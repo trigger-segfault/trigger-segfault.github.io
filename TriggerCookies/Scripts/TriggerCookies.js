@@ -290,7 +290,7 @@ TriggerCookies.WriteMenus = function () {
 			button.style.display = 'none';
 		}
 		else {
-			display: inline - block;
+			display: 'inline-block';
 		}
 	}
 }

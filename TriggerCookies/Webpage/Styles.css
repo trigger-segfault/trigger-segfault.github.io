@@ -1,0 +1,25 @@
+﻿@font-face {
+  font-family: 'Kavoon';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kavoon Regular'), local('Kavoon-Regular'), url(http://fonts.gstatic.com/s/kavoon/v4/CuvH69872GCz__gaf4SQDQ.woff) format('woff');
+}
+
+body {
+
+	background-image: url('Images/bgBlue.jpg');
+	background-color: #28688B;
+}
+
+.container {
+	background-image: url('Images/darkNoise.jpg');
+	max-width: 900px;
+}
+
+h1 {
+	font-family: 'Kavoon', Georgia,serif;
+	text-shadow:0px 0px 4px #000;
+	font-weight: 500;
+	font-size: 63px;
+	color: #FFF;
+}
