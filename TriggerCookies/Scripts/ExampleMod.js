@@ -202,7 +202,7 @@ ExampleMod.WriteMenu = function (tab) {
 		// Don't use separators here. They're already added
 
 		str +=
-		'<div class="listing">Author : <div class="priceoff">' + 'Example Person' + ' <small>(He\'s a cool guy)</small>' + '</div></div>' +
+		'<div class="listing"><b>Author : </b> <div class="priceoff">' + 'Example Person' + ' <small>(He\'s a cool guy)</small>' + '</div></div>' +
 		'<div class="listing"><div class="priceoff">' + 'Information about the mod goes here.' + '</div></div>' +
 
 		'';
