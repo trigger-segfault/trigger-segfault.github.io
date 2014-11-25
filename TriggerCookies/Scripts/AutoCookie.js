@@ -218,6 +218,8 @@ AutoCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				AutoCookie.WriteButton('autoascend') +
 				AutoCookie.WriteButton('allowdevil') +
+				AutoCookie.WriteButton('chocegg') +
+				'<label>This applies for manual ascends as well</label>' +
 				'</div>';
 
 		str += '<div class="listing">' +
@@ -884,35 +886,20 @@ AutoCookie.AutoAscend = function () {
 }
 
 AutoCookie.AssignPermanentSlot = function (slot, upgrade) {
-	Game.SelectingPermanentUpgrade = Game.Upgrades[upgrade].id;
+	Game.permanentUpgrades[slot] = Game.Upgrades[upgrade].id;
+}
 
-	/*var list = [];
-	for (var i in Game.Upgrades) {
-		var me = Game.Upgrades[i];
-		if (me.bought && me.unlocked && (me.pool == '' || me.pool == 'cookie')) list.push(me);
-	}
+AutoCookie.SellChocolateEgg = function () {
+	if (Game.AscendTimer != 0) {
+		if (Game.HasUnlocked('Chocolate egg') && !Game.Has('Chocolate egg')) {
+			for (var i in Game.Objects) {
+				var building = Game.Objects[i];
 
-	var sortMap = function (a, b) {
-		if (a.order > b.order) return 1;
-		else if (a.order < b.order) return -1;
-		else return 0;
+				building.sell(-1, true);
+			}
+			Game.Upgrades['Chocolate egg'].buy(true);
+		}
 	}
-	list.sort(sortMap);
-
-	var upgrades = '';
-	for (var i in list) {
-		var me = list[i];
-		upgrades += '<div class="crate upgrade enabled" ' + Game.getTooltip(
-		'<div style="min-width:200px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.getPrice())) + '</span></div><small>' + (me.pool == 'toggle' ? '[Togglable]' : '[Upgrade]') + '</small><div class="name">' + me.name + '</div><div class="description">' + me.desc + '</div></div>'
-		, 'bottom-left') + ' ' + Game.clickStr + '="Game.PutUpgradeInPermanentSlot(' + me.id + ',' + slot + ');" id="upgrade' + me.id + '" style="' + (me.icon[2] ? 'background-image:url(' + me.icon[2] + ');' : '') + 'background-position:' + (-me.icon[0] * 48) + 'px ' + (-me.icon[1] * 48) + 'px;"></div>';
-	}
-	var upgrade = Game.permanentUpgrades[slot];
-	Game.SelectingPermanentUpgrade = upgrade;
-	Game.Prompt('<h3>Pick an upgrade to make permanent</h3>' +
-				'<div style="margin:4px auto;clear:both;width:120px;"><div class="crate upgrade enabled" style="background-position:' + (-slot * 48) + 'px ' + (-10 * 48) + 'px;"></div><div id="upgradeToSlot" class="crate upgrade enabled" style="background-position:' + (upgrade == -1 ? ((-0 * 48) + 'px ' + (-7 * 48) + 'px') : ((-Game.UpgradesById[upgrade].icon[0] * 48) + 'px ' + (-Game.UpgradesById[upgrade].icon[1] * 48) + 'px')) + ';"></div></div>' +
-				'<div class="block" style="overflow-y:scroll;float:left;clear:left;width:317px;padding-left:0px;padding-right:0px;height:250px;">' + upgrades + '</div>' +
-				'<div class="block" style="float:right;width:152px;clear:right;height:250px;"><p>Here are all the upgrades you\'ve purchased last playthrough.</p><p>Pick one to permanently gain its effects!</p><p>You can reassign this slot anytime you ascend.</p></div>'
-				, [['Confirm', 'Game.permanentUpgrades[' + slot + ']=Game.SelectingPermanentUpgrade;Game.ClosePrompt();'], 'Cancel'], 0, 'widePrompt');*/
 }
 
 AutoCookie.ShowAscendPrompt = function () {
@@ -1006,6 +993,7 @@ BuyoutItem.prototype.Buy = function () {
 /*=====================================================================================
 AUTO-COOKIE SEASONS
 =======================================================================================*/
+//#region Seasons
 
 function Seasons() {
 	this.Seasons			= ['christmas', 'valentines', 'easter', 'halloween', 'fools'];
@@ -1325,33 +1313,39 @@ Seasons.prototype.UpdateValentines = function () {
 }
 Seasons.prototype.UpdateEaster = function () {
 	// Check if Easter is complete
-	//if (!this.EasterComplete) {
-		this.EasterComplete = true;
-		this.EasterUnlocked = true;
-		this.EasterEggsNum = 0;
+	this.EasterComplete = true;
+	this.EasterUnlocked = true;
+	this.EasterEggsNum = 0;
 
-		// Check Easter eggs
-		for (var i = 0; i < this.EasterEggs.length; i++) {
-			var name = this.EasterEggs[i];
-			var egg = Game.Upgrades[name];
+	// Check Easter eggs
+	for (var i = 0; i < this.EasterEggs.length; i++) {
+		var name = this.EasterEggs[i];
+		var egg = Game.Upgrades[name];
 
-			if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
-				this.EasterEggsNum++;
-			else
-				this.EasterComplete = false;
-			if (!egg.unlocked)
-				this.EasterUnlocked = false;
-		}
+		if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
+			this.EasterEggsNum++;
+		else
+			this.EasterComplete = false;
+		if (!egg.unlocked)
+			this.EasterUnlocked = false;
+	}
 
-		// Check Rare Easter eggs
-		for (var i = 0; i < this.RareEasterEggs.length; i++) {
-			var name = this.RareEasterEggs[i];
-			var egg = Game.Upgrades[name];
+	// Check Rare Easter eggs
+	for (var i = 0; i < this.RareEasterEggs.length; i++) {
+		var name = this.RareEasterEggs[i];
+		var egg = Game.Upgrades[name];
 
-			if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
-				this.RareEasterEggsNum++;
-		}
-	//}
+		if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
+			this.RareEasterEggsNum++;
+	}
+
+	// Because the achievement isn't checked in time when instantly switching seasons
+	if (this.EasterUnlocked) {
+		Game.Win('The hunt is on');
+		Game.Win('Egging on');
+		Game.Win('Mass Easteria');
+		Game.Win('Hide & seek champion');
+	}
 }
 Seasons.prototype.UpdateHalloween = function () {
 	// Check if Halloween is complete
@@ -1375,6 +1369,7 @@ Seasons.prototype.UpdateHalloween = function () {
 	//}
 }
 
+//#endregion
 /*=====================================================================================
 AUTO-COOKIE CALCULATOR
 =======================================================================================*/
@@ -1705,7 +1700,10 @@ AutoCookie.Actions = {
 
 
 	autoascend: new AutoCookieAction('Auto Ascend', null, [19, 7], 'toggle', false, 5000, AutoCookie.AutoAscend, true),
-	allowdevil: new AutoCookieAction('Allow "devil" Upgrade', null, [7, 11], 'toggle', false, 0, AutoCookie.ToggleAllowDevil, true)
+	allowdevil: new AutoCookieAction('Allow "devil" Upgrade', null, [7, 11], 'toggle', false, 0, AutoCookie.ToggleAllowDevil, true),
+
+
+	chocegg: new AutoCookieAction('Sell Chocolate Egg on Ascend', null, [18, 12], 'toggle', false, 200, AutoCookie.SellChocolateEgg, true)
 };
 
 /*=====================================================================================

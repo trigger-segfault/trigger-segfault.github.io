@@ -172,6 +172,7 @@ HotfixCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 			HotfixCookie.WriteButton('fixup') +
 			HotfixCookie.WriteButton('fixachiev') +
+			HotfixCookie.WriteButton('fixhcookies') +
 			'</div>';
 		str += HotfixCookie.WriteSectionEnd();
 	}
@@ -223,6 +224,125 @@ HotfixCookie.FixAchievements = function () {
 		if (timePlayed <= 1000 * 60 * 25) Game.Win('Speed baking II');
 		if (timePlayed <= 1000 * 60 * 15) Game.Win('Speed baking III');
 	}
+
+	var eggs = 0;
+	for (var i in Game.easterEggs) {
+		if (Game.HasUnlocked(Game.easterEggs[i])) eggs++;
+	}
+	if (eggs >= 1) Game.Win('The hunt is on');
+	if (eggs >= 7) Game.Win('Egging on');
+	if (eggs >= 14) Game.Win('Mass Easteria');
+	if (eggs >= Game.easterEggs.length) Game.Win('Hide & seek champion');
+}
+
+HotfixCookie.FixHCookies = function () {
+	if (HotfixCookie.Actions['fixhcookies'].Enabled) {
+		Overrides.OverrideFunction('Game.CalculateGains', 'HotfixCookie.CalculateGains', 'HotfixCookie');
+	}
+	else {
+		Overrides.RestoreFunction('Game.CalculateGains', 'HotfixCookie');
+	}
+	Game.CalculateGains();
+}
+
+HotfixCookie.CalculateGains = function () {
+	Game.cookiesPs = 0;
+	var mult = 1;
+
+	var heavenlyMult = 0;
+	if (Game.Has('Heavenly chip secret')) heavenlyMult += 0.05;
+	if (Game.Has('Heavenly cookie stand')) heavenlyMult += 0.20;
+	if (Game.Has('Heavenly bakery')) heavenlyMult += 0.25;
+	if (Game.Has('Heavenly confectionery')) heavenlyMult += 0.25;
+	if (Game.Has('Heavenly key')) heavenlyMult += 0.25;
+	mult += parseFloat(Game.heavenlyCookies) * 0.01 * heavenlyMult;
+
+	for (var i in Game.Upgrades) {
+		var me = Game.Upgrades[i];
+		if (me.bought > 0) {
+			if (me.pool == 'cookie' && Game.Has(me.name)) mult *= (1 + (typeof (me.power) == 'function' ? me.power(me) : me.power) * 0.01);
+		}
+	}
+	if (Game.Has('Specialized chocolate chips')) mult *= 1.01;
+	if (Game.Has('Designer cocoa beans')) mult *= 1.02;
+	if (Game.Has('Underworld ovens')) mult *= 1.03;
+	if (Game.Has('Exotic nuts')) mult *= 1.04;
+	if (Game.Has('Arcane sugar')) mult *= 1.05;
+
+	if (Game.Has('Increased merriness')) mult *= 1.15;
+	if (Game.Has('Improved jolliness')) mult *= 1.15;
+	if (Game.Has('A lump of coal')) mult *= 1.01;
+	if (Game.Has('An itchy sweater')) mult *= 1.01;
+	if (Game.Has('Santa\'s dominion')) mult *= 1.2;
+
+	if (Game.Has('Santa\'s legacy')) mult *= (Game.santaLevel + 1) * 0.05;
+
+	for (var i in Game.Objects) {
+		var me = Game.Objects[i];
+		me.storedCps = (typeof (me.cps) == 'function' ? me.cps(me) : me.cps);
+		me.storedTotalCps = me.amount * me.storedCps;
+		Game.cookiesPs += me.storedTotalCps;
+	}
+
+	if (Game.Has('"egg"')) Game.cookiesPs += 9;//"egg"
+	if (Game.Has('"god"')) Game.cookiesPs += 9;//"god"
+
+	for (var i in Game.customCps) { mult += Game.customCps[i](); }
+
+	var milkMult = Game.Has('Santa\'s milk and cookies') ? 1.05 : 1;
+	if (Game.Has('Kitten helpers')) mult *= (1 + Game.milkProgress * 0.05 * milkMult);
+	if (Game.Has('Kitten workers')) mult *= (1 + Game.milkProgress * 0.1 * milkMult);
+	if (Game.Has('Kitten engineers')) mult *= (1 + Game.milkProgress * 0.2 * milkMult);
+	if (Game.Has('Kitten overseers')) mult *= (1 + Game.milkProgress * 0.2 * milkMult);
+	if (Game.Has('Kitten managers')) mult *= (1 + Game.milkProgress * 0.2 * milkMult);
+	if (Game.Has('Kitten angels')) mult *= (1 + Game.milkProgress * 0.1 * milkMult);
+
+	var eggMult = 0;
+	if (Game.Has('Chicken egg')) eggMult++;
+	if (Game.Has('Duck egg')) eggMult++;
+	if (Game.Has('Turkey egg')) eggMult++;
+	if (Game.Has('Quail egg')) eggMult++;
+	if (Game.Has('Robin egg')) eggMult++;
+	if (Game.Has('Ostrich egg')) eggMult++;
+	if (Game.Has('Cassowary egg')) eggMult++;
+	if (Game.Has('Salmon roe')) eggMult++;
+	if (Game.Has('Frogspawn')) eggMult++;
+	if (Game.Has('Shark egg')) eggMult++;
+	if (Game.Has('Turtle egg')) eggMult++;
+	if (Game.Has('Ant larva')) eggMult++;
+	if (Game.Has('Century egg')) {
+		//the boost increases a little every day, with diminishing returns up to +10% on the 100th day
+		var day = Math.floor((new Date().getTime() - Game.startDate) / 1000 / 10) * 10 / 60 / 60 / 24;
+		day = Math.min(day, 100);
+		eggMult += (1 - Math.pow(1 - day / 100, 3)) * 10;
+	}
+	mult *= (1 + 0.01 * eggMult);
+
+	var rawCookiesPs = Game.cookiesPs * mult;
+	for (var i = 0; i < Game.cpsAchievs.length / 2; i++) {
+		if (rawCookiesPs >= Game.cpsAchievs[i * 2 + 1]) Game.Win(Game.cpsAchievs[i * 2]);
+	}
+
+	if (Game.frenzy > 0) mult *= Game.frenzyPower;
+
+	var sucked = 1;
+	for (var i in Game.wrinklers) {
+		if (Game.wrinklers[i].phase == 2) sucked -= 1 / 20;
+	}
+	Game.cpsSucked = (1 - sucked);
+
+	if (Game.Has('Elder Covenant')) mult *= 0.95;
+
+	if (Game.Has('Golden switch')) mult *= 1.25;
+
+	for (var i in Game.customCpsMult) { mult *= Game.customCpsMult[i](); }
+
+	Game.globalCpsMult = mult;
+	Game.cookiesPs *= Game.globalCpsMult;
+
+	Game.computedMouseCps = Game.mouseCps();
+
+	Game.recalculateGains = 0;
 }
 
 /*=====================================================================================
@@ -336,7 +456,9 @@ HotfixCookie.Actions = {
 	fixup: new HotfixCookieAction('Fix Upgrades', null, [9, 22], '', 'toggle', false, 5000, HotfixCookie.FixUpgrades, true, 'Fix Upgrades',
 			'Broken upgrades can now be unlocked normally.', 'Broken upgrades can no longer be unlocked.'),
 	fixachiev: new HotfixCookieAction('Fix Achievements', null, [11, 22], '', 'toggle', false, 5000, HotfixCookie.FixAchievements, true, 'Fix Achievements',
-			'Broken achievements can now be awarded normally.', 'Broken achievements can no longer be awarded.')
+			'Broken achievements can now be awarded normally.', 'Broken achievements can no longer be awarded.'),
+	fixhcookies: new HotfixCookieAction('Fix H.Cookie Multiplier', null, [20, 7], '', 'toggle', false, 0, HotfixCookie.FixHCookies, true, 'Fix Heavenly Cookies',
+			'H.Cookies now add 1% production multipler.', 'H.Cookies now add 10% production multipler.')
 };
 
 /*=====================================================================================
