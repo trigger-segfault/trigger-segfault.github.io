@@ -285,21 +285,13 @@ TriggerCookies.WriteMenus = function () {
 		section.innerHTML = str;
 		menu.appendChild(section);
 
+		var button = l('tabbutton-' + tab);
 		if (empty) {
-			var button = l('tabbutton-' + tab);
 			button.style.display = 'none';
 		}
-	}
-
-	for (var i in TriggerCookies.TabList) {
-		var tab = TriggerCookies.TabList[i].replace(' ', '');
-
-		var button = l('tabbutton-' + tab);
-		var section = 'tab-' + tab;
-
-		/*if (section.innerHTML == '<div style="padding-bottom:128px;"></div>') {
-			button.style.display = 'none';
-		}*/
+		else {
+			display: inline - block;
+		}
 	}
 }
 

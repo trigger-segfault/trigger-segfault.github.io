@@ -207,6 +207,7 @@ StatCookie.WriteSectionEnd = function () {
 /*=====================================================================================
 STAT COOKIE COOKIES
 =======================================================================================*/
+//#region Cookies
 
 function StatCookies() {
 
@@ -305,10 +306,11 @@ StatCookies.prototype.UpdateClickRate = function () {
 	this.CookieClicksLast = Game.cookieClicks;
 }
 
-
+//#endregion
 /*=====================================================================================
 STAT COOKIE PRESTIGE
 =======================================================================================*/
+//#region Prestige
 
 function StatPrestige() {
 
@@ -408,9 +410,11 @@ StatPrestige.prototype.UpdateClickRate = function () {
 	this.CookieClicksLast = Game.cookieClicks;
 }
 
+//#endregion
 /*=====================================================================================
 STAT COOKIE SEASONS
 =======================================================================================*/
+//#region Seasons
 
 function StatSeasons() {
 	this.SantaLevel = 0;
@@ -518,16 +522,17 @@ StatSeasons.prototype.Update = function () {
 	this.EasterEggs = 0;
 	for (var i = 0; i < this.Lists.EasterEggs.length; i++) {
 		var name = this.Lists.EasterEggs[i];
-		if (Game.Has(name)) this.EasterEggs++;
+		if (Game.Has(name) || (name == 'Chocolate egg' && Game.HasUnlocked('Chocolate egg'))) this.EasterEggs++;
 	}
 	// Check rare eggs
 	this.RareEggs = 0;
 	for (var i = 0; i < this.Lists.RareEggs.length; i++) {
 		var name = this.Lists.RareEggs[i];
-		if (Game.Has(name)) this.RareEggs++;
+		if (Game.Has(name) || (name == 'Chocolate egg' && Game.HasUnlocked('Chocolate egg'))) this.RareEggs++;
 	}
 }
 
+//#endregion
 /*=====================================================================================
 AUTO-COOKIE VARIABLES
 =======================================================================================*/

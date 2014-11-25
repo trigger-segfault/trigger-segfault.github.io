@@ -1103,7 +1103,7 @@ Seasons.prototype.FindBest = function () {
 			for (var i = 0; i < this.EasterEggs.length; i++) {
 				var name = this.EasterEggs[i];
 			
-				if (Game.HasUnlocked(name) && !Game.Has(name) && (Game.Upgrades[name].getPrice() < this.BestUpgrade.Price || this.BestUpgrade.Type == 'invalid'))
+				if (name != 'Chocolate egg' && Game.HasUnlocked(name) && !Game.Has(name) && (Game.Upgrades[name].getPrice() < this.BestUpgrade.Price || this.BestUpgrade.Type == 'invalid'))
 					this.BestUpgrade = new BuyoutItem(name, 'upgrade', 11, Game.Upgrades[name].getPrice());
 			}
 		}
@@ -1334,10 +1334,10 @@ Seasons.prototype.UpdateEaster = function () {
 			var name = this.EasterEggs[i];
 			var egg = Game.Upgrades[name];
 
-			if (!egg.bought)
-				this.EasterComplete = false;
-			else
+			if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
 				this.EasterEggsNum++;
+			else
+				this.EasterComplete = false;
 			if (!egg.unlocked)
 				this.EasterUnlocked = false;
 		}
@@ -1347,7 +1347,7 @@ Seasons.prototype.UpdateEaster = function () {
 			var name = this.RareEasterEggs[i];
 			var egg = Game.Upgrades[name];
 
-			if (egg.bought)
+			if (egg.bought || (name == 'Chocolate egg' && egg.unlocked))
 				this.RareEasterEggsNum++;
 		}
 	//}
