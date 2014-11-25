@@ -1387,10 +1387,10 @@ function Calculator() {
 Calculator.prototype.EstimatedCPS = function () {
 	return Game.cookiesPs * (1 - Game.cpsSucked);
 }
-Calculator.prototype.CalculateCPSPrice = function (oldCPS, newCPS, price) {
+/*Calculator.prototype.CalculateCPSPrice = function (oldCPS, newCPS, price) {
 	// Yes, the bonus returned is smaller if it's better
 	return price / (newCPS - oldCPS);
-}
+}*/
 Calculator.prototype.CalculateBonus = function (building) {
 	// Prevent achievements from testing building CPS
 	var GameWinBackup = Game.Win;
@@ -1409,11 +1409,11 @@ Calculator.prototype.CalculateBonus = function (building) {
 	Game.Win = GameWinBackup;
 
 	return {
-		bonus: this.CalculateCPSPrice(oldCPS, newCPS, price),
-		cps: newCPS,
+		bci: price / (newCPS - oldCPS),
+		income: newCPS - oldCPS,
 		price: price,
 		time: time,
-		afford: afford
+		afford: afford,
 	};
 }
 Calculator.prototype.FindBestBuilding = function () {
@@ -1421,7 +1421,7 @@ Calculator.prototype.FindBestBuilding = function () {
 
 	// Find the best building to buy for the greatest CPS-to-Price increase
 	var bestItem	= new BuyoutItem();
-	var bestBonus	= -1;
+	var bestBCI	= -1;
 
 	for (var i = 0; i < buildingNames.length; i++) {
 		var name		= buildingNames[i];
@@ -1429,15 +1429,15 @@ Calculator.prototype.FindBestBuilding = function () {
 		var info		= this.CalculateBonus(building);
 
 		// Always buy a building if none exist yet.
-		if (building.amount == 0 && bestBonus != 0 && info.afford) {
+		if (building.amount == 0 && bestBCI != 0 && info.afford) {
 			bestItem	= new BuyoutItem(name, 'building', 1, info.Price, info.time);
-			bestBonus	= 0;
+			bestBCI = 0;
 		}
 
 		// If no building has been found yet or its bonus is better than the current best
-		else if (bestBonus == -1 || info.bonus <= bestBonus) {
+		else if (bestBCI == -1 || info.bci <= bestBCI) {
 			bestItem	= new BuyoutItem(name, 'building', 1, info.Price, info.time);
-			bestBonus	= info.bonus;
+			bestBCI		= info.bci;
 
 			// If you can't afford this building, see if buying other buildings will get you to this one faster
 			if (!info.afford) {
