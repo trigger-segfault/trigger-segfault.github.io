@@ -682,6 +682,7 @@ StatSeasons.prototype.UpdateStats = function () {
 	};
 
 	lStat('currentSeason').innerHTML = seasonNames[Game.season];
+	lStat('reindeerFound').innerHTML = Beautify(Game.reindeerClicked);
 
 	lStat('santaLevel').innerHTML = Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '');
 	lStat('santaDrops').innerHTML = Beautify(this.SantaDrops) + '/' + Beautify(this.Lists.SantaDrops.length);
