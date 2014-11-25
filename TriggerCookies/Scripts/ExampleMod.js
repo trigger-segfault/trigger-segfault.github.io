@@ -196,6 +196,17 @@ ExampleMod.WriteMenu = function (tab) {
 
 		'';
 	}
+	else if (tab == 'Mod List') {
+
+		// Add information about the mod here. You really shouldn't put buttons or anything here though.
+		// Don't use separators here. They're already added
+
+		str +=
+		'<div class="listing">Author : <div class="priceoff">' + 'Example Person' + ' <small>(He\'s a cool guy)</small>' + '</div></div>' +
+		'<div class="listing"><div class="priceoff">' + 'Information about the mod goes here.' + '</div></div>' +
+
+		'';
+	}
 
 	return str;
 }
