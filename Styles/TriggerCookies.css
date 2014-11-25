@@ -1,0 +1,103 @@
+﻿
+a.option.framed.large.off {
+	font-size: 20px;
+	margin: 4px auto;
+	padding: 6px 12px;
+	box-shadow: none;
+	background: none;
+	text-shadow: 0px 1px 2px #000;
+}
+
+a.option.framed.large.off:hover {
+	background: #0cf;
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.5),0px 2px 4px rgba(0,0,0,0.25),0px 1px 1px 1px rgba(0,0,0,0.5) inset,0px 0px 12px 2px #8ef inset;
+	text-shadow: 0px 1px 2px #000;
+	color: #fff;
+}
+
+.priceoff {
+	color: #fff;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.modmenu {
+    display: none;
+    z-index: 1000000;
+    position: absolute;
+    left: 16px;
+    right: 0px;
+    top: 112px;
+    bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.modsubsection {
+   padding: 8px 0px;
+   font-size: 14px;
+}
+
+#game.onModMenu #sectionMiddle
+{
+	background:#000 url(http://orteil.dashnet.org/cookieclicker/beta/img/darkNoise.jpg);
+}
+
+#game.onMenu #menu{display:block;}
+#game.onMenu .row{visibility:hidden;}
+#game.onMenu .modmenu{display:none;}
+
+#game.onModMenu #menu{display:none;}
+#game.onModMenu .row{visibility:hidden;}
+#game.onModMenu .modmenu{display:block;}
+
+#game.disablePopWrinklers .wrinkler {display: none !important;}
+
+a.option.framed.large.off {
+	font-size: 20px;
+	margin: 4px auto;
+	padding: 6px 12px;
+	box-shadow: none;
+	background: none;
+	text-shadow: 0px 1px 2px #000;
+}
+a.option.framed.large.off:hover {
+	background: #0cf;
+	box-shadow: 0px 0px 1px 2px rgba(0,0,0,0.5), 0px 2px 4px rgba(0,0,0,0.25), 0px 1px 1px 1px rgba(0,0,0,0.5) inset, 0px 0px 12px 2px #8EF inset;
+	text-shadow: 0px 1px 2px #000;
+	color: #FFF;
+}
+
+a.tc.option.large.on {
+	font-size: 20px;
+	font-family: "Kavoon",Georgia,serif;
+	display: inline-block;
+	font-size: 20px;
+	/*margin: 4px auto;*/
+	padding: 6px 12px;
+	background: none repeat scroll 0% 0% #058;
+	box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 1px 1px 1px rgba(0, 0, 0, 0.5) inset, 0px 0px 12px 2px #0CF inset;
+	text-shadow: 0px 1px 2px #000;
+	color: #CCC;
+	text-decoration: none;
+	border-style: none;
+	border-width: 3px;
+	border-radius: 3px;
+	transition: opacity 0.1s ease-out 0s;
+	text-align: center;
+}
+a.tc.option.large.on:hover {
+	background:#0cf;
+	box-shadow:0px 0px 1px 2px rgba(0,0,0,0.5),0px 2px 4px rgba(0,0,0,0.25),0px 1px 1px 1px rgba(0,0,0,0.5) inset,0px 0px 12px 2px #8ef inset;
+	text-shadow:0px 1px 2px #000;
+	color:#fff;
+}
+
+a.tc.option.large.wrinkler.on {
+	z-index: 21;
+	display: none;
+	position: absolute;
+	width : 150px;
+	top: 160px;
+	left: -87px;
+	opacity: 0.7;
+}
