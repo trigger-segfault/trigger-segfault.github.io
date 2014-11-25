@@ -99,6 +99,7 @@ AutoCookie.Init = function () {
 
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod('Auto Cookie', [22, 7], AutoCookie.Enable, AutoCookie.Disable, AutoCookie.WriteMenu, AutoCookie.UpdateMenu, true);
+		TriggerCookies.AddTab('Automation', 300);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');
@@ -1481,7 +1482,7 @@ Calculator.prototype.FindBestUpgrade = function () {
 		var upgrade = Game.Upgrades[i];
 
 		// If this upgrade is unlocked but not bought, not togglable, and the cheapest upgrade.
-		if (upgrade.unlocked && !upgrade.bought && upgrade.pool != 'toggle' && (bestValue == -1 || upgrade.getPrice() < bestValue)) {
+		if (upgrade.name != 'Chocolate egg' && upgrade.unlocked && !upgrade.bought && upgrade.pool != 'toggle' && (bestValue == -1 || upgrade.getPrice() < bestValue)) {
 			bestItem	= new BuyoutItem(upgrade.name, 'upgrade', 1, upgrade.getPrice());
 			bestValue	= upgrade.getPrice();
 		}

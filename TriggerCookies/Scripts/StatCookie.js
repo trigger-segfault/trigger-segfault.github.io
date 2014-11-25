@@ -100,6 +100,7 @@ StatCookie.Init = function () {
 
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod('Stat Cookie', [0, 7], StatCookie.Enable, StatCookie.Disable, StatCookie.WriteMenu, StatCookie.UpdateMenu, true);
+		TriggerCookies.AddTab('Statistics', 100);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');
@@ -136,7 +137,9 @@ StatCookie.WriteMenu = function (tab) {
 	else if (tab == 'Statistics') {
 
 		str += StatCookie.CookieStats.WriteStats();
+		str += StatCookie.GoldenStats.WriteStats();
 		str += StatCookie.PrestigeStats.WriteStats();
+		str += StatCookie.WrinklerStats.WriteStats();
 		str += StatCookie.SeasonStats.WriteStats();
 
 	}
@@ -151,7 +154,9 @@ StatCookie.UpdateMenu = function () {
 	else if (TriggerCookies.CurrentTab == 'Statistics') {
 
 		StatCookie.CookieStats.UpdateStats();
+		StatCookie.GoldenStats.UpdateStats();
 		StatCookie.PrestigeStats.UpdateStats();
+		StatCookie.WrinklerStats.UpdateStats();
 		StatCookie.SeasonStats.UpdateStats();
 
 	}
@@ -308,6 +313,131 @@ StatCookies.prototype.UpdateClickRate = function () {
 
 //#endregion
 /*=====================================================================================
+STAT COOKIE GOLDEN COOKIES
+=======================================================================================*/
+//#region Golden Cookies
+
+function StatGolden() {
+	this.LuckyRequired = 0;
+	this.LuckyFrenzyRequired = 0;
+	this.LuckyReward = 0;
+	this.LuckyFrenzyReward = 0;
+
+	this.MaxCookieChain = 0;
+	this.NextCookieChain = 0;
+	this.NextCPSChain = 0;
+
+	this.LastEffect = 'N/A';
+}
+StatGolden.prototype.WriteStats = function () {
+	this.Update();
+
+	var str = ''
+
+	str += StatCookie.WriteSectionHead('Golden Cookies', [10, 14]);
+
+	str +=
+	'<div class="listing"><b>Golden cookie clicks :</b> <div id="' + iStat('goldenClicks') + '" class="priceoff">' + Beautify(Game.goldenClicksLocal) +
+		' <small>(all time : ' + Beautify(Game.goldenClicks) + ')</small></div></div>' +
+	'<div class="listing"><b>Golden cookies missed : </b> <div id="' + iStat('goldenMissed') + '" class="priceoff">' + Beautify(Game.missedGoldenClicks) + '</div></div>' +
+	'<div class="listing"><b>Last effect : </b> <div id="' + iStat('lastEffect') + '" class="priceoff">' + this.LastEffect + '</div></div>' +
+
+	StatCookie.WriteSectionMiddle() +
+
+	'<div class="listing"><b>Lucky cookies required : </b> <div id="' + iStat('luckyRequired') + '" class="price plain">' + Beautify(this.LuckyRequired) + '</div></div>' +
+	'<div class="listing"><b>Lucky+Frenzy cookies required : </b> <div id="' + iStat('luckyFrenzyRequired') + '" class="price plain">' + Beautify(this.LuckyFrenzyRequired) + '</div></div>' +
+	'<div class="listing"><b>Lucky reward : </b> <div id="' + iStat('luckyReward') + '" class="price plain">' + Beautify(this.LuckyReward) + '</div></div>' +
+	'<div class="listing"><b>Lucky+Frenzy reward : </b> <div id="' + iStat('luckyFrenzyReward') + '" class="price plain">' + Beautify(this.LuckyFrenzyReward) + '</div></div>' +
+
+	StatCookie.WriteSectionMiddle() +
+
+	'<div class="listing"><b>Max cookie chain reward : </b> <div id="' + iStat('maxCookieChain') + '" class="price plain">' + Beautify(this.MaxCookieChain) + '</div></div>' +
+	'<div class="listing"><b>Cookies for next chain tier : </b> <div id="' + iStat('nextCookieChain') + '" class="price plain">' + Beautify(this.NextCookieChain) + '</div></div>' +
+	'<div class="listing"><b>CPS for next chain tier : </b> <div id="' + iStat('nextCPSChain') + '" class="price plain">' + Beautify(this.NextCPSChain) + '</div></div>' +
+
+	'';
+
+	str += StatCookie.WriteSectionEnd();
+
+	return str;
+}
+StatGolden.prototype.UpdateStats = function () {
+	this.Update();
+
+	lStat('goldenClicks').innerHTML = Beautify(Game.goldenClicksLocal) +
+		' <small>(all time : ' + Beautify(Game.goldenClicks) + ')</small>';
+	lStat('goldenMissed').innerHTML = Beautify(Game.missedGoldenClicks);
+	lStat('lastEffect').innerHTML = this.LastEffect;
+
+	lStat('luckyRequired').innerHTML = Beautify(this.LuckyRequired);
+	lStat('luckyFrenzyRequired').innerHTML = Beautify(this.LuckyFrenzyRequired);
+	lStat('luckyReward').innerHTML = Beautify(this.LuckyReward);
+	lStat('luckyFrenzyReward').innerHTML = Beautify(this.LuckyFrenzyReward);
+
+	lStat('maxCookieChain').innerHTML = Beautify(this.MaxCookieChain);
+	lStat('nextCookieChain').innerHTML = Beautify(this.NextCookieChain);
+	lStat('nextCPSChain').innerHTML = Beautify(this.NextCPSChain);
+}
+StatGolden.prototype.Update = function () {
+
+	// Last Effect
+	var effectnames = {
+		'multiply cookies': 'Lucky',
+		'ruin cookies': 'Ruin',
+		'clot': 'Clot',
+		'frenzy': 'Frenzy',
+		'blood frenzy': 'Elder Frenzy',
+		'click frenzy': 'Click Frenzy',
+		'chain cookie': 'Cookie Chain',
+		'blab': 'Blab <small>(you lucky bastard)</small>'
+	};
+	this.LastEffect = (Game.goldenCookie.last.length != 0 ? effectnames[Game.goldenCookie.last] : 'N/A');
+
+	// Lucky
+	this.LuckyRequired = Game.cookiesPs * 60 * 20 * 10;
+	this.LuckyReward = Math.min(Game.cookies * 0.1, Game.cookiesPs * 60 * 20) + 13;//add 10% to cookies owned (+13), or 20 minutes of cookie production - whichever is lowest
+	this.LuckyFrenzyRequired = Game.cookiesPs * 60 * 20 * 7 * 10;
+	this.LuckyFrenzyReward = Math.min(Game.cookies * 0.1, Game.cookiesPs * 60 * 20 * 7) + 13;//add 10% to cookies owned (+13), or 20 minutes of cookie production - whichever is lowest
+
+	
+	// Cookie Chain
+	var digit = 7;
+
+	var maxCookies = Game.cookies * 0.25;
+	var maxLogCookies = Math.floor(Math.log(maxCookies) / Math.LN10);
+	var maxCookiesChain = maxLogCookies + 1;
+	while (maxCookies < (Math.floor(1 / 9 * Math.pow(10, maxCookiesChain) * digit))) {
+		maxCookiesChain--;
+	}
+	var nextCookies = (Math.floor(1 / 9 * Math.pow(10, maxCookiesChain + 1) * digit)) * 4;
+
+	var maxCPS = Game.cookiesPs * 60 * 60 * 3;
+	var maxLogCPS = Math.floor(Math.log(maxCPS) / Math.LN10);
+	var maxCPSChain = maxLogCPS + 1;
+	while (maxCPS < (Math.floor(1 / 9 * Math.pow(10, maxCPSChain) * digit))) {
+		maxCPSChain--;
+	}
+	var nextCPS = (Math.floor(1 / 9 * Math.pow(10, maxCPSChain + 1) * digit)) / 60 / 60 / 3;
+	
+	this.NextCookieChain = nextCookies;
+	this.NextCPSChain = nextCPS;
+
+	var chain = 1 + Math.max(0, Math.ceil(Math.log(Game.cookies) / Math.LN10) - 10);
+	var moni = 0;
+	var nextMoni = 1;
+	var maxPayout = Math.min(Game.cookiesPs * 60 * 60 * 3, Game.cookies * 0.25); // max payout is 25% of cookies owned, or 3 hours of production - whichever is lowest
+	
+	moni = 0; nextMoni = 1;
+	for (; nextMoni < maxPayout || chain <= 4; chain++) {
+		moni = Math.max(digit, Math.min(Math.floor(1 / 9 * Math.pow(10, chain) * digit), maxPayout));
+		nextMoni = Math.max(digit, Math.min(Math.floor(1 / 9 * Math.pow(10, chain + 1) * digit), maxPayout));
+	}
+	this.MaxCookieChain = moni;
+	
+}
+
+//#endregion
+/*=====================================================================================
 STAT COOKIE PRESTIGE
 =======================================================================================*/
 //#region Prestige
@@ -397,17 +527,78 @@ StatPrestige.prototype.Update = function () {
 	this.TotalChipsPerSecond = StatCookie.CookieStats.TotalCPS / this.CookiesPerChip;
 
 }
-StatPrestige.prototype.UpdateClickRate = function () {
-	this.Clicks[0] = Math.max(0, Game.cookieClicks - this.CookieClicksLast);
 
-	var totalClicks = this.Clicks[0];
-	for (var i = 0; i < this.Clicks.length - 1; i++) {
-		totalClicks += this.Clicks[i + 1];
-		this.Clicks[i + 1] = this.Clicks[i];
+//#endregion
+/*=====================================================================================
+STAT COOKIE WRINKLERS
+=======================================================================================*/
+//#region Wrinklers
+
+function StatWrinklers() {
+	this.CookiesSucked = 0;
+	this.CookiesReward = 0;
+	this.NumWrinklers = 0;
+	this.NumWrinklersSucking = 0;
+	this.WrinklerMultiplier = 1;
+}
+StatWrinklers.prototype.WriteStats = function () {
+	this.Update();
+
+	var str = ''
+
+	str += StatCookie.WriteSectionHead('Wrinklers', [19, 8]);
+
+	str +=
+	'<div class="listing"><b>Wrinklers popped : </b> <div id="' + iStat('wrinklersPopped') + '" class="priceoff">' + Beautify(Game.wrinklersPopped) + '</div></div>' +
+	'<div class="listing"><b>Wrinkler multiplier : </b> <div id="' + iStat('wrinklerMultiplier') + '" class="priceoff">' + Beautify(this.WrinklerMultiplier * 100) + '%' + '</div></div>' +
+
+	StatCookie.WriteSectionMiddle() +
+
+	'<div class="listing"><b>Number of wrinklers : </b> <div id="' + iStat('numWrinklers') + '" class="priceoff">' + Beautify(this.NumWrinklers) +
+		(this.NumWrinklers == 10 ? ' <small>(maxed)</small>' : '') + '</div></div>' +
+	'<div class="listing"><b>Cookies sucked : </b> <div id="' + iStat('cookiesSucked') + '" class="price plain">' + Beautify(this.CookiesSucked) + '</div></div>' +
+	'<div class="listing"><b>Reward for popping :</b> <div id="' + iStat('cookiesSuckedReward') + '" class="price plain">' + Beautify(this.CookiesReward) + '</div></div>' +
+
+	'';
+
+	str += StatCookie.WriteSectionEnd();
+
+	return str;
+}
+StatWrinklers.prototype.UpdateStats = function () {
+	this.Update();
+
+	lStat('wrinklersPopped').innerHTML = Beautify(Game.wrinklersPopped);
+	lStat('wrinklerMultiplier').innerHTML = Beautify(this.WrinklerMultiplier * 100) + '%';
+
+	lStat('numWrinklers').innerHTML = Beautify(this.NumWrinklers) +
+		(this.NumWrinklers == 10 ? ' <small>(maxed)</small>' : '')
+	lStat('cookiesSucked').innerHTML = Beautify(this.CookiesSucked);
+	lStat('cookiesSuckedReward').innerHTML = Beautify(this.CookiesReward);
+}
+StatWrinklers.prototype.Update = function () {
+
+	this.NumWrinklers = 0;
+	this.NumWrinklersSucking = 0;
+	this.CookiesSucked = 0;
+
+	this.WrinklerMultiplier = 1.1;
+	if (Game.Has('Sacrilegious corruption')) this.WrinklerMultiplier *= 1.05;
+	if (Game.Has('Wrinklerspawn')) this.WrinklerMultiplier *= 1.05;
+
+	for (var i in Game.wrinklers) {
+		var me = Game.wrinklers[i];
+
+		if (me.phase > 0) {
+			this.NumWrinklers++;
+			if (me.phase == 2) {
+				this.NumWrinklersSucking++;
+				this.CookiesSucked += me.sucked;
+			}
+		}
 	}
-	this.ClicksPerSecond = totalClicks / this.Clicks.length;
 
-	this.CookieClicksLast = Game.cookieClicks;
+	this.CookiesReward = this.CookiesSucked * this.WrinklerMultiplier;
 }
 
 //#endregion
@@ -427,7 +618,7 @@ function StatSeasons() {
 
 	this.Lists = {};
 	this.Lists.SantaLevels = ['Festive test tube', 'Festive ornament', 'Festive wreath', 'Festive tree', 'Festive present', 'Festive elf fetus', 'Elf toddler', 'Elfling', 'Young elf', 'Bulky elf', 'Nick', 'Santa Claus', 'Elder Santa', 'True Santa', 'Final Claus'];
-	this.Lists.SantaDrops = ['A festive hat', 'Increased merriness', 'Improved jolliness', 'A lump of coal', 'An itchy sweater', 'Reindeer baking grounds', 'Weighted sleighs', 'Ho ho ho-flavored frosting', 'Season savings', 'Toy workshop', 'Naughty list', 'Santa\'s bottomless bag', 'Santa\'s helpers', 'Santa\'s legacy', 'Santa\'s milk and cookies'];
+	this.Lists.SantaDrops = ['A festive hat', 'An itchy sweater', 'Increased merriness', 'Improved jolliness', 'A lump of coal', 'An itchy sweater', 'Reindeer baking grounds', 'Weighted sleighs', 'Ho ho ho-flavored frosting', 'Season savings', 'Toy workshop', 'Naughty list', 'Santa\'s bottomless bag', 'Santa\'s helpers', 'Santa\'s legacy', 'Santa\'s milk and cookies'];
 	this.Lists.ChristmasCookies = ['Christmas tree biscuits', 'Snowflake biscuits', 'Snowman biscuits', 'Holly biscuits', 'Candy cane biscuits', 'Bell biscuits', 'Present biscuits'];
 	this.Lists.SpookyCookies = ['Skull cookies', 'Ghost cookies', 'Bat cookies', 'Slime cookies', 'Pumpkin cookies', 'Eyeball cookies', 'Spider cookies'];
 	this.Lists.HeartCookies = ['Pure heart biscuits', 'Ardent heart biscuits', 'Sour heart biscuits', 'Weeping heart biscuits', 'Golden heart biscuits', 'Eternal heart biscuits'];
@@ -439,22 +630,37 @@ StatSeasons.prototype.WriteStats = function () {
 
 	var str = ''
 
-	str += StatCookie.WriteSectionHead('Season Progress', [16, 6]);
+	str += StatCookie.WriteSectionHead('Seasons', [16, 6]);
+
+	var seasonNames = {
+		'': 'None',
+		christmas: 'Christmas',
+		halloween: 'Halloween',
+		valentines: 'Valentines Day',
+		easter: 'Easter',
+		fools: 'Business Day'
+	};
 
 	str +=
+	'<div class="listing"><b>Current season : </b> <div id="' + iStat('currentSeason') + '" class="priceoff">' + seasonNames[Game.season] + '</div></div>' +
+
+	'<div class="listing"><b>Reindeer found : </b> <div id="' + iStat('reindeerFound') + '" class="priceoff">' + Beautify(Game.reindeerClicked) + '</div></div>' +
+
+	StatCookie.WriteSectionMiddle() +
+
 	// Christmas
-	'<div class="listing"><b>Santa Level : </b> <div id="' + iStat('santaLevel') + '" class="priceoff">' + Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '') + '</div></div>' +
-	'<div class="listing"><b>Santa Drops : </b> <div id="' + iStat('santaDrops') + '" class="priceoff">' + Beautify(this.SantaDrops) + '/' + Beautify(this.Lists.SantaDrops.length) + '</div></div>' +
-	'<div class="listing"><b>Christmas Cookies : </b> <div id="' + iStat('xmasCookies') + '" class="priceoff">' + Beautify(this.ChristmasCookies) + '/' + Beautify(this.Lists.ChristmasCookies.length) + '</div></div>' +
+	'<div class="listing"><b>Santa level : </b> <div id="' + iStat('santaLevel') + '" class="priceoff">' + Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '') + '</div></div>' +
+	'<div class="listing"><b>Santa drops : </b> <div id="' + iStat('santaDrops') + '" class="priceoff">' + Beautify(this.SantaDrops) + '/' + Beautify(this.Lists.SantaDrops.length) + '</div></div>' +
+	'<div class="listing"><b>Christmas cookies : </b> <div id="' + iStat('xmasCookies') + '" class="priceoff">' + Beautify(this.ChristmasCookies) + '/' + Beautify(this.Lists.ChristmasCookies.length) + '</div></div>' +
 
 	// Halloween
-	'<div class="listing"><b>Spooky Cookies : </b> <div id="' + iStat('spookyCookies') + '" class="priceoff">' + Beautify(this.SpookyCookies) + '/' + Beautify(this.Lists.SpookyCookies.length) + '</div></div>' +
+	'<div class="listing"><b>Spooky cookies : </b> <div id="' + iStat('spookyCookies') + '" class="priceoff">' + Beautify(this.SpookyCookies) + '/' + Beautify(this.Lists.SpookyCookies.length) + '</div></div>' +
 
 	// Valentines Day
-	'<div class="listing"><b>Heart Cookies : </b> <div id="' + iStat('heartCookies') + '" class="priceoff">' + Beautify(this.HeartCookies) + '/' + Beautify(this.Lists.HeartCookies.length) + '</div></div>' +
+	'<div class="listing"><b>Heart cookies : </b> <div id="' + iStat('heartCookies') + '" class="priceoff">' + Beautify(this.HeartCookies) + '/' + Beautify(this.Lists.HeartCookies.length) + '</div></div>' +
 
 	// Easter
-	'<div class="listing"><b>Easter Eggs : </b> <div id="' + iStat('easterEggs') + '" class="priceoff">' + Beautify(this.EasterEggs) + '/' + Beautify(this.Lists.EasterEggs.length) + ' <small>' +
+	'<div class="listing"><b>Easter eggs : </b> <div id="' + iStat('easterEggs') + '" class="priceoff">' + Beautify(this.EasterEggs) + '/' + Beautify(this.Lists.EasterEggs.length) + ' <small>' +
 		'(rare eggs : ' + Beautify(this.RareEggs) + '/' + Beautify(this.Lists.RareEggs.length) + ')' + '</small></div></div>' +
 
 	'';
@@ -465,6 +671,17 @@ StatSeasons.prototype.WriteStats = function () {
 }
 StatSeasons.prototype.UpdateStats = function () {
 	this.Update();
+
+	var seasonNames = {
+		'': 'None',
+		christmas: 'Christmas',
+		halloween: 'Halloween',
+		valentines: 'Valentines Day',
+		easter: 'Easter',
+		fools: 'Business Day'
+	};
+
+	lStat('currentSeason').innerHTML = seasonNames[Game.season];
 
 	lStat('santaLevel').innerHTML = Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '');
 	lStat('santaDrops').innerHTML = Beautify(this.SantaDrops) + '/' + Beautify(this.Lists.SantaDrops.length);
@@ -538,10 +755,10 @@ AUTO-COOKIE VARIABLES
 =======================================================================================*/
 
 
-/* The season cycle manager. */
 StatCookie.CookieStats = new StatCookies();
+StatCookie.GoldenStats = new StatGolden();
 StatCookie.PrestigeStats = new StatPrestige();
-/* The season cycle manager. */
+StatCookie.WrinklerStats = new StatWrinklers();
 StatCookie.SeasonStats = new StatSeasons();
 
 

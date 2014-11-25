@@ -6,14 +6,18 @@
 }
 
 body {
-
+	margin: 0px;
 	background-image: url('Images/bgBlue.jpg');
 	background-color: #28688B;
 }
 
 .container {
+	margin-right: auto;
+	margin-left: auto;
+	display: table;
+	box-sizing: border-box;
 	background-image: url('Images/darkNoise.jpg');
-	max-width: 900px;
+	/*max-width: 900px;*/
 }
 
 h1 {
@@ -22,4 +26,20 @@ h1 {
 	font-weight: 500;
 	font-size: 63px;
 	color: #FFF;
+}
+
+@media (min-width:1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+@media (min-width:992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width:768px) {
+	.container {
+		width: 750px;
+	}
 }

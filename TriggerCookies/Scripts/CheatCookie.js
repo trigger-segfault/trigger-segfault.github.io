@@ -100,6 +100,7 @@ CheatCookie.Init = function () {
 	// Add the mod to the manager if it exists.
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod('Cheat Cookie', [10, 6], CheatCookie.Enable, CheatCookie.Disable, CheatCookie.WriteMenu, CheatCookie.UpdateMenu, true);
+		TriggerCookies.AddTab('Cheating', 400);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');

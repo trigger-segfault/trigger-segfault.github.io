@@ -105,6 +105,7 @@ HotfixCookie.Init = function () {
 
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod("Hotfix Cookie", [10, 22], HotfixCookie.Enable, HotfixCookie.Disable, HotfixCookie.WriteMenu, HotfixCookie.UpateMenu, true);
+		TriggerCookies.AddTab('Functionality', 200);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');

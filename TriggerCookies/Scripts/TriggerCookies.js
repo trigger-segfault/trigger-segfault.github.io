@@ -166,6 +166,31 @@ TriggerCookies.ChangeNewsTicker = function () {
 /*=====================================================================================
 TRIGGER COOKIES MENU
 =======================================================================================*/
+//#region Menu
+
+TriggerCookies.WriteSectionHead = function (name, icon) {
+	var str = '';
+	str += '<div class="listing"><div class="icon" style="background-position:' + (-icon[0] * 48) + 'px ' + (-icon[1] * 48) + 'px;"></div>' +
+				'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + name + '</span></span></div>';
+	str += '<div style="width: calc(100% - 28px); border-bottom: 1px solid #333; margin: 4px 0px 10px 14px;"></div>';
+	return str;
+}
+
+TriggerCookies.WriteSectionMiddle = function () {
+	var str = '<div style="width: 100%; margin: 12px 0px;"></div>';
+	return str;
+}
+TriggerCookies.WriteSectionEnd = function () {
+	var str = '<div style="width: calc(100% - 28px); border-bottom: 1px solid #333; margin: 10px 0px 6px 14px;"></div>';
+	return str;
+}
+
+TriggerCookies.WriteSpacing = function (pixels) {
+	if (!pixels)
+		pixels = 8;
+	var str = '<div style="margin-left: ' + pixels.toString() + 'px; display: inline;"></div>';
+	return str;
+}
 
 /* Writes a mod button to the menu. */
 TriggerCookies.WriteEnabledButton = function (mod) {
@@ -199,6 +224,8 @@ TriggerCookies.WriteTabButton = function (name) {
 TriggerCookies.WriteMenus = function () {
 	TriggerCookies.ForceWriteMenu = false;
 
+	TriggerCookies.SortTabs();
+
 	var menu = l('modMenu');
 
 	var str = '';
@@ -209,10 +236,10 @@ TriggerCookies.WriteMenus = function () {
 			'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 			'<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';
 
-	str += '<div class="listing" style="padding-top: 2px; padding-bottom: 2px">';
+	str += '<div id="tabList" class="listing" style="padding-top: 2px; padding-bottom: 2px">';
 
 	for (var i in TriggerCookies.TabList) {
-		var tab = TriggerCookies.TabList[i];
+		var tab = TriggerCookies.TabList[i].name;
 		str += TriggerCookies.WriteTabButton(tab);
 	}
 
@@ -227,7 +254,7 @@ TriggerCookies.WriteMenus = function () {
 	var currentTab = TriggerCookies.CurrentTab.replace(' ', '');
 
 	for (var i in TriggerCookies.TabList) {
-		var realTab = TriggerCookies.TabList[i];
+		var realTab = TriggerCookies.TabList[i].name;
 		var tab = realTab.replace(' ', '');
 
 		var section = document.createElement('div');
@@ -357,7 +384,7 @@ TriggerCookies.ChangeTab = function (name) {
 	TriggerCookies.CurrentTab = name;
 	var currentTab = name.replace(' ', '');
 	for (var i in TriggerCookies.TabList) {
-		var tab = TriggerCookies.TabList[i].replace(' ', '');
+		var tab = TriggerCookies.TabList[i].name.replace(' ', '');
 
 		var button = l('tabbutton-' + tab);
 		//button.style.display = (tab == currentTab ? 'block' : 'none');
@@ -368,6 +395,7 @@ TriggerCookies.ChangeTab = function (name) {
 	}
 }
 
+//#endregion
 /*=====================================================================================
 TRIGGER COOKIES MODS
 =======================================================================================*/
@@ -377,6 +405,60 @@ TRIGGER COOKIES MODS
 TriggerCookies.AddMod = function (name, icon, load, unload, write, update, enabled) {
 
 	TriggerCookies.Mods[name] = new ModInfo(name, icon, load, unload, write, update, enabled);
+
+	TriggerCookies.ForceWriteMenu = true;
+}
+
+/* Adds a single tab. Lower priorities go first. */
+TriggerCookies.AddTab = function (name, priority) {
+	var newTab = { name: name, priority: priority };
+	var tabExists = false;
+
+	for (var j = 0; j < TriggerCookies.TabList.length; j++) {
+		var tab = TriggerCookies.TabList[j];
+
+		if (newTab.name == tab.name) {
+			tabExists = true;
+			break;
+		}
+	}
+
+	if (!tabExists) {
+		TriggerCookies.TabList.push(newTab);
+	}
+}
+
+/* Adds a list of tabs in the structure [{name:, priority:},...]. Lower priorities go first. */
+TriggerCookies.AddTabs = function (tabs) {
+	for (var i = 0; i < tabs.length; i++) {
+		var newTab = tabs[i];
+		var tabExists = false;
+
+		for (var j = 0; j < TriggerCookies.TabList.length; j++) {
+			var tab = TriggerCookies.TabList[j];
+
+			if (newTab.name == tab.name) {
+				tabExists = true;
+				break;
+			}
+		}
+
+		if (!tabExists) {
+			TriggerCookies.TabList.push(newTab);
+		}
+	}
+}
+
+TriggerCookies.SortTabs = function () {
+
+	TriggerCookies.TabList.sort(function (a, b) {
+		if (a.priority != b.priority)
+			return a.priority - b.priority;
+		else
+			return a.name - b.name;
+	});
+
+	TriggerCookies.CurrentTab = TriggerCookies.TabList[0].name;
 }
 
 function ModInfo(name, icon, load, unload, write, update, enabled) {
@@ -420,10 +502,16 @@ TRIGGER COOKIES VARIABLES
 TriggerCookies.Mods = [];
 
 /* The current tab open in the mods menu. */
-TriggerCookies.CurrentTab = 'Statistics';
+TriggerCookies.CurrentTab = '';
 
 /* The list of tabs. */
-TriggerCookies.TabList = ['Statistics', 'Functionality', 'Automation', 'Cheating', 'Mod List'];//, 'About'];
+TriggerCookies.TabList = [
+	//{ name: 'Statistics', priority: 100 },
+	//{ name: 'Functionality', priority: 200 },
+	//{ name: 'Automation', priority: 300 },
+	//{ name: 'Cheating', priority: 400 },
+	{ name: 'Mod List', priority: 1000000000 }
+];
 
 TriggerCookies.ForceWriteMenu = true;
 

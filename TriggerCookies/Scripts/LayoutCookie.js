@@ -2,7 +2,7 @@
 LAYOUT COOKIE MOD
 =======================================================================================*/
 
-// hor:       Robert Jordan
+// Author:       Robert Jordan
 // Written For:  v.1.0501 beta
 // Repository:   https://github.com/trigger-death/CookieMods
 // Raw File:     https://raw.githubusercontent.com/trigger-death/CookieMods/master/LayoutCookie.js
@@ -96,6 +96,7 @@ LayoutCookie.Init = function () {
 
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod("Layout Cookie", [3, 29], LayoutCookie.Enable, LayoutCookie.Disable, LayoutCookie.WriteMenu, LayoutCookie.UpdateMenu, true);
+		TriggerCookies.AddTab('Functionality', 200);
 
 		LayoutCookie.Loaded = true;
 	});
@@ -844,13 +845,6 @@ LayoutCookie.Actions = {
 /*=====================================================================================
 LAYOUT COOKIE VARIABLES
 =======================================================================================*/
-
-/* True if the mod has been loaded. */
-var LayoutCookieLoaded = false;
-/* True if the Trigger_Cookies Mod Manager is being used. */
-LayoutCookie.ModManager = false;
-/* True if the mod is loaded. */
-LayoutCookie.Loaded = false;
 
 LayoutCookie.Calc = new PriceCalculator();
 
