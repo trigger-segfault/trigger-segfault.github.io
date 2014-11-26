@@ -133,8 +133,8 @@ LayoutCookie.Enable = function () {
 	//LayoutCookie.Actions['removetopbar'].Enabled = true;
 	//LayoutCookie.Actions['improvescroll'].Enabled = true;
 
-	//var upgrade = new Game.Upgrade('End season', '', Game.seasonTriggerBasePrice, [16, 6], function () {
-	var upgrade = new Game.Upgrade('End season', 'Cancels the current season.<q>You have the power to start them, now you finally have the power to end them!</q>', Game.seasonTriggerBasePrice, [16, 6], function () {
+	//var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, '', Game.seasonTriggerBasePrice, [16, 6], function () {
+	var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, 'Ends the current season.<q>You have the power to start them, now you finally have the power to stop them!</q>', Game.seasonTriggerBasePrice, [16, 6], function () {
 		Game.seasonUses += 1;
 		Game.seasonT = 0;
 		Game.computeSeasonPrices();
@@ -195,7 +195,7 @@ LayoutCookie.StartSeasonBuyFunction = function () {
 	else Game.Notify(str, '', this.icon, 4);
 
 	if (LayoutCookie.Actions['cancelseason'].Enabled) {
-		Game.Unlock('End season');
+		Game.Unlock(LayoutCookie.EndSeasonName);
 	}
 }
 
@@ -413,11 +413,11 @@ LayoutCookie.ImproveScrollBars = function () {
 }
 
 LayoutCookie.CancelSeasonButton = function () {
-	if (LayoutCookie.Actions['cancelseason'].Enabled && Game.season != '' && !Game.Upgrades['End season'].unlocked) {
-		Game.Unlock('End season');
+	if (LayoutCookie.Actions['cancelseason'].Enabled && Game.season != '' && !Game.Upgrades[LayoutCookie.EndSeasonName].unlocked) {
+		Game.Unlock(LayoutCookie.EndSeasonName);
 	}
-	else if (Game.Upgrades['End season'].unlocked) {
-		Game.Lock('End season');
+	else if (Game.Upgrades[LayoutCookie.EndSeasonName].unlocked) {
+		Game.Lock(LayoutCookie.EndSeasonName);
 	}
 }
 LayoutCookie.ChangeTickerBackground = function () {
@@ -845,6 +845,8 @@ LayoutCookie.Actions = {
 /*=====================================================================================
 LAYOUT COOKIE VARIABLES
 =======================================================================================*/
+
+LayoutCookie.EndSeasonName = 'Parting of seasons';
 
 LayoutCookie.Calc = new PriceCalculator();
 

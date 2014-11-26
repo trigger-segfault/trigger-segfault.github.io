@@ -99,7 +99,7 @@ StatCookie.Init = function () {
 	LoadMod('TriggerCookies');
 
 	IntervalUntilLoaded('TriggerCookies', function () {
-		TriggerCookies.AddMod('Stat Cookie', [0, 7], StatCookie.Enable, StatCookie.Disable, StatCookie.WriteMenu, StatCookie.UpdateMenu, true);
+		TriggerCookies.AddMod('Stat Cookie', [9, 6], StatCookie.Enable, StatCookie.Disable, StatCookie.WriteMenu, StatCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Statistics', 100);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
