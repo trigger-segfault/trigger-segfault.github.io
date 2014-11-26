@@ -99,7 +99,7 @@ CheatCookie.Init = function () {
 
 	// Add the mod to the manager if it exists.
 	IntervalUntilLoaded('TriggerCookies', function () {
-		TriggerCookies.AddMod('Cheat Cookie', [10, 6], CheatCookie.Enable, CheatCookie.Disable, CheatCookie.WriteMenu, CheatCookie.UpdateMenu, true);
+		TriggerCookies.AddMod('Cheat Cookie', 'CheatCookie', [10, 6], CheatCookie.Enable, CheatCookie.Disable, null, null, CheatCookie.WriteMenu, CheatCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Cheating', 400);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
@@ -110,67 +110,10 @@ CheatCookie.Init = function () {
 }
 
 /* Loads Cheat Cookie. */
-CheatCookie.Enable = function () {
+CheatCookie.Enable = function (firstTime) {
 
 	CheatCookie.Enabled = true;
-	/*$sectionLeft.hover(
-        function () {
-        	if (self.wrinklersExist()) {
-        		$('#CMPopWrinklers').fadeIn(200);
-        	}
-        },
-        function () {
-        	$('#CMPopWrinklers').fadeOut(200);
-        }
-    );
-	$('#CMPopWrinklers').click(function () {
-		Game.CollectWrinklers();
-		CM.popWrinklersAfterXTime();
-		$('#CMPopWrinklers').hide();
-	});*/
-	var button = document.createElement('a');
-	button.id = iCheat('popAllWrinklers');
-	button.className = 'tc option large wrinkler on';
-	button.innerHTML = 'Pop Wrinklers';
-	/*button.style.zIndex = 21;
-	button.style.position = 'absolute';
-	button.style.width = '150px';
-	button.style.top = '180px';
-	button.style.left = '-85px';
-	button.style.opacity = 0.7;
-	button.style.display = 'none';*/
 
-	if (Game.touchEvents)
-		button.ontouched = CheatCookie.PopAllWrinklers;
-	else
-		button.onclick = CheatCookie.PopAllWrinklers;
-
-	l('cookieAnchor').appendChild(button);
-
-	AddEvent(l('sectionLeft'), 'mouseover', function () {
-		if (CheatCookie.WrinklersExist()) {
-			lCheat('popAllWrinklers').style.display = 'inline-block';
-		}
-	});
-	AddEvent(l('sectionLeft'), 'mouseout', function () {
-		lCheat('popAllWrinklers').style.display = 'none';
-	});
-
-	/*$('#sectionLeft').hover(
-        function () {
-        	if (CheatCookie.WrinklersExist()) {
-        		lCheat('popAllWrinklers').fadeIn(200);
-        	}
-        },
-        function () {
-        	lCheat('popAllWrinklers').fadeOut(200);
-        }
-    );*/
-	/*$('#CMPopWrinklers').click(function () {
-		Game.CollectWrinklers();
-		CM.popWrinklersAfterXTime();
-		$('#CMPopWrinklers').hide();
-	});*/
 }
 /* Unloads Cheat Cookie. */
 CheatCookie.Disable = function () {

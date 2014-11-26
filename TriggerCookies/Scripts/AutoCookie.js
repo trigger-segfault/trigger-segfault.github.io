@@ -98,7 +98,7 @@ AutoCookie.Init = function () {
 	LoadMod('TriggerCookies');
 
 	IntervalUntilLoaded('TriggerCookies', function () {
-		TriggerCookies.AddMod('Auto Cookie', [22, 7], AutoCookie.Enable, AutoCookie.Disable, AutoCookie.WriteMenu, AutoCookie.UpdateMenu, true);
+		TriggerCookies.AddMod('Auto Cookie', 'AutoCookie', [22, 7], AutoCookie.Enable, AutoCookie.Disable, AutoCookie.Load, AutoCookie.Save, AutoCookie.WriteMenu, AutoCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Automation', 300);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
@@ -109,8 +109,12 @@ AutoCookie.Init = function () {
 }
 
 /* Enables Auto-Cookie. */
-AutoCookie.Enable = function () {
+AutoCookie.Enable = function (firstTime) {
+	
+	if (firstTime) {
 
+
+	}
 	AutoCookie.Actions['autobuy'].Enable(false);
 	AutoCookie.Actions['checkautoclick'].Enable(false);
 	AutoCookie.Actions['checkascendinputs'].Enable(false);
@@ -127,10 +131,107 @@ AutoCookie.Disable = function () {
 
 	AutoCookie.Enabled = false;
 }
+/* Loads the mod settings. */
+AutoCookie.Load = function (data) {
+	function isValid(varname, name, value) { return (name == varname && !isNaN(value)); }
+	function readAction(action, name, value) {
+		if (action == name) {
+			if (value && !AutoCookie.Actions[action].Enabled)
+				AutoCookie.Actions[action].Enable(false);
+			else if (!value && AutoCookie.Actions[action].Enabled)
+				AutoCookie.Actions[action].Disable(false);
+		}
+	}
+
+	var lines = data.split('|');
+	for (var i = 0; i < lines.length; i++) {
+		var line = lines[i];
+		if (line.indexOf('=') != -1) {
+			var line = line.split('=');
+			var name = line[0], valueStr = line[1], value = parseInt(valueStr), valuef = parseFloat(valueStr + 'f');
+
+			readAction('autoclick', name, value);
+			readAction('gold', name, value);
+			readAction('wrath', name, value);
+			readAction('wrinkler', name, value);
+			readAction('reindeer', name, value);
+
+			readAction('autobuildings', name, value);
+			readAction('autoupgrades', name, value);
+			readAction('autoresearch', name, value);
+			readAction('autoseason', name, value);
+
+			readAction('autoascend', name, value);
+			readAction('allowdevil', name, value);
+			readAction('chocegg', name, value);
+
+			readAction('maintainseason', name, value);
+			readAction('maintainpledge', name, value);
+			readAction('maintainelder', name, value);
+
+			if (isValid('autoclickspeed', name, value))
+				AutoCookie.AutoClickRate = value;
+
+			if (isValid('ascendminhc', name, value))
+				AutoCookie.AscendMinChips = value;
+			if (isValid('ascendmaxhc', name, value))
+				AutoCookie.AscendMaxChips = value;
+			if (isValid('ascendminmult', name, valuef))
+				AutoCookie.AscendMinMultiplier = valuef;
+			if (isValid('ascendmaxmult', name, valuef))
+				AutoCookie.AscendMaxMultiplier = valuef;
+			if (isValid('hccookies', name, value))
+				AutoCookie.ChipsForCookies = value;
+
+			if (name == 'seasoninput')
+				AutoCookie.MaintainSeason = valueStr;
+		}
+	}
+}
+/* Saves the mod settings. */
+AutoCookie.Save = function () {
+	function write(name, value) { return name + '=' + value.toString() + '|'; }
+	function writeAction(name) { return name + '=' + (AutoCookie.Actions[name].Enabled ? 1 : 0).toString() + '|'; }
+
+	var str = '';
+	str +=
+	writeAction('autoclick') +
+	writeAction('gold') +
+	writeAction('wrath') +
+	writeAction('wrinkler') +
+	writeAction('reindeer') +
+
+	writeAction('autobuildings') +
+	writeAction('autoupgrades') +
+	writeAction('autoresearch') +
+	writeAction('autoseason') +
+
+	writeAction('autoascend') +
+	writeAction('allowdevil') +
+	writeAction('chocegg') +
+
+	writeAction('maintainseason') +
+	writeAction('maintainpledge') +
+	writeAction('maintainelder') +
+
+	write('autoclickspeed', AutoCookie.AutoClickRate) +
+
+	write('ascendminhc', AutoCookie.AscendMinChips) +
+	write('ascendmaxhc', AutoCookie.AscendMaxChips) +
+	write('ascendminmult', AutoCookie.AscendMinMultiplier) +
+	write('ascendmaxmult', AutoCookie.AscendMaxMultiplier) +
+	write('hccookies', AutoCookie.ChipsForCookies) +
+
+	write('seasoninput', AutoCookie.MaintainSeason) +
+
+	'';
+	return str;
+}
 
 /*=====================================================================================
 AUTO-COOKIE MENU
 =======================================================================================*/
+//#region Menu
 
 AutoCookie.WriteSectionHead = function (name, icon) {
 	var str = '';
@@ -206,8 +307,27 @@ AutoCookie.WriteMenu = function (tab) {
 				AutoCookie.WriteButton('autoupgrades') +
 				AutoCookie.WriteButton('autoresearch') +
 				AutoCookie.WriteButton('autoseason') +
+				'<label>Disables the settings below until the cycle is complete</label>' +
+
+
 				//'<label id="' + iAuto('nextItem') + '"> Next ' + AutoCookie.NextItem.Type + ': ' + AutoCookie.NextItem.Name + '</label>' +
 				'</div>';
+		str +=
+		'<div class="listing">' +
+		AutoCookie.WriteButton('maintainelder') +
+		AutoCookie.WriteButton('maintainpledge') +
+		AutoCookie.WriteButton('maintainseason') +
+		AutoCookie.WriteSpacing() +
+		'<select id="' + iAuto('seasonInput') + '" onchange="AutoCookie.CheckSeasonInput();" style="font-size: 14px; background-color: #111; color: #FFF; border: 1px ridge #444; padding: 2px;">' +
+		//'<select id="' + iAuto('seasonInput') + '" style="width: 160px; font-size: 14px; background-color: #111; color: #FFF;">' +
+		//'<select id="' + iAuto('seasonInput') + '">' +
+		'<option value="christmas"' + (AutoCookie.MaintainSeason == 'christmas' ? ' selected' : '') + '>Christmas</option>' +
+		'<option value="halloween"' + (AutoCookie.MaintainSeason == 'halloween' ? ' selected' : '') + '>Halloween</option>' +
+		'<option value="valentines"' + (AutoCookie.MaintainSeason == 'valentines' ? ' selected' : '') + '>Valentines Day</option>' +
+		'<option value="fools"' + (AutoCookie.MaintainSeason == 'fools' ? ' selected' : '') + '>Business Day</option>' +
+		'<option value="easter"' + (AutoCookie.MaintainSeason == 'easter' ? ' selected' : '') + '>Easter</option>' +
+		'</select>' +
+		'</div>';
 
 		str += '<div class="listing"><b id="' + iAuto('nextType') + '">Next item : </b> <div id="' + iAuto('nextItem') + '" class="priceoff">' + Beautify(Game.heavenlyCookies) + '</div></div>';
 
@@ -227,14 +347,14 @@ AutoCookie.WriteMenu = function (tab) {
 				'<input id="' + iAuto('ascendMinChips') + '" type="text" value="' + Beautify(AutoCookie.AscendMinChips) + '" style="width: 160px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
 				AutoCookie.WriteSpacing() +
 				'Min Ascend Multiplier: ' +
-				'<input id="' + iAuto('ascendMinMultiplier') + '" type="text" value="' + Beautify(AutoCookie.AscendMinMultiplier) + '" style="width: 80px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
+				'<input id="' + iAuto('ascendMinMultiplier') + '" type="text" value="' + Beautify(AutoCookie.AscendMinMultiplier, 2) + '" style="width: 80px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
 				'</div>';
 		str += '<div class="listing">' +
 				'Max Ascend Chips: ' +
 				'<input id="' + iAuto('ascendMaxChips') + '" type="text" value="' + Beautify(AutoCookie.AscendMaxChips) + '" style="width: 160px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
 				AutoCookie.WriteSpacing() +
 				'Max Ascend Multiplier: ' +
-				'<input id="' + iAuto('ascendMaxMultiplier') + '" type="text" value="' + Beautify(AutoCookie.AscendMaxMultiplier) + '" style="width: 80px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
+				'<input id="' + iAuto('ascendMaxMultiplier') + '" type="text" value="' + Beautify(AutoCookie.AscendMaxMultiplier, 2) + '" style="width: 80px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
 				'</div>';
 		str += '<div class="listing">' +
 				'Percentage of chips used for cookies: ' +
@@ -342,6 +462,7 @@ AutoCookie.UpdateAscendInfo = function () {
 	}
 }
 
+//#endregion
 //============ MODES ============
 
 AutoCookie.UpdateButtons = function () {
@@ -387,7 +508,7 @@ AutoCookie.GetNumber = function (inputID) {
 	if (/^(\-|\+)?(([0-9]+\.?[0-9]*)|(\.[0-9]+)|Infinity)$/.test(text)) {
 		value = parseFloat(text);
 		value *= multiplier;
-		Math.floor(value);
+		//Math.floor(value);
 	}
 
 	return value;
@@ -442,6 +563,15 @@ AutoCookie.CheckAutoClick = function () {
 		lAuto('clickRateInput').style.color = (invalid ? '#F00' : '#FFF');
 	}
 }
+AutoCookie.CheckSeasonInput = function () {
+	
+	if (lAuto('seasonInput') != null) {
+		var season = lAuto('seasonInput').value;
+		if (season != AutoCookie.MaintainSeason) {
+			AutoCookie.MaintainSeason = season;
+		}
+	}
+}
 AutoCookie.CheckAscendInputs = function () {
 
 	var updated = false;
@@ -474,7 +604,7 @@ AutoCookie.CheckAscendInputs = function () {
 	}
 	if (lAuto('ascendMinMultiplier') != null) {
 		var invalid = true;
-		var newMinMult = Math.floor(AutoCookie.GetNumber('ascendMinMultiplier'));
+		var newMinMult = AutoCookie.GetNumber('ascendMinMultiplier');
 
 		if (!isNaN(newMinMult) && newMinMult >= 1 && newMinMult > AutoCookie.AscendMaxMultiplier) {
 			invalid = false;
@@ -487,7 +617,7 @@ AutoCookie.CheckAscendInputs = function () {
 	}
 	if (lAuto('ascendMaxMultiplier') != null) {
 		var invalid = true;
-		var newMaxMult = Math.floor(AutoCookie.GetNumber('ascendMaxMultiplier'));
+		var newMaxMult = AutoCookie.GetNumber('ascendMaxMultiplier');
 
 		if (!isNaN(newMaxMult) && newMaxMult >= 1 && newMaxMult < AutoCookie.AscendMinMultiplier) {
 			invalid = false;
@@ -528,7 +658,14 @@ AutoCookie.EnabledAll = function () {
 	AutoCookie.Actions['autoupgrades'].Enable(false);
 	AutoCookie.Actions['autoresearch'].Enable(false);
 	AutoCookie.Actions['autoseason'].Enable(false);
+
 	AutoCookie.Actions['autoascend'].Enable(false);
+	AutoCookie.Actions['allowdevil'].Enable(false);
+	AutoCookie.Actions['chocegg'].Enable(false);
+
+	AutoCookie.Actions['maintainseason'].Enable(false);
+	AutoCookie.Actions['maintainpledge'].Enable(false);
+	AutoCookie.Actions['maintainelder'].Enable(false);
 
 	AutoCookie.UpdateButtons();
 	Game.UpdateMenu();
@@ -545,7 +682,14 @@ AutoCookie.DisableAll = function () {
 	AutoCookie.Actions['autoupgrades'].Disable(false);
 	AutoCookie.Actions['autoresearch'].Disable(false);
 	AutoCookie.Actions['autoseason'].Disable(false);
+
 	AutoCookie.Actions['autoascend'].Disable(false);
+	AutoCookie.Actions['allowdevil'].Disable(false);
+	AutoCookie.Actions['chocegg'].Disable(false);
+
+	AutoCookie.Actions['maintainseason'].Disable(false);
+	AutoCookie.Actions['maintainpledge'].Disable(false);
+	AutoCookie.Actions['maintainelder'].Disable(false);
 
 	AutoCookie.UpdateButtons();
 	Game.UpdateMenu();
@@ -590,20 +734,28 @@ AutoCookie.DisableAllBuy = function () {
 	AutoCookie.Actions['autoresearch'].Disable(false);
 	AutoCookie.Actions['autoseason'].Disable(false);
 
+	AutoCookie.Actions['maintainseason'].Disable(false);
+	AutoCookie.Actions['maintainpledge'].Disable(false);
+	AutoCookie.Actions['maintainelder'].Disable(false);
+
 	AutoCookie.UpdateButtons();
 	Game.UpdateMenu();
 }
 
 /* Auto-clicks the big cookie. */
 AutoCookie.AutoClick = function () {
+	var click = Game.Click;
 	Game.ClickCookie();
+	Game.Click = click;
 }
 /* Clicks the golden cookies. */
 AutoCookie.ClickGoldenCookies = function () {
 	// Prevent dealing with golden cookies while ascended.
 	if (!Game.AscendTimer && !Game.OnAscend) {
 		if (Game.goldenCookie.life > 0 && (Game.goldenCookie.wrath == 0 || AutoCookie.Actions['wrath'].Enabled)) {
+			var click = Game.Click;
 			Game.goldenCookie.click();
+			Game.Click = click;
 			if (AutoCookie.Actions['gnotify'].Enabled)
 				AutoCookie.NotifySound.play();
 		}
@@ -1040,22 +1192,26 @@ function Seasons() {
 }
 
 Seasons.prototype.FindBest = function () {
-	this.Update();
 
 	this.BestUpgrade = new BuyoutItem();
 
-	// Upgrade the jolly old man so he can deliver to more and more little kiddies
-	if (Game.santaLevel < 14) {
-		this.UpgradeSanta();
+
+	if (AutoCookie.Actions['autoseason'].Enabled) {
+		this.Update();
+
+		// Upgrade the jolly old man so he can deliver to more and more little kiddies
+		if (Game.santaLevel < 14) {
+			this.UpgradeSanta();
+		}
+
+		if (this.NewSeason != '') {
+			var name = this.SeasonTriggers[this.NewSeason];
+			this.BestUpgrade = new BuyoutItem(name, 'upgrade', 13, Game.Upgrades[name].getPrice());
+			this.NewSeason = '';
+		}
 	}
 
-	if (this.NewSeason != '') {
-		var name = this.SeasonTriggers[this.NewSeason];
-		this.BestUpgrade = new BuyoutItem(name, 'upgrade', 13, Game.Upgrades[name].getPrice());
-		this.NewSeason = '';
-	}
-
-	if (!this.CycleComplete) {
+	if (!this.CycleComplete && AutoCookie.Actions['autoseason'].Enabled) {
 
 		if (!this.XmasComplete) {
 			// Buy Santa trigger
@@ -1105,14 +1261,12 @@ Seasons.prototype.FindBest = function () {
 			}
 		}
 	}
-	else if (Game.season == 'fools') {
-		if (!Game.Has('Elder Covenant')) {
-			if (Game.HasUnlocked('Elder Covenant')) {
-				this.BestUpgrade = new BuyoutItem('Elder Covenant', 'upgrade', 13, Game.Upgrades['Elder Covenant'].getPrice());
-			}
-			else if (Game.HasUnlocked('Elder Pledge')) {
-				this.BestUpgrade = new BuyoutItem('Elder Pledge', 'upgrade', 13, Game.Upgrades['Elder Pledge'].getPrice());
-			}
+	else {
+		if (AutoCookie.Actions['maintainseason'].Enabled && Game.season != AutoCookie.MaintainSeason) {
+			this.NewSeason = AutoCookie.MaintainSeason;
+			var name = this.SeasonTriggers[this.NewSeason];
+			this.BestUpgrade = new BuyoutItem(name, 'upgrade', 13, Game.Upgrades[name].getPrice());
+			this.NewSeason = '';
 		}
 	}
 
@@ -1178,8 +1332,8 @@ Seasons.prototype.Update = function () {
 				this.NewSeason = 'easter';
 			else if (!this.HalloweenComplete)
 				this.NewSeason = 'halloween';
-			else
-				this.NewSeason = 'fools';
+			//else
+			//	this.NewSeason = 'fools';
 		}
 	}
 	else if (Game.season == 'valentines') {
@@ -1191,8 +1345,8 @@ Seasons.prototype.Update = function () {
 				this.NewSeason = 'easter';
 			else if (!this.HalloweenComplete)
 				this.NewSeason = 'halloween';
-			else
-				this.NewSeason = 'fools';
+			//else
+			//	this.NewSeason = 'fools';
 		}
 	}
 	else if (Game.season == 'easter') {
@@ -1204,8 +1358,8 @@ Seasons.prototype.Update = function () {
 				this.NewSeason = 'valentines';
 			else if (!this.HalloweenComplete)
 				this.NewSeason = 'halloween';
-			else
-				this.NewSeason = 'fools';
+			//else
+			//	this.NewSeason = 'fools';
 		}
 	}
 	else if (Game.season == 'halloween') {
@@ -1217,8 +1371,8 @@ Seasons.prototype.Update = function () {
 				this.NewSeason = 'valentines';
 			else if (!this.EasterComplete)
 				this.NewSeason = 'easter';
-			else
-				this.NewSeason = 'fools';
+			//else
+			//	this.NewSeason = 'fools';
 		}
 	}
 	else {
@@ -1230,8 +1384,8 @@ Seasons.prototype.Update = function () {
 			this.NewSeason = 'easter';
 		else if (!this.HalloweenComplete)
 			this.NewSeason = 'halloween';
-		else if (Game.season != 'fools')
-			this.NewSeason = 'fools';
+		//else if (Game.season != 'fools')
+		//	this.NewSeason = 'fools';
 	}
 	
 	if (!Game.Has('Season switcher')) {
@@ -1523,8 +1677,28 @@ Calculator.prototype.FindBest = function () {
 		itemList.push(this.FindBestUpgrade());
 	if (AutoCookie.Actions['autobuildings'].Enabled)
 		itemList.push(this.FindBestBuilding());
-	if (AutoCookie.Actions['autoseason'].Enabled)
+	if (AutoCookie.Actions['autoseason'].Enabled || AutoCookie.Actions['maintainseason'].Enabled)
 		itemList.push(this.FindBestSeason());
+
+	if (!AutoCookie.Actions['autoseason'].Enabled || AutoCookie.Season.CycleComplete) {
+		if (AutoCookie.Actions['maintainpledge'].Enabled) {
+			if (!Game.Has('Elder Covenant')) {
+				if (Game.HasUnlocked('Elder Pledge')) {
+					itemList.push(new BuyoutItem('Elder Pledge', 'upgrade', 13, Game.Upgrades['Elder Pledge'].getPrice()));
+				}
+			}
+		}
+		if (AutoCookie.Actions['maintainelder'].Enabled) {
+			if (!Game.Has('Elder Covenant')) {
+				if (Game.HasUnlocked('Elder Covenant')) {
+					itemList.push(new BuyoutItem('Elder Covenant', 'upgrade', 13, Game.Upgrades['Elder Covenant'].getPrice()));
+				}
+				else if (Game.HasUnlocked('Elder Pledge')) {
+					itemList.push(new BuyoutItem('Elder Pledge', 'upgrade', 13, Game.Upgrades['Elder Pledge'].getPrice()));
+				}
+			}
+		}
+	}
 	
 	var maxItem		= new BuyoutItem();
 
@@ -1551,6 +1725,7 @@ Calculator.prototype.FindBest = function () {
 /*=====================================================================================
 AUTO-COOKIE ACTION
 =======================================================================================*/
+//#region Actions
 
 /* Writes the action button. */
 AutoCookie.WriteButton = function (name) {
@@ -1657,6 +1832,7 @@ AutoCookieAction.prototype.Disable = function (notify) {
 	}
 }
 
+//#endregion
 /*=====================================================================================
 AUTO-COOKIE ACTIONS
 =======================================================================================*/
@@ -1680,6 +1856,7 @@ AutoCookie.Actions = {
 
 	checkascendinputs: new AutoCookieAction('Check Ascend Inputs', null, [12, 0], 'toggle', false, 400, AutoCookie.CheckAscendInputs, false),
 	checkautoclick: new AutoCookieAction('Check Auto Click', null, [12, 0], 'toggle', false, 400, AutoCookie.CheckAutoClick, false),
+
 	autoclick: new AutoCookieAction('Auto Click', null, [12, 0], 'toggle', false, 4, AutoCookie.AutoClick, true),
 
 	slow: new AutoCookieAction('Slow Click', null, [11, 0], 'toggle', false, 300, AutoCookie.AutoClick, true),
@@ -1698,6 +1875,9 @@ AutoCookie.Actions = {
 	autoresearch: new AutoCookieAction('Autobuy Reasearch', null, [11, 9], 'toggle', false, 0, function () {}, true),
 	autoseason: new AutoCookieAction('Season Cycle', null, [16, 6], 'toggle', false, 0, function () { }, true),
 
+	maintainseason: new AutoCookieAction('Maintain Season', null, [16, 6], 'toggle', false, 0, function () { }, true),
+	maintainpledge: new AutoCookieAction('Maintain Pledge', null, [9, 9], 'toggle', false, 0, function () { }, true),
+	maintainelder: new AutoCookieAction('Apply Elder Covenant', null, [8, 9], 'toggle', false, 0, function () { }, true),
 
 	autoascend: new AutoCookieAction('Auto Ascend', null, [19, 7], 'toggle', false, 5000, AutoCookie.AutoAscend, true),
 	allowdevil: new AutoCookieAction('Allow "devil" Upgrade', null, [7, 11], 'toggle', false, 0, AutoCookie.ToggleAllowDevil, true),
@@ -1741,6 +1921,8 @@ AutoCookie.AutoAscendStartTime = 0;
 AutoCookie.ChipsForAscend = 0;
 
 AutoCookie.PurchaseDevil = false;
+
+AutoCookie.MaintainSeason = 'christmas';
 
 /* The notify sound for golden cookies. Source: http://www.soundjay.com/button/beep-30b.mp3 */
 AutoCookie.NotifySound = new Audio("https://gist.github.com/pernatiy/38bc231506b06fd85473/raw/beep-30.mp3");

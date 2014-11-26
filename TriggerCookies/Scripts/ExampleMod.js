@@ -86,9 +86,11 @@ ExampleMod.Init = function () {
 	IntervalUntilLoaded('TriggerCookies', function () {
 
 		// Define the mod and information about it
+		// The second name is the save name. Make sure it is a valid file name
+		// You can choose to exclude the Load and Save functions and just put null if your mod has no settings
 		// The icon used is the x and y indecies of the icons in icons.png
 		// http://orteil.dashnet.org/cookieclicker/beta/img/icons.png
-		TriggerCookies.AddMod('Example Mod', [16, 5], ExampleMod.Enable, ExampleMod.Disable, ExampleMod.WriteMenu, ExampleMod.UpdateMenu, true);
+		TriggerCookies.AddMod('Example Mod', 'ExampleMod', [16, 5], ExampleMod.Enable, ExampleMod.Disable, ExampleMod.Load, ExampleMod.Save, ExampleMod.WriteMenu, ExampleMod.UpdateMenu, true);
 
 		// Add the tabs that the mod plans on using
 		TriggerCookies.AddTab('Example Tab', 1000);
@@ -104,9 +106,15 @@ ExampleMod.Init = function () {
 	});
 }
 /* Enables ExampleMod. */
-ExampleMod.Enable = function () {
+ExampleMod.Enable = function (firstTime) {
 
 	// NOTE: This is automatically called by TriggerCookies if enabled is passed as true
+
+	if (firstTime) {
+
+		// Do first time setup
+
+	}
 
 	// Only needed by this mod. TriggerCookies has its own enabled setting for mods
 	ExampleMod.Enabled = true;
@@ -122,6 +130,48 @@ ExampleMod.Disable = function () {
 
 	// Only needed by this mod. TriggerCookies has its own enabled setting for mods
 	ExampleMod.Enabled = false;
+}
+/* Loads the mod settings. */
+ExampleMod.Load = function (data) {
+	function isValid(varname, name, value) { return (name == varname && !isNaN(value)); }
+	function readAction(action, name, value) {
+		if (action == name) {
+			if (value && !ExampleMod.Actions[action].Enabled)
+				ExampleMod.Actions[action].Enable(false);
+			else if (!value && ExampleMod.Actions[action].Enabled)
+				ExampleMod.Actions[action].Disable(false);
+		}
+	}
+
+	var lines = data.split('|');
+	for (var i = 0; i < lines.length; i++) {
+		var line = lines[i];
+		if (line.indexOf('=') != -1) {
+			var line = line.split('=');
+			var name = line[0], valueStr = line[1], value = parseInt(valueStr), valuef = parseFloat(valueStr + 'f');
+
+			readAction('toggle1', name, value);
+			readAction('toggle2', name, value);
+
+			if (isValid('count', name, value))
+				ExampleMod.CountNumber = value;
+		}
+	}
+}
+/* Saves the mod settings. */
+ExampleMod.Save = function () {
+	function write(name, value) { return name + '=' + value.toString() + '|'; }
+	function writeAction(name) { return name + '=' + (ExampleMod.Actions[name].Enabled ? 1 : 0).toString() + '|'; }
+
+	var str = '';
+	str +=
+	writeAction('toggle1') +
+	writeAction('toggle2') +
+
+	write('count', ExampleMod.CountNumber) +
+
+	'';
+	return str;
 }
 
 //#endregion

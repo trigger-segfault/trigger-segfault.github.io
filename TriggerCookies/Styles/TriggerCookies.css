@@ -29,8 +29,8 @@ a.option.framed.large.off:hover {
     right: 0px;
     top: 112px;
     bottom: 0px;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	/*overflow-x: hidden;
+	overflow-y: scroll;*/
 }
 .modsubsection {
    padding: 8px 0px;
@@ -43,11 +43,11 @@ a.option.framed.large.off:hover {
 }
 
 #game.onMenu #menu{display:block;}
-#game.onMenu .row{visibility:hidden;}
+#game.onMenu #rows{visibility:hidden !important;}
 #game.onMenu .modmenu{display:none;}
 
 #game.onModMenu #menu{display:none;}
-#game.onModMenu .row{visibility:hidden;}
+#game.onModMenu #rows{visibility:hidden !important;}
 #game.onModMenu .modmenu{display:block;}
 
 #game.disablePopWrinklers .wrinkler {display: none !important;}

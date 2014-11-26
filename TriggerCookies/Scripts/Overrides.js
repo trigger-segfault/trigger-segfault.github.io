@@ -131,17 +131,22 @@ Overrides.RestoreFunction = function (gameFunc, owner) {
 		eval(gameFunc + ' = Overrides.Backup.Functions[\'' + gameFunc + '\'].func');
 
 		// Remove the function from the list
-		Overrides.Backup.Functions.splice(Overrides.Backup.Functions.indexOf(gameFunc), 1);
+		delete Overrides.Backup.Functions[gameFunc];
+		//Overrides.Backup.Functions.splice(Overrides.Backup.Functions.indexOf(gameFunc), 1);
 		if (gameFunc in Overrides.Backup.AppendedFunctions)
-			Overrides.Backup.AppendedFunctions.splice(Overrides.Backup.AppendedFunctions.indexOf(gameFunc), 1);
+			delete Overrides.Backup.AppendedFunctions[gameFunc];
+			//Overrides.Backup.AppendedFunctions.splice(Overrides.Backup.AppendedFunctions.indexOf(gameFunc), 1);
 
 		if (gameFunc in Overrides.AppendedFunctions)
-			Overrides.AppendedFunctions.splice(Overrides.AppendedFunctions.indexOf(gameFunc), 1);
+			delete Overrides.AppendedFunctions[gameFunc];
+			//Overrides.AppendedFunctions.splice(Overrides.AppendedFunctions.indexOf(gameFunc), 1);
 
 		if (gameFunc in Overrides.UserFunctions)
-			Overrides.UserFunctions.splice(Overrides.UserFunctions.indexOf(gameFunc), 1);
+			delete Overrides.UserFunctions[gameFunc];
+			//Overrides.UserFunctions.splice(Overrides.UserFunctions.indexOf(gameFunc), 1);
 		if (gameFunc in Overrides.AppendedUserFunctions)
-			Overrides.AppendedUserFunctions.splice(Overrides.AppendedUserFunctions.indexOf(gameFunc), 1);
+			delete Overrides.AppendedUserFunctions[gameFunc];
+			//Overrides.AppendedUserFunctions.splice(Overrides.AppendedUserFunctions.indexOf(gameFunc), 1);
 
 		console.log('Function "' + gameFunc + '" has been restored' + (owner ? (' by "' + owner + '".') : '.'));
 	}
@@ -154,17 +159,22 @@ Overrides.RestoreAll = function (owner) {
 		eval(gameFunc + ' = Overrides.Backup.Functions[\'' + gameFunc + '\'].func');
 
 		// Remove the function from the list
-		Overrides.Backup.Functions.splice(Overrides.Backup.Functions.indexOf(gameFunc), 1);
+		delete Overrides.Backup.Functions[gameFunc];
+		//Overrides.Backup.Functions.splice(Overrides.Backup.Functions.indexOf(gameFunc), 1);
 		if (gameFunc in Overrides.Backup.AppendedFunctions)
-			Overrides.Backup.AppendedFunctions.splice(Overrides.Backup.AppendedFunctions.indexOf(gameFunc), 1);
+			delete Overrides.Backup.AppendedFunctions[gameFunc];
+			//Overrides.Backup.AppendedFunctions.splice(Overrides.Backup.AppendedFunctions.indexOf(gameFunc), 1);
 
 		if (gameFunc in Overrides.AppendedFunctions)
-			Overrides.AppendedFunctions.splice(Overrides.AppendedFunctions.indexOf(gameFunc), 1);
+			delete Overrides.AppendedFunctions[gameFunc];
+			//Overrides.AppendedFunctions.splice(Overrides.AppendedFunctions.indexOf(gameFunc), 1);
 
 		if (gameFunc in Overrides.UserFunctions)
-			Overrides.UserFunctions.splice(Overrides.UserFunctions.indexOf(gameFunc), 1);
+			delete Overrides.UserFunctions[gameFunc];
+			//Overrides.UserFunctions.splice(Overrides.UserFunctions.indexOf(gameFunc), 1);
 		if (gameFunc in Overrides.AppendedUserFunctions)
-			Overrides.AppendedUserFunctions.splice(Overrides.AppendedUserFunctions.indexOf(gameFunc), 1);
+			delete Overrides.AppendedUserFunctions[gameFunc];
+			//Overrides.AppendedUserFunctions.splice(Overrides.AppendedUserFunctions.indexOf(gameFunc), 1);
 	}
 
 	console.log('All functions restored' + (owner ? (' by "' + owner + '".') : '.'));

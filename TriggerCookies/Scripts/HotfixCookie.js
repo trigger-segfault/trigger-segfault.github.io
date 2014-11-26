@@ -104,7 +104,7 @@ HotfixCookie.Init = function () {
 	LoadMod('TriggerCookies');
 
 	IntervalUntilLoaded('TriggerCookies', function () {
-		TriggerCookies.AddMod("Hotfix Cookie", [10, 22], HotfixCookie.Enable, HotfixCookie.Disable, HotfixCookie.WriteMenu, HotfixCookie.UpateMenu, true);
+		TriggerCookies.AddMod('Hotfix Cookie', 'HotfixCookie', [10, 22], HotfixCookie.Enable, HotfixCookie.Disable, HotfixCookie.Load, HotfixCookie.Save, HotfixCookie.WriteMenu, HotfixCookie.UpateMenu, true);
 		TriggerCookies.AddTab('Functionality', 200);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
@@ -115,7 +115,22 @@ HotfixCookie.Init = function () {
 }
 
 /* Loads Hotfix Cookie. */
-HotfixCookie.Enable = function () {
+HotfixCookie.Enable = function (firstTime) {
+
+	
+	if (firstTime) {
+
+		if (Game.season == 'christmas')
+			Game.Lock('Festive biscuit');
+		if (Game.season == 'halloween')
+			Game.Lock('Ghostly biscuit');
+		if (Game.season == 'valentines')
+			Game.Lock('Lovesick biscuit');
+		if (Game.season == 'easter')
+			Game.Lock('Bunny biscuit');
+		if (Game.season == 'fools')
+			Game.Lock('Fool\'s biscuit');
+	}
 
 	if (HotfixCookie.UpgradesEnabled)
 		HotfixCookie.Actions['fixup'].Enable(false);
@@ -130,6 +145,49 @@ HotfixCookie.Disable = function () {
 	HotfixCookie.DisableAll();
 
 	HotfixCookie.Enabled = false;
+}
+/* Loads the mod settings. */
+HotfixCookie.Load = function (data) {
+	function isValid(varname, name, value) { return (name == varname && !isNaN(value)); }
+	function readAction(action, name, value) {
+		if (action == name) {
+			if (value && !HotfixCookie.Actions[action].Enabled)
+				HotfixCookie.Actions[action].Enable(false);
+			else if (!value && HotfixCookie.Actions[action].Enabled)
+				HotfixCookie.Actions[action].Disable(false);
+		}
+	}
+
+	var lines = data.split('|');
+	for (var i = 0; i < lines.length; i++) {
+		var line = lines[i];
+		if (line.indexOf('=') != -1) {
+			var line = line.split('=');
+			var name = line[0], valueStr = line[1], value = parseInt(valueStr), valuef = parseFloat(valueStr);
+
+			readAction('fixbank', name, value);
+			readAction('fixup', name, value);
+			readAction('fixachiev', name, value);
+
+			readAction('fixhcookies', name, value);
+		}
+	}
+}
+/* Saves the mod settings. */
+HotfixCookie.Save = function () {
+	function write(name, value) { return name + '=' + value.toString() + '|'; }
+	function writeAction(name) { return name + '=' + (HotfixCookie.Actions[name].Enabled ? 1 : 0).toString() + '|'; }
+	var str = '';
+
+	str +=
+	writeAction('fixbank') +
+	writeAction('fixup') +
+	writeAction('fixachiev') +
+
+	writeAction('fixhcookies') +
+
+	'';
+	return str;
 }
 
 //#endregion
@@ -170,6 +228,7 @@ HotfixCookie.WriteMenu = function (tab) {
 	if (tab == 'Functionality') {
 		str += HotfixCookie.WriteSectionHead('Hotfixes', [10, 22]);
 		str += '<div class="listing">' +
+			HotfixCookie.WriteButton('fixbank') +
 			HotfixCookie.WriteButton('fixup') +
 			HotfixCookie.WriteButton('fixachiev') +
 			HotfixCookie.WriteButton('fixhcookies') +
@@ -204,8 +263,8 @@ HotfixCookie.DisableAll = function () {
 }
 /* Fixes broken upgrades. */
 HotfixCookie.FixUpgrades = function () {
-	if (Game.Objects['Bank'].amount >= 10)
-		Game.Unlock('Acid-proof vault');
+	/*if (Game.Objects['Bank'].amount >= 10)
+		Game.Unlock('Acid-proof vault');*/
 
 	if (Game.season == 'valentines' && Game.cookies >= 50000)
 		Game.Unlock('Pure heart biscuits');
@@ -243,6 +302,22 @@ HotfixCookie.FixHCookies = function () {
 		Overrides.RestoreFunction('Game.CalculateGains', 'HotfixCookie');
 	}
 	Game.CalculateGains();
+}
+HotfixCookie.FixBank = function () {
+	var upgrade = Game.Upgrades['Acid-proof vault'];
+	if (upgrade && HotfixCookie.Actions['fixbank'].Enabled) {
+		upgrade.name = 'Acid-proof vaults';
+		Game.Upgrades['Acid-proof vaults'] = upgrade;
+		delete Game.Upgrades['Acid-proof vault'];
+	}
+	else if (!upgrade && !HotfixCookie.Actions['fixbank'].Enabled)  {
+		upgrade = Game.Upgrades['Acid-proof vaults'];
+		if (upgrade) {
+			upgrade.name = 'Acid-proof vault';
+			Game.Upgrades['Acid-proof vault'] = upgrade;
+			delete Game.Upgrades['Acid-proof vaults'];
+		}
+	}
 }
 
 HotfixCookie.CalculateGains = function () {
@@ -453,6 +528,8 @@ HotfixCookie.Loaded = false;
 
 /* The list of actions. */
 HotfixCookie.Actions = {
+	fixbank: new HotfixCookieAction('Fix Acid-proof vaults', null, [15, 1], '', 'toggle', false, 0, HotfixCookie.FixBank, true, 'Fix Acid-proof vaults',
+			'Acid-proof vaults now unlocks and functions properly.', 'Acid-proof vaults no longer unlocks or functions properly.'),
 	fixup: new HotfixCookieAction('Fix Upgrades', null, [9, 22], '', 'toggle', false, 5000, HotfixCookie.FixUpgrades, true, 'Fix Upgrades',
 			'Broken upgrades can now be unlocked normally.', 'Broken upgrades can no longer be unlocked.'),
 	fixachiev: new HotfixCookieAction('Fix Achievements', null, [11, 22], '', 'toggle', false, 5000, HotfixCookie.FixAchievements, true, 'Fix Achievements',

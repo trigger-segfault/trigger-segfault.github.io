@@ -89,6 +89,7 @@ TriggerCookies.Init = function () {
 	IntervalUntilLoaded('Overrides', function () {
 		Overrides.OverrideFunction('Game.ShowMenu', 'TriggerCookies.ShowMenu', 'TriggerCookies');
 		Overrides.OverrideFunction('Overrides.UpdateMenuLog', 'TriggerCookies.UpdateMenuLog', 'TriggerCookies');
+		Overrides.OverrideFunction('Game.WriteSave', 'TriggerCookies.WriteSave', 'TriggerCookies');
 		
 		LoadStyleSheet('TriggerCookies');
 		//TriggerCookies.LoadTabCSS();
@@ -105,7 +106,29 @@ TriggerCookies.Init = function () {
 		var menu = document.createElement('div');
 		menu.className = 'modmenu';
 		menu.id = 'modMenu';
+
+		var str = '';
+
+		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '</div>';
+
+		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
+				'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
+				'<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';
+
+		str += '<div id="tabList" class="listing" style="padding-top: 2px; padding-bottom: 2px"></div>';
+
+		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
+			'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
+			'<div style="width: 100%; margin: 0px 0px 5px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';
+
+		str += '<div id="modTabs"></div>';
+
+		/*str += '<div class="separatorBottom" style="position: initial;"></div>';
+		str += '<div id="modMenu2"style="display: block;"></div>';*/
+
 		l('menu').parentNode.appendChild(menu);
+		menu.innerHTML = str;
+
 
 		// States that this mod has been loaded.
 		TriggerCookies.Loaded = true;
@@ -212,6 +235,7 @@ TriggerCookies.Toggle = function (name, button) {
 		l(button).className = 'option enabled';
 		mod.Enable();
 	}
+	TriggerCookies.ForceWriteMenu = true;
 	Game.UpdateMenu();
 }
 
@@ -227,29 +251,41 @@ TriggerCookies.WriteMenus = function () {
 	TriggerCookies.SortTabs();
 
 	var menu = l('modMenu');
+	var tabList = l('tabList');
 
 	var str = '';
 
-	str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '</div>';
+	/*str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '</div>';
 
 	str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 			'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
-			'<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';
+			'<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';*/
 
-	str += '<div id="tabList" class="listing" style="padding-top: 2px; padding-bottom: 2px">';
+	//str += '<div id="tabList" class="listing" style="padding-top: 2px; padding-bottom: 2px">';
 
 	for (var i in TriggerCookies.TabList) {
 		var tab = TriggerCookies.TabList[i].name;
 		str += TriggerCookies.WriteTabButton(tab);
 	}
 
-	str += '</div>';
+	tabList.innerHTML = str;
 
-	str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
+	/*(str += '</div>';
+
+	str += '<div class="separatorBottom"></div>';*/
+
+	/*str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 			'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
-			'<div style="width: 100%; margin: 0px 0px 5px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';
+			'<div style="width: 100%; margin: 0px 0px 5px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>';*/
 
-	menu.innerHTML = str;
+
+	//menu.innerHTML = str;
+	var modTabs = l('modTabs');
+	modTabs.innerHTML = '';
+	//var modmenu = l('modMenu2');
+	/*(modmenu.className = 'modmenu';
+	modmenu.id = 'modMenu2';
+	menu.parentNode.appendChild(menu);*/
 
 	var currentTab = TriggerCookies.CurrentTab.replace(' ', '');
 
@@ -272,13 +308,13 @@ TriggerCookies.WriteMenus = function () {
 				empty = false;
 
 				// Enabling mods isn't really useful right now so don't draw the enable button
-				/*str += '<div class="listing"><div class="icon" style="background-position:' + (-mod.Icon[0] * 48) + 'px ' + (-mod.Icon[1] * 48) + 'px;"></div>' +
-					'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + mod.Name +
-					TriggerCookies.WriteEnabledButton(mod) + '</span></span></div>';*/
-
 				str += '<div class="listing"><div class="icon" style="background-position:' + (-mod.Icon[0] * 48) + 'px ' + (-mod.Icon[1] * 48) + 'px;"></div>' +
 					'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + mod.Name +
-					'</span></span></div>';
+					TriggerCookies.WriteEnabledButton(mod) + '</span></span></div>';
+
+				/*str += '<div class="listing"><div class="icon" style="background-position:' + (-mod.Icon[0] * 48) + 'px ' + (-mod.Icon[1] * 48) + 'px;"></div>' +
+					'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + mod.Name +
+					'</span></span></div>';*/
 
 				if (mod.Enabled) {
 					var str2 = mod.WriteMenu(realTab);
@@ -310,7 +346,7 @@ TriggerCookies.WriteMenus = function () {
 		str += '<div style="padding-bottom:128px;"></div>';
 
 		section.innerHTML = str;
-		menu.appendChild(section);
+		modTabs.appendChild(section);
 
 		var button = l('tabbutton-' + tab);
 		if (empty) {
@@ -331,7 +367,9 @@ TriggerCookies.UpdateMenuLog = function () {
 	else {
 		for (var i in TriggerCookies.Mods) {
 			var mod = TriggerCookies.Mods[i];
-			mod.UpdateMenu();
+			if (mod.Enabled) {
+				mod.UpdateMenu();
+			}
 		}
 	}
 
@@ -401,10 +439,26 @@ TRIGGER COOKIES MODS
 =======================================================================================*/
 //#region Mods
 
-/* Adds the mod to the collection. */
-TriggerCookies.AddMod = function (name, icon, load, unload, write, update, enabled) {
+/* Saves the game and TriggerCookie settings. */
+TriggerCookies.WriteSave = function (exporting) {
+	Overrides.Backup.Functions['Game.WriteSave'].func(exporting);
 
-	TriggerCookies.Mods[name] = new ModInfo(name, icon, load, unload, write, update, enabled);
+	if (!exporting)
+		TriggerCookies.SaveSettings();
+}
+
+/* Saves TriggerCookie settings. */
+TriggerCookies.SaveSettings = function () {
+	for (var i in TriggerCookies.Mods) {
+		var mod = TriggerCookies.Mods[i];
+		mod.SaveSettings();
+	}
+}
+
+/* Adds the mod to the collection. */
+TriggerCookies.AddMod = function (name, saveName, icon, enable, disable, load, save, write, update, enabled) {
+
+	TriggerCookies.Mods[name] = new ModInfo(name, saveName, icon, enable, disable, load, save, write, update, enabled);
 
 	TriggerCookies.ForceWriteMenu = true;
 }
@@ -458,37 +512,72 @@ TriggerCookies.SortTabs = function () {
 			return a.name - b.name;
 	});
 
-	TriggerCookies.CurrentTab = TriggerCookies.TabList[0].name;
+
+	if (TriggerCookies.CurrentTab != 'Mod List')
+		TriggerCookies.CurrentTab = TriggerCookies.TabList[0].name;
 }
 
-function ModInfo(name, icon, load, unload, write, update, enabled) {
+function ModInfo(name, saveName, icon, enable, disable, load, save, write, update, enabled) {
 	this.Name = name;
+	this.SaveName = saveName;
 	this.Icon = icon;
-	this.Load = load;
-	this.Unload = unload;
+	this.EnableMod = enable;
+	this.DisableMod = disable;
+	this.LoadModSettings = load;
+	this.SaveModSettings = save;
 	this.WriteMenu = write;
 	this.UpdateMenu = update;
 	this.Enabled = enabled;
+	this.FirstTime = !enabled;
 
-	if (enabled)
-		load();
+	if (enabled) {
+		enable(true);
+		this.LoadSettings();
+	}
 
 	Game.Notify('Mod Loaded', '<div class="title" style="font-size:18px;">' + name.fontcolor(enabled ? 'cyan' : 'red') + '</div>', icon);
-
-	TriggerCookies.ForceWriteMenu = true;
 }
 ModInfo.prototype.Enable = function () {
 	if (!this.Enabled) {
 		this.Enabled = true;
-		this.Load();
+		this.EnableMod(this.FirstTime);
+		this.LoadSettings();
+		this.FirstTime = false;
 		Game.Notify('Mod Enabled', '<div class="title" style="font-size:18px;">' + this.Name.fontcolor('cyan') + '</div>', this.Icon);
 	}
 }
 ModInfo.prototype.Disable = function () {
 	if (this.Enabled) {
 		this.Enabled = false;
-		this.Unload();
+		this.DisableMod();
 		Game.Notify('Mod Disabled', '<div class="title" style="font-size:18px;">' + this.Name.fontcolor('red') + '</div>', this.Icon);
+	}
+}
+ModInfo.prototype.LoadSettings = function () {
+	if (this.LoadModSettings) {
+		var saveTo = Game.SaveTo + this.SaveName;
+		var saveData = window.localStorage.getItem(saveTo);
+
+		if (saveData) {
+			saveData = unescape(saveData);
+			this.LoadModSettings(saveData);
+		}
+		else {
+			console.log('Error loading ' + this.Name + ' settings! (A save may not exist yet for his mod.)');
+		}
+	}
+}
+ModInfo.prototype.SaveSettings = function () {
+	if (this.SaveModSettings) {
+		var saveData = this.SaveModSettings();
+		var saveTo = Game.SaveTo + this.SaveName;
+
+		//saveData=utf8_to_b64(saveData)+'!END!';
+		saveData = escape(saveData);
+		window.localStorage.setItem(saveTo, saveData);//aaand save
+		if (!window.localStorage.getItem(saveTo)) {
+			console.log('Error saving ' + this.Name + ' settings!');
+		}
 	}
 }
 

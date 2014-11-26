@@ -95,62 +95,66 @@ LayoutCookie.Init = function () {
 	LoadMod('TriggerCookies');
 
 	IntervalUntilLoaded('TriggerCookies', function () {
-		TriggerCookies.AddMod("Layout Cookie", [3, 29], LayoutCookie.Enable, LayoutCookie.Disable, LayoutCookie.WriteMenu, LayoutCookie.UpdateMenu, true);
+		TriggerCookies.AddMod('Layout Cookie', 'LayoutCookie', [3, 29], LayoutCookie.Enable, LayoutCookie.Disable, LayoutCookie.Load, LayoutCookie.Save, LayoutCookie.WriteMenu, LayoutCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Functionality', 200);
 
 		LayoutCookie.Loaded = true;
 	});
 }
 /* Loads Layout Cookie. */
-LayoutCookie.Enable = function () {
+LayoutCookie.Enable = function (firstTime) {
 
+	if (firstTime) {
+		var button = document.createElement('a');
+		button.id = iLayout('popAllWrinklers');
+		button.className = 'tc option large wrinkler on';
+		button.innerHTML = 'Pop Wrinklers';
 
-	var button = document.createElement('a');
-	button.id = iLayout('popAllWrinklers');
-	button.className = 'tc option large wrinkler on';
-	button.innerHTML = 'Pop Wrinklers';
+		if (Game.touchEvents)
+			button.ontouched = LayoutCookie.PopAllWrinklers;
+		else
+			button.onclick = LayoutCookie.PopAllWrinklers;
 
-	if (Game.touchEvents)
-		button.ontouched = LayoutCookie.PopAllWrinklers;
-	else
-		button.onclick = LayoutCookie.PopAllWrinklers;
+		l('cookieAnchor').appendChild(button);
 
-	l('cookieAnchor').appendChild(button);
+		AddEvent(l('sectionLeft'), 'mouseover', function () {
+			if (LayoutCookie.WrinklersExist()) {
+				lLayout('popAllWrinklers').style.display = 'inline-block';
+			}
+		});
+		AddEvent(l('sectionLeft'), 'mouseout', function () {
+			lLayout('popAllWrinklers').style.display = 'none';
+		});
 
-	AddEvent(l('sectionLeft'), 'mouseover', function () {
-		if (LayoutCookie.WrinklersExist()) {
-			lLayout('popAllWrinklers').style.display = 'inline-block';
-		}
-	});
-	AddEvent(l('sectionLeft'), 'mouseout', function () {
-		lLayout('popAllWrinklers').style.display = 'none';
-	});
+		Game.addClass('disablePopWrinklers');
 
-	Game.addClass('disablePopWrinklers');
+		Overrides.AppendFunction('Game.Draw', 'LayoutCookie.DrawCookies', 'LayoutCookie');
 
-	Overrides.AppendFunction('Game.Draw', 'LayoutCookie.DrawCookies', 'LayoutCookie');
+		//LayoutCookie.Actions['removetopbar'].Enabled = true;
+		//LayoutCookie.Actions['improvescroll'].Enabled = true;
 
-	//LayoutCookie.Actions['removetopbar'].Enabled = true;
-	//LayoutCookie.Actions['improvescroll'].Enabled = true;
+		//var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, '', Game.seasonTriggerBasePrice, [16, 6], function () {
+		var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, 'Ends the current season.<q>You have the power to start them, now you finally have the power to stop them!</q>', Game.seasonTriggerBasePrice, [16, 6], function () {
+			Game.seasonUses += 1;
+			Game.seasonT = 0;
+			Game.computeSeasonPrices();
+			this.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;
+			Game.Lock(this.name);
+		});
+		upgrade.order = 24000;
+		upgrade.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;;
+		//upgrade.order = Game.Upgrades['Festive biscuit'].order - 1;
+		//Game.last.season = '';
+		Game.last.pool = 'toggle';
 
-	//var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, '', Game.seasonTriggerBasePrice, [16, 6], function () {
-	var upgrade = new Game.Upgrade(LayoutCookie.EndSeasonName, 'Ends the current season.<q>You have the power to start them, now you finally have the power to stop them!</q>', Game.seasonTriggerBasePrice, [16, 6], function () {
-		Game.seasonUses += 1;
-		Game.seasonT = 0;
-		Game.computeSeasonPrices();
-		this.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses);
-		Game.Lock(this.name);
-	});
-	//Game.last.season = '';
-	Game.last.pool = 'toggle';
+		Overrides.OverrideFunction('Game.Upgrades["Festive biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
+		Overrides.OverrideFunction('Game.Upgrades["Lovesick biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
+		Overrides.OverrideFunction('Game.Upgrades["Bunny biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
+		Overrides.OverrideFunction('Game.Upgrades["Ghostly biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
 
-	Overrides.OverrideFunction('Game.Upgrades["Festive biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
-	Overrides.OverrideFunction('Game.Upgrades["Lovesick biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
-	Overrides.OverrideFunction('Game.Upgrades["Bunny biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
-	Overrides.OverrideFunction('Game.Upgrades["Ghostly biscuit"].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
-
-	// Use the id for fool's biscuit because the ' messes it up
-	Overrides.OverrideFunction('Game.UpgradesById[185].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
+		// Use the id for fool's biscuit because the ' messes it up
+		Overrides.OverrideFunction('Game.UpgradesById[185].buyFunction', 'LayoutCookie.StartSeasonBuyFunction', 'LayoutCookie');
+	}
 
 
 	LayoutCookie.Actions['removetopbar'].Enable(false);
@@ -158,17 +162,71 @@ LayoutCookie.Enable = function () {
 	LayoutCookie.Actions['tickerbackground'].Enable(false);
 	LayoutCookie.Actions['bakeall'].Enable(false);
 	LayoutCookie.Actions['popwrinklers'].Enable(false);
+	LayoutCookie.Actions['buildingprice'].Enable(false);
 
 	LayoutCookie.Enabled = true;
 }
 /* Unloads Layout Cookie. */
 LayoutCookie.Disable = function () {
 
-
+	LayoutCookie.Actions['removetopbar'].Disable(false);
+	LayoutCookie.Actions['improvescroll'].Disable(false);
+	LayoutCookie.Actions['tickerbackground'].Disable(false);
+	LayoutCookie.Actions['bakeall'].Disable(false);
+	LayoutCookie.Actions['popwrinklers'].Disable(false);
 	// Just to let you know the mod is unloaded.
 	//LayoutCookie.Notify('Mod Unloaded', '<div class="title" style="font-size:18px;">' + 'Layout Cookie'.fontcolor('red') + '</div>', [3, 29]);
 
 	LayoutCookie.Enabled = false;
+}
+/* Loads the mod settings. */
+LayoutCookie.Load = function (data) {
+	function isValid(varname, name, value) { return (name == varname && !isNaN(value)); }
+	function readAction(action, name, value) {
+		if (action == name) {
+			if (value && !LayoutCookie.Actions[action].Enabled)
+				LayoutCookie.Actions[action].Enable(false);
+			else if (!value && LayoutCookie.Actions[action].Enabled)
+				LayoutCookie.Actions[action].Disable(false);
+		}
+	}
+
+	var lines = data.split('|');
+	for (var i = 0; i < lines.length; i++) {
+		var line = lines[i];
+		if (line.indexOf('=') != -1) {
+			var line = line.split('=');
+			var name = line[0], valueStr = line[1], value = parseInt(valueStr), valuef = parseFloat(valueStr);
+
+			readAction('bakeall', name, value);
+			readAction('popwrinklers', name, value);
+			readAction('cancelseason', name, value);
+
+			readAction('removetopbar', name, value);
+			readAction('improvescroll', name, value);
+			readAction('tickerbackground', name, value);
+			readAction('buildingprice', name, value);
+		}
+	}
+}
+/* Saves the mod settings. */
+LayoutCookie.Save = function () {
+	function write(name, value) { return name + '=' + value.toString() + '|'; }
+	function writeAction(name) { return name + '=' + (LayoutCookie.Actions[name].Enabled ? 1 : 0).toString() + '|'; }
+	var str = '';
+
+	str +=
+	writeAction('bakeall') +
+	writeAction('popwrinklers') +
+	writeAction('cancelseason') +
+
+	writeAction('removetopbar') +
+	writeAction('improvescroll') +
+	writeAction('tickerbackground') +
+	writeAction('buildingprice') +
+
+	'';
+	return str;
 }
 
 LayoutCookie.StartSeasonBuyFunction = function () {
@@ -196,6 +254,7 @@ LayoutCookie.StartSeasonBuyFunction = function () {
 
 	if (LayoutCookie.Actions['cancelseason'].Enabled) {
 		Game.Unlock(LayoutCookie.EndSeasonName);
+		Game.Upgrades[LayoutCookie.EndSeasonName].basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;
 	}
 }
 
@@ -361,7 +420,10 @@ LayoutCookie.RemoveTopBar = function () {
 	if (LayoutCookie.Actions['removetopbar'].Enabled) {
 
 		// Remove the top bar because it's stupid and no one will ever love it.
-		LayoutCookie.TopBar.parentNode.removeChild(LayoutCookie.TopBar);
+		/*LayoutCookie.TopBar.parentNode.removeChild(LayoutCookie.TopBar);
+		*/
+
+		l('topBar').style.display = 'none';
 		var gameDiv = document.getElementById('game');
 		gameDiv.style.top = '0px';
 		var canvasDiv = document.getElementById('backgroundLeftCanvas');
@@ -370,8 +432,9 @@ LayoutCookie.RemoveTopBar = function () {
 	else {
 
 		// Re-add the top bar because apparently someone actually likes it.
+		l('topBar').style.display = 'initial';
 		var gameDiv = document.getElementById('game');
-		gameDiv.parentNode.insertBefore(LayoutCookie.TopBar, gameDiv);
+		//gameDiv.parentNode.insertBefore(LayoutCookie.TopBar, gameDiv);
 		gameDiv.style.top = '32px';
 		var canvasDiv = document.getElementById('backgroundLeftCanvas');
 		canvasDiv.height -= 32;
