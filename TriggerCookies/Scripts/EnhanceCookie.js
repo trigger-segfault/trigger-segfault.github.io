@@ -18,7 +18,7 @@ QUICK FUNCTIONS
 
 /* Gets the URL of where the mod is being hosted. */
 function GetModURL() {
-	var name = 'LayoutCookie';
+	var name = 'EnhanceCookie';
 	var url = document.getElementById('modscript_' + name).getAttribute('src');
 	url = url.replace('Scripts/' + name + '.js', '');
 	return url;
@@ -256,7 +256,7 @@ LAYOUT COOKIE MENU
 /* Writes the Enhance Cookie buttons. */
 EnhanceCookie.WriteMenu = function (tab) {
 	var str = '';
-
+	
 	if (tab == 'Enhancements') {
 		str += Helper.Menu.WriteSectionHeader('Buttons', [4, 28]);
 
@@ -453,7 +453,7 @@ EnhanceCookie.ImproveScrollBars = function () {
 		l('rows').style.right = '0px';
 		l('rows').style.top = '0px';
 		l('rows').style.bottom = '0px';
-
+		
 		l('modMenu').style.overflow = 'initial';
 	}
 }
@@ -513,7 +513,7 @@ EnhanceCookie.ShortNumbers = function () {
 	Game.upgradesToRebuild = 1;
 }
 
-EnhanceCookie.Beautify = function (value, floats) {
+EnhanceCookie.Beautify = function(value, floats) {
 	var negative = (value < 0);
 	var decimal = '';
 	if (value < 1000000 && floats > 0 && Math.floor(value.toFixed(floats)) != value.toFixed(floats)) decimal = '.' + (value.toFixed(floats).toString()).split('.')[1];
@@ -639,7 +639,7 @@ EnhanceCookie.Actions = {
 	buildingbci: new EnhanceCookieAction('Show Building Efficiency', null, [6, 6], 'toggle', false, 0, EnhanceCookie.BuildingBCI, null, true),
 	upgradebci: new EnhanceCookieAction('Show Upgrade Efficiency', null, [9, 1], 'toggle', false, 0, EnhanceCookie.UpgradeBCI, null, true),
 	shortnum: new EnhanceCookieAction('Short Numbers', null, [1, 10], 'toggle', false, 0, EnhanceCookie.ShortNumbers, null, true)
-
+	
 };
 
 /*=====================================================================================

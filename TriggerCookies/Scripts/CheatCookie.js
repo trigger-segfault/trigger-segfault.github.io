@@ -24,41 +24,28 @@ function GetModURL() {
 }
 /* Returns true if the specified mod is loaded. */
 function IsModLoaded(name) {
-	return document.getElementById('modscript_' + name) != null;
+	return (document.getElementById('modscript_' + name) != null);
 }
-/* Loads the mod from the same location as this mod if the mod hasn't been loaded yet. */
-function LoadMod(name) {
-	if (!IsModLoaded(name)) {
-		var url = GetModURL() + 'Scripts/' + name + '.js';
-		Game.LoadMod(url);
+/* Loads the Trigger Cookies Mod Manager. */
+function LoadTriggerCookies() {
+	if (!IsModLoaded('TriggerCookies')) {
+		Game.LoadMod(GetModURL() + 'Scripts/TriggerCookies.js');
 	}
-}
-/* Loads the style sheet from the same location as this mod. */
-function LoadStyleSheet(name) {
-	var url = GetModURL() + 'Styles/' + name + '.css';
-
-	var link = document.createElement("link");
-	link.type = 'text/css';
-	link.rel = 'stylesheet';
-	link.href = url;
-	link.media = 'all';
-
-	document.head.appendChild(link);
-	console.log('Loaded the style sheet ' + url + ', ' + name + '.');
 }
 /* Returns true if the variable is defined and equals the value. */
 function IsDefined(name, value) {
 	return eval('(typeof ' + name.split('.')[0] + ' !== \'undefined\') && (typeof ' + name + ' !== \'undefined\') && (' + name + ' === ' + value + ')');
 }
-/* Creates an interval to wait until the specified mod is loaded */
-function IntervalUntilLoaded(mod, func) {
+/* Creates an interval to wait until TriggerCookies is loaded */
+function IntervalUntilLoaded(func) {
 	var checkReady = setInterval(function () {
-		if (IsDefined(mod + '.Loaded', 'true')) {
+		if (IsDefined('TriggerCookies.Loaded', 'true')) {
 			func();
 			clearInterval(checkReady);
 		}
 	}, 100);
 }
+
 /* Returns the element used in Cheat Cookie. */
 function lCheat(name) {
 	if (name.indexOf('CheatCookie') != 0)
@@ -80,8 +67,6 @@ CHEAT COOKIE DEFINITIONS
 
 /* The static class that manages the Cheat Cookie mod. */
 CheatCookie = {};
-/* The static class that manages Game backups. */
-CheatCookie.Backup = {};
 /* True if the mod is loaded. */
 CheatCookie.Loaded = false;
 /* True if the mod is enabled. */
@@ -91,34 +76,29 @@ CheatCookie.Enabled = true;
 /*=====================================================================================
 CHEAT COOKIE INITIALIZATION
 =======================================================================================*/
+//#region Initialization
 
-/* Initializes Cheat Cookie. */
+/* Initializes the mod. */
 CheatCookie.Init = function () {
-
-	LoadMod('TriggerCookies');
+	LoadTriggerCookies();
 
 	// Add the mod to the manager if it exists.
-	IntervalUntilLoaded('TriggerCookies', function () {
+	IntervalUntilLoaded(function () {
 		TriggerCookies.AddMod('Cheat Cookie', 'CheatCookie', [10, 6], CheatCookie.Enable, CheatCookie.Disable, null, null, CheatCookie.WriteMenu, CheatCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Cheating', 400);
-
-		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
-		Game.Win('Third-party');
 
 		CheatCookie.Loaded = true;
 	});
 }
-
-/* Loads Cheat Cookie. */
+/* Enables the mod */
 CheatCookie.Enable = function (firstTime) {
 
 	CheatCookie.Enabled = true;
-
 }
-/* Unloads Cheat Cookie. */
+/* Disables the mod. */
 CheatCookie.Disable = function () {
 
-	HotfixCookie.DisableAll();
+	CheatCookie.DisableAll();
 
 	CheatCookie.Enabled = false;
 }
@@ -149,9 +129,9 @@ CheatCookie.PopAllWrinklers = function () {
 /*=====================================================================================
 CHEAT COOKIE MENU
 =======================================================================================*/
+//#region Menu
 
-
-CheatCookie.WriteSectionHead = function (name, icon) {
+/*CheatCookie.WriteSectionHead = function (name, icon) {
 	var str = '';
 	str += '<div class="listing"><div class="icon" style="background-position:' + (-icon[0] * 48) + 'px ' + (-icon[1] * 48) + 'px;"></div>' +
 				'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + name + '</span></span></div>';
@@ -178,7 +158,7 @@ CheatCookie.WriteSpacing = function (pixels) {
 		pixels = 8;
 	var str = '<div style="margin-left: ' + pixels.toString() + 'px; display: inline;"></div>';
 	return str;
-}
+}*/
 
 /* Writes the Cheat Cookie buttons. */
 CheatCookie.WriteMenu = function (tab) {
@@ -186,7 +166,7 @@ CheatCookie.WriteMenu = function (tab) {
 	var str = '';
 	if (tab == 'Cheating') {
 
-		str += CheatCookie.WriteSectionHead('Cookies', [3, 5]);
+		str += Helper.Menu.WriteSectionHeader('Cookies', [3, 5]);
 
 		str += '<div class="listing"><b>Cookies in bank : </b> <div id="' + iCheat('cookies') + '" class="price plain">' + Beautify(Game.cookies) + '</div></div>';
 
@@ -194,11 +174,11 @@ CheatCookie.WriteMenu = function (tab) {
 				CheatCookie.WriteButton('addcookies') +
 				CheatCookie.WriteButton('x2cookies') +
 				CheatCookie.WriteButton('x10cookies') +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('losecookies') +
 				CheatCookie.WriteButton('d2cookies') +
 				CheatCookie.WriteButton('d10cookies') +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('frenzy') +
 				CheatCookie.WriteButton('elder') +
 				CheatCookie.WriteButton('click') +
@@ -207,16 +187,16 @@ CheatCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				'Custom Amount: ' +
 				'<input id="' + iCheat('cookiesInput') + '" type="text" value="1000" style="width: 200px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('addcustomcookies') +
 				CheatCookie.WriteButton('setcustomcookies') +
 				'</div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 
 
 
-		str += CheatCookie.WriteSectionHead('Heavenly Chips', [19, 7]);
+		str += Helper.Menu.WriteSectionHeader('Heavenly Chips', [19, 7]);
 		
 		str += '<div class="listing"><b>Heavenly Chips in bank : </b> <div id="' + iCheat('hchips') + '" class="price plain heavenly">' + Beautify(Game.heavenlyChips) + '</div></div>';
 
@@ -224,7 +204,7 @@ CheatCookie.WriteMenu = function (tab) {
 				CheatCookie.WriteButton('addhchips') +
 				CheatCookie.WriteButton('x2hchips') +
 				CheatCookie.WriteButton('x10hchips') +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('losehchips') +
 				CheatCookie.WriteButton('d2hchips') +
 				CheatCookie.WriteButton('d10hchips') +
@@ -233,16 +213,16 @@ CheatCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				'Custom Amount: ' +
 				'<input id="' + iCheat('hchipsInput') + '" type="text" value="1000" style="width: 200px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('addcustomhchips') +
 				CheatCookie.WriteButton('setcustomhchips') +
 				'</div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 
 
 
-		str += CheatCookie.WriteSectionHead('Heavenly Cookies', [20, 7]);
+		str += Helper.Menu.WriteSectionHeader('Heavenly Cookies', [20, 7]);
 
 		str += '<div class="listing"><b>Heavenly Cookies in bank : </b> <div id="' + iCheat('hcookies') + '" class="priceoff">' + Beautify(Game.heavenlyCookies) + '</div></div>';
 
@@ -250,7 +230,7 @@ CheatCookie.WriteMenu = function (tab) {
 				CheatCookie.WriteButton('addhcookies') +
 				CheatCookie.WriteButton('x2hcookies') +
 				CheatCookie.WriteButton('x10hcookies') +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('losehcookies') +
 				CheatCookie.WriteButton('d2hcookies') +
 				CheatCookie.WriteButton('d10hcookies') +
@@ -259,14 +239,14 @@ CheatCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				'Custom Amount: ' +
 				'<input id="' + iCheat('hcookiesInput') + '" type="text" value="1000" style="width: 200px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('addcustomhcookies') +
 				CheatCookie.WriteButton('setcustomhcookies') +
 				'</div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 
-		str += CheatCookie.WriteSectionHead('Upgrades', [11, 9]);
+		str += Helper.Menu.WriteSectionHeader('Upgrades', [11, 9]);
 
 		var basicUpgrades = 0, basicUpgradesTotal = 0;
 		var cookieUpgrades = 0, cookieUpgradesTotal = 0;
@@ -283,13 +263,13 @@ CheatCookie.WriteMenu = function (tab) {
 		var spacing = 14;
 
 		str += '<div class="listing"><b>Upgrades owned : </b> ' +
-			CheatCookie.WriteSpacing(8) +
+			Helper.Menu.WriteSpacing(8) +
 			'basic: <div id="' + iCheat('basicupgradesowned') + '" class="priceoff">' + basicUpgrades + '/' + basicUpgradesTotal + '</div>' +
-			CheatCookie.WriteSpacing(spacing) +
+			Helper.Menu.WriteSpacing(spacing) +
 			'cookies: <div id="' + iCheat('cookieupgradesowned') + '" class="priceoff">' + cookieUpgrades + '/' + cookieUpgradesTotal + '</div>' +
-			CheatCookie.WriteSpacing(spacing) +
+			Helper.Menu.WriteSpacing(spacing) +
 			'prestige: <div id="' + iCheat('prestigeupgradesowned') + '" class="priceoff">' + prestigeUpgrades + '/' + prestigeUpgradesTotal + '</div>' +
-			CheatCookie.WriteSpacing(spacing) +
+			Helper.Menu.WriteSpacing(spacing) +
 			'debug: <div id="' + iCheat('debugupgradesowned') + '" class="priceoff">' + debugUpgrades + '/' + debugUpgradesTotal + '</div>' +
 			'</div></div>';
 
@@ -302,7 +282,7 @@ CheatCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				'Upgrade Name: ' +
 				'<input id="' + iCheat('upgradeInput') + '" type="text" value="" style="width: 240px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('buyupgrade') +
 				CheatCookie.WriteButton('sellupgrade') +
 				CheatCookie.WriteButton('unlockupgrade') +
@@ -312,9 +292,9 @@ CheatCookie.WriteMenu = function (tab) {
 
 		str += '<div class="listing"><b>Upgrade ID : </b> <div id="' + iCheat('upgradeID') + '" class="priceoff">' + '' + '</div></div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 
-		str += CheatCookie.WriteSectionHead('Achievements', [12, 5]);
+		str += Helper.Menu.WriteSectionHeader('Achievements', [12, 5]);
 
 		var achievements = 0, achievementsTotal = 0;
 		var shadow = 0, shadowTotal = 0;
@@ -327,9 +307,9 @@ CheatCookie.WriteMenu = function (tab) {
 		var spacing = 14;
 
 		str += '<div class="listing"><b>Achievements won : </b> ' +
-			CheatCookie.WriteSpacing(8) +
+			Helper.Menu.WriteSpacing(8) +
 			'basic: <div id="' + iCheat('achievwon') + '" class="priceoff">' + achievements + '/' + achievementsTotal + '</div>' +
-			CheatCookie.WriteSpacing(spacing) +
+			Helper.Menu.WriteSpacing(spacing) +
 			'shadow: <div id="' + iCheat('shadowwon') + '" class="priceoff">' + shadow + '/' + shadowTotal + '</div>' +
 			'</div></div>';
 
@@ -343,7 +323,7 @@ CheatCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				'Achievement Name: ' +
 				'<input id="' + iCheat('achievInput') + '" type="text" value="" style="width: 240px; font-size: 14px; background-color: #111; color: #FFF; border: 1px solid #444; padding: 2px;"></input>' +
-				CheatCookie.WriteSpacing() +
+				Helper.Menu.WriteSpacing() +
 				CheatCookie.WriteButton('winachiev') +
 				CheatCookie.WriteButton('loseachiev') +
 				CheatCookie.WriteButton('getachievid') +
@@ -351,11 +331,11 @@ CheatCookie.WriteMenu = function (tab) {
 
 		str += '<div class="listing"><b>Achievement ID : </b> <div id="' + iCheat('achievID') + '" class="priceoff">' + '' + '</div></div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 
 
 
-		str += CheatCookie.WriteSectionHead('Spawning', [19, 8]);
+		str += Helper.Menu.WriteSectionHeader('Spawning', [19, 8]);
 
 		str += '<div class="listing">' +
 				CheatCookie.WriteButton('spawnwrinkler') +
@@ -364,7 +344,7 @@ CheatCookie.WriteMenu = function (tab) {
 				CheatCookie.WriteButton('spawnwrath') +
 				'</div>';
 
-		str += CheatCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 	}
 
 	return str;
@@ -406,6 +386,7 @@ CheatCookie.UpdateMenu = function () {
 	lCheat('shadowwon').innerHTML = shadow + '/' + shadowTotal;
 }
 
+//#endregion
 //============ MODES ============
 
 /* Enables all important modes. */

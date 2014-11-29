@@ -24,51 +24,38 @@ function GetModURL() {
 }
 /* Returns true if the specified mod is loaded. */
 function IsModLoaded(name) {
-	return document.getElementById('modscript_' + name) != null;
+	return (document.getElementById('modscript_' + name) != null);
 }
-/* Loads the mod from the same location as this mod if the mod hasn't been loaded yet. */
-function LoadMod(name) {
-	if (!IsModLoaded(name)) {
-		var url = GetModURL() + 'Scripts/' + name + '.js';
-		Game.LoadMod(url);
+/* Loads the Trigger Cookies Mod Manager. */
+function LoadTriggerCookies() {
+	if (!IsModLoaded('TriggerCookies')) {
+		Game.LoadMod(GetModURL() + 'Scripts/TriggerCookies.js');
 	}
-}
-/* Loads the style sheet from the same location as this mod. */
-function LoadStyleSheet(name) {
-	var url = GetModURL() + 'Styles/' + name + '.css';
-
-	var link = document.createElement("link");
-	link.type = 'text/css';
-	link.rel = 'stylesheet';
-	link.href = url;
-	link.media = 'all';
-
-	document.head.appendChild(link);
-	console.log('Loaded the style sheet ' + url + ', ' + name + '.');
 }
 /* Returns true if the variable is defined and equals the value. */
 function IsDefined(name, value) {
 	return eval('(typeof ' + name.split('.')[0] + ' !== \'undefined\') && (typeof ' + name + ' !== \'undefined\') && (' + name + ' === ' + value + ')');
 }
-/* Creates an interval to wait until the specified mod is loaded */
-function IntervalUntilLoaded(mod, func) {
+/* Creates an interval to wait until TriggerCookies is loaded */
+function IntervalUntilLoaded(func) {
 	var checkReady = setInterval(function () {
-		if (IsDefined(mod + '.Loaded', 'true')) {
+		if (IsDefined('TriggerCookies.Loaded', 'true')) {
 			func();
 			clearInterval(checkReady);
 		}
 	}, 100);
 }
-/* Returns the element used in Auto Cookie. */
-function lAuto(name) {
-	if (name.indexOf('AutoCookie') != 0)
-		return l('AutoCookie' + name);
+
+/* Returns the element used in mod. */
+function lHotfix(name) {
+	if (name.indexOf('HotfixCookie') != 0)
+		return l('HotfixCookie' + name);
 	return l(name);
 }
-/* Returns the element with the name used in Auto Cookie. */
-function iAuto(name) {
-	if (name.indexOf('AutoCookie') != 0)
-		return 'AutoCookie' + name;
+/* Returns the element with the name used in mod. */
+function iHotfix(name) {
+	if (name.indexOf('HotfixCookie') != 0)
+		return 'HotfixCookie' + name;
 	return name;
 }
 
@@ -95,17 +82,11 @@ HOTFIX COOKIE INITIALIZATION
 
 /* Initializes Hotfix Cookie. */
 HotfixCookie.Init = function () {
+	LoadTriggerCookies();
 
-	//HotfixCookie.UpgradesEnabled = true;
-	//HotfixCookie.AchievementsEnabled = true;
-	HotfixCookie.UpgradesEnabled = false;
-	HotfixCookie.AchievementsEnabled = false;
-
-	LoadMod('TriggerCookies');
-
-	IntervalUntilLoaded('TriggerCookies', function () {
+	IntervalUntilLoaded(function () {
 		TriggerCookies.AddMod('Hotfix Cookie', 'HotfixCookie', [10, 22], HotfixCookie.Enable, HotfixCookie.Disable, HotfixCookie.Load, HotfixCookie.Save, HotfixCookie.WriteMenu, HotfixCookie.UpateMenu, true);
-		TriggerCookies.AddTab('Functionality', 200);
+		TriggerCookies.AddTab('Enhancements', 200);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');
@@ -117,7 +98,6 @@ HotfixCookie.Init = function () {
 /* Loads Hotfix Cookie. */
 HotfixCookie.Enable = function (firstTime) {
 
-	
 	if (firstTime) {
 
 		if (Game.season == 'christmas')
@@ -131,11 +111,6 @@ HotfixCookie.Enable = function (firstTime) {
 		if (Game.season == 'fools')
 			Game.Lock('Fool\'s biscuit');
 	}
-
-	if (HotfixCookie.UpgradesEnabled)
-		HotfixCookie.Actions['fixup'].Enable(false);
-	if (HotfixCookie.AchievementsEnabled)
-		HotfixCookie.Actions['fixachiev'].Enable(false);
 
 	HotfixCookie.Enabled = true;
 }
@@ -195,7 +170,7 @@ HotfixCookie.Save = function () {
 HOTFIX COOKIE MENU
 =======================================================================================*/
 
-HotfixCookie.WriteSectionHead = function (name, icon) {
+/*HotfixCookie.WriteSectionHead = function (name, icon) {
 	var str = '';
 	str += '<div class="listing"><div class="icon" style="background-position:' + (-icon[0] * 48) + 'px ' + (-icon[1] * 48) + 'px;"></div>' +
 				'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + name + '</span></span></div>';
@@ -219,21 +194,21 @@ HotfixCookie.WriteSpacing = function (pixels) {
 		pixels = 8;
 	var str = '<div style="margin-left: ' + pixels.toString() + 'px; display: inline;"></div>';
 	return str;
-}
+}*/
 
 /* Writes the Hotfix Cookie buttons. */
 HotfixCookie.WriteMenu = function (tab) {
 	var str = '';
 
-	if (tab == 'Functionality') {
-		str += HotfixCookie.WriteSectionHead('Hotfixes', [10, 22]);
+	if (tab == 'Enhancements') {
+		str += Helper.Menu.WriteSectionHeader('Hotfixes', [10, 22]);
 		str += '<div class="listing">' +
 			HotfixCookie.WriteButton('fixbank') +
 			HotfixCookie.WriteButton('fixup') +
 			HotfixCookie.WriteButton('fixachiev') +
 			HotfixCookie.WriteButton('fixhcookies') +
 			'</div>';
-		str += HotfixCookie.WriteSectionEnd();
+		str += Helper.Menu.WriteSectionEnd();
 	}
 
 	return str;

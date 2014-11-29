@@ -18,7 +18,7 @@ QUICK FUNCTIONS
 
 /* Gets the URL of where the mod is being hosted. */
 function GetModURL() {
-	var name = 'LayoutCookie';
+	var name = 'EnhanceCookie';
 	var url = document.getElementById('modscript_' + name).getAttribute('src');
 	url = url.replace('Scripts/' + name + '.js', '');
 	return url;
@@ -33,12 +33,6 @@ function LoadTriggerCookies() {
 		Game.LoadMod(GetModURL() + 'Scripts/TriggerCookies.js');
 	}
 }
-/* Loads the specified Trigger Cookies Mod. */
-function LoadMod(name) {
-	if (!IsModLoaded(name)) {
-		Game.LoadMod(GetModURL() + 'Scripts/' + name + '.js');
-	}
-}
 /* Returns true if the variable is defined and equals the value. */
 function IsDefined(name, value) {
 	return eval('(typeof ' + name.split('.')[0] + ' !== \'undefined\') && (typeof ' + name + ' !== \'undefined\') && (' + name + ' === ' + value + ')');
@@ -47,19 +41,6 @@ function IsDefined(name, value) {
 function IntervalUntilLoaded(func) {
 	var checkReady = setInterval(function () {
 		if (IsDefined('TriggerCookies.Loaded', 'true')) {
-			func();
-			clearInterval(checkReady);
-		}
-	}, 100);
-}
-/* Creates an interval to wait until all the specified mods are loaded loaded */
-function IntervalUntilAllLoaded(mods, func) {
-	var checkReady = setInterval(function () {
-		var allLoaded = true;
-		for (var i = 0; i < mods.length; i++) {
-			if (!IsDefined(mods[i] + '.Loaded', 'true')) { allLoaded = false; break; }
-		}
-		if (allLoaded && IsDefined('TriggerCookies.Loaded', 'true')) {
 			func();
 			clearInterval(checkReady);
 		}
@@ -101,11 +82,10 @@ ENHANCE COOKIE INITIALIZATION
 /* Initializes Enhance Cookie. */
 EnhanceCookie.Init = function () {
 	LoadTriggerCookies();
-	LoadMod('CalcCookie');
 
-	IntervalUntilAllLoaded(['CalcCookie'], function () {
+	IntervalUntilLoaded(function () {
 		TriggerCookies.AddMod('Enhance Cookie', 'EnhanceCookie', [4, 28], EnhanceCookie.Enable, EnhanceCookie.Disable, EnhanceCookie.Load, EnhanceCookie.Save, EnhanceCookie.WriteMenu, EnhanceCookie.UpdateMenu, true);
-		TriggerCookies.AddTab('Enhancements', 200);
+		TriggerCookies.AddTab('Functionality', 200);
 
 		EnhanceCookie.Loaded = true;
 	});
@@ -161,6 +141,12 @@ EnhanceCookie.Enable = function (firstTime) {
 
 		// Use the id for fool's biscuit because the ' messes it up
 		Overrides.AppendFunction('Game.UpgradesById[185].buyFunction', 'EnhanceCookie.SeasonBuyFunction', 'this', 'EnhanceCookie');
+
+		/*for (var i = 0; i < Game.ObjectsN; i++) {
+			Overrides.OverrideFunction('Game.ObjectsById[' + i + '].tooltip', 'EnhanceCookie.BCITooltip', 'EnhanceCookie');
+		}*/
+		//Overrides.AppendFunction('Game.RebuildUpgrades', 'EnhanceCookie.RebuildUpgrades', null, 'LayoutCookie');
+		//Overrides.OverrideFunction('Game.RebuildUpgrades', 'EnhanceCookie.RebuildUpgrades', 'LayoutCookie');
 	}
 
 	// Default Settings
@@ -169,9 +155,7 @@ EnhanceCookie.Enable = function (firstTime) {
 	EnhanceCookie.Actions['tickerbackground'].Enable(false);
 	EnhanceCookie.Actions['bakeall'].Enable(false);
 	EnhanceCookie.Actions['popwrinklers'].Enable(false);
-
-	EnhanceCookie.Actions['buildingbci'].Enable(false);
-	EnhanceCookie.Actions['upgradebci'].Enable(false);
+	EnhanceCookie.Actions['buildingprice'].Enable(false);
 
 	EnhanceCookie.Enabled = true;
 }
@@ -183,11 +167,8 @@ EnhanceCookie.Disable = function () {
 	EnhanceCookie.Actions['tickerbackground'].Disable(false);
 	EnhanceCookie.Actions['bakeall'].Disable(false);
 	EnhanceCookie.Actions['popwrinklers'].Disable(false);
+	EnhanceCookie.Actions['buildingprice'].Disable(false);
 	EnhanceCookie.Actions['cancelseason'].Disable(false);
-
-	EnhanceCookie.Actions['buildingbci'].Disable(false);
-	EnhanceCookie.Actions['upgradebci'].Disable(false);
-	EnhanceCookie.Actions['shortnum'].Disable(false);
 
 	EnhanceCookie.Enabled = false;
 }
@@ -217,12 +198,11 @@ EnhanceCookie.Load = function (data) {
 			readAction('removetopbar', name, value);
 			readAction('improvescroll', name, value);
 			readAction('tickerbackground', name, value);
-			readAction('buildingbci', name, value);
-			readAction('upgradebci', name, value);
-
-			readAction('shortnum', name, value);
+			readAction('buildingprice', name, value);
 		}
 	}
+
+	EnhanceCookie.Actions['buildingprice'].Disable(false);
 }
 /* Saves the mod settings. */
 EnhanceCookie.Save = function () {
@@ -238,10 +218,7 @@ EnhanceCookie.Save = function () {
 	writeAction('removetopbar') +
 	writeAction('improvescroll') +
 	writeAction('tickerbackground') +
-	writeAction('buildingbci') +
-	writeAction('upgradebci') +
-
-	writeAction('shortnum') +
+	writeAction('buildingprice') +
 
 	'';
 	return str;
@@ -256,8 +233,8 @@ LAYOUT COOKIE MENU
 /* Writes the Enhance Cookie buttons. */
 EnhanceCookie.WriteMenu = function (tab) {
 	var str = '';
-
-	if (tab == 'Enhancements') {
+	
+	if (tab == 'Functionality') {
 		str += Helper.Menu.WriteSectionHeader('Buttons', [4, 28]);
 
 		str += '<div class="listing">' +
@@ -268,18 +245,13 @@ EnhanceCookie.WriteMenu = function (tab) {
 
 		str += Helper.Menu.WriteSectionEnd();
 
-		str += Helper.Menu.WriteSectionHeader('Layout', [3, 29]);
+		str += Helper.Menu.WriteSectionHeader('Layout', [3, 28]);
 
 		str += '<div class="listing">' +
 				EnhanceCookie.WriteButton('removetopbar') +
 				EnhanceCookie.WriteButton('improvescroll') +
 				EnhanceCookie.WriteButton('tickerbackground') +
-				'</div>';
-
-		str += '<div class="listing">' +
-				EnhanceCookie.WriteButton('buildingbci') +
-				EnhanceCookie.WriteButton('upgradebci') +
-				EnhanceCookie.WriteButton('shortnum') +
+				EnhanceCookie.WriteButton('buildingprice') +
 				'</div>';
 
 		str += Helper.Menu.WriteSectionEnd();
@@ -407,8 +379,6 @@ EnhanceCookie.RemoveTopBar = function () {
 		gameDiv.style.top = '0px';
 		var canvasDiv = document.getElementById('backgroundLeftCanvas');
 		canvasDiv.height += 32;
-		var canvasDiv2 = document.getElementById('backgroundCanvas');
-		canvasDiv2.height += 32;
 	}
 	else {
 
@@ -419,8 +389,6 @@ EnhanceCookie.RemoveTopBar = function () {
 		gameDiv.style.top = '32px';
 		var canvasDiv = document.getElementById('backgroundLeftCanvas');
 		canvasDiv.height -= 32;
-		var canvasDiv2 = document.getElementById('backgroundCanvas');
-		canvasDiv2.height -= 32;
 	}
 }
 EnhanceCookie.ImproveScrollBars = function () {
@@ -453,7 +421,7 @@ EnhanceCookie.ImproveScrollBars = function () {
 		l('rows').style.right = '0px';
 		l('rows').style.top = '0px';
 		l('rows').style.bottom = '0px';
-
+		
 		l('modMenu').style.overflow = 'initial';
 	}
 }
@@ -476,19 +444,212 @@ EnhanceCookie.ChangeTickerBackground = function () {
 		l('comments').style.backgroundImage = "none";
 	}
 }
-EnhanceCookie.BuildingBCI = function () {
 
-	if (EnhanceCookie.Actions['buildingbci'].Enabled)
-		CalcCookie.Actions['buildingbci'].Enable();
-	else
-		CalcCookie.Actions['buildingbci'].Disable();
+
+EnhanceCookie.BuildingEfficiency = function () {
+
+	var info = EnhanceCookie.Calc.FindBuildingEfficiencies();
+	var values = info.values;
+	//var colors = ['#6F6', '#FF6', '#F95', '#F55'];
+	var colors = ['#6F6', '#FF6', '#FB5', '#F95', '#F55'];
+	var colorNone = '#AAB';
+
+	for (var i = 0; i < values.length; i++) {
+		var textID = l('productPrice' + i);
+		var bci = values[i].bci;
+		var bci2 = (values[i].bci - info.bestBCI) / (info.worstBCI - info.bestBCI);
+
+		var valueIndex = 0;
+		if (bci2 > 0) {
+			if (bci == info.worstBCI)
+				valueIndex = colors.length - 1;
+			else if (bci2 <= 0.2)
+				valueIndex = 1;
+			else if (bci2 <= 0.5)
+				valueIndex = 2;
+			else
+				valueIndex = 3;
+		}
+
+		textID.style.color = colors[valueIndex];
+
+		Game.ObjectsById[i].bci = bci;
+		Game.ObjectsById[i].bciColor = colors[valueIndex];
+	}
+
+	EnhanceCookie.UpgradeEfficiency();
 }
-EnhanceCookie.UpgradeBCI = function () {
+EnhanceCookie.UpgradeEfficiency = function () {
 
-	if (EnhanceCookie.Actions['upgradebci'].Enabled)
-		CalcCookie.Actions['upgradebci'].Enable();
-	else
-		CalcCookie.Actions['upgradebci'].Disable();
+	var colors = ['#6F6', '#FF6', '#FB5', '#F95', '#F55'];
+	var colorNone = '#AAB';
+	var info = EnhanceCookie.Calc.FindUpgradeEfficiencies();
+	var values = info.values;
+	var index = 0;
+
+	for (var i in Game.UpgradesInStore) {
+		var uID = l('upgrade' + index);
+		var upgrade = Game.UpgradesInStore[i];
+		var bci = values[i].bci;
+		var bci2 = (values[i].bci - info.bestBCI) / (info.worstBCI - info.bestBCI);
+
+		var valueIndex = 0;
+		if (bci2 > 0) {
+			if (bci == info.worstBCI)
+				valueIndex = colors.length - 1;
+			else if (bci2 <= 0.2)
+				valueIndex = 1;
+			else if (bci2 <= 0.5)
+				valueIndex = 2;
+			else
+				valueIndex = 3;
+		}
+
+		upgrade.bci = bci;
+		upgrade.bciColor = (!isFinite(bci) ? colorNone : colors[valueIndex]);
+		index++;
+	}
+}
+
+/*EnhanceCookie.BCIUpgradeTooltip = function () {
+	var me = this;
+	var desc = me.desc;
+	var name = me.name;
+	if (Game.season == 'fools') {
+		if (!Game.foolIcons[me.name]) {
+			name = Game.foolNames['Unknown'];
+			desc = Game.foolDescs['Unknown'];
+		}
+		else {
+			name = Game.foolNames[me.name];
+			desc = Game.foolDescs[me.name];
+		}
+	}
+	if (me.locked) {
+		name = '???';
+		desc = '';
+	}
+	//if (l('rowInfo'+me.id) && Game.drawT%10==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'cookie':'cookies')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName;
+
+	return '<div style="min-width:300px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.price)) + '</span></div><div class="name">' + name + '</div>' + '<small>[owned : ' + me.amount + '</small>]' +
+	'<div class="description">' + desc + '</div>' +
+	(me.totalCookies > 0 ? (
+		'<div class="data">' +
+		(EnhanceCookie.Actions['buildingprice'].Enabled ? '&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br>') : '') +
+		(me.amount > 0 ? '&bull; each ' + me.single + ' produces <b>' + Beautify((me.storedTotalCps / me.amount) * Game.globalCpsMult, 1) + '</b> ' + ((me.storedTotalCps / me.amount) * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second<br>' : '') +
+		'&bull; ' + me.amount + ' ' + (me.amount == 1 ? me.single : me.plural) + ' producing <b>' + Beautify(me.storedTotalCps * Game.globalCpsMult, 1) + '</b> ' + (me.storedTotalCps * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second (<b>' + Beautify((me.amount > 0 ? ((me.storedTotalCps * Game.globalCpsMult) / Game.cookiesPs) : 0) * 100, 1) + '%</b> of total)<br>' +
+		'&bull; <b>' + Beautify(me.totalCookies) + '</b> ' + (Math.floor(me.totalCookies) == 1 ? 'cookie' : 'cookies') + ' ' + me.actionName + ' so far</div>'
+	) : '') +
+	'</div>';
+}*/
+EnhanceCookie.BCITooltip = function () {
+	var me = this;
+	var desc = me.desc;
+	var name = me.name;
+	if (Game.season == 'fools') {
+		if (!Game.foolIcons[me.name]) {
+			name = Game.foolNames['Unknown'];
+			desc = Game.foolDescs['Unknown'];
+		}
+		else {
+			name = Game.foolNames[me.name];
+			desc = Game.foolDescs[me.name];
+		}
+	}
+	if (me.locked) {
+		name = '???';
+		desc = '';
+	}
+	//if (l('rowInfo'+me.id) && Game.drawT%10==0) l('rowInfoContent'+me.id).innerHTML='&bull; '+me.amount+' '+(me.amount==1?me.single:me.plural)+'<br>&bull; producing '+Beautify(me.storedTotalCps,1)+' '+(me.storedTotalCps==1?'cookie':'cookies')+' per second<br>&bull; total : '+Beautify(me.totalCookies)+' '+(Math.floor(me.totalCookies)==1?'cookie':'cookies')+' '+me.actionName;
+
+	return '<div style="min-width:300px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.price)) + '</span></div><div class="name">' + name + '</div>' + '<small>[owned : ' + me.amount + '</small>]' +
+	'<div class="description">' + desc + '</div>' +
+	(me.totalCookies > 0 ? (
+		'<div class="data">' +
+		(EnhanceCookie.Actions['buildingprice'].Enabled ? '&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br>') : '') +
+		(me.amount > 0 ? '&bull; each ' + me.single + ' produces <b>' + Beautify((me.storedTotalCps / me.amount) * Game.globalCpsMult, 1) + '</b> ' + ((me.storedTotalCps / me.amount) * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second<br>' : '') +
+		'&bull; ' + me.amount + ' ' + (me.amount == 1 ? me.single : me.plural) + ' producing <b>' + Beautify(me.storedTotalCps * Game.globalCpsMult, 1) + '</b> ' + (me.storedTotalCps * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second (<b>' + Beautify((me.amount > 0 ? ((me.storedTotalCps * Game.globalCpsMult) / Game.cookiesPs) : 0) * 100, 1) + '%</b> of total)<br>' +
+		'&bull; <b>' + Beautify(me.totalCookies) + '</b> ' + (Math.floor(me.totalCookies) == 1 ? 'cookie' : 'cookies') + ' ' + me.actionName + ' so far</div>'
+	) : '') +
+	'</div>';
+}
+
+EnhanceCookie.RebuildUpgrades = function () {
+	EnhanceCookie.UpgradeEfficiency();
+
+	/*var index = 0;
+
+	for (var i in Game.UpgradesInStore) {
+		var u = l('upgrade' + index);
+		var me = Game.UpgradesInStore[i];
+
+		/*if (EnhanceCookie.Actions['buildingprice'].Enabled) {
+			var data = document.createElement('div');
+			data.className = 'data';
+
+			var str = '&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br>');
+			u.appendChild(data);
+			data.innerHTML = str;
+		}*/
+		/*u.onmouseout = Game.getTooltip(
+						//'<b>'+me.name+'</b>'+me.desc
+			'<div style="min-width:200px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.getPrice())) + '</span></div><small>' + (me.pool == 'toggle' ? '[Togglable]' : '[Upgrade]') + '</small><div class="name">' + me.name + '</div><div class="description">' + me.desc + '</div>' +
+			(EnhanceCookie.Actions['buildingprice'].Enabled ? ('<div class="data">&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br></div>')) : '') + '</div>', 'store');
+			
+		//}
+
+		index++;
+	}*/
+
+	Game.upgradesToRebuild = 0;
+	var list = [];
+	for (var i in Game.Upgrades) {
+		var me = Game.Upgrades[i];
+		if (!me.bought && me.pool != 'debug' && me.pool != 'prestige' && me.pool != 'prestigeDecor') {
+			if (me.unlocked) list.push(me);
+		}
+	}
+
+	var sortMap = function (a, b) {
+		if (a.basePrice > b.basePrice) return 1;
+		else if (a.basePrice < b.basePrice) return -1;
+		else return 0;
+	}
+	list.sort(sortMap);
+
+	Game.UpgradesInStore = [];
+	for (var i in list) {
+		Game.UpgradesInStore.push(list[i]);
+	}
+	var storeStr = '';
+	var toggleStr = '';
+	for (var i in Game.UpgradesInStore) {
+		//if (!Game.UpgradesInStore[i]) break;
+		var me = Game.UpgradesInStore[i];
+		var str = '<div class="crate upgrade" ' + Game.getTooltip(
+		//'<b>'+me.name+'</b>'+me.desc
+		'<div style="min-width:200px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.getPrice())) + '</span></div><small>' + (me.pool == 'toggle' ? '[Togglable]' : '[Upgrade]') + '</small><div class="name">' + me.name + '</div><div class="description">' + me.desc + '</div>' +
+		(EnhanceCookie.Actions['buildingprice'].Enabled ? ('<div class="data">&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br></div>')) : '') + '</div>', 'store') + ' ' + Game.clickStr + '="Game.UpgradesById[' + me.id + '].buy();" id="upgrade' + i + '" style="' + (me.icon[2] ? 'background-image:url(' + me.icon[2] + ');' : '') + 'background-position:' + (-me.icon[0] * 48) + 'px ' + (-me.icon[1] * 48) + 'px;"></div>';
+		if (me.pool == 'toggle') toggleStr += str; else storeStr += str;
+	}
+	l('upgrades').innerHTML = storeStr;
+	l('toggleUpgrades').innerHTML = toggleStr;
+	if (toggleStr == '') l('toggleUpgrades').style.display = 'none'; else l('toggleUpgrades').style.display = 'block';
+
+	
+}
+
+EnhanceCookie.BuildingEfficiencyOff = function () {
+
+	for (var i = 0; i < Game.ObjectsN; i++) {
+		var textID = l('productPrice' + i);
+		var building = Game.ObjectsById[i];
+
+		if (building.getPrice() <= Game.cookies)
+			textID.style.color = '#6F6';
+		else
+			textID.style.color = '#F66';
+	}
 }
 
 EnhanceCookie.DrawCookies = function () {
@@ -502,25 +663,175 @@ EnhanceCookie.DrawCookies = function () {
 	l('compactCookies').innerHTML = str;
 }
 
-EnhanceCookie.ShortNumbers = function () {
-	EnhanceCookie.ShortNumbers = EnhanceCookie.Actions['shortnum'].Enabled;
-	if (EnhanceCookie.Actions['shortnum'].Enabled)
-		Overrides.OverrideFunction('Beautify', 'EnhanceCookie.Beautify', 'EnhanceCookie');
-	else
-		Overrides.RestoreFunction('Beautify', 'EnhanceCookie');
-	BeautifyAll();
-	Game.RefreshStore();
-	Game.upgradesToRebuild = 1;
-}
+//#endregion
+/*=====================================================================================
+LAYOUT-COOKIE CALCULATOR
+=======================================================================================*/
+//#region Calculator
 
-EnhanceCookie.Beautify = function (value, floats) {
-	var negative = (value < 0);
-	var decimal = '';
-	if (value < 1000000 && floats > 0 && Math.floor(value.toFixed(floats)) != value.toFixed(floats)) decimal = '.' + (value.toFixed(floats).toString()).split('.')[1];
-	value = Math.floor(Math.abs(value));
-	var formatter = numberFormatters[Game.prefs.format ? 0 : (EnhanceCookie.ShortNumbers ? 2 : 1)];
-	var output = formatter(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	return negative ? '-' + output : output + decimal;
+function PriceCalculator() {
+
+}
+PriceCalculator.prototype.EstimatedCPS = function () {
+	return Game.cookiesPs * (1 - Game.cpsSucked);
+}
+PriceCalculator.prototype.CalculateCPSPrice = function (oldCPS, newCPS, price) {
+	// Yes, the bonus returned is smaller if it's better
+	return price / (newCPS - oldCPS);
+}
+PriceCalculator.prototype.CalculateBonus = function (building) {
+	// Prevent achievements from testing building CPS
+	var GameWinBackup = Game.Win;
+	Game.Win = function () { };
+
+	var oldCPS = this.EstimatedCPS();
+
+	var price = Math.round(building.price);
+	building.amount++; Game.CalculateGains();
+	var newCPS = this.EstimatedCPS();
+	building.amount--; Game.CalculateGains();
+	var time = (price - Game.cookies) / oldCPS;
+	var afford = (price <= Game.cookies);
+
+	// Restore achievements function
+	Game.Win = GameWinBackup;
+
+	return {
+		bonus: this.CalculateCPSPrice(oldCPS, newCPS, price),
+		cps: newCPS,
+		income: newCPS - oldCPS,
+		bci: price / (newCPS - oldCPS),
+		price: price,
+		time: time,
+		afford: afford
+	};
+}
+PriceCalculator.prototype.CalculateUpgradeBonus = function (upgrade) {
+	// Prevent achievements from testing building CPS
+	var GameWinBackup = Game.Win;
+	Game.Win = function () { };
+
+	var oldCPS = this.EstimatedCPS();
+
+	var price = Math.round(upgrade.getPrice());
+	upgrade.bought = true; Game.CalculateGains();
+	var newCPS = this.EstimatedCPS();
+	upgrade.bought = false; Game.CalculateGains();
+	var time = (price - Game.cookies) / oldCPS;
+	var afford = (price <= Game.cookies);
+
+	// Restore achievements function
+	Game.Win = GameWinBackup;
+
+	return {
+		bonus: this.CalculateCPSPrice(oldCPS, newCPS, price),
+		cps: newCPS,
+		income: newCPS - oldCPS,
+		bci: price / (newCPS - oldCPS),
+		price: price,
+		time: time,
+		afford: afford
+	};
+}
+PriceCalculator.prototype.FindBuildingEfficiencies = function () {
+	var buildingNames = ['Cursor', 'Grandma', 'Farm', 'Mine', 'Factory', 'Bank', 'Temple', 'Wizard tower', 'Shipment', 'Alchemy lab', 'Portal', 'Time machine', 'Antimatter condenser', 'Prism'];
+
+	var buildingBCIs = [];
+
+	for (var i = 0; i < buildingNames.length; i++) {
+		buildingBCIs.push(-1);
+	}
+
+	// Find the best building to buy for the greatest CPS-to-Price increase
+	var bestItem = new BuyoutItem();
+
+	var bestBCI = -1;
+	var worstBCI = -1;
+
+	var endIndex = 0;
+
+	for (var i = 0; i < buildingNames.length; i++) {
+		var name = buildingNames[i];
+		var building = Game.Objects[name];
+		var info = this.CalculateBonus(building);
+
+		if (building.locked)
+			break;
+
+		endIndex++;
+		buildingBCIs[i] = info.bci;
+
+		if (bestBCI == -1 || info.bci < bestBCI) {
+			bestBCI = info.bci;
+		}
+		if (worstBCI == -1 || info.bci > worstBCI) {
+			worstBCI = info.bci;
+		}
+		// If no building has been found yet or its bonus is better than the current best
+		if (bestBCI == -1 || info.bci <= bestBCI) {
+			bestItem = new BuyoutItem(name, 'building', 1, info.Price, info.time);
+			bestBCI = info.bci;
+		}
+	}
+
+	var values = [];
+
+	for (var i = 0; i < endIndex; i++) {
+		var bci = buildingBCIs[i];
+		values.push({ bci: bci });
+	}
+
+	return { bestBCI: bestBCI, worstBCI: worstBCI, values: values };
+}
+PriceCalculator.prototype.FindUpgradeEfficiencies = function () {
+
+	var upgradeBCIs = [];
+
+	/*for (var i = 0; i < buildingNames.length; i++) {
+		upgradeBCIs.push(-1);
+	}*/
+
+	// Find the best building to buy for the greatest CPS-to-Price increase
+	var bestItem = new BuyoutItem();
+
+	var bestBCI = -1;
+	var worstBCI = -1;
+
+	var index = 0;
+
+	for (var i in Game.UpgradesInStore) {
+		upgradeBCIs.push(-1);
+		var upgrade = Game.UpgradesInStore[i];
+		var name = upgrade.name;
+		var info = this.CalculateUpgradeBonus(upgrade);
+
+		upgradeBCIs[index] = info.bci;
+
+		if (isFinite(info.bci)) {
+			if (bestBCI == -1 || info.bci < bestBCI) {
+				bestBCI = info.bci;
+			}
+			if (worstBCI == -1 || info.bci > worstBCI) {
+				worstBCI = info.bci;
+			}
+		}
+		// If no building has been found yet or its bonus is better than the current best
+		if (bestBCI == -1 || info.bci <= bestBCI) {
+			bestItem = new BuyoutItem(name, 'upgrade', 1, info.Price, info.time);
+			bestBCI = info.bci;
+		}
+
+		index++;
+	}
+
+	var values = [];
+
+	for (var i = 0; i < index; i++) {
+		var bci = upgradeBCIs[i];
+		values.push({ bci: bci });
+	}
+
+	return { bestBCI: bestBCI, worstBCI: worstBCI, values: values };
 }
 
 //#endregion
@@ -636,10 +947,8 @@ EnhanceCookie.Actions = {
 	removetopbar: new EnhanceCookieAction('Remove Top Bar', null, [3, 29], 'toggle', false, 0, EnhanceCookie.RemoveTopBar, null, true),
 	improvescroll: new EnhanceCookieAction('Improved Scroll Bars', null, [3, 29], 'toggle', false, 0, EnhanceCookie.ImproveScrollBars, null, true),
 	tickerbackground: new EnhanceCookieAction('News Ticker Background', null, [3, 29], 'toggle', false, 0, EnhanceCookie.ChangeTickerBackground, null, true),
-	buildingbci: new EnhanceCookieAction('Show Building Efficiency', null, [6, 6], 'toggle', false, 0, EnhanceCookie.BuildingBCI, null, true),
-	upgradebci: new EnhanceCookieAction('Show Upgrade Efficiency', null, [9, 1], 'toggle', false, 0, EnhanceCookie.UpgradeBCI, null, true),
-	shortnum: new EnhanceCookieAction('Short Numbers', null, [1, 10], 'toggle', false, 0, EnhanceCookie.ShortNumbers, null, true)
-
+	buildingprice: new EnhanceCookieAction('Color Building Efficiency', null, [6, 6], 'toggle', false, 300, EnhanceCookie.BuildingEfficiency, EnhanceCookie.BuildingEfficiencyOff, true)
+	
 };
 
 /*=====================================================================================
@@ -648,7 +957,7 @@ LAYOUT COOKIE VARIABLES
 
 EnhanceCookie.EndSeasonName = 'Parting of seasons';
 
-EnhanceCookie.ShortNumbers = false;
+EnhanceCookie.Calc = new PriceCalculator();
 
 /*=====================================================================================
 LAUNCH LAYOUT COOKIE

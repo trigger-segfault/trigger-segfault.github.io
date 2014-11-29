@@ -47,10 +47,14 @@ function LoadStyleSheet(name) {
 function IsDefined(name, value) {
 	return eval('(typeof ' + name.split('.')[0] + ' !== \'undefined\') && (typeof ' + name + ' !== \'undefined\') && (' + name + ' === ' + value + ')');
 }
-/* Creates an interval to wait until the specified mod is loaded */
-function IntervalUntilLoaded(mod, func) {
+/* Creates an interval to wait until all the specified mods are loaded loaded */
+function IntervalUntilAllLoaded(mods, func) {
 	var checkReady = setInterval(function () {
-		if (IsDefined(mod + '.Loaded', 'true')) {
+		var allLoaded = true;
+		for (var i = 0; i < mods.length; i++) {
+			if (!IsDefined(mods[i] + '.Loaded', 'true')) { allLoaded = false; break; }
+		}
+		if (allLoaded) {
 			func();
 			clearInterval(checkReady);
 		}
@@ -79,23 +83,19 @@ TriggerCookies.Init = function () {
 
 	// Overrides.js is required
 	LoadMod('Overrides');
+	LoadMod('Helper');
 
 	// Set the favicon to a cookie, which it should have been all along.
 	TriggerCookies.ChangeFavicon();
 
-	//TriggerCookies.RemoveTopBar();
-
 	// Wait until Overrides.js is loaded
-	IntervalUntilLoaded('Overrides', function () {
+	IntervalUntilAllLoaded(['Overrides', 'Helper'], function () {
 		Overrides.OverrideFunction('Game.ShowMenu', 'TriggerCookies.ShowMenu', 'TriggerCookies');
 		Overrides.OverrideFunction('Overrides.UpdateMenuLog', 'TriggerCookies.UpdateMenuLog', 'TriggerCookies');
 		Overrides.OverrideFunction('Game.WriteSave', 'TriggerCookies.WriteSave', 'TriggerCookies');
 		
 		LoadStyleSheet('TriggerCookies');
-		//TriggerCookies.LoadTabCSS();
 		TriggerCookies.ChangeLogButton();
-		//TriggerCookies.ChangeScrollBar();
-		//TriggerCookies.ChangeNewsTicker();
 
 		// Just to let you know the mod is loaded and working.
 		Game.Notify('Mod Loaded', '<div class="title" style="font-size:18px;">' + 'Trigger Cookies'.fontcolor('cyan') + '</div>', [16, 5]);
@@ -109,7 +109,7 @@ TriggerCookies.Init = function () {
 
 		var str = '';
 
-		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '</div>';
+		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '<div style="font-size: 20px;">v1.0.2 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
 
 		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 				'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
@@ -123,12 +123,8 @@ TriggerCookies.Init = function () {
 
 		str += '<div id="modTabs"></div>';
 
-		/*str += '<div class="separatorBottom" style="position: initial;"></div>';
-		str += '<div id="modMenu2"style="display: block;"></div>';*/
-
 		l('menu').parentNode.appendChild(menu);
 		menu.innerHTML = str;
-
 
 		// States that this mod has been loaded.
 		TriggerCookies.Loaded = true;
@@ -596,7 +592,7 @@ TriggerCookies.CurrentTab = '';
 /* The list of tabs. */
 TriggerCookies.TabList = [
 	//{ name: 'Statistics', priority: 100 },
-	//{ name: 'Functionality', priority: 200 },
+	//{ name: 'Enhancements', priority: 200 },
 	//{ name: 'Automation', priority: 300 },
 	//{ name: 'Cheating', priority: 400 },
 	{ name: 'Mod List', priority: 1000000000 }
