@@ -24,47 +24,41 @@ function GetModURL() {
 }
 /* Returns true if the specified mod is loaded. */
 function IsModLoaded(name) {
-	return (document.getElementById('modscript_' + name) != null);
+	return document.getElementById('modscript_' + name) != null;
 }
-/* Loads the Trigger Cookies Mod Manager. */
-function LoadTriggerCookies() {
-	if (!IsModLoaded('TriggerCookies')) {
-		Game.LoadMod(GetModURL() + 'Scripts/TriggerCookies.js');
-	}
-}
-/* Loads the specified Trigger Cookies Mod. */
+/* Loads the mod from the same location as this mod if the mod hasn't been loaded yet. */
 function LoadMod(name) {
 	if (!IsModLoaded(name)) {
-		Game.LoadMod(GetModURL() + 'Scripts/' + name + '.js');
+		var url = GetModURL() + 'Scripts/' + name + '.js';
+		Game.LoadMod(url);
 	}
+}
+/* Loads the style sheet from the same location as this mod. */
+function LoadStyleSheet(name) {
+	var url = GetModURL() + 'Styles/' + name + '.css';
+
+	var link = document.createElement("link");
+	link.type = 'text/css';
+	link.rel = 'stylesheet';
+	link.href = url;
+	link.media = 'all';
+
+	document.head.appendChild(link);
+	console.log('Loaded the style sheet ' + url + ', ' + name + '.');
 }
 /* Returns true if the variable is defined and equals the value. */
 function IsDefined(name, value) {
 	return eval('(typeof ' + name.split('.')[0] + ' !== \'undefined\') && (typeof ' + name + ' !== \'undefined\') && (' + name + ' === ' + value + ')');
 }
-/* Creates an interval to wait until TriggerCookies is loaded */
-function IntervalUntilLoaded(func) {
+/* Creates an interval to wait until the specified mod is loaded */
+function IntervalUntilLoaded(mod, func) {
 	var checkReady = setInterval(function () {
-		if (IsDefined('TriggerCookies.Loaded', 'true')) {
+		if (IsDefined(mod + '.Loaded', 'true')) {
 			func();
 			clearInterval(checkReady);
 		}
 	}, 100);
 }
-/* Creates an interval to wait until all the specified mods are loaded loaded */
-function IntervalUntilAllLoaded(mods, func) {
-	var checkReady = setInterval(function () {
-		var allLoaded = true;
-		for (var i = 0; i < mods.length; i++) {
-			if (!IsDefined(mods[i] + '.Loaded', 'true')) { allLoaded = false; break; }
-		}
-		if (allLoaded && IsDefined('TriggerCookies.Loaded', 'true')) {
-			func();
-			clearInterval(checkReady);
-		}
-	}, 100);
-}
-
 /* Returns the element used in Stat Cookie. */
 function lStat(name) {
 	if (name.indexOf('StatCookie') != 0)
@@ -101,9 +95,10 @@ AUTO-COOKIE INITIALIZATION
 
 /* Initializes Stat-Cookie. */
 StatCookie.Init = function () {
-	LoadTriggerCookies();
 
-	IntervalUntilAllLoaded(['CalcCookie'], function () {
+	LoadMod('TriggerCookies');
+
+	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod('Stat Cookie', 'StatCookie', [9, 6], StatCookie.Enable, StatCookie.Disable, null, null, StatCookie.WriteMenu, StatCookie.UpdateMenu, true);
 		TriggerCookies.AddTab('Statistics', 100);
 
@@ -131,11 +126,10 @@ StatCookie.Disable = function () {
 
 //#endregion
 /*=====================================================================================
-STAT COOKIE MENU
+AUTO-COOKIE MENU
 =======================================================================================*/
-//#region Menu
 
-/* Writes the mod menu. */
+/* Writes the Stat-Cookie buttons. */
 StatCookie.WriteMenu = function (tab) {
 
 	var str = '';
@@ -155,7 +149,6 @@ StatCookie.WriteMenu = function (tab) {
 
 	return str;
 }
-/* Updates the mod menu. */
 StatCookie.UpdateMenu = function () {
 
 	if (TriggerCookies.CurrentTab == 'Mod List') {
@@ -172,7 +165,6 @@ StatCookie.UpdateMenu = function () {
 	}
 }
 
-//#endregion
 /*=====================================================================================
 STAT COOKIE BUYOUT ITEM
 =======================================================================================*/
@@ -185,11 +177,39 @@ function BuyoutItem(name, type, priority, price, time) {
 	this.Time = time || 0;
 	this.Afford = price <= Game.cookies;
 }
+
 BuyoutItem.prototype.Buy = function () {
 	if (this.Type == 'building')
 		Game.Objects[this.Name].buy();
 	else if (this.Type == 'upgrade')
 		Game.Upgrades[this.Name].buy(true);
+}
+
+/*=====================================================================================
+STAT COOKIE WRITING
+=======================================================================================*/
+
+
+StatCookie.WriteSectionHead = function (name, icon) {
+	var str = '';
+	str += '<div class="listing"><div class="icon" style="background-position:' + (-icon[0] * 48) + 'px ' + (-icon[1] * 48) + 'px;"></div>' +
+				'<span style="vertical-align:100%;"><span class="title" style="font-size:22px;">' + name + '</span></span></div>';
+
+	str += '<div style="width: calc(100% - 28px); border-bottom: 1px solid #333; margin: 4px 0px 10px 14px;"></div>';
+
+	return str;
+}
+
+StatCookie.WriteSectionMiddle = function () {
+
+	//var str = '<div style="width: calc(100% - 28px); border-bottom: 1px solid #333; margin: 6px 0px 6px 14px;"></div>';
+	var str = '<div style="width: 100%; margin: 12px 0px;"></div>';
+	return str;
+}
+StatCookie.WriteSectionEnd = function () {
+
+	var str = '<div style="width: calc(100% - 28px); border-bottom: 1px solid #333; margin: 10px 0px 6px 14px;"></div>';
+	return str;
 }
 
 /*=====================================================================================
@@ -204,21 +224,18 @@ function StatCookies() {
 	this.ClicksPerSecond = 0;
 	this.TotalCPS = 0;
 
-	/*var t = 500.0;
-	this.Clicks	 = [{ clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t },
-					{ clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t },
-					{ clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }, { clicks: 0, time: t }];
+	this.Clicks = [{ clicks: 0, time: 1 }, { clicks: 0, time: 1 }, { clicks: 0, time: 1 }, { clicks: 0, time: 1 }, { clicks: 0, time: 1 }];
 	this.Clicks[0].time = new Date().getTime();
-	this.CookieClicksLast = Game.cookieClicks;*/
+	this.CookieClicksLast = Game.cookieClicks;
 
-	//setInterval(this.UpdateClickRate.bind(this), 500);
+	setInterval(this.UpdateClickRate.bind(this), 1000);
 }
 StatCookies.prototype.WriteStats = function () {
 	this.Update();
 
 	var str = ''
 
-	str += Helper.Menu.WriteSectionHeader('Cookies', [3, 5]);
+	str += StatCookie.WriteSectionHead('Cookies', [3, 5]);
 
 	str +=
 	'<div class="listing"><b>Cookies in bank :</b> <div id="' + iStat('cookiesInBank') + '" class="price plain">' + Beautify(Game.cookies) + '</div></div>' +
@@ -226,7 +243,7 @@ StatCookies.prototype.WriteStats = function () {
 	'<div class="listing"><b>Cookies baked (all time) :</b> <div id="' + iStat('cookiesAllTime') + '" class="price plain">' + Beautify(Game.cookiesEarned + Game.cookiesReset) + '</div></div>' +
 	'<div class="listing"><b>Cookies forfeited by ascending :</b> <div id="' + iStat('cookiesForfeited') + '" class="price plain">' + Beautify(Game.cookiesReset) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Current CPS : </b> <div id="' + iStat('currentCPS') + '" class="price plain"> ' + Beautify(Game.cookiesPs, 1) + ' <small>' +
 		'(multiplier : ' + Beautify(Math.round(Game.globalCpsMult * 100), 1) + '%)' +
@@ -236,7 +253,7 @@ StatCookies.prototype.WriteStats = function () {
 	'<div class="listing"><b>Click CPS : </b> <div id="' + iStat('clickCPS') + '" class="price plain">' + Beautify(this.ClickCPS) + '</div></div>' +
 	'<div class="listing"><b>Total CPS : </b> <div id="' + iStat('totalCPS') + '" class="price plain">' + Beautify(this.TotalCPS) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Hand-made cookies : </b> <div id="' + iStat('handMade') + '" class="price plain"> ' + Beautify(Game.handmadeCookies) + '</div></div>' +
 	'<div class="listing"><b>Cookies per click : </b> <div id="' + iStat('cookiesPerClick') + '" class="price plain"> ' + Beautify(Game.computedMouseCps, 1) + '</div></div>' +
@@ -245,7 +262,7 @@ StatCookies.prototype.WriteStats = function () {
 
 	'';
 
-	str += Helper.Menu.WriteSectionEnd();
+	str += StatCookie.WriteSectionEnd();
 
 	return str;
 }
@@ -274,29 +291,28 @@ StatCookies.prototype.UpdateStats = function () {
 StatCookies.prototype.Update = function () {
 
 	var frenzyMod = (Game.frenzy > 0) ? Game.frenzyPower : 1;
-	this.ClicksPerSecond = CalcCookie.ClicksPerSecond;
 
 	this.BaseCPS = Game.cookiesPs / frenzyMod;
 	this.ClickCPS = this.ClicksPerSecond * Game.computedMouseCps;
 	this.TotalCPS = Game.cookiesPs * (1 - Game.cpsSucked) + this.ClickCPS;
 
 }
-/*StatCookies.prototype.UpdateClickRate = function () {
+StatCookies.prototype.UpdateClickRate = function () {
 	this.Clicks[0].clicks = Math.max(0, Game.cookieClicks - this.CookieClicksLast);
 	this.Clicks[0].time = new Date().getTime() - this.Clicks[0].time;
 	var totalClicks = this.Clicks[0].clicks;
 	var totalTime = this.Clicks[0].time;
-	for (var i = this.Clicks.length - 2; i >= 0; i--) {
+	for (var i = 0; i < this.Clicks.length - 1; i++) {
 		totalClicks += this.Clicks[i + 1].clicks;
 		totalTime += this.Clicks[i + 1].time;
 		this.Clicks[i + 1] = this.Clicks[i];
 	}
 	this.Clicks[0].time = new Date().getTime();
 	//this.ClicksPerSecond = totalClicks / this.Clicks.length;
-	this.ClicksPerSecond = totalClicks / totalTime * 1000.0;
+	this.ClicksPerSecond = totalClicks / totalTime * 1000;
 
 	this.CookieClicksLast = Game.cookieClicks;
-}*/
+}
 
 //#endregion
 /*=====================================================================================
@@ -314,35 +330,29 @@ function StatGolden() {
 	this.NextCookieChain = 0;
 	this.NextCPSChain = 0;
 
-	this.LastEffectName = 'N/A';
-	this.LastFrenzyCombo = 0;
-	this.LastBlab = 0;
-	this.LastFrenzyComboTime = 0;
-	this.LastBlabTime = 0;
+	this.LastEffect = 'N/A';
 }
 StatGolden.prototype.WriteStats = function () {
 	this.Update();
 
-	var str = '';
+	var str = ''
 
-	str += Helper.Menu.WriteSectionHeader('Golden Cookies', [10, 14]);
+	str += StatCookie.WriteSectionHead('Golden Cookies', [10, 14]);
 
 	str +=
 	'<div class="listing"><b>Golden cookie clicks :</b> <div id="' + iStat('goldenClicks') + '" class="priceoff">' + Beautify(Game.goldenClicksLocal) +
 		' <small>(all time : ' + Beautify(Game.goldenClicks) + ')</small></div></div>' +
 	'<div class="listing"><b>Golden cookies missed : </b> <div id="' + iStat('goldenMissed') + '" class="priceoff">' + Beautify(Game.missedGoldenClicks) + '</div></div>' +
-	'<div class="listing"><b>Last effect : </b> <div id="' + iStat('lastEffect') + '" class="priceoff">' + this.LastEffectName + '</div></div>' +
-	'<div class="listing"><b>Last click/frenzy combo : </b> <div id="' + iStat('lastCombo') + '" class="priceoff">' + (this.LastFrenzyComboTime != 0 ? (this.LastFrenzyCombo == 0 ? 'Now' : Helper.Numbers.GetTime(this.LastFrenzyCombo, 4)) : 'Never') + '</div></div>' +
-	'<div class="listing"><b>Last blab effect : </b> <div id="' + iStat('lastCombo') + '" class="priceoff">' + (this.LastBlabTime != 0 ? (this.LastBlad == 0 ? 'Now' : Helper.Numbers.GetTime(this.LastBlab, 4)) : 'Never') + '</div></div>' +
+	'<div class="listing"><b>Last effect : </b> <div id="' + iStat('lastEffect') + '" class="priceoff">' + this.LastEffect + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Lucky cookies required : </b> <div id="' + iStat('luckyRequired') + '" class="price plain">' + Beautify(this.LuckyRequired) + '</div></div>' +
 	'<div class="listing"><b>Lucky+Frenzy cookies required : </b> <div id="' + iStat('luckyFrenzyRequired') + '" class="price plain">' + Beautify(this.LuckyFrenzyRequired) + '</div></div>' +
 	'<div class="listing"><b>Lucky reward : </b> <div id="' + iStat('luckyReward') + '" class="price plain">' + Beautify(this.LuckyReward) + '</div></div>' +
 	'<div class="listing"><b>Lucky+Frenzy reward : </b> <div id="' + iStat('luckyFrenzyReward') + '" class="price plain">' + Beautify(this.LuckyFrenzyReward) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Max cookie chain reward : </b> <div id="' + iStat('maxCookieChain') + '" class="price plain">' + Beautify(this.MaxCookieChain) + '</div></div>' +
 	'<div class="listing"><b>Cookies for next chain tier : </b> <div id="' + iStat('nextCookieChain') + '" class="price plain">' + Beautify(this.NextCookieChain) + '</div></div>' +
@@ -350,7 +360,7 @@ StatGolden.prototype.WriteStats = function () {
 
 	'';
 
-	str += Helper.Menu.WriteSectionEnd();
+	str += StatCookie.WriteSectionEnd();
 
 	return str;
 }
@@ -360,7 +370,7 @@ StatGolden.prototype.UpdateStats = function () {
 	lStat('goldenClicks').innerHTML = Beautify(Game.goldenClicksLocal) +
 		' <small>(all time : ' + Beautify(Game.goldenClicks) + ')</small>';
 	lStat('goldenMissed').innerHTML = Beautify(Game.missedGoldenClicks);
-	lStat('lastEffect').innerHTML = this.LastEffectName;
+	lStat('lastEffect').innerHTML = this.LastEffect;
 
 	lStat('luckyRequired').innerHTML = Beautify(this.LuckyRequired);
 	lStat('luckyFrenzyRequired').innerHTML = Beautify(this.LuckyFrenzyRequired);
@@ -370,9 +380,6 @@ StatGolden.prototype.UpdateStats = function () {
 	lStat('maxCookieChain').innerHTML = Beautify(this.MaxCookieChain);
 	lStat('nextCookieChain').innerHTML = Beautify(this.NextCookieChain);
 	lStat('nextCPSChain').innerHTML = Beautify(this.NextCPSChain);
-
-	lStat('lastCombo').innerHTML = (this.LastFrenzyComboTime != 0 ? (this.LastFrenzyCombo == 0 ? 'Now' : Helper.Numbers.GetTime(this.LastFrenzyCombo, 4)) : 'Never');
-	lStat('lastCombo').innerHTML = (this.LastBlabTime != 0 ? (this.LastBlad == 0 ? 'Now' : Helper.Numbers.GetTime(this.LastBlab, 4)) : 'Never');
 }
 StatGolden.prototype.Update = function () {
 
@@ -387,22 +394,7 @@ StatGolden.prototype.Update = function () {
 		'chain cookie': 'Cookie Chain',
 		'blab': 'Blab <small>(you lucky bastard)</small>'
 	};
-	this.LastEffectName = (Game.goldenCookie.last.length != 0 ? effectnames[Game.goldenCookie.last] : 'N/A');
-
-	if (Game.goldenCookie.last == 'blab') {
-		this.LastBlabTime = new Date().getTime();
-		this.LastBlab = 0;
-	}
-	else {
-		this.LastBlab = new Date().getTime() - this.LastBlabTime;
-	}
-	if (game.frenzy > 0 && Game.clickFrenzy > 0) {
-		this.LastFrenzyComboTime = new Date().getTime();
-		this.LastFrenzyCombo = 0;
-	}
-	else {
-		this.LastFrenzyCombo = new Date().getTime() - this.LastFrenzyComboTime;
-	}
+	this.LastEffect = (Game.goldenCookie.last.length != 0 ? effectnames[Game.goldenCookie.last] : 'N/A');
 
 	// Lucky
 	this.LuckyRequired = Game.cookiesPs * 60 * 20 * 10;
@@ -473,7 +465,7 @@ StatPrestige.prototype.WriteStats = function () {
 
 	var str = ''
 
-	str += Helper.Menu.WriteSectionHeader('Prestige', [19, 7]);
+	str += StatCookie.WriteSectionHead('Prestige', [19, 7]);
 
 	str +=
 	'<div class="listing"><b>Heavenly Cookies in bank : </b> <div id="' + iStat('hcookiesBank') + '" class="priceoff">' + Beautify(Game.heavenlyCookies) + '</div></div>' +
@@ -481,21 +473,21 @@ StatPrestige.prototype.WriteStats = function () {
 	'<div class="listing"><b>Heavenly Chips earned : </b> <div id="' + iStat('hchipsEarned') + '" class="price plain heavenly">' + Beautify(Game.heavenlyChipsEarned) + '</div></div>' +
 	'<div class="listing"><b>Chips earned from ascend : </b> <div id="' + iStat('hchipsAscend') + '" class="price plain heavenly">' + Beautify(this.AscendNowToGet) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Current chips per second : </b> <div id="' + iStat('currentHCPS') + '" class="price plain heavenly">' + Beautify(this.ChipsPerSecond) + '</div></div>' +
 	'<div class="listing"><b>Base chips per second : </b> <div id="' + iStat('baseHCPS') + '" class="price plain heavenly">' + Beautify(this.BaseChipsPerSecond) + '</div></div>' +
 	'<div class="listing"><b>Click chips per second : </b> <div id="' + iStat('clickHCPS') + '" class="price plain heavenly">' + Beautify(this.ClickChipsPerSecond) + '</div></div>' +
 	'<div class="listing"><b>Total chips per second : </b> <div id="' + iStat('totalHCPS') + '" class="price plain heavenly">' + Beautify(this.TotalChipsPerSecond) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b id="' + iStat('hchipNextXAmount') + '">Cookies to next ' + Beautify(this.XAmount) + ' chip' + (this.XAmount != 1 ? 's' : '') + ' : </b> <div id="' + iStat('hchipNextCookies') + '" class="price plain">' + Beautify(this.CookiesToNextXChips) + '</div></div>' +
 	'<div class="listing"><b>Cookies per chip : </b> <div id="' + iStat('cookiesPerHChip') + '" class="price plain">' + Beautify(this.CookiesPerChip) + '</div></div>' +
 
 	'';
 
-	str += Helper.Menu.WriteSectionEnd();
+	str += StatCookie.WriteSectionEnd();
 
 	return str;
 }
@@ -557,13 +549,13 @@ StatWrinklers.prototype.WriteStats = function () {
 
 	var str = ''
 
-	str += Helper.Menu.WriteSectionHeader('Wrinklers', [19, 8]);
+	str += StatCookie.WriteSectionHead('Wrinklers', [19, 8]);
 
 	str +=
 	'<div class="listing"><b>Wrinklers popped : </b> <div id="' + iStat('wrinklersPopped') + '" class="priceoff">' + Beautify(Game.wrinklersPopped) + '</div></div>' +
 	'<div class="listing"><b>Wrinkler multiplier : </b> <div id="' + iStat('wrinklerMultiplier') + '" class="priceoff">' + Beautify(this.WrinklerMultiplier * 100) + '%' + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	'<div class="listing"><b>Number of wrinklers : </b> <div id="' + iStat('numWrinklers') + '" class="priceoff">' + Beautify(this.NumWrinklers) +
 		(this.NumWrinklers == 10 ? ' <small>(maxed)</small>' : '') + '</div></div>' +
@@ -572,7 +564,7 @@ StatWrinklers.prototype.WriteStats = function () {
 
 	'';
 
-	str += Helper.Menu.WriteSectionEnd();
+	str += StatCookie.WriteSectionEnd();
 
 	return str;
 }
@@ -641,7 +633,7 @@ StatSeasons.prototype.WriteStats = function () {
 
 	var str = ''
 
-	str += Helper.Menu.WriteSectionHeader('Seasons', [16, 6]);
+	str += StatCookie.WriteSectionHead('Seasons', [16, 6]);
 
 	var seasonNames = {
 		'': 'None',
@@ -653,11 +645,11 @@ StatSeasons.prototype.WriteStats = function () {
 	};
 
 	str +=
-	'<div class="listing"><b>Current season : </b> <div id="' + iStat('currentSeason') + '" class="priceoff">' + seasonNames[Game.season] + (Game.seasonT > 0 && Game.season != '' ? ' (time remaining: ' + Helper.Numbers.GetTime(Game.seasonT, 3) + ')' : '') + '</div></div>' +
+	'<div class="listing"><b>Current season : </b> <div id="' + iStat('currentSeason') + '" class="priceoff">' + seasonNames[Game.season] + '</div></div>' +
 
 	'<div class="listing"><b>Reindeer found : </b> <div id="' + iStat('reindeerFound') + '" class="priceoff">' + Beautify(Game.reindeerClicked) + '</div></div>' +
 
-	Helper.Menu.WriteSectionMiddle() +
+	StatCookie.WriteSectionMiddle() +
 
 	// Christmas
 	'<div class="listing"><b>Santa level : </b> <div id="' + iStat('santaLevel') + '" class="priceoff">' + Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '') + '</div></div>' +
@@ -676,7 +668,7 @@ StatSeasons.prototype.WriteStats = function () {
 
 	'';
 
-	str += Helper.Menu.WriteSectionEnd();
+	str += StatCookie.WriteSectionEnd();
 
 	return str;
 }
@@ -692,7 +684,7 @@ StatSeasons.prototype.UpdateStats = function () {
 		fools: 'Business Day'
 	};
 
-	lStat('currentSeason').innerHTML = seasonNames[Game.season] + (Game.seasonT > 0 && Game.season != '' ? ' (time remaining: ' + Helper.Numbers.GetTime(Game.seasonT, 3) + ')' : '');
+	lStat('currentSeason').innerHTML = seasonNames[Game.season];
 	lStat('reindeerFound').innerHTML = Beautify(Game.reindeerClicked);
 
 	lStat('santaLevel').innerHTML = Beautify(this.SantaLevel) + '/' + Beautify(15) + (this.SantaLevel > 0 ? ' ' + this.Lists.SantaLevels[this.SantaLevel - 1] : '');
