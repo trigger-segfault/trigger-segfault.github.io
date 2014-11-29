@@ -10,12 +10,55 @@
 	<link rel="icon" href="Webpage/Images/favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="Webpage/Images/favicon.ico" type="image/x-icon"/>
 	
-	<link rel="stylesheet" type="text/css" href="Webpage/Styles.css"/>
+	<link rel="stylesheet" type="text/css" href="Webpage/Styles/Styles.css"/>
 </head>
 <body>
-	<div class="container">
-		<h1>Trigger Cookies</h1>
-		<p style="color: #FFF;">Eventually I'll finish this site...</p>
+<div class="container">
+	<div class="header">
+		<a class="headerButton" id="modListButton">Mod List</a>
+		<div class="tickerText">News : new release v1.0.2.2 beta released!</div>
+		<a class="headerButton" id="changeLogButton">Change Log</a>
 	</div>
+	<div class="section indent">
+		<div class="title">Trigger Cookies</div>
+		<div class="titleVersion">v1.0.2.2 <font color="#4B8">beta</font></div>
+		<a class="getButton">Get TriggerCookies</a>
+	</div>
+	<div class="subsection">
+
+		<div class="icon crate heavenly" style="background-position: calc(48px * -15) calc(48px * -7);"></div><span class="sectionTitle">Get TriggerCookies</span>
+		<div class="separator"></div>
+		<div class="subsubsection">
+
+		<h2>Bookmarklet</h2>
+		<div>Paste the following code into a bookmark URL. Then load the bookmark while on the Cookie Clicker page.</div>
+<pre>javascript: (function () {
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/TriggerCookies.js');
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/EnhanceCookie.js');
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/AutoCookie.js');
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/StatCookie.js');
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/CheatCookie.js');
+    Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/HotfixCookie.js');
+}());</pre>
+		<h2>User Script</h2>
+		<div>Paste the following code into a bookmark URL. Then load the bookmark while on the Cookie Clicker page.</div>
+<pre>javascript: (function () {
+    var checkReady = setInterval(function () {
+    if (typeof Game.ready !== 'undefined' && Game.ready) {
+        clearInterval(checkReady);
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/TriggerCookies.js');
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/EnhanceCookie.js');
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/AutoCookie.js');
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/StatCookie.js');
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/CheatCookie.js');
+        Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/HotfixCookie.js');
+    }}, 100);
+}());</pre>
+		</div>
+	</div>	
+		<p style="color: #FFF;">Eventually I'll finish this site...</p>
+
+
+</div>
 </body>
 </html>

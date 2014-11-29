@@ -145,12 +145,12 @@ EnhanceCookie.Enable = function (firstTime) {
 			Game.seasonUses += 1;
 			Game.seasonT = 0;
 			Game.computeSeasonPrices();
-			this.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;
+			this.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) * 0.9999;
 			Game.Lock(this.name);
 		});
 		upgrade.order = 24000;
 		// Set the price to always be season price - 1 so that it's just before seasons
-		upgrade.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;
+		upgrade.basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) * 0.9999;
 		Game.last.pool = 'toggle';
 
 		// Append to the season buy functions to unlock the Parting of seasons upgrade
@@ -300,7 +300,7 @@ LAYOUT COOKIE FUNCTIONS
 EnhanceCookie.SeasonBuyFunction = function () {
 	if (EnhanceCookie.Actions['cancelseason'].Enabled) {
 		Game.Unlock(EnhanceCookie.EndSeasonName);
-		Game.Upgrades[EnhanceCookie.EndSeasonName].basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) - 1;
+		Game.Upgrades[EnhanceCookie.EndSeasonName].basePrice = Game.seasonTriggerBasePrice * Math.pow(2, Game.seasonUses) * 0.9999;
 	}
 }
 
