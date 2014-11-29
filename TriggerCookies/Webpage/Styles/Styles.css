@@ -78,6 +78,17 @@ h1 {
 	height: 100%;
 	position: relative;
 }
+a:link, a:visited {
+    color: #0CC;
+    text-decoration: underline;
+    cursor: auto;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:link:active, a:visited:active {
+    color: #5FF;
+} 
 a {
     background: none repeat scroll 0px 0px transparent;
 }
@@ -128,7 +139,23 @@ a {
 	background-color: rgba(0, 0, 0, 0.5);
 	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
 }
-
+.section.indent.small {
+	width: 100%;
+	text-align: center;
+	font-family: "Kavoon",Georgia,serif;
+	font-size: 28px;
+	text-shadow: 0px 0px 4px #000;
+	color: #FFF;
+	margin: 0px 20px;
+	padding: 1px 0px;
+	border-radius: 6px;
+	width: calc(100% - 40px);
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+}
+.footer p {
+    margin: 0px;
+}
 h2 {
 	font-family: 'Kavoon', Georgia,serif;
 	text-shadow:0px 0px 4px #000;
@@ -176,7 +203,7 @@ pre {
 	font-size: 12px;
 	padding: 28px 0px 15px;
 	color: #777;
-	background: url('../images/panelHorizontal.png') repeat-x scroll 0px top transparent;
+	background: url('../Images/panelHorizontal.png') repeat-x scroll 0px top transparent;
 	text-align: center;
 }
 
@@ -185,14 +212,14 @@ pre {
 	padding-top: 16px;
 	background-position: 0px 0px;
 }
-#modListButton:hover {
+#modListButton:hover, #modListButton.selected {
 	background-position: 0px 96px;
 }
 #changeLogButton {
 	right: 16px;
 	background-position: 144px 0px;
 }
-#changeLogButton:hover {
+#changeLogButton:hover, #changeLogButton.selected {
 	background-position: 144px 96px;
 }
 
@@ -214,7 +241,7 @@ a.headerButton {
 	color: #999;
 	text-shadow: 0px 1px 0px #444, 0px 0px 4px #000;
 }
-.headerButton:hover {
+.headerButton:hover, .headerButton.selected {
 	color: #FFF;
 }
 
@@ -256,6 +283,9 @@ a.headerButton {
 	width: 100%;
 	border-bottom: 1px solid #333;
 	margin: 18px 0px 10px;
+}
+.separator.thin {
+	margin: 10px 0px 0px 0px;
 }
 .listing {
 	padding: 3px 16px;
@@ -333,17 +363,6 @@ a.getButton:visited {
 	color: #CCC;
 }
 
-a:link, a:visited {
-    color: #0CC;
-    text-decoration: underline;
-    cursor: auto;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-a:link:active, a:visited:active {
-    color: #5FF;
-} 
 
 
 a.getButton:hover
