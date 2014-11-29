@@ -855,8 +855,8 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 	if (bestItem != null) {
 		bestItem = new BuyoutItem(bestName, 'upgrade', 1, bestItem.price, bestItem.bci, bestItem.income, bestItem.time);
 
-		if (bestValued)
-			bestItem.BCI = 0;
+		//if (bestValued)
+		//	bestItem.BCI = 0;
 
 		if (!bestItem.CanAfford()) {
 			timeItem = new BuyoutItem();
@@ -901,13 +901,15 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 PriceCalculator.prototype.FindBestResearch = function (grandmapocalypseLevel) {
 	var bestItem = new BuyoutItem();
 
-	for (var i = 0; i < this.Research.length; i++) {
-		var name = this.Research[i];
+	for (var i in this.Research) {
+		var name = i;
 		var upgrade = Game.Upgrades[name];
 
 		if (upgrade.unlocked && !upgrade.bought) {
+			//console.log(name);
 			if (!(name in this.GLevels) || this.GLevels[name] <= grandmapocalypseLevel) {
 				var info = this.CalculateUpgradeBCI(upgrade);
+				//console.log(name);
 				bestItem = new BuyoutItem(name, 'upgrade', 15, info.price, info.bci, info.income, info.time);
 				break;
 			}

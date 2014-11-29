@@ -898,7 +898,7 @@ AutoCookie.Autobuy = function () {
 		if (bestItem.Type != 'invalid') {
 			if (bestItem.CanAfford()) {
 				bestItem.Buy();
-				console.log('Bought: ' + bestItem.Name);
+				//console.log('Bought: ' + bestItem.Name);
 			}
 		}
 	}
@@ -1068,7 +1068,7 @@ AutoCookie.AutoAscend = function () {
 				var name = permanentUpgrades[j];
 				var upgrade = Game.Upgrades[name];
 
-				console.log(name);
+				//console.log(name);
 
 				if (upgrade.bought) {
 					AutoCookie.AssignPermanentSlot(i, name);
@@ -1171,7 +1171,7 @@ AutoCookie.UpdateAscendPrompt = function () {
 	l('promptOption2').style.marginLeft = '4px';*/
 
 	if (timer < 0) {
-		console.log(timer);
+		//console.log(timer);
 		Game.ClosePrompt();
 		Game.Ascend(true);
 		AutoCookie.ManualAscend = false;
