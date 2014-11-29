@@ -105,7 +105,7 @@ HotfixCookie.Init = function () {
 
 	IntervalUntilLoaded('TriggerCookies', function () {
 		TriggerCookies.AddMod('Hotfix Cookie', 'HotfixCookie', [10, 22], HotfixCookie.Enable, HotfixCookie.Disable, HotfixCookie.Load, HotfixCookie.Save, HotfixCookie.WriteMenu, HotfixCookie.UpateMenu, true);
-		TriggerCookies.AddTab('Functionality', 200);
+		TriggerCookies.AddTab('Enhancements', 200);
 
 		// Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 		Game.Win('Third-party');
@@ -225,7 +225,7 @@ HotfixCookie.WriteSpacing = function (pixels) {
 HotfixCookie.WriteMenu = function (tab) {
 	var str = '';
 
-	if (tab == 'Functionality') {
+	if (tab == 'Enhancements') {
 		str += HotfixCookie.WriteSectionHead('Hotfixes', [10, 22]);
 		str += '<div class="listing">' +
 			HotfixCookie.WriteButton('fixbank') +
