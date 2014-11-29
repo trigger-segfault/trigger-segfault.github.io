@@ -16,32 +16,88 @@
 <div class="container">
 	<div class="header">
 		<a class="headerButton" id="modListButton">Mod List</a>
-		<div class="tickerText">News : new release v1.0.2.3 beta hotfix released!</div>
+		<div class="tickerText">News : new release v1.0.2.3 beta hotfix!</div>
 		<a class="headerButton" id="changeLogButton">Change Log</a>
 	</div>
 	<div class="section indent">
 		<div class="title">Trigger Cookies</div>
 		<div class="titleVersion">v1.0.2.3 <font color="#4B8">beta</font></div>
-		<a class="getButton">Get TriggerCookies</a>
+		<a class="getButton" href="#GetTriggerCookies">Get TriggerCookies</a>
 	</div>
 	<div class="subsection">
-
-		<div class="icon crate heavenly" style="background-position: calc(48px * -4) calc(48px * -28);"></div><span class="sectionTitle">Features</span>
+		<div class="icon crate heavenly" style="background-position: calc(48px * -4) calc(48px * -28);"></div><span id="Features" class="sectionTitle">Features</span>
 		<div class="separator"></div>
 		<div class="subsubsection">
-
+			<h2>Modular Support</h2>
+			<div>
+				TriggerCookies provides an interface to create and load mods that all work together.
+				Take a look at <a href="Scripts/ExampleMod.js">ExampleMod</a> to understand how mods work with TriggerCookies.
+			</div>
+			<h2>Numerous Mods Ready for Use</h2>
+			<div>
+				TriggerCookies comes with a large supply of mods that already cover most areas of the game. You can pick and choose which ones you like, or make your own mods that better suit your needs.
+			</div>
+			<p>
+				<b>Included Mods</b>: <a href="ModList#AutoCookie">AutoCookie</a>, <a href="ModList#StatCookie">StatCookie</a>,
+				<a href="ModList#EnhanceCookie">EnhanceCookie</a>, <a href="ModList#HotfixCookie">HotfixCookie</a>, and <a href="ModList#CheatCookie">CheatCookie</a>
+			</p>
 
 		</div>
 		<div class="separator"></div>
 	</div>
 	<div class="subsection">
-
-		<div class="icon crate heavenly" style="background-position: calc(48px * -15) calc(48px * -7);"></div><span class="sectionTitle">Get TriggerCookies</span>
+		<div class="icon crate heavenly" style="background-position: calc(48px * -13) calc(48px * -0);"></div><span id="Screenshots" class="sectionTitle">Screenshots</span>
 		<div class="separator"></div>
 		<div class="subsubsection">
+			<div style="display: table; width: 100%;">
+				<div class="col"><div class="thumbnail">
+					<a href="Webpage/Images/ssStats.png"><img src="Webpage/Images/thumbStats.png"/></a>
+					<div class="caption">StatCookie</div>
+				</div></div>
+				<div class="col"><div class="thumbnail">
+					<a href="Webpage/Images/ssAutomation.png"><img src="Webpage/Images/thumbAutomation.png"/></a>
+					<div class="caption">AutoCookie</div>
+				</div></div>
+				<div class="col"><div class="thumbnail">
+					<a href="Webpage/Images/ssModList.png"><img src="Webpage/Images/thumbModList.png"/></a>
+					<div class="caption">Mod List</div>
+				</div></div>
+				<div class="col"><div class="thumbnail">
+					<a href="Webpage/Images/ssAutoAscend.png"><img src="Webpage/Images/thumbAutoAscend.png"/></a>
+					<div class="caption">Auto Ascend</div>
+				</div></div>
+			</div>
 
-		<h2>Bookmarklet</h2>
-		<div>Paste the following code into a bookmark URL. Then load the bookmark while on the Cookie Clicker page.</div>
+		</div>
+		<div class="separator"></div>
+	</div>
+	<div class="subsection">
+		<div class="icon crate heavenly" style="background-position: calc(48px * -3) calc(48px * -29);"></div><span id="Span1" class="sectionTitle">Compatibility</span>
+		<div class="separator"></div>
+		<div class="subsubsection">
+			<h2>Game Versions</h2>
+			<div>
+				TriggerCookies is currently only compatible with Cookie Clicker v.1.0501 beta. Do not try to use it with any other version.
+			</div>
+			<h2>Other Mods</h2>
+			<div>
+				TriggerCookies is a large mod that takes control of many important functions. Other mods, especially large ones most likely will not work with this one.
+			</div>
+
+		</div>
+		<div class="separator"></div>
+	</div>
+	<div class="subsection">
+		<div class="icon crate heavenly" style="background-position: calc(48px * -15) calc(48px * -7);"></div><span id="GetTriggerCookies" class="sectionTitle">Get TriggerCookies</span>
+		<div class="separator"></div>
+		<div>
+			Any mod in the scripts below can be included or excluded. This allows you to pick and choose which mods you do and don't want in your TriggerCookies menu.
+			For example, if you dislike cheating and game automation you can exclude <i>AutoCookie.js</i> and <i>CheatCookie.js</i>.
+		</div>
+		<div class="subsubsection">
+
+			<h2>Bookmarklet</h2>
+			<div>Paste the following code into a bookmark URL. Then load the bookmark while on the Cookie Clicker page.</div>
 <pre>javascript: (function () {
     Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/TriggerCookies.js');
     Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/EnhanceCookie.js');
@@ -50,8 +106,8 @@
     Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/CheatCookie.js');
     Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/HotfixCookie.js');
 }());</pre>
-		<h2>User Script</h2>
-		<div>Paste the following code into a bookmark URL. Then load the bookmark while on the Cookie Clicker page.</div>
+			<h2>User Script</h2>
+			<div>Paste the following code into a script that loads for http://orteil.dashnet.org/cookieclicker/beta/. </div>
 <pre>javascript: (function () {
     var checkReady = setInterval(function () {
     if (typeof Game.ready !== 'undefined' && Game.ready) {
@@ -64,12 +120,12 @@
         Game.LoadMod('http://trigger-death.github.io/TriggerCookies/Scripts/HotfixCookie.js');
     }}, 100);
 }());</pre>
+
 		</div>
 		<div class="separator"></div>
-	</div>	
-		<p style="color: #FFF;">Eventually I'll finish this site...</p>
-
-
+	</div>
+	<div class="footer">
+	</div>
 </div>
 </body>
 </html>

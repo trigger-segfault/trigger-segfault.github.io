@@ -54,6 +54,18 @@ h1 {
 	margin-bottom: 48px;
 }
 
+.thumbnail > img, .thumbnail a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
 .container {
 	margin-right: auto;
 	margin-left: auto;
@@ -61,10 +73,45 @@ h1 {
 	box-sizing: border-box;
 	padding: 0px 15px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-	background: url('../Images/panelVertical.png') repeat-y scroll 0px 0px, url('../images/panelVertical.png') repeat-y scroll right 0px, url('../images/darkNoise.png') repeat scroll 0px 0px #1F1F1F;
+	background: url('../Images/panelVertical.png') repeat-y scroll 0px 0px, url('../Images/panelVertical.png') repeat-y scroll right 0px, url('../Images/darkNoise.jpg') repeat scroll 0px 0px #1F1F1F;
 	color: #C7C7C7;
 	height: 100%;
 	position: relative;
+}
+a {
+    background: none repeat scroll 0px 0px transparent;
+}
+a {
+    text-decoration: none;
+}
+.col {
+	width: 25%;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+	min-height: 1px;
+	box-sizing: border-box;
+}
+
+.caption {
+	padding: 9px;
+	text-align: center;
+	color: #808080;
+}
+
+.thumbnail {
+	display: block;
+	padding: 4px;
+	margin-bottom: 20px;
+	line-height: 1.42857;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	transition: all 0.2s ease-in-out 0s;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid #242424;
+	color: #C7C7C7;
+	box-sizing: border-box;
 }
 
 .section.indent {
@@ -121,6 +168,16 @@ pre {
 	margin-bottom: 20px;
 	height: 65px;
 	background: url('../Images/panelHorizontal.png') repeat-x scroll 0px bottom transparent;
+}
+.footer {
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	height: 65px;
+	font-size: 12px;
+	padding: 28px 0px 15px;
+	color: #777;
+	background: url('../images/panelHorizontal.png') repeat-x scroll 0px top transparent;
+	text-align: center;
 }
 
 #modListButton {
@@ -269,8 +326,24 @@ a.getButton {
 	display: inline-block;
 	color: #CCC;
 	text-align: center;
+	text-decoration: none;
 }
 
+a.getButton:visited {
+	color: #CCC;
+}
+
+a:link, a:visited {
+    color: #0CC;
+    text-decoration: underline;
+    cursor: auto;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:link:active, a:visited:active {
+    color: #5FF;
+} 
 
 
 a.getButton:hover
