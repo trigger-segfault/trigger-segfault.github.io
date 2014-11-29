@@ -155,6 +155,8 @@ CalcCookie.UpdateBuildingBCI = function () {
 			colorIndex = 6; // Invalid
 			bci = NaN;
 		}
+		else if (bci == info.bestBCI)
+			colorIndex = 0;
 		else if (bci == info.worstBCI)
 			colorIndex = 4;
 		else if (bci == 0)
@@ -193,6 +195,8 @@ CalcCookie.UpdateUpgradeBCI = function () {
 			colorIndex = 6; // Invalid
 			bci = NaN;
 		}
+		else if (bci == info.bestBCI)
+			colorIndex = 0;
 		else if (bci == info.worstBCI)
 			colorIndex = 4;
 		else if (bci == 0)
@@ -796,6 +800,9 @@ PriceCalculator.prototype.FindBuildingBCIs = function (force) {
 			}
 		}
 	}
+	else {
+		bestItem = new BuyoutItem();
+	}
 
 
 	CalcCookie.BuildingBCIs	= { bestItem: bestItem, timeItem: timeItem, bestBCI: bestBCI, worstBCI: worstBCI, values: buildingBCIs };
@@ -894,6 +901,9 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 				}
 			}
 		}
+	}
+	else {
+		bestItem = new BuyoutItem();
 	}
 
 	CalcCookie.UpgradeBCIs = { bestItem: bestItem, timeItem: timeItem, bestBCI: bestBCI, worstBCI: worstBCI, values: upgradeBCIs };

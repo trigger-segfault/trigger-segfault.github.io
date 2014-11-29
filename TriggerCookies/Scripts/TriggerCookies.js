@@ -109,7 +109,7 @@ TriggerCookies.Init = function () {
 
 		var str = '';
 
-		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '<div style="font-size: 20px;">v1.0.2.1 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
+		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '<div style="font-size: 20px;">v1.0.2.2 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
 
 		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 				'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
