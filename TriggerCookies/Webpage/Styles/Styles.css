@@ -23,18 +23,28 @@ h1 {
 	color: cyan;
 }
 
-@media (min-width:768px) {
+@media (max-width: 750px) {
+	
+	.tickerText {
+		display: none;
+	}
+	.col {
+		width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
 	.container {
 		width: 750px;
 		max-width:930px
 	}
 }
-@media (min-width:992px) {
+@media (min-width: 992px) {
 	.container {
 		width: 970px;
 	}
 }
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
 	.container {
 		width: 1170px;
 	}
@@ -66,10 +76,14 @@ h1 {
 *:before, *:after {
     box-sizing: border-box;
 }
+* {
+    box-sizing: border-box;
+}
+
 .container {
 	margin-right: auto;
 	margin-left: auto;
-	display: table;
+	display: block;
 	box-sizing: border-box;
 	padding: 0px 15px;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
@@ -78,6 +92,7 @@ h1 {
 	height: 100%;
 	position: relative;
 }
+
 a:link, a:visited {
     color: #0CC;
     text-decoration: underline;
@@ -91,8 +106,6 @@ a:link:active, a:visited:active {
 } 
 a {
     background: none repeat scroll 0px 0px transparent;
-}
-a {
     text-decoration: none;
 }
 .col {
@@ -104,6 +117,12 @@ a {
 	box-sizing: border-box;
 }
 
+@media (max-width: 650px) {
+	
+	.col {
+		width: 50%;
+	}
+}
 .caption {
 	padding: 9px;
 	text-align: center;
@@ -177,8 +196,8 @@ h2 {
 pre {
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 	display: block;
-	padding: 9.5px;
 	margin: 12px 0px 10px;
+	padding: 9.5px;
 	font-size: 13px;
 	line-height: 1.42857;
 	word-break: break-all;
@@ -188,6 +207,9 @@ pre {
 	background-color: rgba(0, 0, 0, 0.5);
 	border: 1px solid #000;
 	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+	overflow: auto;
+	page-break-inside: avoid;
+	width:100%;
 }
 
 .header {
@@ -198,10 +220,9 @@ pre {
 }
 .footer {
 	box-sizing: border-box;
-	margin-bottom: 20px;
-	height: 65px;
+	margin-bottom: 0px;
 	font-size: 12px;
-	padding: 28px 0px 15px;
+	padding: 28px 0px 25px;
 	color: #777;
 	background: url('../Images/panelHorizontal.png') repeat-x scroll 0px top transparent;
 	text-align: center;
@@ -291,12 +312,25 @@ a.headerButton {
 	padding: 3px 16px;
 	font-size: 13px;
 }
+
 .sectionTitle {
 	margin-left: 16px;
 	font-family: "Kavoon",Georgia,serif;
 	font-size: 36px;
 	text-shadow: 0px 0px 4px #000;
 	color: #1CD;
+	height: 46px;
+	display: inline-block;
+}
+
+@media (max-width: 700px) {
+	.sectionTitle {
+		font-size: 20px;
+		padding-top: 12px;
+	}
+	h2 {
+		font-size: 20px;
+	}
 }
 .icon {
 	background-image: url('../Images/icons.png');
