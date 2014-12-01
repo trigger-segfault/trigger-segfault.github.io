@@ -339,9 +339,6 @@ a.headerButton {
 	.titleVersion {
 		font-size: 20px;
 	}
-	body {
-		font-size: 13px;
-	}
 }
 .icon {
 	background-image: url('../Images/icons.png');
