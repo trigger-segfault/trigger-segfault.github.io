@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../Webpage/Styles/Styles.css"/>
 </head>
 <body>
+<div id="bgOverlay" class="bgOverlay"></div>
 <div class="container">
 	<div class="header">
 		<a class="headerButton" id="modListButton" href="../ModList/">Mod List</a>
@@ -88,5 +89,35 @@
 		<p>&copy Robert Jordan 2014 - This site is not affiliated with or endorsed by Cookie Clicker</p>
 	</div>
 </div>
+<script>
+	(function () {
+		var rand = Math.random();
+		var rand2 = Math.random();
+		var step = 0.04;
+		var step2 = 0.07;
+		if (rand2 < step2 * 2) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("../Webpage/Images/cookieShower1.png")';
+		}
+		else if (rand2 < step2 * 2) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("../Webpage/Images/cookieShower2.png")';
+		}
+		else if (rand2 < step2 * 2.1) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("../Webpage/Images/cookieShower3.png")';
+		}
+
+		if (rand < step * 1) {
+			document.body.style.backgroundImage = 'url("../Webpage/Images/grandmas2.jpg")';
+		}
+		else if (rand < step * 2) {
+			document.body.style.backgroundImage = 'url("../Webpage/Images/panelBG.png")';
+		}
+		else if (rand < step * 4) {
+			document.body.style.backgroundImage = 'url("../Webpage/Images/starbg.jpg")';
+		}
+		else if (rand < step * 4.1) {
+			document.body.style.backgroundImage = 'url("../Webpage/Images/bgMoney.jpg")';
+		}
+	})();
+</script>
 </body>
 </html>

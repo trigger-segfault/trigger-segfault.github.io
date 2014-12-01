@@ -49,6 +49,15 @@ h1 {
 		width: 1170px;
 	}
 }
+html{
+	position:relative
+}
+
+.bgOverlay {
+	width: 100%;
+	height:100%;
+	position: absolute;
+}
 
 .title {
 	text-align: center;
@@ -369,6 +378,7 @@ a.headerButton {
 #tickerTextBelow {
 	z-index: 10;
 }
+
 
 .risingUp {
     animation: 1s ease 0s normal forwards 1 running riseUp;

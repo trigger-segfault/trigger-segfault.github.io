@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="Webpage/Styles/Styles.css"/>
 </head>
 <body>
+<div id="bgOverlay" class="bgOverlay"></div>
 <div class="container">
 	<div class="header">
 		<a class="headerButton" id="modListButton" href="ModList/">Mod List</a>
@@ -26,7 +27,7 @@
 		<a class="getButton" href="#GetTriggerCookies">Get TriggerCookies</a>
 	</div>
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -4) calc(48px * -28);"></div><div id="Features" class="sectionTitle">Features</div>
+		<div id="iconFeatures" class="icon crate heavenly" style="background-position: calc(48px * -4) calc(48px * -28);"></div><div id="Features" class="sectionTitle">Features</div>
 		<div class="separator"></div>
 		<div class="subsubsection">
 			<h2>Modular Support</h2>
@@ -47,7 +48,7 @@
 		<div class="separator"></div>
 	</div>
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -14) calc(48px * -0);"></div><div id="Screenshots" class="sectionTitle">Screenshots</div>
+		<div id="iconScreenshots" class="icon crate heavenly" style="background-position: calc(48px * -14) calc(48px * -0);"></div><div id="Screenshots" class="sectionTitle">Screenshots</div>
 		<div class="separator"></div>
 		<div class="subsubsection">
 			<div style="display: table; width: 100%;">
@@ -73,7 +74,7 @@
 		<div class="separator"></div>
 	</div>
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -3) calc(48px * -29);"></div><div id="Span1" class="sectionTitle">Compatibility</div>
+		<div id="iconCompatibility" class="icon crate heavenly" style="background-position: calc(48px * -3) calc(48px * -29);"></div><div id="Compatibility" class="sectionTitle">Compatibility</div>
 		<div class="separator"></div>
 		<div class="subsubsection">
 			<h2>Game Versions</h2>
@@ -98,7 +99,7 @@
 		<div class="separator"></div>
 	</div>
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -15) calc(48px * -7);"></div><div id="GetTriggerCookies" class="sectionTitle">Get TriggerCookies</div>
+		<div id="iconGetTriggerCookies" class="icon crate heavenly" style="background-position: calc(48px * -15) calc(48px * -7);"></div><div id="GetTriggerCookies" class="sectionTitle">Get TriggerCookies</div>
 		<div class="separator"></div>
 		<div>
 			Any mod in the scripts below can be included or excluded. This allows you to pick and choose which mods you do and don't want in your TriggerCookies menu.
@@ -136,14 +137,14 @@
 	</div>
 	
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -13) calc(48px * -0);"></div><div id="Source" class="sectionTitle">Source</div>
+		<div id="iconSource" class="icon crate heavenly" style="background-position: calc(48px * -13) calc(48px * -0);"></div><div id="Source" class="sectionTitle">Source</div>
 		<div class="separator"></div>
 		<div>The source for TriggerCookies and all of its respective mods can be viewed on  <a href="https://github.com/trigger-death/trigger-death.github.io/tree/master/TriggerCookies">GitHub</a>.</div>
 		<div class="separator"></div>
 	</div>
 
 	<div class="subsection">
-		<div class="icon crate heavenly" style="background-position: calc(48px * -21) calc(48px * -7);"></div><div id="Contact" class="sectionTitle">Contact</div>
+		<div id="iconContact" class="icon crate heavenly" style="background-position: calc(48px * -21) calc(48px * -7);"></div><div id="Contact" class="sectionTitle">Contact</div>
 		<div class="separator"></div>
 		<div>If you have any suggestions, feedback, bugs, or comments about TriggerCookies, feel free to contact me. I'd love to hear it.</div>
 		<p>
@@ -156,5 +157,59 @@
 		<p>&copy Robert Jordan 2014 - This site is not affiliated with or endorsed by Cookie Clicker</p>
 	</div>
 </div>
+<script>
+	(function () {
+		var rand = Math.random();
+		var rand2 = Math.random();
+		var step = 0.04;
+		var step2 = 0.05;
+		if (rand2 < step2*2) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower1.png")';
+		}
+		else if (rand2 < step2 * 2) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower2.png")';
+		}
+		else if (rand2 < step2 * 2.1) {
+			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower3.png")';
+		}
+
+		if (rand < step * 1) {
+			document.body.style.backgroundImage = 'url("Webpage/Images/grandmas2.jpg")';
+			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -8) calc(48px * -9)';
+			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -5) calc(48px * -9)';
+			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -4) calc(48px * -9)';
+			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -6) calc(48px * -9)';
+			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -3) calc(48px * -9)';
+			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -2) calc(48px * -9)';
+		}
+		else if (rand < step * 2) {
+			document.body.style.backgroundImage = 'url("Webpage/Images/panelBG.png")';
+			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -3) calc(48px * -5)';
+			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -13) calc(48px * -5)';
+			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -11) calc(48px * -9)';
+			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -12) calc(48px * -0)';
+			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -16) calc(48px * -5)';
+			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -17) calc(48px * -5)';
+		}
+		else if (rand < step * 4) {
+			document.body.style.backgroundImage = 'url("Webpage/Images/starbg.jpg")';
+			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -20) calc(48px * -7)';
+			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -19) calc(48px * -7)';
+			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -16) calc(48px * -7)';
+			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -15) calc(48px * -7)';
+			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -17) calc(48px * -7)';
+			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -21) calc(48px * -7)';
+		}
+		else if (rand < step * 4.1) {
+			document.body.style.backgroundImage = 'url("Webpage/Images/bgMoney.jpg")';
+			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -0) calc(48px * -14)';
+			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -14) calc(48px * -14)';
+			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -4) calc(48px * -14)';
+			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -7) calc(48px * -14)';
+			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -13) calc(48px * -14)';
+			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -18) calc(48px * -14)';
+		}
+	})();
+</script>
 </body>
 </html>
