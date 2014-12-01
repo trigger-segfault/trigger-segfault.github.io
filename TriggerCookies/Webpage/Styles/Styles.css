@@ -332,6 +332,17 @@ a.headerButton {
 		font-size: 20px;
 	}
 }
+@media (max-width: 600px) {
+	.title {
+		font-size: 36px;
+	}
+	.titleVersion {
+		font-size: 20px;
+	}
+	body {
+		font-size: 13px;
+	}
+}
 .icon {
 	background-image: url('../Images/icons.png');
 	width: 48px;
