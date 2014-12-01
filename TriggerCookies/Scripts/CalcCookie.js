@@ -142,22 +142,23 @@ CalcCookie.UpdateBuildingBCI = function () {
 	CalcCookie.Price.FindBuildingBCIs();
 
 	var colors = ['#6F6', '#FF6', '#FB5', '#F95', '#F55', /*Valued color*/'#5FF', /*Invalid color*/'#EEF'];
-	var info = CalcCookie.BuildingBCIs;
+	var baseInfo = CalcCookie.BuildingBCIs;
 	var values = CalcCookie.BuildingBCIs.values;
 
 	for (var i = 0; i < values.length; i++) {
 		var priceID = l('productPrice' + i);
-		var bci = values[i];
-		var bci2 = (values[i] - info.bestBCI) / (info.worstBCI - info.bestBCI);
+		var info = values[i];
+		var bci = values[i].bci;
+		var bci2 = (values[i].bci - baseInfo.bestBCI) / (baseInfo.worstBCI - baseInfo.bestBCI);
 
 		var colorIndex = 0;
 		if (!isFinite(bci) || isNaN(bci)) {
 			colorIndex = 6; // Invalid
 			bci = NaN;
 		}
-		else if (bci == info.bestBCI)
+		else if (bci == baseInfo.bestBCI)
 			colorIndex = 0;
-		else if (bci == info.worstBCI)
+		else if (bci == baseInfo.worstBCI)
 			colorIndex = 4;
 		else if (bci == 0)
 			colorIndex = 5; // Valued
@@ -173,6 +174,8 @@ CalcCookie.UpdateBuildingBCI = function () {
 		priceID.style.color = colors[colorIndex];
 
 		Game.ObjectsById[i].bci = bci;
+		Game.ObjectsById[i].income = info.income;
+		Game.ObjectsById[i].timeLeft = info.time;
 		Game.ObjectsById[i].bciColor = colors[colorIndex];
 	}
 }
@@ -181,23 +184,28 @@ CalcCookie.UpdateUpgradeBCI = function () {
 	CalcCookie.Price.FindUpgradeBCIs();
 
 	var colors = ['#6F6', '#FF6', '#FB5', '#F95', '#F55', /*Valued color*/'#5FF', /*Invalid color*/'#EEF'];
-	var info = CalcCookie.UpgradeBCIs;
+	var baseInfo = CalcCookie.UpgradeBCIs;
 	var values = CalcCookie.UpgradeBCIs.values;
 
 	for (var i in Game.UpgradesInStore) {
 		var triangleID = l('upgradeBCI' + i);
 		var upgrade = Game.UpgradesInStore[i];
-		var bci = values[i];
-		var bci2 = (values[i] - info.bestBCI) / (info.worstBCI - info.bestBCI);
+		var info = values[i];
+		var bci = values[i].bci;
+		var bci2 = (values[i].bci - baseInfo.bestBCI) / (baseInfo.worstBCI - baseInfo.bestBCI);
 
 		var colorIndex = 0;
 		if (!isFinite(bci) || isNaN(bci)) {
 			colorIndex = 6; // Invalid
 			bci = NaN;
+			if (info.valued)
+				colorIndex = 5; // Valued
 		}
-		else if (bci == info.bestBCI)
+		else if (info.valued)
+			colorIndex = 5; // Valued
+		else if (bci == baseInfo.bestBCI)
 			colorIndex = 0;
-		else if (bci == info.worstBCI)
+		else if (bci == baseInfo.worstBCI)
 			colorIndex = 4;
 		else if (bci == 0)
 			colorIndex = 5; // Valued
@@ -212,6 +220,8 @@ CalcCookie.UpdateUpgradeBCI = function () {
 
 		upgrade.bci = bci;
 		upgrade.bciColor = colors[colorIndex];
+		upgrade.income = info.income;
+		upgrade.timeLeft = info.time;
 		if (triangleID != null)
 			triangleID.style.borderColor = colors[colorIndex] + ' transparent transparent';
 	}
@@ -243,9 +253,13 @@ CalcCookie.BuildingTooltipBCI = function () {
 
 	return '<div style="min-width:300px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.price)) + '</span></div><div class="name">' + name + '</div>' + '<small>[owned : ' + me.amount + '</small>]' +
 	'<div class="description">' + desc + '</div>' +
+	(CalcCookie.Actions['buildingbci'].Enabled ? 
+		'<div class="data" ' + (me.totalCookies > 0 ? 'style="padding-bottom: 0px;"' : '') + '>' +
+		('&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br>')) +
+		('&bull; ' + ('Income:' + ' <b>' + Beautify(me.income) + '</b><br>')) +
+		(me.timeLeft > 0 ? '&bull; ' + ('Time Left:' + ' <b>' + Helper.Numbers.GetTime(me.timeLeft * 1000, 4) + '</b><br>') : '') : '') +
 	(me.totalCookies > 0 ? (
-		'<div class="data">' +
-		(CalcCookie.Actions['buildingbci'].Enabled ? '&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + Beautify(me.bci).fontcolor(me.bciColor) + '</b><br>') : '') +
+		'</div><div class="data">' +
 		(me.amount > 0 ? '&bull; each ' + me.single + ' produces <b>' + Beautify((me.storedTotalCps / me.amount) * Game.globalCpsMult, 1) + '</b> ' + ((me.storedTotalCps / me.amount) * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second<br>' : '') +
 		'&bull; ' + me.amount + ' ' + (me.amount == 1 ? me.single : me.plural) + ' producing <b>' + Beautify(me.storedTotalCps * Game.globalCpsMult, 1) + '</b> ' + (me.storedTotalCps * Game.globalCpsMult == 1 ? 'cookie' : 'cookies') + ' per second (<b>' + Beautify((me.amount > 0 ? ((me.storedTotalCps * Game.globalCpsMult) / Game.cookiesPs) : 0) * 100, 1) + '%</b> of total)<br>' +
 		'&bull; <b>' + Beautify(me.totalCookies) + '</b> ' + (Math.floor(me.totalCookies) == 1 ? 'cookie' : 'cookies') + ' ' + me.actionName + ' so far</div>'
@@ -256,7 +270,11 @@ CalcCookie.BuildingTooltipBCI = function () {
 CalcCookie.UpgradeTooltipBCI = function () {
 	var me = this;
 	return '<div style="min-width:200px;"><div style="float:right;"><span class="price">' + Beautify(Math.round(me.getPrice())) + '</span></div><small>' + (me.pool == 'toggle' ? '[Togglable]' : '[Upgrade]') + '</small><div class="name">' + me.name + '</div><div class="description">' + me.desc + '</div>' +
-		'<div class="data">&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + ((isFinite(me.bci) && !isNaN(me.bci)) ? Beautify(me.bci) : 'N/A').fontcolor(me.bciColor) + '</b><br></div>') + '</div>';
+		'<div class="data">' +
+		'&bull; ' + ('BCI:'.fontcolor(me.bciColor) + ' <b>' + ((isFinite(me.bci) && !isNaN(me.bci)) ? Beautify(me.bci) : 'N/A').fontcolor(me.bciColor) + '</b><br>') +
+		'&bull; ' + ('Income:' + ' <b>' + ((isFinite(me.income) && !isNaN(me.income)) ? Beautify(me.income) : 'N/A') + '</b><br>') +
+		(me.timeLeft > 0 ? ('&bull; ' + ('Time Left:' + ' <b>' + Helper.Numbers.GetTime(me.timeLeft * 1000, 4) + '</b><br>')) : '') +
+		'</div></div>';
 }
 /* Rebuildings the upgrades and sets up the upgrade BCI. */
 CalcCookie.RebuildUpgrades = function () {
@@ -714,7 +732,7 @@ PriceCalculator.prototype.CalculateBuildingBCI = function (building) {
 	Game.Win = GameWinBackup;
 
 	return {
-		bci: Math.round(price / (newCPS - oldCPS)),
+		bci: price / (newCPS - oldCPS),
 		income: Math.round(newCPS - oldCPS),
 		cps: newCPS,
 		price: price,
@@ -761,7 +779,8 @@ PriceCalculator.prototype.FindBuildingBCIs = function (force) {
 		endIndex++;
 
 		var info = this.CalculateBuildingBCI(building);
-		buildingBCIs.push(info.bci);
+		//buildingBCIs.push(info.bci);
+		buildingBCIs.push({ bci: info.bci, income: info.income, time: info.time, valued: false });
 		if (bestBCI == -1 || info.bci < bestBCI) {
 			bestBCI = info.bci;
 			bestItem = info;
@@ -825,20 +844,24 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 		}
 
 		var info = this.CalculateUpgradeBCI(upgrade);
+		info.valued = false;
 		if (upgrade.name in CalcCookie.ValuedUpgrades) {
-			info.bci = 0;
-			upgradeBCIs.push(info.bci);
+			//info.bci = 0;
+			//upgradeBCIs.push(info.bci);
+			upgradeBCIs.push({ bci: info.bci, income: info.income, time: info.time, valued: true });
 			//if (info.afford && !bestValued && upgrade.name != 'Chocolate egg') {
 			if (Game.cookies * CalcCookie.ValuedUpgrades[upgrade.name] >= info.price && !bestValued && upgrade.name != 'Chocolate egg') {
+				info.valued = true;
 				bestItem = info;
 				bestName = upgrade.name;
 				bestValued = true;
 			}
 			continue;
 		}
-		upgradeBCIs.push(info.bci);
+		//upgradeBCIs.push(info.bci);
+		upgradeBCIs.push({ bci: info.bci, income: info.income, time: info.time, valued: false });
 		if (isFinite(info.bci) && !isNaN(info.bci)) {
-			if ((bestNonResearchBCI == -1 || info.bci + 0.1 < bestNonResearchBCI) && !(upgrade.name in this.Research)) {
+			if ((bestNonResearchBCI == -1 || info.bci * 1.0000001 < bestNonResearchBCI) && !(upgrade.name in this.Research)) {
 				bestNonResearchBCI = info.bci;
 				if (!bestValued) {
 					bestItem = info;
@@ -847,12 +870,8 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 				bestNonResearchItem = info;
 				bestNonResearchName = upgrade.name;
 			}
-			if (bestBCI == -1 || info.bci + 0.1 < bestBCI) {
+			if (bestBCI == -1 || info.bci * 1.0000001 < bestBCI) {
 				bestBCI = info.bci;
-				/*if (!bestValued) {
-					bestItem = info;
-					bestName = upgrade.name;
-				}*/
 			}
 			if (worstBCI == -1 || info.bci > worstBCI) {
 				worstBCI = info.bci;
@@ -860,10 +879,7 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 		}
 	}
 	if (bestItem != null) {
-		bestItem = new BuyoutItem(bestName, 'upgrade', 1, bestItem.price, bestItem.bci, bestItem.income, bestItem.time);
-
-		//if (bestValued)
-		//	bestItem.BCI = 0;
+		bestItem = new BuyoutItem(bestName, 'upgrade', bestItem.valued ? 4 : 1, bestItem.price, bestItem.bci, bestItem.income, bestItem.time);
 
 		if (!bestItem.CanAfford()) {
 			timeItem = new BuyoutItem();
@@ -896,7 +912,7 @@ PriceCalculator.prototype.FindUpgradeBCIs = function (force, allowbuildings) {
 				var newTime = info.time + (bestItem.Price - (info.time > 0 ? 0 : (Game.cookies - info.price))) / info.cps;
 				//console.log(timeBonus + ', ' + newTime + ', ' + timeItem.Time);
 				if (newTime < bestItem.Time && (timeBonus == -1 || newTime < timeBonus)) {
-					timeItem = new BuyoutItem(upgrade.name, 'upgrade', 1, info.price, bestItem.BCI, info.income, info.time);
+					timeItem = new BuyoutItem(upgrade.name, 'upgrade', bestItem.Priority, info.price, bestItem.BCI, info.income, info.time);
 					timeBonus = newTime;
 				}
 			}
@@ -944,12 +960,12 @@ PriceCalculator.prototype.FindBestItem = function () {
 	}
 
 	var bestItemGoal = bestBuildingGoal;
-	if (bestUpgradeGoal.BCI < bestBuildingGoal.BCI && bestUpgradeGoal.Type != 'invalid') {
+	if (((bestUpgradeGoal.BCI < bestBuildingGoal.BCI && bestUpgradeGoal.Priority == bestBuildingGoal.Priority) || bestUpgradeGoal.Priority > bestBuildingGoal.Priority) && bestUpgradeGoal.Type != 'invalid') {
 		bestItemGoal = bestUpgradeGoal;
 	}
 	var bestItem = bestBuilding;
 	//console.log(bestUpgrade.BCI + ', ' + bestBuilding.BCI);
-	if (bestUpgrade.BCI < bestBuilding.BCI && bestUpgrade.Type != 'invalid') {
+	if (((bestUpgrade.BCI < bestBuilding.BCI && bestUpgrade.Priority == bestBuilding.Priority) || bestUpgrade.Priority > bestBuilding.Priority) && bestUpgrade.Type != 'invalid') {
 		bestItem = bestUpgrade;
 	}
 

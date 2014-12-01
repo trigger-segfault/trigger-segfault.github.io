@@ -93,6 +93,7 @@ TriggerCookies.Init = function () {
 		Overrides.OverrideFunction('Game.ShowMenu', 'TriggerCookies.ShowMenu', 'TriggerCookies');
 		Overrides.OverrideFunction('Overrides.UpdateMenuLog', 'TriggerCookies.UpdateMenuLog', 'TriggerCookies');
 		Overrides.OverrideFunction('Game.WriteSave', 'TriggerCookies.WriteSave', 'TriggerCookies');
+		Overrides.AppendFunction('Game.Logic', 'TriggerCookies.Logic', null, 'TriggerCookies');
 		
 		LoadStyleSheet('TriggerCookies');
 		TriggerCookies.ChangeLogButton();
@@ -108,8 +109,11 @@ TriggerCookies.Init = function () {
 		menu.id = 'modMenu';
 
 		var str = '';
+		
+		str += '<a class="changeLogButton" href="http://trigger-death.github.io/TriggerCookies/ChangeLog/#v1-0-2-4", target="_blank">Change Log</a>';
 
-		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') + '<div style="font-size: 20px;">v1.0.2.3 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
+		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') +
+			'<div style="font-size: 20px;">v1.0.2.4 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
 
 		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 				'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
@@ -125,6 +129,8 @@ TriggerCookies.Init = function () {
 
 		l('menu').parentNode.appendChild(menu);
 		menu.innerHTML = str;
+
+		Game.customTickers.push(function () { return ['Trigger Cookies v1.0.2.4 beta hotfix released! Check out the changelog from the mods menu.']; });
 
 		// States that this mod has been loaded.
 		TriggerCookies.Loaded = true;
@@ -209,6 +215,14 @@ TriggerCookies.WriteSpacing = function (pixels) {
 		pixels = 8;
 	var str = '<div style="margin-left: ' + pixels.toString() + 'px; display: inline;"></div>';
 	return str;
+}
+
+TriggerCookies.Logic = function () {
+	if (Game.onMenu == 'log') {
+		if ((Game.T - 1) % (Game.fps * 1) == 0 &&
+			(Game.T - 1) % (Game.fps * 5) != 0)
+			Game.UpdateMenu();
+	}
 }
 
 /* Writes a mod button to the menu. */

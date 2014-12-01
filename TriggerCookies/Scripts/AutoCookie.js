@@ -291,7 +291,7 @@ AutoCookie.WriteMenu = function (tab) {
 				AutoCookie.WriteButton('autoupgrades') +
 				AutoCookie.WriteButton('autoresearch') +
 				AutoCookie.WriteButton('autoseason') +
-				'<label>Disables the settings below until the cycle is complete</label>' +
+				'<label style="display: none">Disables the settings below until the cycle is complete</label>' +
 
 
 				//'<label id="' + iAuto('nextItem') + '"> Next ' + AutoCookie.NextItem.Type + ': ' + AutoCookie.NextItem.Name + '</label>' +
@@ -331,7 +331,7 @@ AutoCookie.WriteMenu = function (tab) {
 				AutoCookie.WriteButton('autoascend') +
 				AutoCookie.WriteButton('allowdevil') +
 				AutoCookie.WriteButton('chocegg') +
-				'<label>This applies for manual ascends as well</label>' +
+				'<label style="display: none">This applies for manual ascends as well</label>' +
 				'</div>';
 
 		str += '<div class="listing">' +
@@ -689,13 +689,13 @@ AutoCookie.DisableAll = function () {
 	AutoCookie.Actions['autoresearch'].Disable(false);
 	AutoCookie.Actions['autoseason'].Disable(false);
 
-	AutoCookie.Actions['autoascend'].Disable(false);
-	AutoCookie.Actions['allowdevil'].Disable(false);
-	AutoCookie.Actions['chocegg'].Disable(false);
-
 	AutoCookie.Actions['maintainseason'].Disable(false);
 	AutoCookie.Actions['maintainpledge'].Disable(false);
 	AutoCookie.Actions['maintainelder'].Disable(false);
+
+	AutoCookie.Actions['autoascend'].Disable(false);
+	AutoCookie.Actions['allowdevil'].Disable(false);
+	AutoCookie.Actions['chocegg'].Disable(false);
 
 	AutoCookie.UpdateButtons();
 	Game.UpdateMenu();
@@ -703,11 +703,11 @@ AutoCookie.DisableAll = function () {
 /* Enables all important modes. */
 AutoCookie.EnabledAllClick = function () {
 	AutoCookie.Actions['autoclick'].Enable(false);
+	AutoCookie.Actions['instantclick'].Disable(false);
 	AutoCookie.Actions['gold'].Enable(false);
 	AutoCookie.Actions['wrath'].Enable(false);
 	AutoCookie.Actions['wrinkler'].Enable(false);
 	AutoCookie.Actions['reindeer'].Enable(false);
-	AutoCookie.Actions['instantclick'].Disable(false);
 
 	AutoCookie.UpdateButtons();
 	Game.UpdateMenu();
@@ -715,6 +715,7 @@ AutoCookie.EnabledAllClick = function () {
 /* Disables all modes. */
 AutoCookie.DisableAllClick = function () {
 	AutoCookie.Actions['autoclick'].Disable(false);
+	AutoCookie.Actions['instantclick'].Disable(false);
 	AutoCookie.Actions['gold'].Disable(false);
 	AutoCookie.Actions['wrath'].Disable(false);
 	AutoCookie.Actions['wrinkler'].Disable(false);

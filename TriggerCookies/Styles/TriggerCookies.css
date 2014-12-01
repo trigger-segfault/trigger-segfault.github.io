@@ -101,3 +101,12 @@ a.tc.option.large.wrinkler.on {
 	left: -87px;
 	opacity: 0.7;
 }
+
+a.changeLogButton {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	text-decoration: none;
+	font-size: 16px;
+	font-family: "Kavoon",Georgia,serif;
+}
