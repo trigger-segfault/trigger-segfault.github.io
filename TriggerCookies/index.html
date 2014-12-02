@@ -12,10 +12,12 @@
 	<link rel="shortcut icon" href="Webpage/Images/favicon.ico" type="image/x-icon"/>
 	
 	<link rel="stylesheet" type="text/css" href="Webpage/Styles/Styles.css"/>
+	<script src="Webpage/Scripts/RandomBackgrounds.js"></script>
 </head>
 <body>
 <div id="bgOverlay" class="bgOverlay"></div>
-<div class="container">
+<div id="milk" class="milk"></div>
+<div id="container" class="container">
 	<div class="header">
 		<a class="headerButton" id="modListButton" href="ModList/">Mod List</a>
 		<div class="tickerText"><a href="ChangeLog#v1-0-2-4" style="color: #FFF;">News : Trigger Cookies v1.0.2.4 beta hotfix released!</a></div>
@@ -158,58 +160,7 @@
 	</div>
 </div>
 <script>
-	(function () {
-		var rand = Math.random();
-		var rand2 = Math.random();
-		var step = 0.04;
-		var step2 = 0.05;
-		if (rand2 < step2*2) {
-			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower1.png")';
-		}
-		else if (rand2 < step2 * 2) {
-			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower2.png")';
-		}
-		else if (rand2 < step2 * 2.1) {
-			document.getElementById('bgOverlay').style.backgroundImage = 'url("Webpage/Images/cookieShower3.png")';
-		}
-
-		if (rand < step * 1) {
-			document.body.style.backgroundImage = 'url("Webpage/Images/grandmas2.jpg")';
-			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -8) calc(48px * -9)';
-			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -5) calc(48px * -9)';
-			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -4) calc(48px * -9)';
-			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -6) calc(48px * -9)';
-			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -3) calc(48px * -9)';
-			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -2) calc(48px * -9)';
-		}
-		else if (rand < step * 2) {
-			document.body.style.backgroundImage = 'url("Webpage/Images/panelBG.png")';
-			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -3) calc(48px * -5)';
-			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -13) calc(48px * -5)';
-			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -11) calc(48px * -9)';
-			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -12) calc(48px * -0)';
-			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -16) calc(48px * -5)';
-			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -17) calc(48px * -5)';
-		}
-		else if (rand < step * 4) {
-			document.body.style.backgroundImage = 'url("Webpage/Images/starbg.jpg")';
-			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -20) calc(48px * -7)';
-			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -19) calc(48px * -7)';
-			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -16) calc(48px * -7)';
-			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -15) calc(48px * -7)';
-			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -17) calc(48px * -7)';
-			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -21) calc(48px * -7)';
-		}
-		else if (rand < step * 4.1) {
-			document.body.style.backgroundImage = 'url("Webpage/Images/bgMoney.jpg")';
-			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -0) calc(48px * -14)';
-			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -14) calc(48px * -14)';
-			document.getElementById('iconCompatibility').style.backgroundPosition = 'calc(48px * -4) calc(48px * -14)';
-			document.getElementById('iconGetTriggerCookies').style.backgroundPosition = 'calc(48px * -7) calc(48px * -14)';
-			document.getElementById('iconSource').style.backgroundPosition = 'calc(48px * -13) calc(48px * -14)';
-			document.getElementById('iconContact').style.backgroundPosition = 'calc(48px * -18) calc(48px * -14)';
-		}
-	})();
+	PickBackground(true, 'Webpage/');
 </script>
 </body>
 </html>
