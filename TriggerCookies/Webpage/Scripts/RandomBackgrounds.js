@@ -93,7 +93,7 @@ function PickBackground(mainPage, url) {
 
 function PickMilk() {
 	var rand = Math.random();
-	var step = 0.8;
+	var step = 0.08;
 	if (theme != 'normal')
 		step *= 2;
 
