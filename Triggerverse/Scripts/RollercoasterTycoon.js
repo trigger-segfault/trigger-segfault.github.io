@@ -79,7 +79,7 @@ RollercoasterTycoon = function () {
 	);
 
 
-	Things["city"].contains.push("theme park");
+	Things["city"].contains.push("theme park,30%");
 
 	CleanThings();
 }
