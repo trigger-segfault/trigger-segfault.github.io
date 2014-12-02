@@ -174,8 +174,14 @@ AutoCookie.Load = function (data) {
 			readAction('maintainpledge', name, value);
 			readAction('maintainelder', name, value);
 
-			if (isValid('autoclickspeed', name, value))
+			if (isValid('autoclickspeed', name, value)) {
 				AutoCookie.AutoClickRate = value;
+				AutoCookie.Actions['autoclick'].Delay = Math.floor(1000.0 / AutoCookie.AutoClickRate);
+				if (AutoCookie.Actions['autoclick'].Enabled) {
+					AutoCookie.Actions['autoclick'].Action(false);
+					AutoCookie.Actions['autoclick'].Action(false);
+				}
+			}
 
 			if (isValid('ascendminhc', name, value))
 				AutoCookie.AscendMinChips = value;
