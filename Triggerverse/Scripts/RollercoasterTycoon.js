@@ -39,8 +39,8 @@ RollercoasterTycoon = function () {
 	}
 
 	new Thing("theme park", ["guests", /*"staff",*/ "rides", "stalls"]);
-	new Thing("rides", ["ride,4-12"]);
-	new Thing("stalls", ["stall,2-5"]);
+	new Thing("rides", ["ride,4-16"]);
+	new Thing("stalls", ["stall,3-7"]);
 	new Thing("ride", ["guests on ride", "wood", "nails", "metal"],
 		listNames(6, [
 			"Wooden Rollercoaster", "Gigacoaster", "Flying Swings", "Haunted House", "Death Coaster", "Elevator", "Wild Mouse", "Corkscrew Rollercoaster", "Ferris Wheel", "Chairlift", "Merry-go-round",
