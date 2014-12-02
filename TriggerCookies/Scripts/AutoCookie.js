@@ -158,6 +158,7 @@ AutoCookie.Load = function (data) {
 			readAction('instantclick', name, value);
 			readAction('gold', name, value);
 			readAction('wrath', name, value);
+			readAction('gnotify', name, value);
 			readAction('wrinkler', name, value);
 			readAction('reindeer', name, value);
 
@@ -213,6 +214,7 @@ AutoCookie.Save = function () {
 	writeAction('instantclick') +
 	writeAction('gold') +
 	writeAction('wrath') +
+	writeAction('gnotify') +
 	writeAction('wrinkler') +
 	writeAction('reindeer') +
 
@@ -268,7 +270,7 @@ AutoCookie.WriteMenu = function (tab) {
 		str += '<div class="listing">' +
 				AutoCookie.WriteButton('gold') +
 				AutoCookie.WriteButton('wrath') +
-				//AutoCookie.WriteButton('gnotify') +
+				AutoCookie.WriteButton('gnotify') +
 				Helper.Menu.WriteSpacing() +
 				AutoCookie.WriteButton('wrinkler') +
 				AutoCookie.WriteButton('reindeer') +
