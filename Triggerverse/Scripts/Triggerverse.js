@@ -94,6 +94,7 @@ TRIGGERVERSE INITIALIZATION
 /* The nest management state. */
 Triggerverse.Init = function () {
 	LoadMod('Overrides');
+	LoadMod('RollercoasterTycoon');
 
 	IntervalUntilAllLoaded(['Overrides'], function () {
 
@@ -103,6 +104,7 @@ Triggerverse.Init = function () {
 		Overrides.OverrideFunction('Toggle', 'Triggerverse.Toggle', 'Triggerverse');
 		Overrides.OverrideFunction('Instance.prototype.List', 'Triggerverse.List', 'Triggerverse');
 		Overrides.AppendFunctionWithParameters('SetStyle', 'Triggerverse.SetStyle', 'which', null, 'Triggerverse');
+
 
 		Triggerverse.Loaded = true;
 
