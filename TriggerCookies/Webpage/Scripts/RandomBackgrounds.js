@@ -16,7 +16,9 @@ function PickBackground(mainPage, url) {
 	var width = window.innerWidth;
 	if (width <= 750) {
 		document.getElementById('milk').style.display = 'none';
-
+	}
+		
+	if (width > 750) {
 		if (rand2 < step2 * 2) {
 			shower = 1;
 			document.getElementById('bgOverlay').style.backgroundImage = 'url("' + mainURL + 'Images/cookieShower1.png")';
