@@ -59,6 +59,12 @@ function PickBackground(mainPage, url) {
 	else if (rand < step * 4.5) {
 		theme = 'evil';
 		document.body.style.backgroundImage = 'url("' + mainURL + 'Images/grandmas2.jpg")';
+		var rand4 = Math.random();
+		var step4 = 0.035;
+		if (rand4 < step4 * 1)
+			document.body.style.backgroundImage = 'url("' + mainURL + 'Images/grandmas1.jpg")';
+		else f (rand4 < step4 * 2)
+			document.body.style.backgroundImage = 'url("' + mainURL + 'Images/grandmas3.jpg")';
 		if (mainPage) {
 			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -8) calc(48px * -9)';
 			document.getElementById('iconScreenshots').style.backgroundPosition = 'calc(48px * -5) calc(48px * -9)';
@@ -175,7 +181,7 @@ function AddCookie() {
 			}
 
 			var centerX = imageWidth / 2, centerY = imageHeight / 2;
-			width -= imageWidth + 3 - 16; height -= imageHeight + 3;
+			width -= imageWidth + 3 + 16; height -= imageHeight + 3 + 16;
 			var x = 1 + centerX + Math.random() * width, y = 1 + centerY + Math.random() * height;
 
 			var cookie = document.createElement('div');
