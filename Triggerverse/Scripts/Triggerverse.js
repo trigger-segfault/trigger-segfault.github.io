@@ -101,6 +101,7 @@ Triggerverse.Init = function () {
 		LoadStyleSheet('Triggerverse');
 
 		Overrides.OverrideFunction('Toggle', 'Triggerverse.Toggle', 'Triggerverse');
+		Overrides.OverrideFunction('Instance.prototype.List', 'Triggerverse.List', 'Triggerverse');
 		Overrides.AppendFunctionWithParameters('SetStyle', 'Triggerverse.SetStyle', 'which', null, 'Triggerverse');
 
 		Triggerverse.Loaded = true;
@@ -232,6 +233,23 @@ Triggerverse.SetNestState = function (state) {
 		Triggerverse.NestState = state;
 		setClass('nestState' + Triggerverse.NestState);
 	}
+}
+Triggerverse.List = function (state) {
+
+	var str = "";
+	var addStyle = "";
+	for (var i in this.children) {
+		str += '<div id="div' + this.children[i].n + '">' + this.children[i].name + '</div>';
+	}
+	//special-case pictures
+	if (this.name == "sharkverse") addStyle = "background-image:url('nestedSharkverse.png');";
+	else if (this.name == "baconverse") addStyle = "background-image:url('nestedBaconverse.png');";
+	else if (this.name == "doughnutverse") addStyle = "background-image:url('nestedDoughnutverse.png');";
+	else if (this.name == "lasagnaverse") addStyle = "background-image:url('nestedLasagnaverse.png');";
+	else if (this.name == "cookieverse") addStyle = "background-image:url('" + GetModURL() + "Images/cookieShower2.png');";
+	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="Toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
+	if (this.children.length > 0) document.getElementById("div" + this.n).innerHTML = '<a href="javascript:Toggle(' + this.n + ');" style="padding-right:8px;" alt="archetype : ' + (this.type.name) + '" title="archetype : ' + (this.type.name) + '"><span class="arrow" id="arrow' + this.n + '">+</span> ' + this.name + '</a><div id="container' + this.n + '" class="thing" style="display:none;' + addStyle + '">' + str + '</div>';
+	else document.getElementById("div" + this.n).innerHTML = '<span class="emptyThing">' + this.name + '</span>';
 }
 Triggerverse.Toggle = function (what) {
 
