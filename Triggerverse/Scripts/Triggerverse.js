@@ -247,7 +247,7 @@ Triggerverse.List = function (state) {
 	else if (this.name == "doughnutverse") addStyle = "background-image:url('nestedDoughnutverse.png');";
 	else if (this.name == "lasagnaverse") addStyle = "background-image:url('nestedLasagnaverse.png');";
 	else if (this.name == "cookieverse") addStyle = "background-image:url('" + GetModURL() + "Images/cookieShower2.png');";
-	else if (this.name == "grandmaverse") addStyle = "background-image:url('" + GetModURL() + "Images/grandmaicon.png');";
+	else if (this.name == "grandmaverse") addStyle = "background-image:url('" + GetModURL() + "Images/grandmaIcon.png');";
 	//if (this.children.length>0) document.getElementById("div"+this.n).innerHTML='<span onclick="Toggle('+this.n+');"><span class="arrow" id="arrow'+this.n+'">+</span> '+this.name+'</span><div id="container'+this.n+'" class="thing" style="display:none;">'+str+'</div>';
 	if (this.children.length > 0) document.getElementById("div" + this.n).innerHTML = '<a href="javascript:Toggle(' + this.n + ');" style="padding-right:8px;" alt="archetype : ' + (this.type.name) + '" title="archetype : ' + (this.type.name) + '"><span class="arrow" id="arrow' + this.n + '">+</span> ' + this.name + '</a><div id="container' + this.n + '" class="thing" style="display:none;' + addStyle + '">' + str + '</div>';
 	else document.getElementById("div" + this.n).innerHTML = '<span class="emptyThing">' + this.name + '</span>';
