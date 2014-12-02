@@ -1233,14 +1233,16 @@ AutoCookie.Toggle = function (name, button) {
 AutoCookie.SetButtonVisual = function (name) {
 	var action = AutoCookie.Actions[name];
 	var button = iAuto(name + 'Button');
-	if (action.Type == 'toggle') {
-		if (action.Enabled) {
-			lAuto(button).innerHTML = action.ButtonName + ' ON'.fontcolor('green');
-			lAuto(button).className = 'option enabled';
-		}
-		else {
-			lAuto(button).innerHTML = action.ButtonName + ' OFF'.fontcolor('red');
-			lAuto(button).className = 'option';
+	if (lAuto(button) != null) {
+		if (action.Type == 'toggle') {
+			if (action.Enabled) {
+				lAuto(button).innerHTML = action.ButtonName + ' ON'.fontcolor('green');
+				lAuto(button).className = 'option enabled';
+			}
+			else {
+				lAuto(button).innerHTML = action.ButtonName + ' OFF'.fontcolor('red');
+				lAuto(button).className = 'option';
+			}
 		}
 	}
 }
