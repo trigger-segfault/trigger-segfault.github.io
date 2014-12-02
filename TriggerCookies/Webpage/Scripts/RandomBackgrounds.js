@@ -175,7 +175,7 @@ function AddCookie() {
 			}
 
 			var centerX = imageWidth / 2, centerY = imageHeight / 2;
-			width -= imageWidth + 3; height -= imageHeight + 3;
+			width -= imageWidth + 3 - 16; height -= imageHeight + 3;
 			var x = 1 + centerX + Math.random() * width, y = 1 + centerY + Math.random() * height;
 
 			var cookie = document.createElement('div');
