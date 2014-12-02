@@ -65,7 +65,7 @@ function PickBackground(mainPage, url) {
 		var step4 = 0.035;
 		if (rand4 < step4 * 1)
 			document.body.style.backgroundImage = 'url("' + mainURL + 'Images/grandmas1.jpg")';
-		else f (rand4 < step4 * 2)
+		else if (rand4 < step4 * 2)
 			document.body.style.backgroundImage = 'url("' + mainURL + 'Images/grandmas3.jpg")';
 		if (mainPage) {
 			document.getElementById('iconFeatures').style.backgroundPosition = 'calc(48px * -8) calc(48px * -9)';
