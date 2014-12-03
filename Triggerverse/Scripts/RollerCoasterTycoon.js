@@ -251,9 +251,9 @@ ROLLERCOASTER TYCOON STALL NAMES
 
 RollerCoasterTycoon.StallNames = [
 	"Beef Noodles Stall", "Burger Bar", "Balloon Stall", "Cash Machine", "Chicken Nuggets Stall", "Cookie Shop", "Cotton Candy Stall", "Drink Stall", "First Aid Room", "Fried Rice Noodles Stall",
-	"Fruity Ices Stall", "Funnel Cake Shop", "Hat Stall", "Hot Chocolate Stall", "Iced Tea Stall", "Lemonade Stall", "Pizza Stall", "Popcorn Stall", "Pretzel Stall", "Roast Sausage Stall",
-	"Sea Food Stall", "Souvenir Stall", "Soybean Milk Stall", "Star Fruit Drink Stall", "Sub Sandwich Stall", "Sujongkwa Stall", "Sunglasses Stall", "T-Shirt Stall", "Toffee Apple Stall",
-	"Wondon Soup Stall"
+	"Fruity Ices Stall", "Funnel Cake Shop", "Hat Stall", "Hot Chocolate Stall", "Iced Tea Stall", "Lemonade Stall", "Pizza Stall", "Popcorn Stall", "Pretzel Stall", "Restroom",
+	"Roast Sausage Stall", "Sea Food Stall", "Souvenir Stall", "Soybean Milk Stall", "Star Fruit Drink Stall", "Sub Sandwich Stall", "Sujongkwa Stall", "Sunglasses Stall", "T-Shirt Stall",
+	"Toffee Apple Stall", "Wondon Soup Stall"
 ];
 RollerCoasterTycoon.ItemNames = [
 	"Umbrella", "Burger", "Drink", "Lemonade", "Pizza", "Park Map", "Balloon"
