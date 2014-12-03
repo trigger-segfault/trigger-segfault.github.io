@@ -256,7 +256,7 @@ RollerCoasterTycoon.StallNames = [
 	"Toffee Apple Stall", "Wondon Soup Stall"
 ];
 RollerCoasterTycoon.ItemNames = [
-	"Umbrella", "Burger", "Drink", "Lemonade", "Pizza", "Park Map", "Balloon"
+	"umbrella", "burger", "drink", "lemonade", "pizza", "park map", "balloon"
 ];
 
 //#endregion
