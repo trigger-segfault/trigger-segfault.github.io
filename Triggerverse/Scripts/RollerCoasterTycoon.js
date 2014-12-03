@@ -282,7 +282,7 @@ RollerCoasterTycoon.GuestMoodIcons = {
 	"very sick":	"Verysick",
 	"tired":		"Tired",
 	"very tired":	"Verytired",
-	"angry":		"angryguest"
+	"angry":		"Angryguest"
 };
 
 //#endregion
