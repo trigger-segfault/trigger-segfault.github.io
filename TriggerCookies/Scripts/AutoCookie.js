@@ -869,15 +869,17 @@ AutoCookie.Autobuy = function () {
 			CalcCookie.Price.FindBestResearch(AutoCookie.GrandmapocalypseLevel);
 			bestItem = CalcCookie.BestResearchItem;
 		}
-		if ((buySeasons || maintainSeason != '') && bestItem.Type == 'invalid') {
+		if ((buySeasons || maintainSeason != '') && (bestItem.Type == 'invalid' || !bestItem.CanAfford())) {
 			CalcCookie.Season.FindBestUpgrade(buySeasons, maintainSeason);
 			bestItem = CalcCookie.BestSeasonItem;
 		}
-		if ((buyBuildings || buyUpgrades) && bestItem.Type == 'invalid') {
+		if ((buyBuildings || buyUpgrades) && (bestItem.Type == 'invalid' || !bestItem.CanAfford())) {
+			console.log("BuildingUpgrade");
 			if (buyBuildings && buyUpgrades) {
 				CalcCookie.Price.FindBestItem();
 				bestItem = CalcCookie.BestOverallItem;
 				AutoCookie.GoalItem = CalcCookie.BestOverallGoal;
+				console.log(bestItem.Name);
 			}
 			else if (buyBuildings) {
 				CalcCookie.Price.FindBuildingBCIs();
@@ -886,6 +888,7 @@ AutoCookie.Autobuy = function () {
 					bestItem = CalcCookie.BuildingBCIs.timeItem;
 					AutoCookie.GoalItem = CalcCookie.BuildingBCIs.bestItem;
 				}
+				console.log(bestItem.Name);
 			}
 			else {
 				CalcCookie.Price.FindUpgradeBCIs(true, false);
@@ -894,6 +897,7 @@ AutoCookie.Autobuy = function () {
 					bestItem = CalcCookie.UpgradeBCIs.timeItem;
 					AutoCookie.GoalItem = CalcCookie.UpgradeBCIs.bestItem;
 				}
+				console.log(bestItem.Name);
 			}
 		}
 		

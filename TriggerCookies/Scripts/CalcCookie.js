@@ -460,8 +460,8 @@ SeasonCalculator.prototype.FindBestUpgrade = function (autoSeason, maintainSeaso
 	if (!this.CycleComplete && autoSeason) {
 		if (!this.ChristmasComplete && this.BestItem.Priority < 12) {
 			// Buy Santa drops
-			for (var i = 0; i < this.SantaDrops.length; i++) {
-				var name = this.SantaDrops[i];
+			for (var i = 0; i < this.Lists.SantaDrops.length; i++) {
+				var name = this.Lists.SantaDrops[i];
 
 				if (Game.HasUnlocked(name) && !Game.Has(name) && (Game.Upgrades[name].getPrice() < this.BestItem.Price || this.BestItem.Type == 'invalid')) {
 					var info = CalcCookie.Price.CalculateUpgradeBCI(Game.Upgrades[name]);

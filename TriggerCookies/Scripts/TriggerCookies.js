@@ -110,10 +110,10 @@ TriggerCookies.Init = function () {
 
 		var str = '';
 		
-		str += '<a class="changeLogButton" href="http://trigger-death.github.io/TriggerCookies/ChangeLog/#v1-0-2-5", target="_blank">Change Log</a>';
+		str += '<a class="changeLogButton" href="http://trigger-death.github.io/TriggerCookies/ChangeLog/#v1-0-2-6", target="_blank">Change Log</a>';
 
 		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') +
-			'<div style="font-size: 20px;">v1.0.2.5 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
+			'<div style="font-size: 20px;">v1.0.2.6 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';
 
 		str += '<div style="width: 100%; margin: 0px; border-color: #733725; border-width: 1px 0px 0px; border-style: solid;"></div>' +
 				'<div style="width: 100%; margin: 0px; border-color: #D1A699; border-width: 1px 0px 0px; border-style: solid;"></div>' +
@@ -130,7 +130,7 @@ TriggerCookies.Init = function () {
 		l('menu').parentNode.appendChild(menu);
 		menu.innerHTML = str;
 
-		Game.customTickers.push(function () { return ['Trigger Cookies v1.0.2.5 beta hotfix released! Check out the changelog from the mods menu.']; });
+		Game.customTickers.push(function () { return ['Trigger Cookies v1.0.2.6 beta hotfix released! Check out the changelog from the mods menu.']; });
 
 		// States that this mod has been loaded.
 		TriggerCookies.Loaded = true;
