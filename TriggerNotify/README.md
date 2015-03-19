@@ -5,6 +5,12 @@
 
 TriggerNotify is a simple mod for Kittens Game that alerts the user with a sound when a resource hits its limit. Each resource has a unique sound when hit so it's differentiable while multitasking. The mod comes with a menu for customization. You can mute specific resources or use a custom sound for a resource. Resources will not show up in the menu unless the resources has been discovered to prevent spoilers.
 
+## Custom Sounds
+
+Browsers can be picky about the audio format used. If no sound plays when testing the sound then the format is most  likely the problem.
+
+If your browser allows loading of local audio files you can paste the file path into the custom url text box. The path must be prefixed with **file:///**, you can shift click on a file in windows to get its path. Remember to remove the quotes after pasting it.
+
 ## Requirements
 
 * Game Version:   Ver 1.0.7.1 *(should easily work with newer versions)*
