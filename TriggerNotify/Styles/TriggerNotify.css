@@ -1,0 +1,20 @@
+
+.triggerNotifyDivHover:hover {
+	background: rgb(70, 70, 140);
+}
+
+.triggerNotifyHelp {
+	position: absolute;
+	border: 1px solid black;
+	width: 600px;
+	height: 300px;
+
+	left: 50%;
+	top: 50%;
+
+	margin-top: -150px;
+	margin-left: -300px;
+
+	background-color: #FFF;
+	padding: 20px;
+}
