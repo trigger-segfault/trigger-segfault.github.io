@@ -18,7 +18,7 @@ If your browser allows loading of local audio files you can paste the file path 
 
 ## How to Load
 
-**Bookmarklet:** Paste this code into a bookmark URL and open the bookmark while on the Cookie Clicker page.
+**Bookmarklet:** Paste this code into a bookmark URL and open the bookmark while on the Kittens Game page.
 
 ```javascript
 javascript: (function () {
