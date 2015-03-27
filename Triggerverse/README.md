@@ -3,7 +3,7 @@
 * Author:         Robert Jordan
 * Version:        v1.0.0.0
 
-TriggerVerse creates a more user-friendly environment in Nested making it easier to explore infinitely. TriggerVerse will also save your current theme. As a bonus it also adds theme park catagories randomly into cities.
+TriggerVerse creates a more user-friendly environment in Nested making it easier to explore infinitely. This mod will count the total nodes in existence, as well as allow you to remove nodes or recenter a node to be the primary node. TriggerVerse will also save your current theme. As a bonus it also adds theme park catagories randomly into cities.
 
 ## Requirements
 
