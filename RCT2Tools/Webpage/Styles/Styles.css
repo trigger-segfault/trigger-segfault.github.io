@@ -141,12 +141,6 @@ html{
 	/*position: relative;*/
 }
 
-.toolLink:link, .toolLink:visited, .toolLink:link:active, .toolLink:visited:active {
-	color: rgb(147, 199, 167);
-}
-.toolLink:hover, .toolLink:visited:hover {
-	color: rgb(175, 219, 195);
-}
 
 a:link, a:visited {
     color: rgb(119, 187, 239);
@@ -166,6 +160,18 @@ a {
     background: none repeat scroll 0px 0px transparent;
     text-decoration: none;
 }
+a.toolLink:link, a.toolLink:visited, a.toolLink:link:active, a.toolLink:visited:active {
+	color: rgb(147, 199, 167);
+}
+a.toolLink:hover, a.toolLink:visited:hover {
+	color: rgb(175, 219, 195);
+}
+a.downloadLink:link, a.downloadLink:visited, a.downloadLink:link:active, a.downloadLink:visited:active {
+	color: rgb(255, 139, 51);
+}
+a.downloadLink:hover, a.downloadLink:visited:hover {
+	color: rgb(255, 183, 107);
+}
 .col {
 	width: 25%;
 	float: left;
@@ -178,13 +184,13 @@ a {
 @media (max-width: 650px) {
 	
 	.col {
-		width: 50%;
+		width: 25%;
 	}
 }
 .caption {
 	padding: 9px;
 	text-align: center;
-	color: #808080;
+	color: rgb(131, 151, 151);
 }
 
 .thumbnail {
