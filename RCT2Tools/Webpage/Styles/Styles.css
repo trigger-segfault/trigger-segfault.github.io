@@ -141,6 +141,23 @@ html{
 	/*position: relative;*/
 }
 
+.navBar {
+	font-family: 'KG The Last Time';
+	text-shadow:0px 0px 4px #000;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FFF;
+	padding: 8px 20px;
+}
+.navTab {
+	font-family: 'KG The Last Time';
+	/*text-shadow:0px 0px 4px #000;*/
+	font-weight: 400;
+	font-size: 20px;
+	color: #F82;
+	margin-bottom: 8px;
+	margin-top: 4px;
+}
 
 a:link, a:visited {
     color: rgb(119, 187, 239);
@@ -170,6 +187,12 @@ a.downloadLink:link, a.downloadLink:visited, a.downloadLink:link:active, a.downl
 	color: rgb(255, 139, 51);
 }
 a.downloadLink:hover, a.downloadLink:visited:hover {
+	color: rgb(255, 183, 107);
+}
+a.navTab:link, a.navTab:visited, a.navTab:link:active, a.navTab:visited:active {
+	color: rgb(255, 139, 51);
+}
+a.navTab:hover, a.navTab:visited:hover {
 	color: rgb(255, 183, 107);
 }
 .col {

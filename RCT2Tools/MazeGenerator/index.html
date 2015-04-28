@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Trigger's Water Browser</title>
+	<title>Trigger's Maze Generator</title>
 	<meta name="author" content="Robert Jordan"/>
 	<meta name="description" content="A site for hosting programs written by Robert Jordan."/>
-	<meta name="keywords" content="trigger,jrob,robert jordan,games,programs,programming,rct2,rollercoaster,tycoon,2,tool,water,creator"/>
+	<meta name="keywords" content="trigger,jrob,robert jordan,games,programs,programming,rct2,rollercoaster,tycoon,2,tool,maze,generator"/>
 	<meta charset="UTF-8"/>
 
 	<link rel="icon" href="../Webpage/Images/Favicon.ico" type="image/x-icon"/>
@@ -17,7 +17,7 @@
 <body id="MainBody">
 <div id="container" class="container">
 	<div class="insideBorder">
-		<h1 class="title">Water Creator</h1>
+		<h1 class="title">Maze Generatorr</h1>
 	</div>
 
 	<div class="insideBorder">
@@ -38,12 +38,13 @@
 		<div class="separator"></div>
 			<div class="subsubsection">
 				
-			<div>Author: Robert Jordan</div>
+			<div>Author: Robert Jordan & Lewis Fox</div>
 			<div>Version: v1.0.0.0</div>
 
 			</div>
 			<div class="subsectionText">
-				A simple program for creating water types for RollerCoaster Tycoon 2. You can edit existing water types, or create your own from scratch.
+				A program for creating, editing, and generating mazes outside of Rollercoaster Tycoon 2. This program has the advantage of being easier and quicker to work with,
+				as well as allowing unfilled maze tiles which the game does not allow.
 			</div>
 		
 		<div class="separator"></div>
@@ -56,22 +57,17 @@
 
 				<div class="col"><div class="thumbnail">
 					<a href="Webpage/Screenshots/1.png"><img src="Webpage/Screenshots/1.png"/></a>
-					<div class="caption">Flat Water</div>
+					<div class="caption">Edit Mazes</div>
 				</div></div>
 				
 				<div class="col"><div class="thumbnail">
 					<a href="Webpage/Screenshots/2.png"><img src="Webpage/Screenshots/2.png"/></a>
-					<div class="caption">Ride Water</div>
+					<div class="caption">Load Mazes</div>
 				</div></div>
 				
 				<div class="col"><div class="thumbnail">
 					<a href="Webpage/Screenshots/3.png"><img src="Webpage/Screenshots/3.png"/></a>
-					<div class="caption">Rainy Lighting</div>
-				</div></div>
-				
-				<div class="col"><div class="thumbnail">
-					<a href="Webpage/Screenshots/4.png"><img src="Webpage/Screenshots/4.png"/></a>
-					<div class="caption">Custom Water</div>
+					<div class="caption">Pattern Generation</div>
 				</div></div>
 
 			</div>
@@ -109,25 +105,43 @@
 		<div class="separator"></div>
 		<div class="subsubsection">
 			
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonSun.png"/><span class="toolTitle">Sunny Weather</span></div>
-			<div class="subsectionText">Change the weather lighting to sunny.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonCloud.png"/><span class="toolTitle">Cloudy Weather</span></div>
-			<div class="subsectionText">Change the weather lighting to cloudy.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRain.png"/><span class="toolTitle">Rainy Weather</span></div>
-			<div class="subsectionText">Change the weather lighting to rainy.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRide.png"/><span class="toolTitle">Ride View</span></div>
-			<div class="subsectionText">Change the view to a water ride.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonWater.png"/><span class="toolTitle">Water View</span></div>
-			<div class="subsectionText">Change the view to an open expanse of water.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonPaint.png"/><span class="toolTitle">Color Dialog</span></div>
-			<div class="subsectionText">Open up the color dialog for the selected color.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonNames.png"/><span class="toolTitle">Change Names</span></div>
-			<div class="subsectionText">Change the names of the water type for each language.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonWalls.png"/><span class="toolTitle">Walls Mode</span></div>
+			<div class="subsectionText">Left clicking opens up a wall or quadrant, and right clicking closes a wall or quadrant.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonTiles.png"/><span class="toolTitle">Tiles Mode</span></div>
+			<div class="subsectionText">Left clicking creates a new tile, and right clicking removes a tile, entrance, or exit.</div>
 			
-			<div><span class="subsectionTitle">Click Selected Color</span></div>
-			<div class="subsectionText">Automatically opens up the color dialog without having to press the color dialog button.</div>
-			<div><span class="subsectionTitle">Ctrl+C & Ctrl+V</span></div>
-			<div class="subsectionText">Allows you to copy and paste the selected color.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonEntrance.png"/><span class="toolTitle">Entrance Mode</span></div>
+			<div class="subsectionText">Left clicking creates an entrance. The side with the door is where the building should connect to the maze.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonExit.png"/><span class="toolTitle">Exit Mode</span></div>
+			<div class="subsectionText">Left clicking creates an exit. The side with the door is where the building should connect to the maze.</div>
+			
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonGenerate.png"/><span class="toolTitle">Generate Mode</span></div>
+			<div class="subsectionText">Left clicking on a tile starts maze generation at that position.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRestrict.png"/><span class="toolTitle">Restrict Mode</span></div>
+			<div class="subsectionText">Left clicking creates a restricted quadrant, and right clicking removes it. Restricted quadrants cannot be used during maze generation.</div>
+
+			
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/CheckBoxWallsMakeTiles.png"/><span class="toolTitle">Walls Make Tiles</span></div>
+			<div class="subsectionText">When clicking outside of a maze tile in Walls mode, a tile will be created.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/CheckBoxFastGeneration.png"/><span class="toolTitle">Fast Generation</span></div>
+			<div class="subsectionText">Generation will only update after numerous calculations instead of just one. Turning this off is more just for fun than anything else.</div>
+			
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonBrickWalls.png"/><span class="toolTitle">Brick Walls</span></div>
+			<div class="subsectionText">Changes the style of the maze walls to brick walls.</div>
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonHedges.png"/><span class="toolTitle">Hedges</span></div>
+			<div class="subsectionText">Changes the style of the maze walls to hedges.</div>
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonIceBlocks.png"/><span class="toolTitle">Ice Blocks</span></div>
+			<div class="subsectionText">Changes the style of the maze walls to ice blocks.</div>
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonWoodenFences.png"/><span class="toolTitle">Wooden Fences</span></div>
+			<div class="subsectionText">Changes the style of the maze walls to wooden fences.</div>
+
+			
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonZoomOut.png"/><span class="toolTitle">Zoom Out</span></div>
+			<div class="subsectionText">Zooms out the maze view.</div>
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonZoomIn.png"/><span class="toolTitle">Zoom In</span></div>
+			<div class="subsectionText">Zooms in the maze view.</div>
+			<div><img style="vertical-align:-8px;" src="../Webpage/Images/ButtonGrid.png"/><span class="toolTitle">Grid</span></div>
+			<div class="subsectionText">Toggles the visibility of the grid over maze tiles.</div>
 		</div>
 		<div class="separator"></div>
 	</div>
@@ -135,9 +149,9 @@
 		<img style="vertical-align:-16px;" src="../Webpage/Images/DownloadIcon.png"/><span id="Download" class="sectionTitle">Download</span>
 		<div class="separator"></div>
 		<div style="text-align: center">
-			<img class="toolIcon" src="../Webpage/Images/WaterCreatorIcon.png"/><span class="toolTitle"><a class="downloadLink" href="http://www.mediafire.com/download/01w8j7smwpwqpi4/RCT2+Water+Creator+v1.0.0.0.zip">Download Water Creator</a></span>
+			<img class="toolIcon" src="../Webpage/Images/MazeGeneratorIcon.png"/><span class="toolTitle"><a class="downloadLink" href="">Download Maze Generator</a></span>
 			<div class="subsectionText">
-				Click here to download RCT2 Water Creator as a standalone executable.
+				Click here to download RCT2 Maze Generator as a standalone executable.
 			</div>
 		</div>
 		<div class="separator"></div>
