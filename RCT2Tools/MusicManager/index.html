@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Trigger's Group Creator</title>
+	<title>Trigger's Music Manager</title>
 	<meta name="author" content="Robert Jordan"/>
 	<meta name="description" content="A site for hosting programs written by Robert Jordan."/>
-	<meta name="keywords" content="trigger,jrob,robert jordan,games,programs,programming,rct2,rollercoaster,tycoon,2,tool,scenery,group,creator"/>
+	<meta name="keywords" content="trigger,jrob,robert jordan,games,programs,programming,rct2,rollercoaster,tycoon,2,tool,song,music,manager"/>
 	<meta charset="UTF-8"/>
 
 	<link rel="icon" href="../Webpage/Images/Favicon.ico" type="image/x-icon"/>
@@ -17,7 +17,7 @@
 <body id="MainBody">
 <div id="container" class="container">
 	<div class="insideBorder">
-		<h1 class="title">Group Creator</h1>
+		<h1 class="title">Music Manager</h1>
 	</div>
 
 	<div class="insideBorder">
@@ -44,10 +44,11 @@
 
 			</div>
 			<div class="subsectionText">
-				A simple program for creating scenery groups for RollerCoaster Tycoon 2.
-				You can edit existing groups, or create your own from scratch.
-				All scenery in the program can be visually represented making it easier to decide if it's worthy for the group.
-				Scenery can be dragged in from the file explorer or RCT2 Content Browser.
+				Rollercoaster Tycoon 2 supports up to two custom songs for rides,
+				RCT2 Music Manager takes advantage of that and creates a simple system for switching out which songs to use.
+				This program will also convert any songs in the MP3, M4A, AIFF, or WAVE format into the correct format for use with RCT2.
+				RCT2 does support changes to the custom songs in game and should update almost instantly.
+				However if the new song is longer than the previous song, it will only last as long as that song until the game is restarted.
 			</div>
 		
 		<div class="separator"></div>
@@ -60,14 +61,9 @@
 
 				<div class="col"><div class="thumbnail">
 					<a href="Webpage/Screenshots/1.png"><img src="Webpage/Screenshots/1.png"/></a>
-					<div class="caption">Existing Group</div>
+					<div class="caption">Custom Songs</div>
 				</div></div>
 				
-				<div class="col"><div class="thumbnail">
-					<a href="Webpage/Screenshots/2.png"><img src="Webpage/Screenshots/2.png"/></a>
-					<div class="caption">Custom Group</div>
-				</div></div>
-
 			</div>
 		</div>
 		<div class="separator"></div>
@@ -77,22 +73,23 @@
 		<div class="separator"></div>
 		<div class="subsubsection">
 			
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonLeft.png"/><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRight.png"/><span class="toolTitle">Change Object</span></div>
-			<div class="subsectionText">Change the currently selected object.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonPlus.png"/><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonMinus.png"/><span class="toolTitle">Add/Remove Scenery</span></div>
-			<div class="subsectionText">Add and remove scenery objects from the list. Note you can also drag objects in, (even from RCT2 Content Browser!).</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonNames.png"/><span class="toolTitle">Names</span></div>
-			<div class="subsectionText">Change the names of the scenery group for each language.</div>
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonIcon.png"/><span class="toolTitle">Icon</span></div>
-			<div class="subsectionText">Change the scenery group icon. Images must be transparent and of the size 31x27.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonPlayRed.png"/><span class="toolTitle">Play/Stop</span></div>
+			<div class="subsectionText">Play the currently selected song or stop the currently playing song.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonSetCustom1Red.png"/><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonSetCustom2Red.png"/><span class="toolTitle">Set Custom Song</span></div>
+			<div class="subsectionText">Set the custom song to the currently selected song.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRenameRed.png"/><span class="toolTitle">Rename</span></div>
+			<div class="subsectionText">Rename the currently selected song.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonBrowseRed.png"/><span class="toolTitle">Browse Data Directory</span></div>
+			<div class="subsectionText">Change the directory to RCT2's Data directory where it stores custom songs.</div>
 			
-			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonBrowse.png"/><span class="toolTitle">Browse</span></div>
-			<div class="subsectionText">Change the default to directory to look for scenery objects in so they can be viewed.</div>
+			<div><img style="vertical-align:-4px;" src="../Webpage/Images/ButtonRefreshRed.png"/><span class="toolTitle">Refresh</span></div>
+			<div class="subsectionText">Refresh the song list.</div>
+			
+			<div><span class="subsectionTitle">Double Click Song</span></div>
+			<div class="subsectionText">Will play or restart the selected song.</div>
 
 			<div><span class="subsectionTitle">Drag Files Onto List</span></div>
-			<div class="subsectionText">Allows you to add scenery objects to the group without using a file dialog. (You can even drag them from RCT2 Content Browser!).</div>
-			<div><span class="subsectionTitle">Drag Files In List</span></div>
-			<div class="subsectionText">Allows you to rearange the order of scenery objects in the list.</div>
+			<div class="subsectionText">Allows you to add more songs to the collection. Any song that doesn't meet the required format will be converted.</div>
 		</div>
 		<div class="separator"></div>
 	</div>
@@ -100,9 +97,9 @@
 		<img style="vertical-align:-16px;" src="../Webpage/Images/DownloadIcon.png"/><span id="Download" class="sectionTitle">Download</span>
 		<div class="separator"></div>
 		<div style="text-align: center">
-			<img class="toolIcon" src="../Webpage/Images/GroupCreatorIcon.png"/><span class="toolTitle"><a class="downloadLink" href="http://www.mediafire.com/download/t8atqdt5opazx20/Triggers_Group_Creator_v1.1.0.0.zip">Download Group Creator</a></span>
+			<img class="toolIcon" src="../Webpage/Images/MusicManagerIcon.png"/><span class="toolTitle"><a class="downloadLink" href="http://www.mediafire.com/download/ooc9g6qdbaqb959/Triggers+Music+Manager.zip">Download Music Manager</a></span>
 			<div class="subsectionText">
-				Click here to download RCT2 Group Creator as a standalone executable.
+				Click here to download RCT2 Music Manager as a standalone executable.
 			</div>
 		</div>
 		<div class="separator"></div>

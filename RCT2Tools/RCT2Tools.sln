@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Webpage", "Webpage", "{9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{39E1F0C6-E3DC-4C8A-A652-E75CDBDFFD21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Styles", "Styles", "{535346B4-C0EC-474D-96A2-32594721F989}"
+	ProjectSection(SolutionItems) = preProject
+		Webpage\Styles\Default.css = Webpage\Styles\Default.css
+		Webpage\Styles\Fonts.css = Webpage\Styles\Fonts.css
+		Webpage\Styles\Main.css = Webpage\Styles\Main.css
+		Webpage\Styles\Styles.css = Webpage\Styles\Styles.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ContentBrowser", "ContentBrowser", "{1C84BAF5-1F91-4B40-B2A7-306D100E524B}"
+	ProjectSection(SolutionItems) = preProject
+		ContentBrowser\index.html = ContentBrowser\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WaterCreator", "WaterCreator", "{B9FFDE85-3638-44F9-B1C1-B81A08BB785B}"
+	ProjectSection(SolutionItems) = preProject
+		WaterCreator\index.html = WaterCreator\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GroupCreator", "GroupCreator", "{A889AE67-3879-45CD-AB89-527C9BB7AD79}"
+	ProjectSection(SolutionItems) = preProject
+		GroupCreator\index.html = GroupCreator\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GraphicsExtractor", "GraphicsExtractor", "{D771A2D6-FA93-4483-8535-AFC017996E1E}"
+	ProjectSection(SolutionItems) = preProject
+		GraphicsExtractor\index.html = GraphicsExtractor\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MazeGenerator", "MazeGenerator", "{D6FA62BA-C8EA-4005-9E1F-89230B907B7C}"
+	ProjectSection(SolutionItems) = preProject
+		MazeGenerator\index.html = MazeGenerator\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MusicManager", "MusicManager", "{53D34EA9-7178-4268-A6D0-4D0899B72F72}"
+	ProjectSection(SolutionItems) = preProject
+		MusicManager\index.html = MusicManager\index.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{39E1F0C6-E3DC-4C8A-A652-E75CDBDFFD21} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{535346B4-C0EC-474D-96A2-32594721F989} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{1C84BAF5-1F91-4B40-B2A7-306D100E524B} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{B9FFDE85-3638-44F9-B1C1-B81A08BB785B} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{A889AE67-3879-45CD-AB89-527C9BB7AD79} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{D771A2D6-FA93-4483-8535-AFC017996E1E} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{D6FA62BA-C8EA-4005-9E1F-89230B907B7C} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{53D34EA9-7178-4268-A6D0-4D0899B72F72} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+	EndGlobalSection
+EndGlobal
