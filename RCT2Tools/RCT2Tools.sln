@@ -46,6 +46,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MusicManager", "MusicManage
 		MusicManager\index.html = MusicManager\index.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AudioExtractor", "AudioExtractor", "{0FB37F5C-F4C9-40D8-A74D-38670EFB1FF0}"
+	ProjectSection(SolutionItems) = preProject
+		AudioExtractor\index.html = AudioExtractor\index.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +64,6 @@ Global
 		{D771A2D6-FA93-4483-8535-AFC017996E1E} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
 		{D6FA62BA-C8EA-4005-9E1F-89230B907B7C} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
 		{53D34EA9-7178-4268-A6D0-4D0899B72F72} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
+		{0FB37F5C-F4C9-40D8-A74D-38670EFB1FF0} = {9425B1AD-BE76-4CE4-8FE8-1992CA0E4B97}
 	EndGlobalSection
 EndGlobal
