@@ -38,6 +38,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Programs", "Programs", "{3E
 		Programs\index.html = Programs\index.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlindiRL", "BlindiRL", "{F9E64924-10A0-4F51-8F02-B0223A4A6E6B}"
+	ProjectSection(SolutionItems) = preProject
+		BlindiRL\index.html = BlindiRL\index.html
+		BlindiRL\Webpage\Styles\Styles.css = BlindiRL\Webpage\Styles\Styles.css
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +56,6 @@ Global
 		{7F63E8FD-00D2-40AC-8151-A946489B775F} = {C640F12B-6239-48FF-8118-86133801CC29}
 		{218DC392-6928-42A4-B565-7A2AD8F0918A} = {C640F12B-6239-48FF-8118-86133801CC29}
 		{3E9ACD84-76AB-4C6B-80CF-06B829B4CB9D} = {C640F12B-6239-48FF-8118-86133801CC29}
+		{F9E64924-10A0-4F51-8F02-B0223A4A6E6B} = {C640F12B-6239-48FF-8118-86133801CC29}
 	EndGlobalSection
 EndGlobal
