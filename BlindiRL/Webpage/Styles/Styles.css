@@ -15,8 +15,9 @@ h1 {
 }
 
 .BlindLogo {
-	padding: 12px 0px;
+	padding: 40px 0px 10px;
 	text-align: center;
+	margin: 20px auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -342,8 +343,7 @@ a.headerButton {
 
 .separator {
 	width: 100%;
-	border-bottom: 1px solid #333;
-	margin: 18px 0px 10px;
+	margin: 20px 0px 10px;
 }
 .separator.thin {
 	margin: 10px 0px 0px 0px;
