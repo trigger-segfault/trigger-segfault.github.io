@@ -158,6 +158,9 @@ TriggerNotify.WriteMenu = function () {
 
 TriggerNotify.WriteMenuItem = function (res, index) {
 	var resStr = 'TriggerNotify.Resources[' + String(index) + ']';
+	if(res==TriggerNotify.AstronomicalEvent){
+		resStr = 'TriggerNotify.AstronomicalEvent'
+	}
 	var resURL = (typeof res.CustomSoundURL !== 'undefined' ? res.CustomSoundURL : '');
 	var str = '';
 
