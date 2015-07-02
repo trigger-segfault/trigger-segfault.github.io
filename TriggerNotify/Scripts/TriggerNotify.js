@@ -212,7 +212,7 @@ TriggerNotify.Update = function () {
 		TriggerNotify.AstronomicalEvent.Value = 1;
 	}
 	else if(gamePage.calendar.observeBtn == null) {
-		TriggerNotify.Astronomical.Value = 0;
+		TriggerNotify.AstronomicalEvent.Value = 0;
 	}
 
 	if (updateMenu) {
