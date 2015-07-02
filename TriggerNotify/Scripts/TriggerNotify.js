@@ -206,11 +206,11 @@ TriggerNotify.Update = function () {
 		}
 	}
 
-	if(TriggerNotify.AstronomicalEvent.Value == 0 && typeof gamePage.observeBtn !== 'undefined') {
+	if(TriggerNotify.AstronomicalEvent.Value == 0 && typeof observeBtn !== 'undefined') {
 		TriggerNotify.AstronomicalEvent.Play();
 		TriggerNotify.AstronomicalEvent.Value = 1;
 	}
-	else if(gamePage.observeBtn === 'undefined') {
+	else if(typeof observeBtn === 'undefined') {
 		TriggerNotify.Astronomical.Value = 0;
 	}
 
