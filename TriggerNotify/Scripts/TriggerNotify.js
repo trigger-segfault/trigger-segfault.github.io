@@ -54,6 +54,8 @@ TriggerNotify.Init = function() {
 		TriggerNotify.Resources[i] = new TriggerResource(res.name, res.name, '');
 	}
 
+	TriggerNotify.AstronomicalEvent = new TriggerResource("Astronomical Event", "Astronomical Event", 'AstronomicalEvent.wav');	
+
 	TriggerNotify.SetResource('catnip', 'Catnip.wav');
 	TriggerNotify.SetResourceProper('manpower', 'catpower', 'CatPower.wav');
 	TriggerNotify.SetResource('coal', 'Coal.wav');
@@ -70,6 +72,8 @@ TriggerNotify.Init = function() {
 	TriggerNotify.SetResource('uranium', 'Uranium.wav');
 	TriggerNotify.SetResource('wood', 'Wood.wav');
 	TriggerNotify.SetResource('zebras', 'Zebras.wav');
+
+	TriggerNotify.AstronomicalEvent.Visible = true;
 
 	for (var i = 0; i < gamePage.resPool.resources.length; i++) {
 		var res = TriggerNotify.Resources[i].Resource;
@@ -144,6 +148,9 @@ TriggerNotify.WriteMenu = function () {
 
 		}
 	}
+	if (TriggerNotify.AstronomicalEvent.Visible){
+		str += '<div class="triggerNotifyDivHover">' + TriggerNotify.WriteMenuItem(TriggerNotify.AstronomicalEvent, TriggerNotify.Resources.length+1) + '</div>';
+	}
 
 	var menu = document.getElementById('triggerNotifyDiv');
 	menu.innerHTML = str;
@@ -151,6 +158,9 @@ TriggerNotify.WriteMenu = function () {
 
 TriggerNotify.WriteMenuItem = function (res, index) {
 	var resStr = 'TriggerNotify.Resources[' + String(index) + ']';
+	if(res==TriggerNotify.AstronomicalEvent){
+		resStr = 'TriggerNotify.AstronomicalEvent'
+	}
 	var resURL = (typeof res.CustomSoundURL !== 'undefined' ? res.CustomSoundURL : '');
 	var str = '';
 
@@ -196,6 +206,14 @@ TriggerNotify.Update = function () {
 		}
 	}
 
+	if(TriggerNotify.AstronomicalEvent.Value == 0 && gamePage.calendar.observeBtn != null) {
+		TriggerNotify.AstronomicalEvent.Play();
+		TriggerNotify.AstronomicalEvent.Value = 1;
+	}
+	else if(gamePage.calendar.observeBtn == null) {
+		TriggerNotify.AstronomicalEvent.Value = 0;
+	}
+
 	if (updateMenu) {
 		TriggerNotify.WriteMenu();
 	}
@@ -209,6 +227,7 @@ TriggerNotify.Save = function () {
 	for (var i = 0; i < TriggerNotify.Resources.length; i++) {
 		saveData.resources[i] = TriggerNotify.Resources[i].Save();
 	}
+	saveData.astronomicalEvent = TriggerNotify.AstronomicalEvent.Save();
 
 	saveData.muteAll = TriggerNotify.MuteAllSounds;
 	saveData.playLoad = TriggerNotify.PlayLoadSound;
@@ -231,6 +250,7 @@ TriggerNotify.Load = function () {
 			for (var i = 0; i < saveData.resources.length; i++) {
 				TriggerNotify.Resources[i].Load(saveData.resources[i]);
 			}
+			TriggerNotify.AstronomicalEvent.Load(saveData.astronomicalEvent);
 		}
 	} catch (ex) {
 		console.error("Unable to load TriggerNotify data: ", ex);
@@ -352,6 +372,7 @@ TriggerNotify.DefaultSound = new Audio("https://gist.github.com/pernatiy/38bc231
 /* The list of resources to track. */
 TriggerNotify.Resources = [];
 TriggerNotify.ResourceSounds = [];
+TriggerNotify.AstronomicalEvent = null;
 
 TriggerNotify.MuteAllSounds = false;
 TriggerNotify.PlayLoadSound = true;

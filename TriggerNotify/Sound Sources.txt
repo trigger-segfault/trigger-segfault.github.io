@@ -1,6 +1,6 @@
 Here are the sources for all the sounds, a few use the same base sound. Almost all of them have been edited.
 
-
+Astronomical Event: http://www.freesound.org/people/Andromadax24/sounds/186719/
 Catnip: https://www.freesound.org/people/MaxDemianAGL/sounds/131050/
 Cat Power: https://www.freesound.org/people/audione/sounds/52458/
 Coal: https://www.freesound.org/people/Prosser/sounds/233998/
@@ -17,3 +17,4 @@ Unobtainium: https://www.freesound.org/people/johnnypanic/sounds/32675/
 Uranium: https://www.freesound.org/people/Corsica_S/sounds/188791/
 Wood: https://www.freesound.org/people/Celticvalkyria/sounds/250391/
 Zebras: https://www.freesound.org/people/acclivity/sounds/19812/
+
