@@ -105,7 +105,7 @@ TriggerNotify.Init = function() {
 TriggerNotify.CreateMenus = function () {
 
 	var menu = document.createElement('div');
-	menu.className = 'help';
+	menu.className = 'debug help';
 	menu.id = 'triggerNotifyDiv';
 	menu.style.cssText = "display: none; height: 480px; top: 30%;";
 	document.getElementById('gamePageContainer').appendChild(menu);
@@ -119,7 +119,7 @@ TriggerNotify.CreateMenus = function () {
 	str +=
 	' | ' +
 	'<a onclick="$(\'#triggerNotifyDiv\').toggle();" href="#">TriggerNotify</a>' +
-	'<span style="font-size: small;"> ver 1.1</span>';
+	'<span style="font-size: small;"> ver 1.2</span>';
 
 	panelTN.innerHTML = str;
 }
@@ -136,8 +136,8 @@ TriggerNotify.WriteMenu = function () {
 	str +=
 	//'<div id="triggerNotifyDiv" class="help" style="display: none;">' +
 	'<a style="position: absolute; top: 10px; right: 15px;" onclick="$(\'#triggerNotifyDiv\').hide();" href="#">close</a>' +
-	'<input id="MuteAllSounds" type="checkbox" " onclick="TriggerNotify.MuteAllSounds = document.getElementById(\'MuteAllSounds\').checked;"' + (TriggerNotify.MuteAllSounds ? 'checked' : '') + '></input> mute all' + ' | ' +
-	'<input id="PlayLoadSound" type="checkbox" " onclick="TriggerNotify.PlayLoadSound = document.getElementById(\'PlayLoadSound\').checked;"' + (TriggerNotify.PlayLoadSound ? 'checked' : '') + '></input> play load sound' + ' | ' +
+	'<input id="MuteAllSounds" class="triggerNotifyCheckbox" type="checkbox" " onclick="TriggerNotify.MuteAllSounds = document.getElementById(\'MuteAllSounds\').checked;"' + (TriggerNotify.MuteAllSounds ? 'checked' : '') + '></input> mute all' + ' | ' +
+	'<input id="PlayLoadSound" class="triggerNotifyCheckbox" type="checkbox" " onclick="TriggerNotify.PlayLoadSound = document.getElementById(\'PlayLoadSound\').checked;"' + (TriggerNotify.PlayLoadSound ? 'checked' : '') + '></input> play sound when mod starts' + ' | ' +
 	'<a style="cursor:pointer; text-decoration:underline;" onclick="TriggerNotify.Save();">save</a> ' +
 	'<br></br>';
 
@@ -165,9 +165,9 @@ TriggerNotify.WriteMenuItem = function (res, index) {
 	var str = '';
 
 	str +=
-	'<input id="' + res.Name + 'Muted" type="checkbox" " onclick="' + resStr + '.Muted = document.getElementById(\'' + res.Name + 'Muted\').checked;"' + (res.Muted ? 'checked' : '') + '></input> mute | ' +
-	'<input id="' + res.Name + 'UseDefaultSound" type="checkbox" " onclick="' + resStr + '.ChangeUseDefaultSound(document.getElementById(\'' + res.Name + 'UseDefaultSound\').checked);"' + (res.UseDefaultSound ? 'checked' : '') + '></input> use default | ' +
-	'<input id="' + res.Name + 'File" type="text" value="' + resURL + '" onchange="' + resStr + '.ChangeCustomSound();"></input> custom url | ' +
+	'<input class="triggerNotifyCheckbox" id="' + res.Name + 'Muted" type="checkbox" " onclick="' + resStr + '.Muted = document.getElementById(\'' + res.Name + 'Muted\').checked;"' + (res.Muted ? 'checked' : '') + '></input> mute | ' +
+	'<input class="triggerNotifyCheckbox" id="' + res.Name + 'UseDefaultSound" type="checkbox" " onclick="' + resStr + '.ChangeUseDefaultSound(document.getElementById(\'' + res.Name + 'UseDefaultSound\').checked);"' + (res.UseDefaultSound ? 'checked' : '') + '></input> use default | ' +
+	'<input class="triggerNotifyCheckbox" id="' + res.Name + 'File" type="text" value="' + resURL + '" onchange="' + resStr + '.ChangeCustomSound();"></input> custom url | ' +
 	//'<input id="' + res.Name + 'File" type="file" onchange="' + resStr + '.ChangeCustomSound();"></input> mute | ' +
 	'<a style="cursor:pointer; text-decoration:underline;" onclick="' + resStr + '.Sound.play();">play</a> ' +
 	' | ' + (typeof res.Resource.color !== 'undefined' ?
