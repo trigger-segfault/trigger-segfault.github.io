@@ -105,7 +105,7 @@ TriggerNotify.Init = function() {
 TriggerNotify.CreateMenus = function () {
 
 	var menu = document.createElement('div');
-	menu.className = 'debug help';
+	menu.className = 'dialog help';
 	menu.id = 'triggerNotifyDiv';
 	menu.style.cssText = "display: none; height: 480px; top: 30%;";
 	document.getElementById('gamePageContainer').appendChild(menu);
