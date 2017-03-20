@@ -1,6 +1,6 @@
 
 .triggerNotifyDivHover:hover {
-	background: rgb(70, 70, 140);
+	background: rgb(70, 70, 140, 0.5);
 }
 
 .triggerNotifyHelp {
@@ -17,4 +17,8 @@
 
 	background-color: #FFF;
 	padding: 20px;
+}
+
+input[type="checkbox"].triggerNotifyCheckbox {
+	display: inline-block;	
 }
