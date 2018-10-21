@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Tab title -->
+    <title>trigger_death's Visual Novel List</title>
+    <!-- Tab favicon -->
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link rel="stylesheet" media="all" href="css/mal.css" />
+    <!--<link rel="stylesheet" media="all" href="css/mal2.css" />-->
+    <link rel="stylesheet" media="all" href="css/custom.css" />
+    <script type="text/javascript" src="js/strip-json-comments.js"></script>
+    <script type="text/javascript" src="js/loadvns.js"></script>
+    <!--<script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/types.js"></script>-->
+</head>
+<body class="ownlist anime">
+    <div class="header">
+        <div class="header-menu">
+            <div class="btn-menu">
+                Viewing <span class="username">trigger_death's</span> Visual Novel List
+            </div>
+        </div>
+        <a class="header-title" href="">Trigger's Visual Novel List</a>
+    </div>
+    <div id="list-container" class="list-container">
+        <div class="cover-block"></div>
+        <div id="status-menu" class="status-menu-container">
+            <div class="status-menu">
+                <a href="" class="status-button all_anime on">All Visual Novels</a>
+                <a href="" class="status-button watching ">Currently Playing</a>
+                <a href="" class="status-button completed ">Completed</a>
+                <a href="" class="status-button onhold ">On Hold</a>
+                <a href="" class="status-button dropped ">Dropped</a>
+                <a href="" class="status-button plantowatch ">Plan to Play</a>
+                <div class="search-container">
+                    <div id="search-box"><input value="" type="text"></div>
+                    <a id="search-button" href="javascript: void(0);">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="list-block">
+            <div class="list-unit all_anime">
+                <div class="list-status-title">
+                    <span class="text">ALL VISUAL NOVELS</span>
+                    <span class="stats">
+                        <a href="" id="show-stats-button"><i class="fa fa-bar-chart"></i> Stats</a>
+                        <a href="" id="advanced-options-button"><i class="fa fa-filter"></i> Filters</a>
+                    </span>
+                </div>
+                <!--<div class="list-stats" style="display: block;">
+                    TV: 422,
+                    OVA: 136,
+                    Movies: 95,
+                    <span title="Specials">Spcl.</span>: 122,
+                    Eps: 7152,
+                    Days: 112.11,
+                    Mean Score: 8.2,
+                    Score <span title="Deviation">Dev.</span>: 0.69
+                </div>-->
+                <table class="list-table" id="list-table">
+                    <tbody>
+                        <tr class="list-table-header">
+                            <th class="header-title status"></th>
+                            <th class="header-title number">#</th>
+                            <th class="header-title image"><a class="link hover_info">Image</a></th>
+                            <th class="header-title title">Title</th>
+                            <th class="header-title score" style="width: 52px;">Score</th>
+                            <th class="header-title progress" style="width: 64px;">Progress</th>
+                            <th class="header-title achievements" style="width: 70px;">Achiev<br/>ments</th>
+                            <th class="header-title completion" style="width: 70px;">Completion</th>
+                            <th class="header-title playtime" style="width: 70px;">Playtime</th>
+                            <th class="header-title startfinish" style="width: 90px;">Start/Finish</th>
+                            <th class="header-title tags">Tags</th>
+                        </tr>
+                    </tbody>
+                    <!--<tbody class="list-item">
+                        <tr class="list-table-data">
+                            <td class="data status completed"></td>
+                            <td class="data number">3</td>
+                            <td class="data image">
+                                <a class="link sort" href="https://vndb.org/v17102">
+                                    <img class="hover-info image" src="https://s.vndb.org/cv/11/35111.jpg" />
+                                </a>
+                            </td>
+                            <td class="data title clearfix">
+                                <a class="link sort" href="https://vndb.org/v17102">Steins;Gate 0</a>
+                            </td>
+                            <td class="data score">9</td>
+                            <td class="data progress">
+                                <span>
+                                    <span>Endings</span>
+                                    <br />
+                                    <span>6</span>
+                                    /
+                                    <span>6</span>
+                                </span>
+                            </td>
+                            <td class="data achievements">
+                                <span>
+                                    <span>28</span>
+                                    /
+                                    <span>28</span>
+                                </span>
+                            </td>
+                            <td class="data completion">
+                                <span>
+                                    <span>100</span>
+                                    %
+                                </span>
+                            </td>
+                            <td class="data playtime">50h</td>
+                            <td class="data start-finish">
+                                <span>
+                                    <span>5/13/18 -</span>
+                                    <br />
+                                    <span>5/24/18</span>
+                                </span>
+                            </td>
+                            <td class="data tags">
+                                <div class="tags">
+                                    <span><a>Cried</a>,</span>
+                                    <span><a>Amazing True ED</a>,</span>
+                                    <span><a>Japanese Shaman Girls</a></span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>-->
+                </table>
+                <div class="loading-space"></div>
+            </div>
+        </div>
+        <!-- All script types are populated in here -->
+    </div>
+
+    <!--<footer></footer>-->
+
+    <!-- ==== Initialize ==== -->
+
+    <script>initializeVNList();</script>
+</body>
+</html>

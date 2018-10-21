@@ -1,0 +1,593 @@
+﻿{
+  "listOwner": "trigger_death",
+
+  "playing": [
+    {
+      "title": "Noble ☆ Works",
+      "url": "https://vndb.org/v4806",
+      "image": "https://s.vndb.org/cv/09/27809.jpg",
+      "type": "Eroge",
+      "score": null,
+      "progressType": "routes",
+      "progress": [ 1, 5 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "10h",
+      "start": "12/31/16",
+      "finish": null,
+      "tags": [],
+      "notes": "Completed: Nagamitsu Maya"
+    }
+  ],
+
+  "completed": [
+    {
+      "title": "Rinkaiten ~Critical Point~",
+      "url": "https://vndb.org/v145",
+      "image": "https://s.vndb.org/cv/81/31581.jpg",
+      "type": "Eroge",
+      "score": 8,
+      "progressType": "endings",
+      "progress": [ 25, 25 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "12h",
+      "start": "3/14/18",
+      "finish": "3/16/18",
+      "tags": [
+        "Better than expected",
+        "Episode XII doesn't exist",
+        "Guide used for final missing episode VIII"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Steins;Gate 0",
+      "url": "https://vndb.org/v17102",
+      "image": "https://s.vndb.org/cv/11/35111.jpg",
+      "type": "Story",
+      "score": 9,
+      "progressType": "routes",
+      "progress": [ 6, 6 ],
+      "achievements": [ 28, 28 ],
+      "completion": 100,
+      "playtime": "50h",
+      "start": "5/13/18",
+      "finish": "5/24/18",
+      "tags": [
+        "Cried",
+        "Amazing True ED",
+        "Japanese Shaman Girls"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Steins;Gate",
+      "url": "https://vndb.org/v2002",
+      "image": "https://s.vndb.org/cv/04/5804.jpg",
+      "type": "Story",
+      "score": 10,
+      "progressType": "routes",
+      "progress": [ 6, 6 ],
+      "achievements": [ 42, 42 ],
+      "completion": 100,
+      "playtime": "44h",
+      "start": "9/22/17",
+      "finish": "10/7/17",
+      "tags": [
+        "Cried"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Saya no Uta",
+      "url": "https://vndb.org/v97",
+      "image": "https://s.vndb.org/cv/75/8675.jpg",
+      "type": "Eroge",
+      "score": 10,
+      "progressType": "endings",
+      "progress": [ 3, 3 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "7h",
+      "start": "6/18/18",
+      "finish": "6/19/18",
+      "tags": [
+        "True psychological",
+        "Everything reminds me of this... help",
+        "Expensive for the playtime"
+      ],
+      "notes": null
+    },
+    /*{
+      "title": "WORLD END ECONOMiCA episode.1",
+      "url": "https://vndb.org/v7184",
+      "image": "https://s.vndb.org/cv/00/9700.jpg",
+      "type": "Kinetic",
+      "score": 9,
+      "progressType": null,
+      "progress": null,
+      "achievements": null,
+      "completion": null,
+      "playtime": "19h",
+      "start": "6/23/18",
+      "finish": "6/27/18",
+      "tags": [],
+      "notes": null
+    },
+    {
+      "title": "WORLD END ECONOMiCA episode.2",
+      "url": "https://vndb.org/v7184",
+      "image": "https://s.vndb.org/cv/00/9700.jpg",
+      "type": "Kinetic",
+      "score": 9,
+      "progressType": null,
+      "progress": null,
+      "achievements": null,
+      "completion": null,
+      "playtime": "20h",
+      "start": "6/28/18",
+      "finish": "7/4/18",
+      "tags": [
+        "Cried"
+      ],
+      "notes": null
+    },
+    {
+      "title": "WORLD END ECONOMiCA episode.3",
+      "url": "https://vndb.org/v7184",
+      "image": "https://s.vndb.org/cv/00/9700.jpg",
+      "type": "Kinetic",
+      "score": 10,
+      "progressType": null,
+      "progress": null,
+      "achievements": null,
+      "completion": null,
+      "playtime": "15h",
+      "start": "7/4/18",
+      "finish": "7/8/18",
+      "tags": [
+        "Cried",
+        "Boring resolution"
+      ],
+      "notes": null
+    },*/
+    {
+      "title": "WORLD END ECONOMiCA",
+      "url": "https://vndb.org/v7184",
+      "image": "https://s.vndb.org/cv/00/9700.jpg",
+      "type": "Kinetic",
+      "score": 10,
+      "progressType": "episodes",
+      "progress": [ 3, 3 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "54h",
+      "start": "6/23/18",
+      "finish": "7/8/18",
+      "tags": [
+        "Cried",
+        "Boring resolution"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Root Double -Before Crime * After Days-",
+      "url": "https://vndb.org/v5000",
+      "image": "https://s.vndb.org/cv/99/14499.jpg",
+      "type": "Story",
+      "score": 10,
+      "progressType": "endings",
+      "progress": [ 39, 39 ],
+      "achievements": [ 49, 49 ],
+      "completion": null,
+      "playtime": "105h",
+      "start": "7/11/18",
+      "finish": "8/8/18",
+      "tags": [
+        "Cried",
+        "Enjoy the flashbacks..."
+      ],
+      "notes": null
+    },
+    {
+      "title": "Dangan Ronpa Kibou no Gakuen to Zetsubou no Koukousei",
+      "url": "https://vndb.org/v7014",
+      "image": "https://s.vndb.org/cv/21/18121.jpg",
+      "type": "Story",
+      "score": 9,
+      "progressType": "routes",
+      "progress": [ 5, 5 ],
+      "achievements": [ 38, 38 ],
+      "completion": null,
+      "playtime": "46h",
+      "start": "12/29/16",
+      "finish": "1/5/17",
+      "tags": [
+        "Chihiro Best Girl"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Doki Doki Literature Club!",
+      "url": "https://vndb.org/v21905",
+      "image": "https://s.vndb.org/cv/43/34243.jpg",
+      "type": "Dating",
+      "score": 9,
+      "progressType": "endings",
+      "progress": [ "All", "All" ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "9h",
+      "start": "10/22/17",
+      "finish": "10/22/17",
+      "tags": [
+        "Do not read anything about the game before playing",
+        "Listened to EVERY Monika dialog line"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Fault Milestone One",
+      "url": "https://vndb.org/v12694",
+      "image": "https://s.vndb.org/cv/55/21155.jpg",
+      "type": "Kinetic",
+      "score": 8,
+      "progressType": "endings",
+      "progress": [ 1, 1 ],
+      "achievements": [ 12, 12 ],
+      "completion": null,
+      "playtime": "8h",
+      "start": "3/7/18",
+      "finish": "3/8/18",
+      "tags": [],
+      "notes": null
+    },
+    {
+      "title": "Fault Milestone 2 Jou (Side: Above)",
+      "url": "https://vndb.org/v15252",
+      "image": "https://s.vndb.org/cv/62/33762.jpg",
+      "type": "Kinetic",
+      "score": 9,
+      "progressType": "endings",
+      "progress": [ 1, 1 ],
+      "achievements": [ 9, 9 ],
+      "completion": null,
+      "playtime": "8h",
+      "start": "3/12/18",
+      "finish": "3/13/18",
+      "tags": [
+        "Cried"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Kajitsu",
+      "url": "https://vndb.org/v5154",
+      "image": "https://s.vndb.org/cv/13/25913.jpg",
+      "type": "Eroge",
+      "score": 10,
+      "progressType": "routes",
+      "progress": [ 5, 5 ],
+      "achievements": null,
+      "completion": 100,
+      "playtime": "113h",
+      "start": "7/5/17",
+      "finish": "8/4/17",
+      "tags": [
+        "Cried",
+        "Sachi Best Girl",
+        "Michiru Best Route"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Meikyuu",
+      "url": "https://vndb.org/v7723",
+      "image": "https://s.vndb.org/cv/74/31974.jpg",
+      "type": "Eroge/Kinetic",
+      "score": 9,
+      "progressType": "scenarios",
+      "progress": [ 7, 7 ],
+      "achievements": null,
+      "completion": 100,
+      "playtime": "49h",
+      "start": "3/21/18",
+      "finish": "3/29/18",
+      "tags": [
+        "Cried",
+        "Again Sashi Best Girl",
+        "and Michiru Best Afterstory"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Yuukan",
+      "url": "https://vndb.org/v18830",
+      "image": "https://s.vndb.org/cv/55/27355.jpg",
+      "type": "Kinetic",
+      "score": 8,
+      "progressType": "endings",
+      "progress": [ 1, 1 ],
+      "achievements": null,
+      "completion": 100,
+      "playtime": "1h",
+      "start": "3/19/18",
+      "finish": "3/19/18",
+      "tags": [],
+      "notes": null
+    },
+    {
+      "title": "Idol Mahou Shoujo Chiruchiru ☆ Michiru",
+      "url": "https://vndb.org/v14973",
+      "image": "https://s.vndb.org/cv/58/33658.jpg",
+      "type": "Kinetic",
+      "score": 10,
+      "progressType": "episodes",
+      "progress": [ 13, 13 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "17h",
+      "start": "3/8/18",
+      "finish": "3/11/18",
+      "tags": [
+        "Cried",
+        "Comedy Gold"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Kono Oozora ni, Tsubasa o Hirogete",
+      "url": "https://vndb.org/v9093",
+      //"image": "https://s.vndb.org/cv/91/32691.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/If_My_Heart_Had_Wings_Coverart.png/220px-If_My_Heart_Had_Wings_Coverart.png",
+      "type": "Eroge",
+      "score": 9,
+      "progressType": "routes",
+      "progress": [ 5, 5 ],
+      "achievements": [ 20, 20 ],
+      "completion": null,
+      "playtime": "67h",
+      "start": "2/21/18",
+      "finish": "3/3/18",
+      "tags": [
+        "Cried",
+        "Hotaru Best Girl"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Katawa Shoujo",
+      "url": "https://vndb.org/v945",
+      "image": "https://s.vndb.org/cv/59/2059.jpg",
+      "type": "Dating",
+      "score": 10,
+      "progressType": "routes",
+      "progress": [ 5, 5 ],
+      "achievements": null,
+      "completion": 100,
+      "playtime": "20h",
+      "start": "Early 2016",
+      "finish": "Early 2016",
+      "tags": [
+        "Cried",
+        "Hanako Best Girl"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Neko Para Vol.0 Minazuki Neko-tachi no Nichijou!",
+      "url": "https://vndb.org/v17763",
+      "image": "https://s.vndb.org/cv/25/25525.jpg",
+      "type": "Kinetic",
+      "score": 6,
+      "progressType": "endings",
+      "progress": [ 1, 1 ],
+      "achievements": [ 13, 13 ],
+      "completion": null,
+      "playtime": "3h",
+      "start": "3/6/18",
+      "finish": "3/6/18",
+      "tags": [
+        "Bad Music Transitions",
+        "Awkward Animation"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Neko Para Vol.1 Soleil Kaiten Shimashita!",
+      "url": "https://vndb.org/v15538",
+      "image": "https://s.vndb.org/cv/39/22939.jpg",
+      "type": "Eroge",
+      "score": 7,
+      "progressType": "endings",
+      "progress": [ 1, 1 ],
+      "achievements": [ 14, 14 ],
+      "completion": null,
+      "playtime": "8h",
+      "start": "3/6/18",
+      "finish": "3/7/18",
+      "tags": [
+        "The only time I touched myself was when I had an itch",
+        "Imouto is annoying"
+      ],
+      "notes": null
+    },
+    {
+      "title": "No One But You",
+      "url": "https://vndb.org/v17564",
+      "image": "https://s.vndb.org/cv/36/27436.jpg",
+      "type": "Dating",
+      "score": 7,
+      "progressType": "routes",
+      "progress": [ 5, 5 ],
+      "achievements": [ 18, 18 ],
+      "completion": 100,
+      "playtime": "10h",
+      "start": "Early 2016",
+      "finish": "Early 2016",
+      "tags": [
+        "Cried"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Sunrider Academy",
+      "url": "https://vndb.org/v16221",
+      "image": "https://s.vndb.org/cv/40/22940.jpg",
+      "type": "Dating",
+      "score": 8,
+      "progressType": "routes",
+      "progress": [ 4, 4 ],
+      "achievements": [ 20, 20 ],
+      "completion": 100,
+      "playtime": "33h",
+      "start": "Early 2016",
+      "finish": "Early 2016",
+      "tags": [
+        "Cried"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Hyperdimension Neptunia Re;Birth1",
+      "url": "https://store.steampowered.com/app/282900/Hyperdimension_Neptunia_ReBirth1___ReBirth1__1/",
+      "image": "https://vignette.wikia.nocookie.net/neptunia/images/b/b4/ReBirth_1_Coverart.png/revision/latest?cb=20140820030933",
+      "type": "JRPG",
+      "score": 8,
+      "progressType": "endings",
+      "progress": [ 2, 2 ],
+      "achievements": [ 45, 45 ],
+      "completion": null,
+      "playtime": "125h",
+      "start": "10/18/16",
+      "finish": "10/25/16",
+      "tags": [
+        "Minor Game Design Issues",
+        "Cumbersome UI",
+        "Heavily Reused Resources"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Hyperdimension Neptunia Re;Birth2: Sisters Generation",
+      "url": "https://store.steampowered.com/app/351710/Hyperdimension_Neptunia_ReBirth2_Sisters_Generation___ReBirth2____2/",
+      "image": "https://vignette.wikia.nocookie.net/neptunia/images/3/3a/Re%3BBirth2_SE.jpg/revision/latest?cb=20150519225219",
+      "type": "JRPG",
+      "score": 8,
+      "progressType": "endings",
+      "progress": [ 9, 9 ],
+      "achievements": [ 41, 41 ],
+      "completion": null,
+      "playtime": "115h",
+      "start": "11/8/16",
+      "finish": "11/17/16",
+      "tags": [
+        "Cried",
+        "Conquest Best Ending",
+        "Minor Game Design Issues",
+        "Cumbersome UI",
+        "Heavily Reused Resources"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Hyperdimension Neptunia Re;Birth3 V Generation",
+      "url": "https://store.steampowered.com/app/353270/Hyperdimension_Neptunia_ReBirth3_V_Generation___ReBirth3_V_CENTURY____3/",
+      "image": "https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/a/a9/Re%3BBirth3VGeneration.jpg/revision/latest?cb=20150914184503",
+      "type": "JRPG",
+      "score": 9,
+      "progressType": "endings",
+      "progress": [ 3, 3 ],
+      "achievements": [ 42, 42 ],
+      "completion": null,
+      "playtime": "151h",
+      "start": "11/29/16",
+      "finish": "12/9/16",
+      "tags": [
+        "Top Nep",
+        "Minor Game Design Issues",
+        "Cumbersome UI",
+        "Heavily Reused Resources",
+        "So Much Power"
+      ],
+      "notes": null
+    }
+  ],
+
+  "onhold": [
+    {
+      "title": "MegaTagmension Blanc + Neptune VS Zombies (Neptunia)",
+      "url": "https://store.steampowered.com/app/496810/MegaTagmension_Blanc__Neptune_VS_Zombies_Neptunia/",
+      "image": "https://vignette.wikia.nocookie.net/neptunia/images/d/d4/BvZ_Standard.jpg/revision/latest?cb=20160413175446",
+      "type": "Hack n Slash",
+      "score": null,
+      "progressType": null,
+      "progress": null,
+      "achievements": [ 4, 36 ],
+      "completion": null,
+      "playtime": "4h",
+      "start": "12/31/16",
+      "finish": null,
+      "tags": [
+        "Cannot physically play"
+      ],
+      "notes": null
+    }
+  ],
+
+  "dropped": [
+
+  ],
+
+  "planning": [
+    {
+      "title": "Super Dangan Ronpa 2 Sayonara Zetsubou Gakuen",
+      "url": "https://vndb.org/v7679",
+      "image": "https://s.vndb.org/cv/20/18120.jpg",
+      "type": "Mystery",
+      "score": null,
+      "progressType": null,
+      "progress": null,
+      "achievements": [ null, 47 ],
+      "completion": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": null,
+      "notes": null
+    },
+    {
+      "title": "Megadimension Neptunia VII",
+      "url": "https://store.steampowered.com/app/460120/Megadimension_Neptunia_VII/",
+      "image": "https://vignette.wikia.nocookie.net/neptunia/images/1/19/V2_SE_Cover.jpg/revision/latest?cb=20160116002938",
+      "type": "JRPG",
+      "score": null,
+      "progressType": "endings",
+      "progress": null,
+      "achievements": [ null, 35 ],
+      "completion": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [],
+      "notes": null
+    },
+    {
+      "title": "Hyperdimension Neptunia U: Action Unleashed",
+      "url": "https://store.steampowered.com/app/387340/Hyperdimension_Neptunia_U_Action_Unleashed/",
+      "image": "https://vignette.wikia.nocookie.net/neptunia/images/3/37/Neptunia_U_SE.jpg/revision/latest?cb=20150519223925",
+      "type": "Hack n Slash",
+      "score": null,
+      "progressType": null,
+      "progress": null,
+      "achievements": [ null, 35 ],
+      "completion": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [],
+      "notes": null
+    }
+  ]
+}
