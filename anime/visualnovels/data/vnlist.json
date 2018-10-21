@@ -346,7 +346,7 @@
       "progressType": "routes",
       "progress": [ 5, 5 ],
       "achievements": [ 20, 20 ],
-      "completion": null,
+      "completion": 100,
       "playtime": "67h",
       "start": "2/21/18",
       "finish": "3/3/18",
