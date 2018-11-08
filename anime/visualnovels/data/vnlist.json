@@ -3,24 +3,40 @@
 
   "playing": [
     {
-      "title": "Noble ☆ Works",
-      "url": "https://vndb.org/v4806",
-      "image": "https://s.vndb.org/cv/09/27809.jpg",
+      "title": "Fate/stay night",
+      "url": "https://vndb.org/v11",
+      "image": "https://s.vndb.org/cv/85/24185.jpg",
       "type": "Eroge",
       "score": null,
       "progressType": "routes",
       "progress": [ 1, 5 ],
       "achievements": null,
       "completion": null,
-      "playtime": "10h",
-      "start": "2/18/16",
+      "playtime": "0h",
+      "start": "11/8/18",
       "finish": null,
       "tags": [],
-      "notes": "Completed: Nagamitsu Maya"
+      "notes": null
     }
   ],
 
   "completed": [
+    {
+      "title": "Noble ☆ Works",
+      "url": "https://vndb.org/v4806",
+      "image": "https://s.vndb.org/cv/09/27809.jpg",
+      "type": "Eroge",
+      "score": 7,
+      "progressType": "routes",
+      "progress": [ 6, 6 ],
+      "achievements": null,
+      "completion": null,
+      "playtime": "108h",
+      "start": "2/18/16",
+      "finish": "11/7/18,
+      "tags": [],
+      "notes": "Completed: Nagamitsu Maya twice"
+    },
     {
       "title": "Rinkaiten ~Critical Point~",
       "url": "https://vndb.org/v145",
