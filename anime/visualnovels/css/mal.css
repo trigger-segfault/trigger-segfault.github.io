@@ -866,8 +866,10 @@ a {
         display: none;
         background-color: #4065BA;
         width: 1024px;
-        height: 30px;
-        line-height: 30px;
+        /*height: 30px;*/
+        line-height: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         color: #FFF;
         text-align: center;
     }
@@ -1053,6 +1055,7 @@ a {
     .list-table .list-table-data .data.image a {
         /*EDITED*/
         /*display: inline-block;*/
+        display: inline-block;
     }
 
     .list-table .list-table-data .data.image .image {

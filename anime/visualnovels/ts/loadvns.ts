@@ -1,80 +1,126 @@
 ﻿
-function setupEnum(obj) {
-    obj._enumNames = [];
-    for (var prop in obj) {
-        if (obj.hasOwnProperty(prop) && typeof obj[prop] !== 'function' && typeof obj[prop] !== typeof []) {
-            obj._enumNames.push(prop);
-        }
-    }
-    Object.freeze(obj);
+enum ProgressTypes {
+    routes = 0,
+    endings = 1,
+    episodes = 2,
+    sidestories = 3,
 }
 
-var ProgressType = {
-    "routes": 0,
-    "endings": 1,
-    "episodes": 2,
-    "sidestories": 3,
-    getFriendlyName(progressType) {
-        switch (progressType) {
-            case this.routes:
-            case "routes": return "Routes";
-            case this.endings:
-            case "endings": return "Endings";
-            case this.episodes:
-            case "episodes": return "Episodes";
-            case this.sidestories:
-            case "sidestories": return "Other";
-        }
-    },
-    getNames() {
-        return this._enumNames;
-    }
-}; setupEnum(ProgressType);
-var StatusType = {
-    "all": 7,
-    "playing": 1,
-    "completed": 2,
-    "onhold": 3,
-    "dropped": 4,
-    "planning": 6,
-    getFriendlyName(progressType) {
-        switch (progressType) {
-            case this.all:
-            case "all": return "All Visual Novels";
-            case this.playing:
-            case "playing": return "Currently Playing";
-            case this.completed:
-            case "completed": return "Completed";
-            case this.onhold:
-            case "onhold": return "On-Hold";
-            case this.dropped:
-            case "dropped": return "Dropped";
-            case this.planning:
-            case "planning": return "Plan to Play";
-        }
-    },
-    getFriendlyShortName(progressType) {
-        switch (progressType) {
-            case this.all:
-            case "all": return "Total";
-            case this.playing:
-            case "playing": return "Playing";
-            case this.completed:
-            case "completed": return "Completed";
-            case this.onhold:
-            case "onhold": return "On-Hold";
-            case this.dropped:
-            case "dropped": return "Dropped";
-            case this.planning:
-            case "planning": return "Planning";
-        }
-    },
-    getNames() {
-        return this._enumNames;
-    }
-}; setupEnum(StatusType);
+namespace EnumHelper {
+    
+}
 
-class VNStats {
+namespace ProgressTypes {
+    var values: ProgressTypes[];
+    var names: string[];
+
+    export function getFriendlyName(progressType: ProgressTypes): string {
+        switch (progressType) {
+            case ProgressTypes.routes: return "Routes";
+            case ProgressTypes.endings: return "Endings";
+            case ProgressTypes.episodes: return "Episodes";
+            case ProgressTypes.sidestories: return "Other";
+        }
+    }
+    export  function getValues(): ProgressTypes[] {
+        if (values == null) {
+            values = [];
+            for (var value in ProgressTypes) {
+                if (typeof value === 'number')
+                    values.push(value);
+            }
+        }
+        return values;
+    }
+    export function getNames(): string[] {
+        if (names == null) {
+            names = [];
+            for (var name in ProgressTypes) {
+                if (typeof name === 'string')
+                    names.push(name);
+            }
+        }
+        return names;
+    }
+}
+
+enum StatusTypes {
+    playing = 1,
+    completed = 2,
+    onhold = 3,
+    dropped = 4,
+    planning = 6,
+    all = 7,
+}
+
+namespace StatusTypes {
+    var values: StatusTypes[];
+    var names: string[];
+
+    export function getFriendlyName(statusType: StatusTypes): string {
+        switch (statusType) {
+            case StatusTypes.all: return "All Visual Novels";
+            case StatusTypes.playing: return "Currently Playing";
+            case StatusTypes.completed: return "Completed";
+            case StatusTypes.onhold: return "On-Hold";
+            case StatusTypes.dropped: return "Dropped";
+            case StatusTypes.planning: return "Plan to Play";
+        }
+    }
+    export function getFriendlyShortName(statusType: StatusTypes): string {
+        switch (statusType) {
+            case StatusTypes.all: return "All";
+            case StatusTypes.playing: return "Playing";
+            case StatusTypes.completed: return "Completed";
+            case StatusTypes.onhold: return "On-Hold";
+            case StatusTypes.dropped: return "Dropped";
+            case StatusTypes.planning: return "Planning";
+        }
+    }
+    export function getValues(): StatusTypes[] {
+        if (values == null) {
+            values = [];
+            for (var value in StatusTypes) {
+                if (typeof value === 'number')
+                    values.push(value);
+            }
+        }
+        return values;
+    }
+    export function getNames(): string[] {
+        if (names == null) {
+            names = [];
+            for (var name in StatusTypes) {
+                if (typeof name === 'string')
+                    names.push(name);
+            }
+        }
+        return names;
+    }
+}
+
+class VNStats2 {
+    playtime: number;
+    achievements: number;
+    gamesWithAchievements: number;
+    gamesWithAllAchievements: number;
+    gamesWithCompletion: number;
+    gamesWithFullCompletion: number;
+
+    routes: number;
+    endings: number;
+    episodes: number;
+    sidestories: number;
+
+    playing: number;
+    completed: number;
+    onhold: number;
+    dropped: number;
+    planning: number;
+    totalEntries: number;
+
+    totalScore: number;
+    totalScoredEntries: number;
     constructor() {
         this.playtime = 0;
         this.achievements = 0;
@@ -94,17 +140,18 @@ class VNStats {
         this.dropped = 0;
         this.planning = 0;
         this.totalEntries = 0;
-        this.totalScoredEntries = 0;
+
         this.totalScore = 0;
-        for (var i = 0; i < ProgressType.getNames().length; i++) {
-            this[ProgressType.getNames()[i]] = 0;
+        this.totalScoredEntries = 0;
+        for (var i = 0; i < ProgressTypes.getNames().length; i++) {
+            this[ProgressTypes.getNames()[i]] = 0;
         }
-        for (var i = 0; i < StatusType.getNames().length; i++) {
-            this[StatusType.getNames()[i]] = 0;
+        for (var i = 0; i < StatusTypes.getNames().length; i++) {
+            this[StatusTypes.getNames()[i]] = 0;
         }
     }
 
-    get meanScore() {
+    get meanScore() : number {
         return this.totalScore / this.totalScoredEntries;
     }
 
@@ -121,8 +168,8 @@ class VNStats {
             if (vn.completion >= 100)
                 this.gamesWithFullCompletion++;
         }
-        for (var i = 0; i < ProgressType.getNames().length; i++) {
-            var type = ProgressType.getNames()[i];
+        for (var i = 0; i < ProgressTypes.getNames().length; i++) {
+            var type = ProgressTypes.getNames()[i];
             if (vn.progress[type] != null)
                 this[type] += vn.progress[type][0];
         };
@@ -135,18 +182,16 @@ class VNStats {
     }
 
     buildList(div) {
-        for (var i = 0; i < ProgressType.getNames().length; i++) {
-            var progress = ProgressType.getNames()[i];
-            this.buildBasic(div, ProgressType.getFriendlyName(progress), this[progress]);
+        for (let progress of ProgressTypes.getValues()) {
+            this.buildBasic(div, ProgressTypes.getFriendlyName(progress), this[progress]);
         }
         this.buildBr(div);
-        for (var i = 0; i < StatusType.getNames().length; i++) {
-            var status = StatusType.getNames()[i];
-            if (StatusType[status] == StatusType.all)
+        for (let status of StatusTypes.getValues()) {
+            if (status == StatusTypes.all)
                 continue;
-            this.buildBasic(div, StatusType.getFriendlyShortName(status), this[status]);
+            this.buildBasic(div, StatusTypes.getFriendlyShortName(status), this[status]);
         }
-        this.buildBasic(div, StatusType.getFriendlyShortName(StatusType.all), this.totalEntries);
+        this.buildBasic(div, 'Total', this.totalEntries);
         this.buildBr(div);
         this.buildBasic(div, 'Achievements', this.achievements);
         this.buildBasic(div, 'Days', (this.playing / 24.0).toPrecision(2));
@@ -172,7 +217,15 @@ class VNStats {
     }
 }
 
-class VNProgress {
+class VNProgress2 {
+    hideProgress: boolean;
+    progressType: ProgressTypes;
+    progressType2: ProgressTypes;
+
+    routes: number[];
+    endings: number[];
+    episodes: number[];
+    sidestories: number[];
     constructor(data) {
         this.routes = null;
         this.endings = null;
@@ -188,8 +241,8 @@ class VNProgress {
         if (data.progressType == null && data.progressType2 != null)
             throw new Error('progressType1 cannot be null when progressType2 is set for ' + data.title + '!');
 
-        for (var i = 0; i < ProgressType.getNames().length; i++) {
-            var type = ProgressType.getNames()[i];
+        for (var i = 0; i < ProgressTypes.getNames().length; i++) {
+            var type = ProgressTypes.getNames()[i];
             var progress = data[type];
             if (progress != null) {
                 if (typeof progress === typeof [] && progress.length == 2) {
@@ -269,7 +322,7 @@ class VNProgress {
             tdProgress.appendChild(spanFullProgress);
 
             var spanType = document.createElement('span');
-            spanType.innerText = ProgressType.getFriendlyName(this.progressType);
+            spanType.innerText = ProgressTypes.getFriendlyName(this.progressType);
             spanFullProgress.appendChild(spanType);
             spanFullProgress.appendChild(document.createElement('br'));
 
@@ -295,7 +348,7 @@ class VNProgress {
                 tdProgress.appendChild(spanFullProgress);
 
                 var spanType = document.createElement('span');
-                spanType.innerText = ProgressType.getFriendlyName(this.progressType2);
+                spanType.innerText = ProgressTypes.getFriendlyName(this.progressType2);
                 spanFullProgress.appendChild(spanType);
                 spanFullProgress.appendChild(document.createElement('br'));
 
@@ -322,7 +375,27 @@ class VNProgress {
     }
 }
 
-class VNEntry {
+class VNEntry2 {
+    title: string;
+    url: string;
+    image: string;
+    type: string; // Unused atm
+
+    status: StatusTypes;
+    score: number;
+    progress: VNProgress2;
+    achievements: number[];
+    completion: number;
+
+    playtime: number;
+    playtimeHours: number;
+    playtimeMinutes: number;
+
+    start: Date;
+    finish: Date;
+
+    tags: string[];
+    notes: string;
     constructor(data, status) {
         this.title = data.title;
         this.url = data.url;
@@ -334,7 +407,7 @@ class VNEntry {
         this.score = data.score;
         //this.progressType = data.progressType;
         //this.progress = data.progress;
-        this.progress = new VNProgress(data);
+        this.progress = new VNProgress2(data);
         this.achievements = data.achievements;
         this.completion = data.completion;
         this.playtime = 0;
@@ -401,7 +474,7 @@ class VNEntry {
         aTitle.href = this.url;
         aTitle.innerText = this.title;
         tdTitle.appendChild(aTitle);
-        
+
         tr.appendChild(this.buildNormalTd('score', this.score));
 
         //tr.appendChild(this.buildProgressTd('progress', this.progressType, this.progress));
@@ -415,7 +488,7 @@ class VNEntry {
             var spanCompletion = document.createElement('span');
             tdCompletion.appendChild(spanCompletion);
             var spanPercent = document.createElement('span');
-            spanPercent.innerText = this.completion;
+            spanPercent.innerText = this.completion.toString();
             spanCompletion.appendChild(spanPercent);
             spanCompletion.innerHTML += '\n%';
             //spanCompletion.appendChild('%');
@@ -549,30 +622,29 @@ class VNEntry {
     }
 }
 
-function initializeVNList() {
-    loadJSON('data/vnlist.json', initializeVNListJson);
+function initializeVNList2() {
+    loadJSON2('data/vnlist.json', initializeVNListJson2);
 }
 
-function initializeVNListJson(jsonText) {
+function initializeVNListJson2(jsonText) {
     var json = JSON.parse(stripJsonComments(jsonText));
     var table = document.getElementById('list-table');
     var listStats = document.getElementById('list-stats');
 
-    var list = [];
-    for (var i = 0; i < StatusType.getNames().length; i++) {
-        var status = StatusType.getNames()[i];
-        if (StatusType[status] == StatusType.all)
+    var list: VNEntry2[] = [];
+    for (let status of StatusTypes.getValues()) {
+        if (status == StatusTypes.all)
             continue;
-        loadStatus(json, status, list);
-    };
+        loadStatus2(json, status, list);
+    }
     /*loadStatus(json, 'playing', list);
     loadStatus(json, 'completed', list);
     loadStatus(json, 'onhold', list);
     loadStatus(json, 'dropped', list);
     loadStatus(json, 'planning', list);*/
 
-    var stats = new VNStats();
-    
+    var stats = new VNStats2();
+
     for (var i = 0; i < list.length; i++) {
         table.appendChild(list[i].buildTableSection(i + 1));
         stats.add(list[i]);
@@ -582,7 +654,7 @@ function initializeVNListJson(jsonText) {
     stats.buildList(listStats);
 }
 
-function loadJSON(url, callback) {
+function loadJSON2(url: string, callback: (jsonText: string) => void) {
     /*fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -592,7 +664,7 @@ function loadJSON(url, callback) {
     xobj.overrideMimeType("application/json");
     xobj.open('GET', url, true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
+        if (xobj.readyState == 4 && xobj.status == 200) {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
             callback(xobj.responseText);
         }
@@ -600,14 +672,14 @@ function loadJSON(url, callback) {
     xobj.send(null);
 }
 
-function loadStatus(json, status, list) {
-    statusArray = json[status];
+function loadStatus2(json, status: StatusTypes, list: VNEntry2[]) {
+    var statusArray = json[StatusTypes[status]];
     if (statusArray == null)
         return;
 
     var statusList = [];
     for (var i = 0; i < statusArray.length; i++) {
-        statusList.push(new VNEntry(statusArray[i], status));
+        statusList.push(new VNEntry2(statusArray[i], status));
     }
     statusList.sort(function (a, b) { return a.title.toLowerCase().localeCompare(b.title.toLowerCase()) });
     Array.prototype.push.apply(list, statusList);
