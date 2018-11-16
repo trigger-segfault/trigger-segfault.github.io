@@ -1,0 +1,52 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "css.lint.vendorPrefix": "ignore",
+    "editor.detectIndentation": false,
+    "files.exclude": {
+      "_site/**": true,
+      "node_modules/**": true,
+      "**/.vscode/**": true
+    },
+	  "[markdown]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[json]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[jsonc]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[xml]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[html]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[css]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[scss]": {
+	    "editor.insertSpaces": true,
+	    "editor.tabSize": 2
+	  },
+	  "[javascript]": {
+	    "editor.insertSpaces": false,
+	    "editor.tabSize": 4
+	  },
+	  "[typescript]": {
+	    "editor.insertSpaces": false,
+	    "editor.tabSize": 4
+	  },
+  }
+}

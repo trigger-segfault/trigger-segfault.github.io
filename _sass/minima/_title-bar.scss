@@ -1,0 +1,221 @@
+/**
+ * Site header
+ */
+.site-header {
+	/*border-top: 5px solid $grey-color-dark;
+	border-bottom: 1px solid $grey-color-dark;*/
+	min-height: $spacing-unit * 1.865;
+  
+	// Positioning context for the mobile navigation icon
+	position: relative;
+}
+  
+  /* @font-face kit by Fonts2u (https://fonts2u.com) */
+  @font-face {
+	  font-family:"Eurostar";
+	  src: url("/assets/fonts/eurostar.eot?") format("eot"),
+		     url("/assets/fonts/eurostar.woff") format("woff"),
+		     url("/assets/fonts/eurostar.ttf") format("truetype"),
+		     url("/assets/fonts/eurostar.svg#Eurostar") format("svg");
+	  font-weight:normal;
+	  font-style:normal;
+  }
+  @font-face {
+	  font-family:"Eurostar";
+	  src: url("/assets/fonts/eurostarblack.eot?") format("eot"),
+		     url("/assets/fonts/eurostarblack.woff") format("woff"),
+		     url("/assets/fonts/eurostarblack.ttf") format("truetype"),
+		     url("/assets/fonts/eurostarblack.svg#Eurostar") format("svg");
+	  font-weight:bold;
+	  font-style:normal;
+  }
+  
+  
+  .site-title-header {
+	  /*background-image: url("/assets/img/title-fractal.png");
+	  background-repeat: repeat-x;
+	  background-position: left center;*/
+	  width: 100%;
+  
+	  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004559+19,0099ba+68&1+71,0+100 */
+	  background: -moz-linear-gradient(left, rgba(0,69,89,1) 19%, rgba(0,153,186,1) 68%, rgba(0,153,186,1) 71%, rgba(253,253,253,1) 100%); /* FF3.6-15 */
+	  background: -webkit-linear-gradient(left, rgba(0,69,89,1) 19%,rgba(0,153,186,1) 68%,rgba(0,153,186,1) 71%,rgba(253,253,253,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	  background: linear-gradient(to right, rgba(0,69,89,1) 19%,rgba(0,153,186,1) 68%,rgba(0,153,186,1) 71%,rgba(253,253,253,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004559', endColorstr='#000099ba',GradientType=1 ); /* IE6-9 */
+	  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#004559+19,0099ba+68&1+71,0+100 */
+	  background: -moz-linear-gradient(left, rgba(0,69,89,1) 19%, rgba(0,153,186,1) 68%, rgba(0,153,186,1) 71%, rgba(0,153,186,0) 100%); /* FF3.6-15 */
+	  background: -webkit-linear-gradient(left, rgba(0,69,89,1) 19%,rgba(0,153,186,1) 68%,rgba(0,153,186,1) 71%,rgba(0,153,186,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	  background: linear-gradient(to right, rgba(0,69,89,1) 19%,rgba(0,153,186,1) 68%,rgba(0,153,186,1) 71%,rgba(0,153,186,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004559', endColorstr='#000099ba',GradientType=1 ); /* IE6-9 */
+	  height: 100px;
+	  /*text-align: center;
+	  position: relative;
+	  display: inline-block;*/
+	display: flex;
+	align-items: center;
+  }
+  /*.site-title {
+	  font-family: Eurostar;
+	  font-size: 50px;
+	  font-weight: bold;
+	  color: rgb(40, 40, 40);
+	  text-shadow: 0 0 12px rgb(0, 190, 230);
+  
+	  line-height: 100px;
+	  vertical-align: middle;
+	  margin: 0 30px;
+	  white-space: nowrap;
+	  &, &:visited {
+		  color: rgb(40, 40, 40);
+	  }
+	  &:hover {
+		  text-decoration: none;
+		  text-shadow: 0 0 18px rgb(50, 210, 250);
+	  }
+  }*/
+  #title-side-fractal {
+	  
+	  background-image: url("/assets/img/title-side-fractal.png");
+	  background-size: 130px 100px;
+	  position: absolute;
+	  width: 130px;
+	  height: 100px;
+	  /*z-index: -10;
+	  position: absolute;
+	  left: -67px;
+	  top: -53px;
+	  background-image: url("/assets/img/title-side-fractal-full.png");
+	  animation: 0.8s ease-out 0s 1 title-side-fractal-frames;
+	  clip-path: inset(63px 57px 0px 0px);*/
+  }
+  
+  /* Retina Fractal */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	  #title-side-fractal {
+		  background-image: url("/assets/img/title-side-fractal-large.png");
+		  background-size: 130px 100px;
+	  }
+  }
+  header.site-header, header.site-header *  {
+    box-sizing: initial;
+  }
+  header .site-title {
+	  z-index: 10;
+	  width: 100%;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+  header .site-title h1, header .site-title h2 {
+	  line-height: normal;
+	  font-family: Eurostar;
+	  @include relative-font-size(1.9);
+	  /*font-size: 50px;*/
+	  font-weight: bold;
+	  color: rgb(40, 40, 40);
+	  //text-shadow: 0 0 12px rgb(0, 190, 230);
+  
+	  /*line-height: 100px;*/
+	  /*margin: 0 30px;*/
+	  /*white-space: nowrap;*/
+	  /*&, &:visited {
+		  color: rgb(40, 40, 40);
+	  }
+	  &:hover {
+		  text-decoration: none;
+		  text-shadow: 0 0 18px rgb(50, 210, 250);
+	  }
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction:row;*/
+	  /*text-align: center;
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+    transform: translateY(-50%);*/
+	  text-shadow: inherit;
+  }
+  body header .site-title a {
+	  line-height: normal;
+	  font-family: Eurostar;
+	  @include relative-font-size(1.9);
+	  /*font-size: 50px;*/
+	  font-weight: bold;
+	  color: rgb(40, 40, 40);
+	  text-shadow: 0 0 12px rgb(0, 190, 230);
+  
+	  /*line-height: 100px;*/
+	  /*margin: 0 30px;*/
+	  /*white-space: nowrap;*/
+	  &, &:visited {
+		  color: rgb(40, 40, 40);
+	  }
+	  &:hover {
+		  text-decoration: none;
+		  text-shadow: 0 0 18px rgb(50, 210, 250);
+	  }
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction:row;
+	  /*text-align: center;
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  transform: translateY(-50%);*/
+  }
+  @media all and (min-width:801px) {
+	  /* put your css styles in here */
+	  header .site-title h1, header .site-title h2 {
+		  @include relative-font-size(2.2);
+		  margin: 0;
+		  font-weight: bold !important;
+	  }
+	  /*.site-title div {
+		  display: block;
+	  }*/
+	  header .site-title span {
+		  font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		  @include relative-font-size(1.5);
+		  margin-top: -4px;
+	  }
+  }
+  @media all and (min-width:651px) and (max-width:800px) {
+	  /* put your css styles in here */
+	  header .site-title h1, header .site-title h2 {
+		  @include relative-font-size(2.2);
+		  margin: 0;
+		  font-weight: bold !important;
+	  }
+	  /*.site-title div {
+		  display: inline;
+	  }*/
+	  header .site-title span {
+		  display: none;
+	  }
+  }
+  @media all and (max-width:650px) {
+	  /* put your css styles in here */
+	  header .site-title a {
+		  flex-direction: column;
+	  }
+	  header .site-title h1, header .site-title h2 {
+		  margin: 0;
+		  font-weight: bold !important;
+	  }
+	  header .site-title h1 {
+		  @include relative-font-size(1.9);
+	  }
+	  header .site-title h2 {
+		  @include relative-font-size(1.45);
+	  }
+	  header .site-title span {
+		  display: none;
+	  }
+	  #title-side-fractal {
+		  margin-left: -50px;
+	  }
+  }

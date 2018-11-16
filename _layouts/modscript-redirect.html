@@ -1,0 +1,19 @@
+// This JavaScript Mod file has been moved to {{ page.modscript_path | absolute_url }}
+// For legacy support, we'll just redirect to the new js file
+
+(function RedirectMod_{{ page.modscript_id }}() {
+	var name = '{{ page.modscript_id }}'
+	var path = '{{ page.modscript_path | absolute_url }}';
+
+	// Remove this JavaScript redirect
+	var redirectJs = document.getElementById('modscript_' + name);
+	redirectJs.parentNode.removeChild(redirectJs);
+
+	// Replace it with the new JavaScript path
+	var js = document.createElement('script');
+	js.setAttribute('type', 'text/javascript');
+	js.setAttribute('id', 'modscript_' + name);
+	js.setAttribute('src', path);
+	document.head.appendChild(js);
+	console.log('This is a legacy mod path. Redirected to the mod ' + path + ', ' + name + '.');
+})();

@@ -1,0 +1,25 @@
+
+#return-arrow {
+	background-image: url('/assets/img/return-arrow-48.png');
+	background-size: 48px 48px;
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	-webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.8);
+	-moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.8);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.8);
+  z-index: 2000;
+  opacity: 0.65;
+  transition: opacity 0.25s ease;
+}
+#return-arrow:hover {
+  opacity: 1;
+}
+/* Retina Return Arrow */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	#return-arrow {
+		background-image: url('/assets/img/return-arrow-96.png');
+	}
+}

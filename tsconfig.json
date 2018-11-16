@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "module": "AMD",
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "outDir": "./assets/js",
+    "target": "es5",
+    "sourceMap": false,
+    "declaration": false,
+    "jsx": "preserve",
+    "lib": [
+      "es2017",
+      "dom",
+      "es5"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "strip-json-comments": [
+        "node_modules/@types/strip-json-comments"
+      ]
+    },
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
+  },
+  "include": [
+    "assets/ts/*"
+  ],
+  "exclude": [
+    ".git",
+    "node_modules"
+  ],
+  "compileOnSave": true
+}

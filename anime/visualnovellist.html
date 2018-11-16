@@ -1,0 +1,89 @@
+---
+layout: none
+title: trigger_death's Visual Novel List
+permalink: /anime/visualnovellist/
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Tab title -->
+  <title>trigger_death's Visual Novel List</title>
+  <!-- Tab favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <link rel="stylesheet" media="all" href="/assets/css/reset.css" />
+  <link rel="stylesheet" media="all" href="/assets/css/return-arrow.css" />
+  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-mal.css" />
+  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-custom.css" />
+  <!--<link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-style.css" />
+  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-inline.css" />-->
+  <script type="text/javascript" src="/assets/js/is-touch-device.js"></script>
+  <script type="text/javascript" src="/assets/js/strip-json-comments.js"></script>
+  <script type="text/javascript" src="/assets/js/visualnovellist.js"></script>
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>
+<body class="ownlist anime">
+  <div id="bgfade"> </div>
+  <div id="bgright"> </div>
+  <div id="bgleft"> </div>
+  <div id="header">
+    <h1>trigger_death's visual novel list</h1>
+  </div>
+  <a id="return-arrow" href="/anime/"></a>
+  <!--<div class="header">
+      <div class="header-menu">
+          <div class="btn-menu">
+              Viewing <span class="username">trigger_death's</span> Visual Novel List
+          </div>
+      </div>
+      <a class="header-title" href="">Trigger's Visual Novel List</a>
+  </div>-->
+  <div id="list-container" class="list-container">
+    <div class="list-block">
+      <div class="list-unit all_vns">
+        <div id="status-menu" class="status-menu-container">
+          <div class="status-menu" id="status-menu-buttons">
+            <span class="status-button all on">All Visual Novels</span>
+            <span class="status-button playing ">Currently Playing</span>
+            <span class="status-button completed ">Completed</span>
+            <span class="status-button onhold ">On Hold</span>
+            <span class="status-button dropped ">Dropped</span>
+            <span class="status-button planning ">Plan to Play</span>
+          </div>
+          <div class="search-container">
+            <div id="search-box"><input value="" type="text"></div>
+            <a id="search-button" href="javascript: void(0);">
+              <i class="fa fa-search"></i>
+            </a>
+          </div>
+          <div class="list-stats" id="list-stats" style="display: block;"></div>
+        </div>
+        <table class="list-table" id="list-table">
+          <tbody>
+            <tr class="list-table-header">
+              <th class="header-title status"></th>
+              <th class="header-title number">#</th>
+              <th class="header-title image">Image</th>
+              <th class="header-title"><a class="title sort-category">Title</a></th>
+              <th class="header-title" style="width: 50px;"><a class="score sort-category">Score</a></th>
+              <th class="header-title" style="width: 68px;"><a class="progress sort-category">Progress</a></th>
+              <th class="header-title completion" style="width: 82px;">Completion</th>
+              <th class="header-title" style="width: 66px;"><a class="playtime sort-category">Playtime</a></th>
+              <th class="header-title start-finish" style="width: 90px;"><a class="start sort-category">Start</a>/<a class="finish sort-category">Finish</a></th>
+              <th class="header-title tags">Tags <a id="tags-clear" style="display: none;">(clear)</a></th>
+            </tr>
+          </tbody>
+        </table>
+        <div class="loading-space"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- All visual novels populated here -->
+  <script>initializeVNList();</script>
+</body>
+</html>

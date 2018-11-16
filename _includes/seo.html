@@ -1,0 +1,19 @@
+{%- assign title = page.title_page | default: page.title -%}
+
+{%- if title -%}
+  {%- if page.title_postfix.size > 0 -%}
+<title>{{ title | escape }} | {{ page.title_postfix | escape }}</title>
+  {%- else -%}
+<title>{{ title | escape }}</title>
+  {%- endif -%}
+{%- elsif site.title -%}
+  {%- if page.title_postfix.size > 0 -%}
+<title>{{ site.title | escape }} | {{ page.title_postfix | escape }}</title>
+  {%- else -%}
+<title>{{ site.title | escape }}</title>
+  {%- endif -%}
+{%- endif -%}
+{%- seo title=false -%}
+{%- if page.tags -%}
+<meta name="keywords" content="{{ page.tags | join: ', ' | escape }}"/>
+{%- endif -%}

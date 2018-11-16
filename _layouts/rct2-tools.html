@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+  <head>
+    {%- include head_base.html -%}
+    {%- include seo.html -%}
+    <link rel="stylesheet" type="text/css" href="/assets/css/return-arrow.css"/>
+    <link rel="stylesheet" type="text/css" href="/tools/rct2-tools/assets/css/styles.css"/>
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+  </head>
+  <body>
+    <a id="return-arrow" href="/tools/"></a>
+    <div id="container" class="container">
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.rct2tools_header_pages | default: default_paths -%}
+      <div class="insideBorder">
+        <h1 class="title">{{ page.title_header | default: page.title | escape }}</h1>
+      </div>
+
+      <div class="insideBorder">
+        <div class="navBar">
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title or my_page.title_nav -%}
+              [<a class="navTab" href="{{ my_page.url | relative_url }}">{{ my_page.title_nav | default: my_page.title | escape }}</a>]&#32;
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+	    </div>
+      {{ content }}
+      <div class="insideBorder">
+        <div class="footer">
+          <p>&copy Robert Jordan 2018 - This site is not affiliated with or endorsed by Rollercoaster Tycoon 2</p>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

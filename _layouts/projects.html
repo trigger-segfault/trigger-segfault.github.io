@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- assign hide_title = page.hide_title | default: false -%}
+  {%- unless hide_title -%}
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
+  {%- endunless -%}
+
+  {{ content }}
+
+  {%- if page.projects.size > 0 -%}
+    <ul class="post-list project">
+      {%- for projects in page.projects -%}
+      <li>
+        <div class="image"><img src="{{ projects.image | relative_url }}"></div>
+        <div class="info">
+          <h3>
+            <a class="post-link" href="{{ projects.url | relative_url }}">
+              {{ projects.title | escape }}
+            </a>
+          </h3>
+          <p>{{ projects.description | escape }}</p>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>

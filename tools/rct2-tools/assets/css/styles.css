@@ -1,0 +1,325 @@
+﻿
+@font-face {
+  font-family: "KG The Last Time";
+  src: url("/tools/rct2-tools/assets/fonts/kgthelasttime.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body {
+	line-height: 1.62em;
+	margin: 0px;
+	background-image: url('/tools/rct2-tools/assets/img/LandTile.png');
+	background-color: #3B5F27;
+	color: #FFF;
+	font-family: Tahoma,Arial,sans-serif;
+	font-size: 15px;
+}
+h1 {
+	line-height: 1.62em;
+}
+
+@media (max-width: 750px) {
+	
+	.tickerText {
+		display: none;
+	}
+	.col {
+		width: 50%;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+		max-width:930px
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+html{
+	position:relative
+}
+
+.insideBorder {
+	border-top-color: rgb(75, 99, 99);
+	border-left-color: rgb(75, 99, 99);
+	border-bottom-color: rgb(159, 175, 175);
+	border-right-color: rgb(159, 175, 175);
+    border-style: solid;
+    border-width: 2px;
+	background-color: rgb(47, 67, 67);
+	margin-bottom: 8px;
+	background-image: url('/tools/rct2-tools/assets/img/DarkBackground.png');
+}
+
+.milk {
+	width: 100%;
+	height: 480px;
+	bottom: 0px;
+	position: absolute;
+	background-image: url('/tools/rct2-tools/assets/img/milkWave.png');
+	opacity: 0.8;
+}
+
+.bgOverlay {
+	width: 100%;
+	height:100%;
+	position: absolute;
+}
+
+.title {
+	text-align: center;
+	font-family: 'KG The Last Time';
+	text-shadow: 0px 0px 4px #000;
+	font-weight: 500;
+	font-size: 63px;
+	color: rgb(91, 163, 231);
+	margin-top: 32px;
+	margin-bottom: 18px;
+}
+
+
+.thumbnail > img, .thumbnail a > img {
+    display: block;
+    max-width: 100%;
+    /*height: auto;*/
+    margin-left: auto;
+    margin-right: auto;
+	box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+
+.toolIcon {
+	vertical-align: -22px;
+  margin-bottom: 6px;
+  width: 48px;
+  height: 48px;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+	border-top-color: rgb(159, 175, 175);
+	border-left-color: rgb(159, 175, 175);
+	border-bottom-color: rgb(75, 99, 99);
+	border-right-color: rgb(75, 99, 99);
+    border-style: solid;
+    border-width: 2px;
+	padding: 8px 8px 0px 8px;
+	background-image: url('/tools/rct2-tools/assets/img/LightBackground.png');
+	background-color: rgb(111, 131, 131);
+	color: rgb(239, 243, 243);
+	height: 100%;
+	/*position: relative;*/
+}
+
+.sectionIcon {
+  width: 56px;
+  height: 56px;
+  vertical-align: -16px;
+}
+
+.navBar {
+	font-family: 'KG The Last Time';
+	text-shadow:0px 0px 4px #000;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FFF;
+	padding: 8px 20px;
+}
+.navTab {
+	font-family: 'KG The Last Time';
+	/*text-shadow:0px 0px 4px #000;*/
+	font-weight: 400;
+	font-size: 20px;
+	color: #F82;
+	margin-bottom: 8px;
+	margin-top: 4px;
+}
+
+a:link, a:visited {
+    color: rgb(119, 187, 239);
+    text-decoration: underline;
+    cursor: auto;
+	cursor: pointer;
+	text-decoration: none;
+}
+a:link:hover, a:visited:hover {
+    color: rgb(175, 231, 251);
+}
+
+a:link:active, a:visited:active {
+    color: rgb(119, 187, 239);
+} 
+a {
+    background: none repeat scroll 0px 0px transparent;
+    text-decoration: none;
+}
+a.toolLink:link, a.toolLink:visited, a.toolLink:link:active, a.toolLink:visited:active {
+	color: rgb(147, 199, 167);
+}
+a.toolLink:hover, a.toolLink:visited:hover {
+	color: rgb(175, 219, 195);
+}
+a.downloadLink:link, a.downloadLink:visited, a.downloadLink:link:active, a.downloadLink:visited:active {
+	color: rgb(255, 139, 51);
+}
+a.downloadLink:hover, a.downloadLink:visited:hover {
+	color: rgb(255, 183, 107);
+}
+a.navTab:link, a.navTab:visited, a.navTab:link:active, a.navTab:visited:active {
+	color: rgb(255, 139, 51);
+}
+a.navTab:hover, a.navTab:visited:hover {
+	color: rgb(255, 183, 107);
+}
+.col {
+	width: 25%;
+	float: left;
+	padding-left: 15px;
+	padding-right: 15px;
+	min-height: 1px;
+	box-sizing: border-box;
+}
+
+@media (max-width: 650px) {
+	
+	.col {
+		width: 25%;
+	}
+}
+.caption {
+	padding: 9px;
+	text-align: center;
+	color: rgb(131, 151, 151);
+}
+
+.thumbnail {
+	display: block;
+	padding: 4px;
+	margin-bottom: 20px;
+	line-height: 1.42857;
+	background-color: #FFF;
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	/*transition: all 0.2s ease-in-out 0s;*/
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid #242424;
+	color: #C7C7C7;
+	box-sizing: border-box;
+}
+
+.footer p {
+    margin: 0;
+}
+h2 {
+	font-family: 'KG The Last Time';
+	text-shadow:0px 0px 4px #000;
+	font-weight: 400;
+	font-size: 24px;
+	color: #F82;
+	margin-bottom: 8px;
+}
+
+.subsection {
+	margin: 20px 20px;
+}
+.subsubsection {
+	margin: 20px 20px;
+}
+
+.header {
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	height: 65px;
+}
+.footer {
+	box-sizing: border-box;
+	margin-bottom: 0px;
+	font-size: 12px;
+	padding: 28px 0px 25px;
+	color: rgb(159, 175, 175);
+	text-align: center;
+}
+
+
+
+.separator {
+	width: 100%;
+	border-top: 1px solid rgb(63, 83, 83);
+	border-bottom: 1px solid rgb(91, 115, 115);
+	margin: 18px 0px 10px;
+}
+
+.sectionTitle {
+	margin-left: 16px;
+	font-family: 'KG The Last Time';
+	font-size: 36px;
+	text-shadow: 0px 0px 4px #000;
+	color: rgb(119, 187, 239);
+	height: 46px;
+	display: inline-block;
+}
+.toolTitle {
+	font-family: 'KG The Last Time';
+	text-shadow:0px 0px 4px #000;
+	font-weight: 400;
+	font-size: 24px;
+	color: rgb(147, 199, 167);
+	margin-bottom: 8px;
+	margin-left: 16px;
+	display: inline-block;
+}
+.subsectionTitle {
+	font-family: 'KG The Last Time';
+	text-shadow:0px 0px 4px #000;
+	font-weight: 400;
+	font-size: 24px;
+	color: rgb(147, 199, 167);
+	margin-bottom: 8px;
+	display: inline-block;
+}
+
+.subsectionText {
+	margin-bottom: 10px;
+}
+
+@media (max-width: 700px) {
+	.sectionTitle {
+		font-size: 20px;
+		padding-top: 12px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+}
+@media (max-width: 600px) {
+	.title {
+		font-size: 36px;
+	}
+	.titleVersion {
+		font-size: 20px;
+	}
+	.container {
+		padding: 4px 4px 0px 4px;
+	}
+	.insideBorder {
+		margin-bottom: 4px;
+	}
+}

@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+        {%- if page.date_edited -%}
+          &nbsp;<span>(last edited {{ page.date_edited | date: date_format }})</span>
+        {%- endif -%}
+      </time>
+      {%- if page.categories.size > 0 or page.tags.size > 0 -%}
+      <br>
+      {%- if page.categories and page.categories.size > 0 -%}
+        Categories:&nbsp;
+        {%- for category in page.categories -%}
+          <a href="/blog/{{ category | escape }}">{{ category }}</a>&nbsp;
+        {%- endfor -%}
+      {%- endif -%}
+      {%- if page.tags and page.tags.size > 0 -%}
+        {%- if page.categories and page.categories.size > 0 -%}
+          |&nbsp;
+        {%- endif -%}
+        <span>Tags: {{ page.tags | join: ", " }}</a>&nbsp;
+        <!--<br>Tags:&nbsp;
+        {%- for tag in page.tags -%}
+          <a href="/blog/{{ tag | escape }}">{{ tag }}</a>&nbsp;
+        {%- endfor -%}-->
+      {%- endif -%}
+      {%- endif -%}
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author | escape }}</span></span>
+      {%- endif -%}</p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
