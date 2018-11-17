@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "module": "AMD",
+    "module": "commonjs",
     "moduleResolution": "node",
     "newLine": "LF",
-    "outDir": "./assets/js",
     "target": "es5",
     "sourceMap": false,
     "declaration": false,
@@ -14,11 +13,6 @@
       "es5"
     ],
     "baseUrl": ".",
-    "paths": {
-      "strip-json-comments": [
-        "node_modules/@types/strip-json-comments"
-      ]
-    },
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
@@ -26,9 +20,6 @@
     "noFallthroughCasesInSwitch": true,
     "allowJs": false,
   },
-  "include": [
-    "assets/ts/*"
-  ],
   "exclude": [
     ".git",
     "node_modules"

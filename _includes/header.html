@@ -1,35 +1,18 @@
 <header class="site-header">
 	<div class="site-title-header">
-		<div id="title-side-fractal"></div>
-		<!--<img id="title-side-fractal" src="/assets/img/title-side-fractal.png" width="130px" height="100px"/>-->
-		{%- assign default_paths = site.pages | map: "path" -%}
-		{%- assign page_paths = site.header_pages | default: default_paths -%}
-		{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-		<!--<a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>-->
+		<div id="title-fractal"></div>
 		<div class="site-title">
 			<a rel="author" href="{{ "/" | relative_url }}">
-				<!--<div class="top-title">&nbsp;Trigger's</div>
-				<div class="bottom-title">&nbsp;Tools &amp; Games</div>
-				<div class="extra-title">&nbsp;(but mostly tools)</div>-->
-				
 				<h1>Trigger's</h1>
 				<h2>&nbsp;Tools &amp; Games</h2>
 				<span>&nbsp;(but mostly tools)</span>
-				<!--Trigger's<wbr>
-					<span class="bottom-title">Tools & Games</span>
-					<span class="extra-title">(but mostly tools)</span>-->
-				<!--Trigger's<br>
-				<span class="subtitle">Tools & Games</span>-->
-				
-				
-				<!--<div class="top-title">Trigger's</div>
-				<div class="bottom-title">Tools & Games</div>
-				<span class="extra-title">(but mostly tools)</span>-->
 			</a>
 		</div>
 	</div>
 	<div class="wrapper">
-	  
+		{%- assign default_paths = site.pages | map: "path" -%}
+		{%- assign page_paths = site.header_pages | default: default_paths -%}
+		{%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
   
 	  {%- if titles_size > 0 -%}
 		<nav class="site-nav">
@@ -58,26 +41,16 @@
         {%- assign title = nav_page.title_nav | default: nav_page.title -%}
 
         {%- if title -%}
-        {%- assign stringToCheck = nav_page.url -%}
-        {%- assign startsWith = page.url | prepend: '/' -%}
-        {%- assign checkArray = stringToCheck | split:startsWith -%}
-        {%- assign page_url = page.url | absolute_url -%}
-        {%- assign nav_url = nav_page.url | absolute_url -%}
+          {%- assign page_url = page.url | absolute_url -%}
+          {%- assign nav_url = nav_page.url | absolute_url -%}
 
-        {%- if nav_page.url == '/' and page.url == nav_page.url -%}
-          <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
-        {%- elsif nav_page.url != '/' and page_url contains nav_url -%}
-          <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
-        {%- else -%}
-          <a class="page-link" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
-        {%- endif -%}
-          <!--{%- if nav_page.url == '/' and page.url == nav_page.url -%}
-          <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
-          {%- elsif nav_page.url != "/" and page.url contains nav_page.url -%}
-          <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
+          {%- if nav_page.url == '/' and page.url == nav_page.url -%}
+            <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
+          {%- elsif nav_page.url != '/' and page_url contains nav_url -%}
+            <a class="page-link current" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
           {%- else -%}
-          <a class="page-link" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
-			    {%- endif -%}-->
+            <a class="page-link" href="{{ nav_page.url | relative_url }}">{{ title | escape }}</a>
+          {%- endif -%}
 			  {%- endif -%}
 			{%- endfor -%}
       </div>

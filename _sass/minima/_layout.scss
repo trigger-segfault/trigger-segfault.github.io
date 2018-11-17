@@ -33,9 +33,6 @@
 
 
 .site-title-header {
-	/*background-image: url("/assets/img/title-fractal.png");
-	background-repeat: repeat-x;
-	background-position: left center;*/
 	width: 100%;
 	border-bottom: 1px solid $grey-color-light;
 
@@ -45,56 +42,25 @@
 	background: linear-gradient(to right, rgba(0,69,89,1) 19%,rgba(0,153,186,1) 68%,rgba(0,153,186,1) 71%,rgba(0,153,186,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004559', endColorstr='#000099ba',GradientType=1 ); /* IE6-9 */
 	height: 100px;
-	/*text-align: center;
-	position: relative;
-	display: inline-block;*/
 	-webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
   display: flex;
   align-items: center;
 }
-/*.site-title {
-	font-family: Eurostar;
-	font-size: 50px;
-	font-weight: bold;
-	color: rgb(40, 40, 40);
-	text-shadow: 0 0 12px rgb(0, 190, 230);
-
-	line-height: 100px;
-	vertical-align: middle;
-	margin: 0 30px;
-	white-space: nowrap;
-	&, &:visited {
-		color: rgb(40, 40, 40);
-	}
-	&:hover {
-		text-decoration: none;
-		text-shadow: 0 0 18px rgb(50, 210, 250);
-	}
-}*/
-#title-side-fractal {
-	
-	background-image: url("/assets/img/title-side-fractal.png");
+#title-fractal {
+	background-image: url("/assets/img/title-fractal.png");
 	background-size: 130px 100px;
 	position: absolute;
 	z-index: -10;
 	width: 130px;
 	height: 100px;
-	/*z-index: -10;
-	position: absolute;
-	left: -67px;
-	top: -53px;
-	background-image: url("/assets/img/title-side-fractal-full.png");
-	animation: 0.8s ease-out 0s 1 title-side-fractal-frames;
-	clip-path: inset(63px 57px 0px 0px);*/
 }
 
 /* Retina Fractal */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-	#title-side-fractal {
-		background-image: url("/assets/img/title-side-fractal-large.png");
-		background-size: 130px 100px;
+	#title-fractal {
+		background-image: url("/assets/img/title-fractal-large.png");
 	}
 }
 header .site-title {
@@ -117,9 +83,6 @@ header .site-title a {
 	color: rgb(40, 40, 40);
 	text-shadow: 0 0 12px rgb(0, 190, 230);
 
-	/*line-height: 100px;*/
-	/*margin: 0 30px;*/
-	/*white-space: nowrap;*/
 	&, &:visited {
 		color: rgb(40, 40, 40);
 	}
@@ -131,23 +94,13 @@ header .site-title a {
 	justify-content: center;
 	align-items: center;
 	flex-direction:row;
-	/*text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);*/
 }
 @media all and (min-width:801px) {
-	/* put your css styles in here */
 	header .site-title h1, header .site-title h2 {
 		@include relative-font-size(2.2);
 		margin: 0;
 		font-weight: bold !important;
 	}
-	/*.site-title div {
-		display: block;
-	}*/
 	header .site-title span {
 		font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 		@include relative-font-size(1.5);
@@ -155,21 +108,16 @@ header .site-title a {
 	}
 }
 @media all and (min-width:651px) and (max-width:800px) {
-	/* put your css styles in here */
 	header .site-title h1, header .site-title h2 {
 		@include relative-font-size(2.2);
 		margin: 0;
 		font-weight: bold !important;
 	}
-	/*.site-title div {
-		display: inline;
-	}*/
 	header .site-title span {
 		display: none;
 	}
 }
 @media all and (max-width:650px) {
-	/* put your css styles in here */
 	header .site-title a {
 		flex-direction: column;
 	}
@@ -186,7 +134,7 @@ header .site-title a {
 	header .site-title span {
 		display: none;
 	}
-	#title-side-fractal {
+	#title-fractal {
 		margin-left: -50px;
 	}
 }
@@ -204,24 +152,6 @@ header .site-title a {
 .category-group {
   margin-bottom: 15px;
 }
-
-/*.site-title {
-  @include relative-font-size(1.625);
-  font-weight: 300;
-  line-height: $base-line-height;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left;
-
-  @include media-query($on-palm) {
-    padding-right: 45px;
-  }
-
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
-}*/
 
 .site-nav {
   position: absolute;
@@ -467,11 +397,13 @@ header .site-title a {
       margin-left: auto;
       margin-right: auto;
       max-width: calc(100% - 20px);
-      border: 1px solid #e8e8e8;
-      border-radius: 3px;
+      background: none repeat scroll 0% 0% #e9e9e9;;
+      box-shadow: 0 0 3px #aaaaaa;
       padding: 4px;
-      background-color: #eef;
       margin: 4px;
+      /*border: 1px solid #e8e8e8;
+      border-radius: 3px;
+      background-color: #eef;*/
     }
   }
   > .info {
@@ -482,12 +414,6 @@ header .site-title a {
     > h3 {
       margin-top: 0px;
     }
-    /*> h3 > a {
-      display: block;
-    }
-    > p {
-      font-size: 15px;
-    }*/
   }
 }
 @media screen and (max-width: 600px) {

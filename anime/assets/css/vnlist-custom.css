@@ -36,7 +36,7 @@ html {
 #bgfade {
     position: absolute;
     top: 0;
-    background: url(/assets/img/vn-blackfade.png) repeat-x;
+    background: url(/anime/assets/img/vn-blackfade.png) repeat-x;
     width: 100%;
     height: 700px;
 }
@@ -48,28 +48,13 @@ body:before {
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(/assets/img/vn-background.png) no-repeat center top;
+    background: url(/anime/assets/img/vn-background.png) no-repeat center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-
-/*body:before {
-    content: "";
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}*/
 
 /**ALIGNMENT FOR VERTICAL MONITOR**/
 .list-container, .list-unit, .list-status-title {

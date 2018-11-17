@@ -1,9 +1,7 @@
-﻿//var stripJsonComments = require('./strip-json-comments');
-// <reference path="is-touch-device.ts" />
-// <reference path="strip-json-comments.ts" />
-//import {stripJsonComments} from "strip-json-comments";
+﻿namespace VisualNovelList {
 
-//var stripJsonComments = require('strip-json-comments');
+declare var isTouchDevice: any;
+declare var stripJsonComments: any;
 
 enum ProgressType {
 	routes = 0,
@@ -444,7 +442,7 @@ class VNEntry {
 			//var hours = Math.floor(data.playtime);
 			//var minutes = Math.floor((data.playtime % 1.0) * 100.0);
 			this.playtimeHours = Math.floor(data.playtime);
-			this.playtimeMinutes = Math.floor((data.playtime % 1.0) * 100.0);
+			this.playtimeMinutes = Math.round((data.playtime % 1.0) * 100.0);
 			//this.playtime = new TimeSpan(0, 0, minutes, hours);
 			// TODO: Get mad when the minutes are invalid.
 
@@ -730,14 +728,8 @@ var currentStatus:StatusType = StatusType.all;
 var currentTag: string = null;
 var touchedTbody: HTMLTableSectionElement = null;
 
-function initializeVNList() {
+export function initializeVNList() {
 	loadJSON('/anime/assets/data/vnlist.jsonc', initializeVNListJson);
-}
-
-function addEntry(table:HTMLTableElement, vn: VNEntry) {
-	if (vn.tbody.style.display != 'none') {
-		table.appendChild(vn.tbody);
-	}
 }
 
 function initializeVNListJson(jsonText) {
@@ -976,4 +968,4 @@ const vnComparer = (category: string, asc: boolean) => (a: VNEntry, b: VNEntry) 
 	v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
 )(compareVNs(asc ? a : b, asc ? b : a, idx));*/
 
-
+}

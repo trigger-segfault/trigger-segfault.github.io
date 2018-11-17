@@ -11,10 +11,10 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 0, 3 ],
-      "endings": [ 1, null ],
+      "endings": [ 2, null ],
       "achievements": null,
       "completion": null,
-      "playtime": 27,
+      "playtime": 32,
       "start": "2018-11-8",
       "finish": null,
       "tags": [],
@@ -449,7 +449,7 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 4, 4 ],
-      "endings": [ 11, 11 ], // Todo: Confirm (9 heroine, 1 male, 1 drown)
+      "endings": [ 11, 11 ], // Todo: Confirm (4 heroine good, 5 heroine bad, 1 male, 1 drown)
       "achievements": [ 18, 18 ],
       "completion": 100,
       "playtime": 10,

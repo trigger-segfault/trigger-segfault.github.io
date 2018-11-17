@@ -21,7 +21,7 @@ permalink: /anime/visualnovellist/
   <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-inline.css" />-->
   <script type="text/javascript" src="/assets/js/is-touch-device.js"></script>
   <script type="text/javascript" src="/assets/js/strip-json-comments.js"></script>
-  <script type="text/javascript" src="/assets/js/visualnovellist.js"></script>
+  <script type="text/javascript" src="/anime/assets/js/visualnovellist.js"></script>
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
@@ -84,6 +84,6 @@ permalink: /anime/visualnovellist/
   </div>
 
   <!-- All visual novels populated here -->
-  <script>initializeVNList();</script>
+  <script>VisualNovelList.initializeVNList();</script>
 </body>
 </html>
