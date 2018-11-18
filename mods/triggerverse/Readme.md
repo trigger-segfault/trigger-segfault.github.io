@@ -10,7 +10,7 @@ permalink: /mods/triggerverse/
 * **Version:**        v1.0.0.0
 * **Source Code:**    [GitHub](https://github.com/trigger-death/trigger-death.github.io/tree/master/mods/triggerverse/)
 
-TriggerVerse creates a more user-friendly environment in [Nested](http://orteil.dashnet.org/nested) making it easier to explore infinitely. This mod will count the total nodes in existence, as well as allow you to remove nodes or recenter a node to be the primary node. TriggerVerse will also save your current theme. As a bonus it also adds RollerCoaster Tycoon-styled theme park catagories randomly into cities.
+TriggerVerse creates a more user-friendly environment in [Nested](http://orteil.dashnet.org/nested) making it easier to explore infinitely. This mod will count the total nodes in existence, as well as allow you to remove nodes or recenter a node to be the primary node. TriggerVerse will also save your current theme. As a bonus it also adds RollerCoaster Tycoon-styled theme park categories randomly into cities.
 
 ## Requirements
 

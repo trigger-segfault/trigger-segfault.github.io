@@ -35,5 +35,5 @@ projects:
     title: "Asteroid Belt"
     url: http://imgur.com/a/ZQEIv
     image: /games/previews/asteroid-belt.png
-    description: "A pretty basic game I made in Flash where you have to travel as far as possible while avoiding/destroying asteroids. A mixture between sidescrolling bullet hells and Asteroids."
+    description: "A pretty basic game I made in Flash where you have to travel as far as possible while avoiding/destroying asteroids. A mixture between side-scrolling bullet hells and Asteroids."
 ---

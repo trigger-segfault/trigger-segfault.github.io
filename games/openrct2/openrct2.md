@@ -8,3 +8,5 @@ permalink: /games/openrct2/
 ---
 
 #### **[Commit History](https://github.com/OpenRCT2/OpenRCT2/commits?author=trigger-death)**
+
+#### **[Pull Request History](https://github.com/OpenRCT2/OpenRCT2/pulls?q=author%3Atrigger-death)**

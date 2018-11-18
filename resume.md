@@ -1,7 +1,6 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+# A simple redirect to /resume.pdf.
+# Also used to add the Resume option to the navigation bar.
 layout: page
 title: Resume
 permalink: /resume/

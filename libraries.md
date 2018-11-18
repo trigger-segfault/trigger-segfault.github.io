@@ -20,7 +20,7 @@ projects:
     title: "TriggersTools.Build.BuildTime"
     url: https://github.com/trigger-death/TriggersTools.Build
     image: /libraries/previews/build-time-128.png
-    description: "Automatically assigns an AssemblyBuildTimeAttribute to the assembly during the beginning of the build. Build time can be aquired through extension methods such as Assembly.GetBuildTime() with AssemblyBuildTimeExtensions in the namespace TriggersTools.Build. Unlike relying on the linker time, (which already no longer works in .NET Core 1.1 and later), this method guarantees that the build time will be present as long as it was compiled with MSBuild."
+    description: "Automatically assigns an AssemblyBuildTimeAttribute to the assembly during the beginning of the build. Build time can be acquired through extension methods such as Assembly.GetBuildTime() with AssemblyBuildTimeExtensions in the namespace TriggersTools.Build. Unlike relying on the linker time, (which already no longer works in .NET Core 1.1 and later), this method guarantees that the build time will be present as long as it was compiled with MSBuild."
   -
     title: "TriggersTools.Build.CopyrightYear"
     url: https://github.com/trigger-death/TriggersTools.Build
@@ -30,7 +30,7 @@ projects:
     title: "TriggersTools.SteinsGate.Divergence"
     url: https://github.com/trigger-death/TriggersTools.SteinsGate
     image: /libraries/previews/steinsgate-divergence-128.png
-    description: "Allows you to programatically draw Divergence Meter nixie tubes from the visual novel & anime: Steins;Gate. Divergence uses graphics taken from the Steins;Gate visual novel for drawing the tubes, digits, and decimal point. The rest of the available characters are drawn with the Oslo II font, by Antonio Rodrigues Jr. This font was chosen as it had a similar style as well as perfect aspect ratio for each character."
+    description: "Allows you to programmatically draw Divergence Meter nixie tubes from the visual novel & anime: Steins;Gate. Divergence uses graphics taken from the Steins;Gate visual novel for drawing the tubes, digits, and decimal point. The rest of the available characters are drawn with the Oslo II font, by Antonio Rodrigues Jr. This font was chosen as it had a similar style as well as perfect aspect ratio for each character."
   -
     title: "TriggersTools.Asciify (WIP)"
     url: https://github.com/trigger-death/TriggersTools.Asciify

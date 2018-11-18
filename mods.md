@@ -30,5 +30,5 @@ projects:
     title: "Nested: Triggerverse"
     url: /mods/triggerverse/
     image: /mods/previews/triggerverse.png
-    description: "Triggerverse creates a more user-friendly environment in Nested making it easier to explore infinitely. This mod will count the total nodes in existence, as well as allow you to remove nodes or recenter a node to be the primary node. Triggerverse will also save your current theme. As a bonus it also adds theme park catagories randomly into cities."
+    description: "Triggerverse creates a more user-friendly environment in Nested making it easier to explore infinitely. This mod will count the total nodes in existence, as well as allow you to remove nodes or recenter a node to be the primary node. Triggerverse will also save your current theme. As a bonus it also adds theme park categories randomly into cities."
 ---

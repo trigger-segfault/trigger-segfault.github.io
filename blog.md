@@ -9,4 +9,4 @@ permalink: /blog/
 
 ### See all [Blog Categories here](/blog/categories/)
 
-I don't know how commited I'll be to this blog, especially since I'm terribly slow at writing. But hopefully I manage to put this to good use.
+I don't know how committed I'll be to this blog, especially since I'm terribly slow at writing. But hopefully I manage to put this to good use.

@@ -20,7 +20,7 @@ projects:
     title: "Trigger's PC"
     url: https://projectpokemon.org/home/forums/topic/37582-gen-3-triggers-pc-legit-use-everything-bank-and-save-manager-tool/
     image: /tools/previews/triggers-pc.png
-    description: "I play Gen 3 alot and I decided hoarding Pokemon and items was a pain when storage space was so limited, that and trading takes forever. So I created a PokeBank-like program for hoarding, trading, and managing Pokemon, Items, Pokeblocks, Mail, and Decorations. Trigger's PC is a tool designed for legit purposes. There really aren't enough tools for legit-play out there sadly. However, note it does extend some of the boundaries of the game to increase replayability and customization."
+    description: "I play Gen 3 a lot and I decided hoarding Pokémon and items was a pain when storage space was so limited, that and trading takes forever. So I created a PokéBank-like program for hoarding, trading, and managing Pokémon, Items, Pokéblocks, Mail, and Decorations. Trigger's PC is a tool designed for legit purposes. There really aren't enough tools for legit-play out there sadly. However, note it does extend some of the boundaries of the game to increase replayability and customization."
   -
     title: "WinDirStat.Net (WIP)"
     url: https://github.com/trigger-death/WinDirStat.Net
@@ -33,8 +33,8 @@ projects:
     description: "A ripping tool (Primarily for images) for the Grisaia games. (Phantom Trigger not supported) This is basically a polished, easy-to-use wrapper for existing programs that extract Grisaia files. (Although much of the original code has been ported to C#)"
   -
     title: "Trigger-chan Discord Bot"
-    url: https://github.com/trigger-death/TriggerChan
-    image: /tools/previews/trigger-chan-spoiler.png
+    url: /tools/trigger-chan/
+    image: /tools/previews/trigger-chan.png
     description: "A Discord bot I made for use in a small selection of Discord servers. Her selling features are spoilers, inserting claps between words, drawing Divergence Meters, and other fun or helpful commands."
   -
     title: "Metroid Map Guardian"

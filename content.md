@@ -1,4 +1,7 @@
 ---
+# Required for /assets/js/search.js
+# Not in-use at the moment
+published: false
 permalink: /content.json
 ---
 {

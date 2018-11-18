@@ -5,6 +5,13 @@
     }
   ],
   "settings": {
+    "spellright.documentTypes": [
+      "markdown",
+      "latex",
+      "plaintext",
+      "html",
+      "yaml"
+    ],
     "css.lint.vendorPrefix": "ignore",
     "editor.detectIndentation": false,
     "files.exclude": {
