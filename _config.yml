@@ -78,7 +78,7 @@ defaults:
     values:
       layout: "rct2-tools"
       title_postfix: Trigger's RCT2 Tools
-      image: /tools/rct2-tools/assets/img/TriggersRCT2ToolsPreview.png
+      image: /tools/rct2-tools/assets/icon-256.png
       tags: [trigger_death,trigger,robert jordan,rct2,rollercoaster,tycoon,2,openrct2]
   -
     scope:
@@ -86,7 +86,7 @@ defaults:
     values:
       layout: "trigger-cookies"
       title_postfix: An outdated Cookie Clicker mod
-      image: /assets/icon-256.png
+      image: /mods/trigger-cookies/assets/icon-256.png
       tags: [trigger_death,trigger,robert jordan,cookies,triggercookies,cookie,clicker,mod]
 
 collections:

@@ -7,7 +7,7 @@ title: Games
 permalink: /games/
 projects:
   -
-    title: "OpenRCT2 Development"
+    title: "OpenRCT2 Contributions"
     url: /games/openrct2/
     image: /games/previews/openrct2.png
     description: "I worked on OpenRCT2's development during the summer of 2015 and 2017. I implemented a numerous features such as the game speed buttons, window theming, title sequence editing, in-game object selection, and changing an entrance's path in the scenario editor, and even the drawing of the logo on the title screen."

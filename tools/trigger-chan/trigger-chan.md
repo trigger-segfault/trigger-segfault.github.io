@@ -26,17 +26,17 @@ With version two of Triggy, I switched the avatar from official art, to one by [
 ## About
 
 <div class="center-text">The <code>t/about</code> command shows a variety of statistics and other information on Trigger-chan. Most of these information tidbits have their own commands such as <code>t/prefix</code>, <code>t/stats</code>, and <code>t/uptime</code>.</div>
-<img class="discord-center" height="500" src="/tools/trigger-chan/assets/img/cmd-about.png">
+<img class="discord-center" style="max-height: 500px;" src="/tools/trigger-chan/assets/img/cmd-about.png">
 
 ## Help Menu
 
 The help menu before framework v2 was an absolute disaster. Every command had it's own entry, so you'd have the admin commands `t/talkback`, `t/talkback cooldown`, `t/talkback reset`, and so on all as separate command entries.
 
 <div class="center-text">This help menu is displayed when no parameters are passed.</div>
-<img class="discord-center" height="400" src="/tools/trigger-chan/assets/img/cmd-help-normal.png">
+<img class="discord-center" style="max-height: 400px;" src="/tools/trigger-chan/assets/img/cmd-help-normal.png">
 
 <div class="center-text">This help menu is displayed when you pass the name of the command.</div>
-<img class="discord-center" height="400" src="/tools/trigger-chan/assets/img/cmd-help-spoiler.png">
+<img class="discord-center" style="max-height: 400px;" src="/tools/trigger-chan/assets/img/cmd-help-spoiler.png">
 
 ## Spoilers
 

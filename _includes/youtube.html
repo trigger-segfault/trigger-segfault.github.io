@@ -1,0 +1,7 @@
+<div class="video-container">
+{% if include.max_width %}
+<iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen style="max-width: {{ include.max_width }}"></iframe>
+{% else %}
+<iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+</div>
