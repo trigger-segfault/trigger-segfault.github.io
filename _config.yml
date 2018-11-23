@@ -35,7 +35,8 @@ youtube_channel: UCGQ4ksvfuzCeVbDplBc5yhg
 mal_username: trigger_death
 anilist_username: triggerdeath
 vndb_username: trigger-death
-vndb_user: 155981
+vndb_userid: 155981
+mfc_username: trigger_death
 
 # Settings
 url: "https://trigger-death.github.io" # the base hostname & protocol for your site, e.g. http://example.com

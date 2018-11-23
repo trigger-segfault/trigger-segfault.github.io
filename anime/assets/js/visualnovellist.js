@@ -743,6 +743,7 @@ var VisualNovelList;
         /*document.addEventListener('scroll', (() => {
             
         }));*/
+        document.getElementById('loading-spinner').style.display = 'none';
     }
     function updateEntries(table) {
         var index = 1;
@@ -850,7 +851,8 @@ var VisualNovelList;
                 }
                 return pa.endings[0] - pb.endings[0];
             case 'title':
-                return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+                // Reverse, since we do descending by default
+                return b.title.toLowerCase().localeCompare(a.title.toLowerCase());
             default:
                 var aa = a[category];
                 var bb = b[category];

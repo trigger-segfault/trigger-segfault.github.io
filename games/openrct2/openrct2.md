@@ -49,7 +49,7 @@ Buying land rights in RCT2 was a huge pain before. You could only buy one piece 
 
 Before the advent of the Game Speed Button. The only way to change the game speed was through hotkeys, you also could not determine what speed you were currently at. Game Speed works based on powers of 2:
 
-* **Normal Speed:** 2^0 = 1 updates per tick
+* **Normal Speed:** 2^0 = 1 update per tick
 * **Quick Speed:** 2^1 = 2 updates per tick
 * **Fast Speed:** 2^2 = 4 updates per tick
 * **Turbo Speed:** 2^3 = 8 updates per tick
@@ -57,7 +57,7 @@ Before the advent of the Game Speed Button. The only way to change the game spee
 
 Upon a user's request, I made it so clicking the game speed button without making a selection would cycle to the next highest speed. Hyper speed is so unbelievably fast that you can fail a scenario in under a minute using it, so this speed is restricted to Debugging Tools mode only. There is no practical use for this speed outside of testing as it even slows down the game enough to reduce the speed of viewport dragging to a crawl.
 
-In a later PR, I added custom sprites for the Game Speed Buttons so would look unique.
+In a later PR, I added custom sprites for the Game Speed Buttons so they would look unique.
 
 ![Game Speed Button Preview](/games/openrct2/assets/img/game-speed-button.png)
 

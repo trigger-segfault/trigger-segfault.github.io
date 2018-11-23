@@ -838,6 +838,7 @@ function initializeVNListJson(jsonText) {
 	/*document.addEventListener('scroll', (() => {
 		
 	}));*/
+	document.getElementById('loading-spinner').style.display = 'none';
 }
 
 function updateEntries(table:HTMLTableElement) {
@@ -950,7 +951,8 @@ function compareVNs(a: VNEntry, b: VNEntry, category: string): any {
 			}
 			return pa.endings[0] - pb.endings[0];
 		case 'title':
-			return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+			// Reverse, since we do descending by default
+			return b.title.toLowerCase().localeCompare(a.title.toLowerCase());
 		default:
 			var aa = a[category];
 			var bb = b[category];

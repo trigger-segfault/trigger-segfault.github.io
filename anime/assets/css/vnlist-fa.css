@@ -1,0 +1,51 @@
+
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+@font-face {
+  font-family: FontAwesome;
+  src:url(/assets/fonts/fontawesome.eot?v=4.7.0);
+  src:url(/assets/fonts/fontawesome.eot?#iefix&v=4.7.0) format("embedded-opentype"),
+      url(/assets/fonts/fontawesome.woff2?v=4.7.0) format("woff2"),
+      url(/assets/fonts/fontawesome.woff?v=4.7.0) format("woff"),
+      url(/assets/fonts/fontawesome.ttf?v=4.7.0) format("truetype"),
+      url(/assets/fonts/fontawesome.svg?v=4.7.0#fontawesomeregular) format("svg")
+}
+.fa-spinner::before {
+  content: "";
+}
+i#loading-spinner {
+  color: #ddd !important;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 14px;
+  font-size: inherit;
+  text-rendering: auto;
+}
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear
+}
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg)
+  }
+}

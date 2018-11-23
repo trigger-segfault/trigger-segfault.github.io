@@ -1,21 +1,20 @@
 ---
 layout: none
 title: trigger_death's Visual Novel List
+title_postfix: ""
 permalink: /anime/visualnovellist/
+image: /anime/assets/icon-vn-256.png
+description: A handmade list for keeping track of visual novels that trigger_death has played.
 ---
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <meta charset="utf-8" />
-
-  <!-- Tab title -->
-  <title>trigger_death's Visual Novel List</title>
-  <!-- Tab favicon -->
-  <link rel="shortcut icon" href="/favicon.ico" />
-
+  {%- include head_base.html -%}
+  {%- include seo.html -%}
   <link rel="stylesheet" media="all" href="/assets/css/reset.css" />
   <link rel="stylesheet" media="all" href="/assets/css/return-arrow.css" />
   <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-mal.css" />
+  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-fa.css" />
   <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-custom.css" />
   <script type="text/javascript" src="/assets/js/is-touch-device.js"></script>
   <script type="text/javascript" src="/assets/js/strip-json-comments.js"></script>
@@ -58,17 +57,19 @@ permalink: /anime/visualnovellist/
               <th class="header-title status"></th>
               <th class="header-title number">#</th>
               <th class="header-title image">Image</th>
-              <th class="header-title"><a class="title sort-category">Title</a></th>
-              <th class="header-title" style="width: 50px;"><a class="score sort-category">Score</a></th>
-              <th class="header-title" style="width: 68px;"><a class="progress sort-category">Progress</a></th>
+              <th class="header-title title"><a class="title sort-category">Title</a></th>
+              <th class="header-title score" style="width: 50px;"><a class="score sort-category">Score</a></th>
+              <th class="header-title progress" style="width: 68px;"><a class="progress sort-category">Progress</a></th>
               <th class="header-title completion" style="width: 82px;">Completion</th>
-              <th class="header-title" style="width: 66px;"><a class="playtime sort-category">Playtime</a></th>
+              <th class="header-title playtime" style="width: 66px;"><a class="playtime sort-category">Playtime</a></th>
               <th class="header-title start-finish" style="width: 90px;"><a class="start sort-category">Start</a>/<a class="finish sort-category">Finish</a></th>
               <th class="header-title tags">Tags <a id="tags-clear" style="display: none;">(clear)</a></th>
             </tr>
           </tbody>
         </table>
-        <div class="loading-space"></div>
+        <div class="loading-space">
+            <i id="loading-spinner" class="fa fa-spinner fa-spin"></i>
+        </div>
       </div>
     </div>
   </div>
