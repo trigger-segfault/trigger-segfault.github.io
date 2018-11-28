@@ -36,8 +36,9 @@
   "playing": [
     {
       "title": "Fate/stay night",
+      "aliases": [ "fsn", "f/sn" ],
       "url": "https://vndb.org/v11",
-      "image": "https://s.vndb.org/cv/85/24185.jpg",
+      "image": "/anime/covers/fate-stay-night.jpg",
       "score": 10,
       "progressType": "routes",
       "progressType2": "endings",
@@ -56,8 +57,9 @@
   "completed": [
     {
       "title": "Noble ☆ Works",
+      "aliases": [ "Noble Works" ],
       "url": "https://vndb.org/v4806",
-      "image": "https://s.vndb.org/cv/09/27809.jpg",
+      "image": "/anime/covers/noble-works.jpg",//"https://s.vndb.org/cv/09/27809.jpg",
       "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
@@ -70,12 +72,17 @@
         "H-Scenes",
         "Nagamitsu Maya x2"
       ],
-      "notes": null
+      "notes": [
+        "Originally dropped after Maya's route back in 2016 because it felt too generic.",
+        "I still stand by that statement, but I do appreciate the game a bit more after completion.",
+        "The main selling point would be the comedy and Shizuru's route, but everything else was just too normal with average resolutions."
+      ]
     },
     {
       "title": "Rinkaiten ~Critical Point~",
+      "title_en": "Critical Point",
       "url": "https://vndb.org/v145",
-      "image": "https://s.vndb.org/cv/81/31581.jpg",
+      "image": "/anime/covers/critical-point.jpg",//"https://s.vndb.org/cv/81/31581.jpg",
       "score": 8,
       "progressType": "endings",
       "endings": [ 25, 25 ],
@@ -84,17 +91,22 @@
       "finish": "2018-3-16",
       "tags": [
         "H-Scenes",
-        "Better than expected",
         "Episode XII doesn't exist",
         "Guide used for final missing episode VIII",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "LOTS of choices and it's difficult to find every ending, but it's well worth the challenge.",
+        "The scenarios were quite amusing but it bugged me that that player choices affected plot from before the story started.",
+        "The H-scenes ranged from standard to pretty wacky, 1990's H-artstyle is also kind of \"creepy\".",
+        "We also get HIGH QUALITY CG renders that put even Overlord to shame."
+      ]
     },
     {
       "title": "Steins;Gate 0",
+      "title_en": "STEINS;GATE 0",
       "url": "https://vndb.org/v17102",
-      "image": "https://s.vndb.org/cv/11/35111.jpg",
+      "image": "/anime/covers/steins-gate-0.jpg",//"https://s.vndb.org/cv/11/35111.jpg",
       "score": 9,
       "progressType": "routes",
       "routes": [ 6, 6 ],
@@ -109,12 +121,18 @@
         "Japanese Shaman Girls",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Dr. Leskinen truly is a man among men!",
+        "His love for \"Lintahlo\" and Japenese Shaman Girls knows no limits!",
+        "This is a great continuation to the Steins;Gate series and the True ED absolutely blew me away!",
+        "The choice system is vastly improved from that of the original game."
+      ]
     },
     {
       "title": "Steins;Gate",
+      "title_en": "STEINS;GATE",
       "url": "https://vndb.org/v2002",
-      "image": "https://s.vndb.org/cv/04/5804.jpg",
+      "image": "/anime/covers/steins-gate.jpg",//"https://s.vndb.org/cv/04/5804.jpg",
       "score": 10,
       "progressType": "routes",
       "routes": [ 6, 6 ],
@@ -127,12 +145,16 @@
         "Cried",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "An absolute masterpiece of a story, whether in VN or anime form!",
+        "KURISUTINA and HOUOUIN KYOUMA make a pair of the most interesting and lovable main characters to grace the monitor!"
+      ]
     },
     {
       "title": "Saya no Uta",
+      "title_en": "The Song of Saya",
       "url": "https://vndb.org/v97",
-      "image": "https://s.vndb.org/cv/75/8675.jpg",
+      "image": "/anime/covers/saya-no-uta.jpg",//"https://s.vndb.org/cv/75/8675.jpg",
       "score": 10,
       "progressType": "endings",
       "endings": [ 3, 3 ],
@@ -146,19 +168,18 @@
         "Owned"
       ],
       "notes": [
-        "This is a game that truly tests the limits of psychological horror story-telling.",
+        "A game that truly tests the limits of psychological horror story-telling.",
         "It just keeps going farther and farther over the edge, and the intro was already pretty dark.",
-        "I had a lump in my stomach just reading some of the scenes, and it takes a lot to affect me.",
-        "I mean I read Emergence with no trouble compared to Saya no Uta.",
+        "I had a lump in my stomach just reading some of the scenes and it takes a lot to affect me.",
+        "I mean, I read Emergence with no trouble compared to Saya no Uta.",
         "Nowadays so many things bring back memories of this game.",
-        "I constantly get the urge to play it again even when it's been less than half a year.",
-        "Also, I will never look at distorted guitars the same way every again."
+        "Also, I will never look at distorted guitars the same way ever again."
       ]
     },
     {
       "title": "WORLD END ECONOMiCA",
       "url": "https://vndb.org/v7184",
-      "image": "https://s.vndb.org/cv/00/9700.jpg",
+      "image": "/anime/covers/world-end-economica.jpg",//"https://s.vndb.org/cv/00/9700.jpg",
       "score": 9,
       "progressType": "episodes",
       "episodes": [ 3, 3 ],
@@ -170,12 +191,15 @@
         "Boring resolution",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "A beautiful love story wrapped around the brutal world of stock trading.",
+        "This would have been a 9.5 easily if the final resolution wasn't so boring."
+      ]
     },
     {
       "title": "Root Double -Before Crime * After Days-",
       "url": "https://vndb.org/v5000",
-      "image": "https://s.vndb.org/cv/99/14499.jpg",
+      "image": "/anime/covers/root-double.jpg",//"https://s.vndb.org/cv/99/14499.jpg",
       "score": 9,
       "progressType": "endings",
       "endings": [ 39, 39 ],
@@ -185,20 +209,22 @@
       "finish": "2018-8-8",
       "tags": [
         "Cried",
-        "Enjoy the flashbacks...",
+        "Enjoy the Flashbacks",
         "Owned"
       ],
       "notes": [
         "This is the story of a player, who against all odds, decided to sit down and spend over 50 hours reading just flashbacks.",
-        "It's no exageration to say this VN is built on all of the flashbacks it brings up.",
+        "It's no exaggeration to say this VN is built on all of the flashbacks it brings up.",
         "Root Double has a pretty unique choice system and plenty of good plot twists to keep you entertained throughout.",
         "It may be a chore to get through at times, but it's worth the effort."
       ]
     },
     {
       "title": "Dangan Ronpa Kibou no Gakuen to Zetsubou no Koukousei",
+      "title_en": "Danganronpa: Trigger Happy Havoc",
+      "aliases": [ "Danganronpa 1" ],
       "url": "https://vndb.org/v7014",
-      "image": "https://s.vndb.org/cv/21/18121.jpg",
+      "image": "/anime/covers/danganronpa-1.jpg",//"https://s.vndb.org/cv/21/18121.jpg",
       "score": 9,
       "progressType": "endings",
       "progressType2": "sidestories",
@@ -212,12 +238,14 @@
         "Chihiro Best Girl",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Combined with mystery, plot twists, interactive gameplay, and quality graphics: This game delivers the best \"Game of Killing\" over any other!"
+      ]
     },
     {
       "title": "Doki Doki Literature Club!",
       "url": "https://vndb.org/v21905",
-      "image": "https://s.vndb.org/cv/43/34243.jpg",
+      "image": "/anime/covers/ddlc.jpg",//"https://s.vndb.org/cv/43/34243.jpg",
       "score": 9,
       "hideProgress": true,
       "progressType": "endings",
@@ -227,7 +255,7 @@
       "finish": "2017-10-23",
       "tags": [
         "Free",
-        "Listened to EVERY Monika dialog line"
+        "Read EVERY Monika dialog line"
       ],
       "notes": [
         "WARNING: DO NOT READ ANYTHING ABOUT THE GAME BEFORE PLAYING IT!"
@@ -235,8 +263,9 @@
     },
     {
       "title": "Fault Milestone One",
+      "title_en": "fault - milestone one",
       "url": "https://vndb.org/v12694",
-      "image": "https://s.vndb.org/cv/55/21155.jpg",
+      "image": "/anime/covers/fault-milestone-1.jpg",//"https://s.vndb.org/cv/55/21155.jpg",
       "score": 8,
       "progressType": "endings",
       "endings": [ 1, 1 ],
@@ -247,12 +276,16 @@
       "tags": [
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Loveable storytelling with an even more lovable main character Run.",
+        "Fault Milestone has fascinating world building that just leaves you wanting more!"
+      ]
     },
     {
       "title": "Fault Milestone 2 Jou (Side: Above)",
+      "title_en": "fault - milestone two side:above",
       "url": "https://vndb.org/v15252",
-      "image": "https://s.vndb.org/cv/62/33762.jpg",
+      "image": "/anime/covers/fault-milestone-2-side-above.jpg",//"https://s.vndb.org/cv/62/33762.jpg",
       "score": 8.5,
       "progressType": "endings",
       "endings": [ 1, 1 ],
@@ -264,12 +297,15 @@
         "Cried",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Again we see beautiful world building, Run being Run, and a side dish of heartbreak."
+      ]
     },
     {
       "title": "Grisaia no Kajitsu",
+      "title_en": "The Fruit of Grisaia",
       "url": "https://vndb.org/v5154",
-      "image": "https://s.vndb.org/cv/13/25913.jpg",
+      "image": "/anime/covers/grisaia-kajitsu.jpg",//"https://s.vndb.org/cv/13/25913.jpg",
       "score": 10,
       "progressType": "routes",
       "progressType2": "endings",
@@ -282,6 +318,7 @@
       "tags": [
         "H-Scenes",
         "Cried",
+        "Comedy Gold",
         "Sachi Best Girl",
         "Michiru Best Route",
         "Owned"
@@ -290,7 +327,9 @@
         "My absolute favorite VN of all time.",
         "The writers are comedy geniuses, the characters are all wonderful, and the routes themselves are anything but standard.",
         "The protagonist Yuuji actually has an interesting personality.",
-        "He's a hard-ass, a tsundere, and doesn't take shit from anyone. Some even go so far as to call him \"best girl\".",
+        "He's a hard-ass, tsundere, that doesn't take shit from anyone. Some even go so far as to call him \"best girl\"."
+      ],
+      "notes_technical": [
         "WARNING: Avoid buying this on Steam at all costs.",
         "There is a patch, but only for the first game, and it has a few major bugs.",
         "If you're stuck with the Steam version, contact me for the patch. The later main games DO NOT have patches, buy them on Denpasoft."
@@ -298,8 +337,9 @@
     },
     {
       "title": "Grisaia no Meikyuu",
+      "title_en": "The Labyrinth of Grisaia",
       "url": "https://vndb.org/v7723",
-      "image": "https://s.vndb.org/cv/74/31974.jpg",
+      "image": "/anime/covers/grisaia-meikyuu.jpg",//"https://s.vndb.org/cv/74/31974.jpg",
       "score": 9,
       "progressType": "routes",
       "progressType2": "sidestories",
@@ -312,31 +352,39 @@
       "tags": [
         "H-Scenes",
         "Cried",
-        "Again Sashi Best Girl",
-        "and Michiru Best Afterstory",
+        "Sachi Best Girl",
+        "Michiru Best Afterstory",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Grisaia continues to maintain it's quality writing with 5 afterstories, and main route.",
+        "Yuuji continues to dominate the playing field to maintain his status as \"best girl\" and best protagonist!",
+        "Comes with quite a few short stories, some of them are hit or miss, but most are worth a good chuckle."
+      ]
     },
     {
       "title": "Grisaia no Yuukan",
+      "title_en": "The Leisure of Grisaia",
       "url": "https://vndb.org/v18830",
-      "image": "https://s.vndb.org/cv/55/27355.jpg",
+      "image": "/anime/covers/grisaia-yuukan.jpg",//"https://s.vndb.org/cv/55/27355.jpg",
       "score": 8,
       "progressType": "endings",
       "endings": [ 1, 1 ],
-      "playtime": 1,
+      "playtime": 1.07,
       "start": "2018-3-19",
       "finish": "2018-3-19",
       "tags": [
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "FUN FACT: This game is labeled as SFW, yet there's actually a nude sprite for Michiru hidden in the \"image.int\" file, HAH!"
+      ]
     },
     {
       "title": "Idol Mahou Shoujo Chiruchiru ☆ Michiru",
+      "title_en": "Idol Magical Girl Chiru Chiru Michiru",
       "url": "https://vndb.org/v14973",
-      "image": "https://s.vndb.org/cv/58/33658.jpg",
+      "image": "/anime/covers/idol-mahou-shoujo-chiruchiru.jpg",//"https://s.vndb.org/cv/58/33658.jpg",
       "score": 9.5,
       "progressType": "episodes",
       "episodes": [ 13, 13 ],
@@ -356,10 +404,10 @@
       ]
     },
     {
-      "title": "Kono Oozora ni, Tsubasa o Hirogete", // If my Heart Had Wings
+      "title": "Kono Oozora ni, Tsubasa o Hirogete",
+      "title_en": "If My Heart Had Wings",
       "url": "https://vndb.org/v9093",
-      //"image": "https://s.vndb.org/cv/91/32691.jpg",
-      "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/70/If_My_Heart_Had_Wings_Coverart.png/220px-If_My_Heart_Had_Wings_Coverart.png",
+      "image": "/anime/covers/imhhw.jpg",//"https://upload.wikimedia.org/wikipedia/en/thumb/7/70/If_My_Heart_Had_Wings_Coverart.png/220px-If_My_Heart_Had_Wings_Coverart.png",//"https://s.vndb.org/cv/91/32691.jpg",
       "score": 9,
       "progressType": "routes",
       "progressType2": "endings",
@@ -376,12 +424,19 @@
         "Hotaru Best Girl",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Has a slow start, but worth the effort as the routes are all really well done and unique.",
+        "Hotaru is best girl for all her snappy comebacks."
+      ],
+      "notes_technical": [
+        "This game is a nightmare to patch, MoeNovel butchered the original game so make sure you follow the patching guides."
+      ]
     },
     {
       "title": "Katawa Shoujo",
+      "aliases": [ "Disability Girls" ],
       "url": "https://vndb.org/v945",
-      "image": "https://s.vndb.org/cv/59/2059.jpg",
+      "image": "/anime/covers/katawa-shoujo.jpg",//"https://s.vndb.org/cv/59/2059.jpg",
       "score": 9.5,
       "progressType": "routes",
       "progressType2": "endings",
@@ -398,16 +453,18 @@
         "Free"
       ],
       "notes": [
-        "This was my 3rd finished VN and it was an amazing ride.",
-        "It has a large amount of choices and the routes are all lovely.",
-        "Katawa Shoujo is an absolute must-play!"
+        "A widely beloved VN that originated from 4chan.",
+        "It has a large amount of choices and the stories are amazingly written.",
+        "There is NO better visual novel to recommend than Katawa Shoujo, it's an absolute must-play! And it's FREE!",
+        "My 3rd finished VN."
       ]
     },
     {
       "title": "Neko Para Vol.0 Minazuki Neko-tachi no Nichijou!",
+      "title_en": "NEKOPARA Vol. 0",
       "url": "https://vndb.org/v17763",
-      "image": "https://s.vndb.org/cv/25/25525.jpg",
-      "score": 6,
+      "image": "/anime/covers/nekopara-0.jpg",//"https://s.vndb.org/cv/25/25525.jpg",
+      "score": 5,
       "progressType": "endings",
       "endings": [ 1, 1 ],
       "achievements": [ 13, 13 ],
@@ -415,16 +472,19 @@
       "start": "2018-3-6",
       "finish": "2018-3-6",
       "tags": [
-        "Bad Music Transitions",
-        "Awkward Animation",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "What a terrible introduction to the series.",
+        "The animations felt really awkward and the music transitions poorly done.",
+        "Not only that, but the story (or lack thereof) and gags were lame."
+      ]
     },
     {
       "title": "Neko Para Vol.1 Soleil Kaiten Shimashita!",
+      "title_en": "NEKOPARA Vol. 1",
       "url": "https://vndb.org/v15538",
-      "image": "https://s.vndb.org/cv/39/22939.jpg",
+      "image": "/anime/covers/nekopara-1.jpg",//"https://s.vndb.org/cv/39/22939.jpg",
       "score": 7,
       "progressType": "endings",
       "endings": [ 1, 1 ],
@@ -445,7 +505,7 @@
     {
       "title": "No One But You",
       "url": "https://vndb.org/v17564",
-      "image": "https://s.vndb.org/cv/36/27436.jpg",
+      "image": "/anime/covers/no-one-but-you.jpg",//"https://s.vndb.org/cv/36/27436.jpg",
       "score": 7,
       "progressType": "routes",
       "progressType2": "endings",
@@ -457,17 +517,19 @@
       "start": "2016-1-22",
       "finish": "2016-1-23",
       "tags": [
-        "Love-Scenes",
+        "H-Scenes", // Todo: Confirm Love or H Scenes
         "Cried",
         "First VN",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "The first visual novel I ever played. I viewed it pretty highly when first played, but I imagine it won't hold up during a replay."
+      ]
     },
     {
       "title": "Sunrider Academy",
       "url": "https://vndb.org/v16221",
-      "image": "https://s.vndb.org/cv/40/22940.jpg",
+      "image": "/anime/covers/sunrider-academy.jpg",//"https://s.vndb.org/cv/40/22940.jpg",
       "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
@@ -479,16 +541,19 @@
       "start": "2016-2-14",
       "finish": "2016-2-18",
       "tags": [
-        "Love-Scenes",
+        "H-Scenes",
         "Cried",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "The second visual novel I ever played. Likewise, I also viewed this pretty highly when first played, but I imagine it won't hold.",
+        "This is the only dating sim I've played with actual character stats as of Dec 2018."
+      ]
     },
     {
       "title": "Hyperdimension Neptunia Re;Birth1",
       "url": "https://store.steampowered.com/app/282900/Hyperdimension_Neptunia_ReBirth1___ReBirth1__1/",
-      "image": "https://vignette.wikia.nocookie.net/neptunia/images/b/b4/ReBirth_1_Coverart.png/revision/latest?cb=20140820030933",
+      "image": "/anime/covers/hdn-rebirth1.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/b/b4/ReBirth_1_Coverart.png/revision/latest?cb=20140820030933",
       "score": 8,
       "progressType": "endings",
       "endings": [ 2, 2 ],
@@ -498,17 +563,23 @@
       "start": "2016-10-18",
       "finish": "2016-10-25",
       "tags": [
-        "Minor Game Design Issues",
-        "Cumbersome UI",
-        "Heavily Reused Resources",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Bring your waifus into the wonderful world of gaming!",
+        "This is a goldmine of memes and parodying other visual novels/anime.",
+        "The gameplay is interesting and not that grindy, but the balance feels pretty off.",
+        "This entire series can be labeled as \"Asset Reuse - The Game\"!"
+      ],
+      "notes_technical": [
+        "The PC version of this game is a port, so go in expecting daily crashes.",
+        "ALWAYS apply the 4GB patch to these games."
+      ]
     },
     {
       "title": "Hyperdimension Neptunia Re;Birth2: Sisters Generation",
       "url": "https://store.steampowered.com/app/351710/Hyperdimension_Neptunia_ReBirth2_Sisters_Generation___ReBirth2____2/",
-      "image": "https://vignette.wikia.nocookie.net/neptunia/images/3/3a/Re%3BBirth2_SE.jpg/revision/latest?cb=20150519225219",
+      "image": "/anime/covers/hdn-rebirth2.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/3/3a/Re%3BBirth2_SE.jpg/revision/latest?cb=20150519225219",
       "score": 8,
       "progressType": "endings",
       "endings": [ 9, 9 ],
@@ -520,17 +591,20 @@
       "tags": [
         "Cried",
         "Conquest Best Ending",
-        "Minor Game Design Issues",
-        "Cumbersome UI",
-        "Heavily Reused Resources",
         "Owned"
       ],
-      "notes": "Conquest Best Ending, Minor Game Design Issues, Cumbersome UI, Heavily Reused Resources, Other random notes that will take up space, but not as much space as tags"
+      "notes": [
+        "This is probably the worst of the Re;Birth trilogy yet it has the BEST ending out of any of them.",
+        "THE CONQUEST ENDING: Take a happy normal gaming experience and turn it into a heartbreaking journey that betrays everything you believed in - I cried."
+      ],
+      "notes_technical": [
+        "The worst in the trilogy when it comes to crashes, especially when hunting rare hidden treasures."
+      ]
     },
     {
       "title": "Hyperdimension Neptunia Re;Birth3 V Generation",
       "url": "https://store.steampowered.com/app/353270/Hyperdimension_Neptunia_ReBirth3_V_Generation___ReBirth3_V_CENTURY____3/",
-      "image": "https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/a/a9/Re%3BBirth3VGeneration.jpg/revision/latest?cb=20150914184503",
+      "image": "/anime/covers/hdn-rebirth3.jpg",//"https://vignette.wikia.nocookie.net/hyperdimensionneptunia/images/a/a9/Re%3BBirth3VGeneration.jpg/revision/latest?cb=20150914184503",
       "score": 8.5,
       "progressType": "endings",
       "endings": [ 3, 3 ],
@@ -541,13 +615,14 @@
       "finish": "2016-12-9",
       "tags": [
         "Top Nep",
-        "Minor Game Design Issues",
-        "Cumbersome UI",
-        "Heavily Reused Resources",
         "So Much Power",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "The best game of the Re;Birth trilogy story and gameplay-wise.",
+        "Gameplay has been tweaked and improved a bit from the last two iterations.",
+        "My only gripe is that some of the optional end-game content is impossible even at the level cap."
+      ]
     }
   ],
 
@@ -555,7 +630,7 @@
     {
       "title": "MegaTagmension Blanc + Neptune VS Zombies (Neptunia)",
       "url": "https://store.steampowered.com/app/496810/MegaTagmension_Blanc__Neptune_VS_Zombies_Neptunia/",
-      "image": "https://vignette.wikia.nocookie.net/neptunia/images/d/d4/BvZ_Standard.jpg/revision/latest?cb=20160413175446",
+      "image": "/anime/covers/megatagmension-blanc.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/d/d4/BvZ_Standard.jpg/revision/latest?cb=20160413175446",
       "score": null,
       "progressType": null,
       "achievements": [ 4, 36 ],
@@ -577,8 +652,9 @@
   "planning": [
     {
       "title": "Super Dangan Ronpa 2 Sayonara Zetsubou Gakuen",
+      "title_en": "Danganronpa 2: Goodbye Despair",
       "url": "https://vndb.org/v7679",
-      "image": "https://s.vndb.org/cv/20/18120.jpg",
+      "image": "/anime/covers/danganronpa-2.jpg",//"https://s.vndb.org/cv/20/18120.jpg",
       "score": null,
       "progressType": "endings",
       "achievements": [ null, 47 ],
@@ -594,7 +670,7 @@
     {
       "title": "Megadimension Neptunia VII",
       "url": "https://store.steampowered.com/app/460120/Megadimension_Neptunia_VII/",
-      "image": "https://vignette.wikia.nocookie.net/neptunia/images/1/19/V2_SE_Cover.jpg/revision/latest?cb=20160116002938",
+      "image": "/anime/covers/mdn-vii.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/1/19/V2_SE_Cover.jpg/revision/latest?cb=20160116002938",
       "score": null,
       "progressType": "endings",
       "achievements": [ null, 35 ],
@@ -610,7 +686,7 @@
     {
       "title": "Hyperdimension Neptunia U: Action Unleashed",
       "url": "https://store.steampowered.com/app/387340/Hyperdimension_Neptunia_U_Action_Unleashed/",
-      "image": "https://vignette.wikia.nocookie.net/neptunia/images/3/37/Neptunia_U_SE.jpg/revision/latest?cb=20150519223925",
+      "image": "/anime/covers/hdn-u.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/3/37/Neptunia_U_SE.jpg/revision/latest?cb=20150519223925",
       "score": null,
       "progressType": null,
       "achievements": [ null, 35 ],
@@ -626,7 +702,7 @@
     {
       "title": "Little Busters!",
       "url": "https://vndb.org/v5",
-      "image": "https://s.vndb.org/cv/67/24267.jpg",
+      "image": "/anime/covers/little-busters.jpg",//"https://s.vndb.org/cv/67/24267.jpg",
       "score": null,
       "progressType": "routes",
       "routes": null,
@@ -642,8 +718,9 @@
     },
     {
       "title": "Karakara",
+      "title_en": "KARAKARA",
       "url": "https://vndb.org/v18974",
-      "image": "https://s.vndb.org/cv/07/29807.jpg",
+      "image": "/anime/covers/karakara.jpg",//"https://s.vndb.org/cv/07/29807.jpg",
       "score": null,
       "progressType": "routes",
       "routes": null,
@@ -660,7 +737,7 @@
     {
       "title": "Go! Go! Nippon! ~My First Trip to Japan~",
       "url": "https://vndb.org/v7316",
-      "image": "https://s.vndb.org/cv/37/26637.jpg",
+      "image": "/anime/covers/go-go-nipon.jpg",//"https://s.vndb.org/cv/37/26637.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -678,7 +755,7 @@
     {
       "title": "Stay! Stay! Democratic People's Republic of Korea",
       "url": "https://vndb.org/v19616",
-      "image": "https://s.vndb.org/cv/23/29923.jpg",
+      "image": "/anime/covers/stay-stay-dprk.jpg",//"https://s.vndb.org/cv/23/29923.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -695,7 +772,7 @@
     {
       "title": "Memory's Dogma CODE:01",
       "url": "https://vndb.org/v17655",
-      "image": "https://s.vndb.org/cv/08/24808.jpg",
+      "image": "/anime/covers/memorys-dogma.jpg",//"https://s.vndb.org/cv/08/24808.jpg",
       "score": null,
       "progressType": "routes",
       "routes": null,
@@ -711,8 +788,9 @@
     },
     {
       "title": "Shizuku no Oto",
+      "title_en": "Sound of Drop -fall into poison-",
       "url": "https://vndb.org/v15940",
-      "image": "https://s.vndb.org/cv/90/21790.jpg",
+      "image": "/anime/covers/shizuku-no-oto.jpg",//"https://s.vndb.org/cv/90/21790.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -729,7 +807,7 @@
     {
       "title": "Highway Blossoms",
       "url": "https://vndb.org/v18381",
-      "image": "https://s.vndb.org/cv/71/26271.jpg",
+      "image": "/anime/covers/highway-blossoms.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -746,7 +824,7 @@
     {
       "title": "Sunrider: Liberation Day",
       "url": "https://vndb.org/v17694",
-      "image": "https://s.vndb.org/cv/60/24760.jpg",
+      "image": "/anime/covers/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -763,7 +841,7 @@
     {
       "title": "Japanese School Life",
       "url": "https://vndb.org/v18387",
-      "image": "https://s.vndb.org/cv/54/29854.jpg",
+      "image": "/anime/covers/japanese-school-life.jpg",//"https://s.vndb.org/cv/54/29854.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -779,8 +857,9 @@
     },
     {
       "title": "Ame no Marginal",
+      "title_en": "Ame no Marginal -Rain Marginal-",
       "url": "https://vndb.org/v16695",
-      "image": "https://s.vndb.org/cv/11/23211.jpg",
+      "image": "/anime/covers/ame-no-marginal.jpg",//"https://s.vndb.org/cv/11/23211.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -796,8 +875,9 @@
     },
     {
       "title": "Grisaia no Rakuen",
+      "title_en": "The Eden of Grisaia",
       "url": "https://vndb.org/v7724",
-      "image": "https://s.vndb.org/cv/14/25914.jpg",
+      "image": "/anime/covers/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -814,8 +894,9 @@
     },
     {
       "title": "Neko Para Vol.2 Shimai Neko no Sucre",
+      "title_en": "NEKOPARA Vol. 2",
       "url": "https://vndb.org/v18713",
-      "image": "https://s.vndb.org/cv/75/27275.jpg",
+      "image": "/anime/covers/nekopara-2.jpg",//"https://s.vndb.org/cv/75/27275.jpg",
       "score": null,
       "progressType": "endings",
       "routes": null,
@@ -833,8 +914,9 @@
     },
     {
       "title": "Grisaia no Senritsu",
+      "title_en": "The Melody of Grisaia",
       "url": "https://vndb.org/v19072",
-      "image": "https://s.vndb.org/cv/41/28041.jpg",
+      "image": "/anime/covers/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
       "score": null,
       "progressType": "endings",
       "routes": null,
@@ -850,8 +932,9 @@
     },
     {
       "title": "Grisaia no Zankou",
+      "title_en": "The Afterglow of Grisaia",
       "url": "https://vndb.org/v18831",
-      "image": "https://s.vndb.org/cv/56/27356.jpg",
+      "image": "/anime/covers/grisaia-zankou.jpg",//"https://s.vndb.org/cv/56/27356.jpg",
       "score": null,
       "progressType": "endings",
       "routes": null,
@@ -868,7 +951,7 @@
     {
       "title": "Narcissu",
       "url": "https://vndb.org/v10",
-      "image": "https://s.vndb.org/cv/00/8900.jpg",
+      "image": "/anime/covers/narcissu.jpg",//"https://s.vndb.org/cv/00/8900.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -884,8 +967,9 @@
     },
     {
       "title": "Subarashiki Hibi ~Furenzoku Sonzai~",
+      "title_en": "Wonderful Everyday Down the Rabbit-Hole",
       "url": "https://vndb.org/v3144",
-      "image": "https://s.vndb.org/cv/19/4519.jpg",
+      "image": "/anime/covers/subahibi.jpg",//"https://s.vndb.org/cv/19/4519.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -902,7 +986,7 @@
     {
       "title": "Swan Song",
       "url": "https://vndb.org/v914",
-      "image": "/anime/covers/vndb914.png",
+      "image": "/anime/covers/swan-song.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -918,8 +1002,9 @@
     },
     {
       "title": "Cross†Channel",
+      "title_en": "CROSS†CHANNEL",
       "url": "https://vndb.org/v66",
-      "image": "https://s.vndb.org/cv/04/16904.jpg",
+      "image": "/anime/covers/cross-channel.jpg",//"https://s.vndb.org/cv/04/16904.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -936,7 +1021,7 @@
     {
       "title": "Ace Academy",
       "url": "https://vndb.org/v13948",
-      "image": "https://s.vndb.org/cv/77/25777.jpg",
+      "image": "/anime/covers/ace-academy.jpg",//"https://s.vndb.org/cv/77/25777.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -952,8 +1037,9 @@
     },
     {
       "title": "Lucy - Geunyeoga Baladeon Geos -",
+      "title_en": "Lucy -The Eternity She Wished For-",
       "url": "https://vndb.org/v16743",
-      "image": "https://s.vndb.org/cv/99/23299.jpg",
+      "image": "/anime/covers/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -969,8 +1055,9 @@
     },
     {
       "title": "Clannad",
+      "title_en": "CLANNAD",
       "url": "https://vndb.org/v4",
-      "image": "https://s.vndb.org/cv/52/24252.jpg",
+      "image": "/anime/covers/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
       "score": null,
       "progressType": "routes",
       "routes": null,
@@ -986,8 +1073,9 @@
     },
     {
       "title": "Kara no Shoujo",
+      "title_en": "Girl in the Shell",
       "url": "https://vndb.org/v810",
-      "image": "https://s.vndb.org/cv/87/26087.jpg",
+      "image": "/anime/covers/kara-no-shoujo.jpg",//"https://s.vndb.org/cv/87/26087.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -1004,7 +1092,7 @@
     {
       "title": "Ever17 -The Out of Infinity-",
       "url": "https://vndb.org/v17",
-      "image": "https://s.vndb.org/cv/60/24260.jpg",
+      "image": "/anime/covers/ever17.jpg",//"https://s.vndb.org/cv/60/24260.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -1021,7 +1109,7 @@
     {
       "title": "Eden* They Were Only Two, On The Planet.",
       "url": "https://vndb.org/v1286",
-      "image": "https://s.vndb.org/cv/22/3922.jpg",
+      "image": "/anime/covers/eden.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -1038,7 +1126,7 @@
     {
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
-      "image": "/anime/covers/ddlc-purist-mod.png",
+      "image": "/anime/covers/ddlc-purist-mod.jpg",
       "score": null,
       "progressType": "routes",
       "routes": [ null, 4 ],
@@ -1055,7 +1143,7 @@
     {
       "title": "Summer's Clover",
       "url": "https://vndb.org/v24425",
-      "image": "https://s.vndb.org/cv/31/37031.jpg",
+      "image": "/anime/covers/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -1071,8 +1159,9 @@
     },
     {
       "title": "G-senjou no Maou",
+      "title_en": "G-senjou no Maou - The Devil on G-String - ",
       "url": "https://vndb.org/v211",
-      "image": "https://s.vndb.org/cv/42/26442.jpg",
+      "image": "/anime/covers/g-senjou-no-maou.jpg",//"https://s.vndb.org/cv/42/26442.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
@@ -1088,8 +1177,9 @@
     },
     {
       "title": "Kikouyoku Senki Tenkuu no Yumina",
+      "title_en": "Yumina the Ethereal",
       "url": "https://vndb.org/v1155",
-      "image": "https://s.vndb.org/cv/24/1424.jpg",
+      "image": "/anime/covers/kikouyoku-senki-tenkuu-no-yumina.jpg",//"https://s.vndb.org/cv/24/1424.jpg",
       "score": null,
       "progressType": null,
       "routes": null,

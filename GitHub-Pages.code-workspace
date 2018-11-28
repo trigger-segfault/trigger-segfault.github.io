@@ -5,12 +5,23 @@
     }
   ],
   "settings": {
+    "spellright.notificationClass": "hint",
     "spellright.documentTypes": [
       "markdown",
       "latex",
       "plaintext",
       "html",
-      "yaml"
+      "yaml",
+      "json",
+      "jsonc"
+    ],
+    "spellright.ignoreFiles": [
+      "**/.gitignore",
+      "**/.spellignore",
+      "GitHub-Pages.code-workspace",
+      "Gemfile*",
+      "tsconfig.json",
+      ".markdownlint.json"
     ],
     "css.lint.vendorPrefix": "ignore",
     "editor.detectIndentation": false,
