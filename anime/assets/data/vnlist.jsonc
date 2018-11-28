@@ -188,7 +188,12 @@
         "Enjoy the flashbacks...",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "This is the story of a player, who against all odds, decided to sit down and spend over 50 hours reading just flashbacks.",
+        "It's no exageration to say this VN is built on all of the flashbacks it brings up.",
+        "Root Double has a pretty unique choice system and plenty of good plot twists to keep you entertained throughout.",
+        "It may be a chore to get through at times, but it's worth the effort."
+      ]
     },
     {
       "title": "Dangan Ronpa Kibou no Gakuen to Zetsubou no Koukousei",
@@ -1061,6 +1066,40 @@
       "finish": null,
       "tags": [
         "Mod"
+      ],
+      "notes": null
+    },
+    {
+      "title": "G-senjou no Maou",
+      "url": "https://vndb.org/v211",
+      "image": "https://s.vndb.org/cv/42/26442.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "H-Scenes"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Kikouyoku Senki Tenkuu no Yumina",
+      "url": "https://vndb.org/v1155",
+      "image": "https://s.vndb.org/cv/24/1424.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "H-Scenes"
       ],
       "notes": null
     }

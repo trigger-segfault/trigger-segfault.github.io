@@ -17,7 +17,8 @@
     "files.exclude": {
       "_site/**": true,
       "node_modules/**": true,
-      "**/.vscode/**": true
+      "**/.vscode/**": true,
+      ".jekyll-metadata": true
     },
 	  "[markdown]": {
 	    "editor.insertSpaces": true,
