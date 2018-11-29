@@ -1,5 +1,5 @@
 ﻿{
-  "entry_information": {
+  "entry_documentation": {
     // Basic Info
     "title": "VNDb title",
     "url": "VNDb url, otherwise another url to the game",
@@ -42,13 +42,14 @@
       "score": 10,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 3 ],
-      "endings": [ 18, 43 ],
-      "playtime": 68,
+      "routes": [ 2, 3 ],
+      "endings": [ 19, 43 ],
+      "playtime": 71,
       "start": "2018-11-8",
       "finish": null,
       "tags": [
-        "H-Scenes"
+        "H-Scenes",
+        "Cried"
       ],
       "notes": null
     }
