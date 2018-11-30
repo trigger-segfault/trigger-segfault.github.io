@@ -10,6 +10,8 @@ description: Random weeaboo pages and details for trigger_death
 
 #### **[Visual Novel List](/anime/visualnovellist/)**
 
+#### **[Top Anime](/anime/top/)**
+
 ## Profiles
 
 #### **[MyAnimeList](https://myanimelist.net/profile/trigger_death)**

@@ -1,0 +1,23 @@
+{%- if site.data.top_anime[include.type].size > 0 -%}
+  <div class="post-list favorite">
+    {%- for favorite in site.data.top_anime[include.type] -%}
+    <div>
+      <div class="image"><img src="{{ favorite.image | relative_url }}"></div>
+      <div class="info">
+        <h5>
+          {%- if favorite.url -%}
+          <a class="post-link" href="{{ favorite.url | relative_url }}">
+            {{ favorite.title | escape }}
+          </a>
+          {%- else -%}
+          <div class="post-link">
+            {{ favorite.title | escape }}
+          </div>
+          {%- endif -%}
+        </h5>
+        <p>{{ favorite.description | markdownify }}</p>
+      </div>
+    </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

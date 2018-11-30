@@ -1,0 +1,68 @@
+#cried: 67
+top_genres:
+  - 
+    title: "Parody x Comedy"
+    image: "/anime/covers/anime/full/katte-ni-kaizou.jpg"
+    description:
+      "I'm a sucker for titles that don't take themselves seriously.
+      Shows that know exactly what they are at a meta level, and execute everything over the top.
+      I can name quite a few anime that have low ratings, but are perfect in my eyes.
+      Some of my favorites:\n
+      * [Haiyore! Nyaruko-san](https://myanimelist.net/anime/11785/Haiyore_Nyaruko-san)\n
+      * [Katte ni Kaizou](https://myanimelist.net/anime/10191/Katte_ni_Kaizou)\n
+      * [Asobi ni Iku yo!](https://myanimelist.net/anime/6166/Asobi_ni_Iku_yo)\n
+      * [Idol Mahou Shoujo Chiruchiru ☆ Michiru](https://vndb.org/v14973)"
+  - 
+    title: "Isekai"
+    image: "/anime/covers/anime/full/gate.jpg"
+    description:
+      "*Taken to another world* series are another love.
+      There's just something so fascinating about mixing the knowledge
+      of fantasy and modern worlds.
+      Also the *really* good writing for a lot of the popular ones is probably to blame.
+      Some of my favorites:\n
+      * [Hataraku Maou-sama!](https://myanimelist.net/anime/15809/Hataraku_Maou-sama)\n
+      * [No Game No Life](https://myanimelist.net/anime/19815/No_Game_No_Life)\n
+      * [KonoSuba](https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo)\n
+      * [Re:Zero](https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu)\n
+      * [Gate](https://myanimelist.net/anime/28907/Gate__Jieitai_Kanochi_nite_Kaku_Tatakaeri)\n"
+top_anime:
+  -
+    title: "Steins;Gate"
+    url:   "https://myanimelist.net/anime/9253/Steins_Gate"
+    image: "/anime/covers/anime/full/steins-gate.jpg"
+    description:
+      "asda
+      asdasdas"
+  -
+    title: "Angel Beats!"
+    url:   "https://myanimelist.net/anime/6547/Angel_Beats"
+    image: "/anime/covers/anime/full/angel-beats.jpg"
+    description:
+      "I have never been so emotionally overwhelmed by the end of an anime as I have with Angel Beats.
+      This show had a really unique premise with some lovable comedic gags that took full advantage of that.
+      Angel Beats had enough impact on me to convince me to become an organ doner."
+  -
+    title: "Haiyore! Nyaruko-san"
+    url:   "https://myanimelist.net/anime/11785/Haiyore_Nyaruko-san"
+    image: "/anime/covers/anime/full/haiyore-nyaruko-san.jpg"
+  -
+    title: "Kiseijuu: Sei no Kakuritsu"
+    url:   "https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu"
+    image: "/anime/covers/anime/full/parasyte.jpg"
+  -
+    title: "Punch Line"
+    url:   https://myanimelist.net/anime/28617/Punch_Line
+    image: "/anime/covers/anime/full/punch-line.jpg"
+top_manga:
+  - "https://myanimelist.net/manga/8144/Sora_no_Otoshimono"
+  - "https://myanimelist.net/manga/7519/Kami_nomi_zo_Shiru_Sekai"
+  - "https://myanimelist.net/manga/25250/Voynich_Hotel"
+top_light_novels:
+  - "https://myanimelist.net/manga/36719/Hataraku_Maou-sama"
+  - "https://myanimelist.net/manga/48399/No_Game_No_Life"
+  - "https://myanimelist.net/manga/60553/Kono_Subarashii_Sekai_ni_Shukufuku_wo"
+top_visual_novels:
+  - "https://vndb.org/v5154"  # Grisaia no Kajitsu
+  - "https://vndb.org/v97"    # Saya no Uta
+  - "https://vndb.org/v945"   # Katawa Shoujo
