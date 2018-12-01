@@ -32,6 +32,12 @@
 }
 
 
+.work-in-progress {
+  color: #CE0018;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
 .site-title-header {
 	width: 100%;
 	border-bottom: 1px solid $grey-color-light;
@@ -485,7 +491,7 @@ header .site-title a {
     margin-right: 0;
   }
   .post-list.favorite > div {
-    width: 100%;
+    width: calc(100% - 24px);
     flex-direction: column;
     justify-content: center;
     align-items: center;

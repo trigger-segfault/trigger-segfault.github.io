@@ -148,7 +148,8 @@ blockquote {
  * Code formatting
  */
 pre,
-code {
+code,
+.work-in-progress {
   @include relative-font-size(0.9375);
   border: 1px solid $grey-color-light;
   border-radius: 3px;
@@ -159,7 +160,8 @@ code {
   padding: 1px 5px;
 }
 
-pre {
+pre,
+.work-in-progress {
   padding: 8px 12px;
   overflow-x: auto;
 
