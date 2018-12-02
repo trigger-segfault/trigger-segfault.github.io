@@ -2,6 +2,13 @@
 layout: default
 ---
 <article class="post">
+  <script src="/assets/js/anchor.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      anchors.options.visible = 'touch'; 
+      anchors.add('.post-content > h1, .post-content > h2, .post-content > h3');
+    });
+  </script>
 
   {%- assign hide_title = page.hide_title | default: false -%}
   {%- unless hide_title -%}

@@ -3,13 +3,159 @@ layout: page
 permalink: /anime/top/
 title: Top Anime
 image: /anime/assets/icon-256.png
-work_in_progress: true
+description: A list of trigger_death's top genres, anime, manga, light novels, and visual novels.
 ---
 
-<h2 id="genres">Top Genres</h2>
+<style>
+.collapsible-container {
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: -10px;
+}
+ /* Style the button that is used to open and close the collapsible content */
+.collapsible-button {
+  margin-left: 3px;
+  background-color: #2a7ae2;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+  width: 80px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  vertical-align: 25%;
+  height: 30px;
+}
+.collapsible-button:hover {
+  background-color: #1756a9;
+}
 
-{% include top-anime.html type="top_genres" %}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.collapsible-button.active {
+  background-color: rgb(206, 206, 206);
+}
+.collapsible-button.active:hover {
+  background-color: rgb(180, 180, 180);
+}
 
-<h2 id="anime">Top Anime</h2>
+/* Style the collapsible content. Note: hidden by default */
+.collapsible-content {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: height 0.3s ease-out;
+  height: auto;
+  overflow: hidden;
+}
+</style>
+<script>
+// This is the important part!
 
-{% include top-anime.html type="top_anime" %}
+function collapseSection(button, element, immediate) {
+  button.innerText = 'Expand';
+  button.classList.remove('active');
+  element.classList.remove('active');
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight;
+  
+  // temporarily disable all css transitions
+  var elementTransition = element.style.transition;
+  element.style.transition = '';
+  
+  if (immediate) {
+    element.style.height = 0 + 'px';
+    element.style.transition = elementTransition;
+  } else {
+    // on the next frame (as soon as the previous style change has taken effect),
+    // explicitly set the element's height to its current pixel height, so we 
+    // aren't transitioning out of 'auto'
+    requestAnimationFrame(function() {
+      element.style.height = sectionHeight + 'px';
+      element.style.transition = elementTransition;
+      
+      // on the next frame (as soon as the previous style change has taken effect),
+      // have the element transition to height: 0
+      requestAnimationFrame(function() {
+        element.style.height = 0 + 'px';
+      });
+    });
+  }
+  
+  // mark the section as "currently collapsed"
+  element.setAttribute('data-collapsed', 'true');
+}
+
+function expandSection(button, element, immediate) {
+  button.innerText = 'Collapse';
+  button.classList.add('active');
+  element.classList.add('active');
+  // get the height of the element's inner content, regardless of its actual size
+  var sectionHeight = element.scrollHeight;
+  
+  if (immediate) {
+    /*var elementTransition = element.style.transition;
+    element.style.transition = null;
+    element.style.height = null;
+    element.style.transition = elementTransition;*/
+  } else {
+    // have the element transition to the height of its inner content
+    element.style.height = sectionHeight + 'px';
+
+    // when the next css transition finishes (which should be the one we just triggered)
+    element.addEventListener('transitionend', function(e) {
+      // remove this event listener so it only gets triggered once
+      element.removeEventListener('transitionend', arguments.callee);
+      
+      // remove "height" from the element's inline styles, so it can return to its initial value
+      element.style.height = null;
+    });
+  }
+  
+  // mark the section as "currently not collapsed"
+  element.setAttribute('data-collapsed', 'false');
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  var coll = document.getElementsByClassName("collapsible-button");
+
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener('click', function(e) {
+      var section = this.parentElement.nextElementSibling.firstElementChild;
+      var isCollapsed = section.getAttribute('data-collapsed') !== 'false';
+        
+      if (isCollapsed) {
+        expandSection(this, section);
+        section.setAttribute('data-collapsed', 'false');
+      } else {
+        collapseSection(this, section, false);
+      }
+    });
+    var section = coll[i].parentElement.nextElementSibling.firstElementChild;
+    var isCollapsed = section.getAttribute('data-collapsed') !== 'false';
+    if (location.hash == '' || location.hash == '#' + coll[i].parentElement.id || !isCollapsed) {
+      expandSection(coll[i], section, true);
+    } else {
+      collapseSection(coll[i], section, true);
+    }
+    if (location.hash != '') {
+      var hash = location.hash.substr(1); // Remove the '#'
+      location.hash = ''; // reset the hash so we scroll on mobile
+      location.hash = hash;
+    }
+  }
+});
+</script>
+
+<h4 data-no-anchor>and Genres, Manga, Light Novels, and Visual Novels</h4>
+
+{% include top-anime.html id="genres" type="genres" title="Top Genres" %}
+
+{% include top-anime.html id="anime" type="anime" title="Top Anime" %}
+
+{% include top-anime.html id="manga" type="manga" title="Top Manga" %}
+
+{% include top-anime.html id="light-novels" type="light_novels" title="Top Light Novels" %}
+
+{% include top-anime.html id="visual-novels" type="visual_novels" title="Top Visual Novels" %}

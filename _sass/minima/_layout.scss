@@ -159,6 +159,22 @@ header .site-title a {
   margin-bottom: 15px;
 }
 
+/* On mobile, fade links so they aren't such an eyesoar. */
+.anchorjs-link.anchorjs-touch {
+  opacity: 0.4 !important;
+}
+*:hover > .anchorjs-link.anchorjs-touch {
+  opacity: 1 !important;
+}
+/* On desktop, transition-in the links. */
+.anchorjs-link:not(.anchorjs-touch) {
+  transition: all .10s ease-out;
+  margin-left: 4px !important;
+}
+*:hover > .anchorjs-link:not(.anchorjs-touch) {
+  margin-left: 12px !important;
+}
+
 .site-nav {
   position: absolute;
   top: 9px;
@@ -367,7 +383,10 @@ header .site-title a {
 }
 
 .post-list {
-  margin-left: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
   list-style: none;
 
   > li, > div {
@@ -504,6 +523,16 @@ header .site-title a {
   }
 }
 
+// This stuff matters!
+.container {
+  
+  .section {
+    overflow:hidden;
+    transition:height 0.3s ease-out;
+    height:auto;
+  }
+}
+
 
 .post-meta {
   font-size: $small-font-size;
@@ -511,7 +540,7 @@ header .site-title a {
 }
 
 .post-link {
-  display: block;
+  display: inline-block;
   @include relative-font-size(1.5);
 }
 

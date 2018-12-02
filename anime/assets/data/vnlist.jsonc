@@ -44,7 +44,7 @@
       "progressType2": "endings",
       "routes": [ 2, 3 ],
       "endings": [ 28, 45 ],
-      "playtime": 82,
+      "playtime": 89,
       "start": "2018-11-8",
       "finish": null,
       "tags": [
@@ -61,7 +61,7 @@
       "aliases": [ "Noble Works" ],
       "url": "https://vndb.org/v4806",
       "image": "/anime/covers/vn/noble-works.jpg",//"https://s.vndb.org/cv/09/27809.jpg",
-      "score": 7.5,
+      "score": 7,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 6, 6 ],
@@ -134,7 +134,7 @@
       "title_en": "STEINS;GATE",
       "url": "https://vndb.org/v2002",
       "image": "/anime/covers/vn/steins-gate.jpg",//"https://s.vndb.org/cv/04/5804.jpg",
-      "score": 10,
+      "score": 9.5,
       "progressType": "routes",
       "routes": [ 6, 6 ],
       "achievements": [ 42, 42 ],
@@ -171,8 +171,8 @@
       "notes": [
         "A game that truly tests the limits of psychological horror story-telling.",
         "It just keeps going farther and farther over the edge, and the intro was already pretty dark.",
-        "I had a lump in my stomach just reading some of the scenes and it takes a lot to affect me.",
-        "I mean, I read Emergence with no trouble compared to Saya no Uta.",
+        "I had a lump in my stomach just reading some of the scenes and it takes a lot to affect me - I mean,",
+        "I read Emergence with no trouble compared to Saya no Uta.",
         "Nowadays so many things bring back memories of this game.",
         "Also, I will never look at distorted guitars the same way ever again."
       ]
@@ -486,7 +486,7 @@
       "title_en": "NEKOPARA Vol. 1",
       "url": "https://vndb.org/v15538",
       "image": "/anime/covers/vn/nekopara-1.jpg",//"https://s.vndb.org/cv/39/22939.jpg",
-      "score": 7,
+      "score": 6.5,
       "progressType": "endings",
       "endings": [ 1, 1 ],
       "achievements": [ 14, 14 ],

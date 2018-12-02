@@ -1,5 +1,5 @@
 #cried: 67
-top_genres:
+genres:
   - 
     title: "Parody x Comedy"
     image: "/anime/covers/anime/full/katte-ni-kaizou.jpg"
@@ -11,7 +11,7 @@ top_genres:
       * [Haiyore! Nyaruko-san](https://myanimelist.net/anime/11785/Haiyore_Nyaruko-san)\n
       * [Katte ni Kaizou](https://myanimelist.net/anime/10191/Katte_ni_Kaizou)\n
       * [Asobi ni Iku yo!](https://myanimelist.net/anime/6166/Asobi_ni_Iku_yo)\n
-      * [Idol Mahou Shoujo Chiruchiru ☆ Michiru](https://vndb.org/v14973)"
+      * [Idol Mahou Shoujo Chiruchiru ☆ Michiru](https://vndb.org/v14973)\n"
   - 
     title: "Isekai"
     image: "/anime/covers/anime/full/gate.jpg"
@@ -26,43 +26,179 @@ top_genres:
       * [KonoSuba](https://myanimelist.net/anime/30831/Kono_Subarashii_Sekai_ni_Shukufuku_wo)\n
       * [Re:Zero](https://myanimelist.net/anime/31240/Re_Zero_kara_Hajimeru_Isekai_Seikatsu)\n
       * [Gate](https://myanimelist.net/anime/28907/Gate__Jieitai_Kanochi_nite_Kaku_Tatakaeri)\n"
-top_anime:
+  - 
+    title: "Psychological"
+    image: "/anime/covers/anime/full/madoka-magica-3.jpg"
+    description:
+      "Sometimes there's nothing more enjoyable then watching characters fall apart from stress
+      and chaotic situations. Psychological series often back characters into a corner to reveal
+      how far they'll go over the edge and it's never a dull moment.
+      Some of my favorites:\n
+      * [Saya no Uta](https://vndb.org/v97)\n
+      * [Steins;Gate](https://myanimelist.net/anime/9253/Steins_Gate)\n
+      * [Mahou Shoujo Madoka★Magica](https://myanimelist.net/anime/9756/Mahou_Shoujo_Madoka)\n
+      * [Psycho-Pass](https://myanimelist.net/anime/13601/Psycho-Pass)\n
+      * [Danganronpa](https://vndb.org/v7014)\n
+      * [Parasyte](https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu)\n"
+anime:
+  -
+    title: "Haiyore! Nyaruko-san"
+    url:   "https://myanimelist.net/anime/11785/Haiyore_Nyaruko-san"
+    image: "/anime/covers/anime/full/haiyore-nyaruko-san.jpg"
+    description:
+      Take the genre of *Parody x Comedy* and combine it with insane but lovable characters,
+      crazy plot devices, and [references that will literally go on for days](https://web.archive.org/web/20171002061246/http://nyaruref.blogspot.com:80/2012/04/haiyore-nyaruko-san-episode-1.html),
+      and you get Haiyore! Nyaruko-san. This series has over the top voice acting and writing
+      that really makes it shine over any other in this genre. Not only that, but every season
+      has it's own OP that consistently delivers amazing quality.
   -
     title: "Steins;Gate"
     url:   "https://myanimelist.net/anime/9253/Steins_Gate"
     image: "/anime/covers/anime/full/steins-gate.jpg"
     description:
-      "asda
-      asdasdas"
+      "Steins;Gate is truly a masterpiece among masterpieces. Time travel is always a tough choice to tackle
+      when telling a story but Steins;Gate shows it dominates the time travel scene by coming extensive theories
+      and science behind time travel and how it affects the world. This isn't part of the Science;Adventure series
+      for nothing. Steins;Gate also brings together two of the greatest main characters of all time:
+      [KURISUTINA](https://youtu.be/a-GqSWsISVs) and [HOUOUIN KYOUMA](https://youtu.be/iDr4itqD0jw)!"
   -
     title: "Angel Beats!"
     url:   "https://myanimelist.net/anime/6547/Angel_Beats"
     image: "/anime/covers/anime/full/angel-beats.jpg"
     description:
-      "I have never been so emotionally overwhelmed by the end of an anime as I have with Angel Beats.
-      This show had a really unique premise with some lovable comedic gags that took full advantage of that.
+      "This show had a really unique premise with some lovable comedic gags that took full advantage of said premise.
+      I have never been so emotionally overwhelmed by the end of an anime as I have with Angel Beats.
       Angel Beats had enough impact on me to convince me to become an organ doner."
-  -
-    title: "Haiyore! Nyaruko-san"
-    url:   "https://myanimelist.net/anime/11785/Haiyore_Nyaruko-san"
-    image: "/anime/covers/anime/full/haiyore-nyaruko-san.jpg"
-  -
-    title: "Kiseijuu: Sei no Kakuritsu"
-    url:   "https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu"
-    image: "/anime/covers/anime/full/parasyte.jpg"
   -
     title: "Punch Line"
     url:   https://myanimelist.net/anime/28617/Punch_Line
     image: "/anime/covers/anime/full/punch-line.jpg"
-top_manga:
-  - "https://myanimelist.net/manga/8144/Sora_no_Otoshimono"
-  - "https://myanimelist.net/manga/7519/Kami_nomi_zo_Shiru_Sekai"
-  - "https://myanimelist.net/manga/25250/Voynich_Hotel"
-top_light_novels:
-  - "https://myanimelist.net/manga/36719/Hataraku_Maou-sama"
-  - "https://myanimelist.net/manga/48399/No_Game_No_Life"
-  - "https://myanimelist.net/manga/60553/Kono_Subarashii_Sekai_ni_Shukufuku_wo"
-top_visual_novels:
-  - "https://vndb.org/v5154"  # Grisaia no Kajitsu
-  - "https://vndb.org/v97"    # Saya no Uta
-  - "https://vndb.org/v945"   # Katawa Shoujo
+    description:
+      "With the strange synopsis given off by MAL, most people would be turned off at first site, but not me.
+      Personally I think the creators tried to oversell this point to get more watchers as it was really only
+      a small part of the huge story that unfolded. Punchline blew me away with this story and a great OST to boot!
+      This is anything but a standard ecchi."
+
+manga:
+  - 
+    title: "Sora no Otoshimono"
+    url:   "https://myanimelist.net/manga/8144/Sora_no_Otoshimono"
+    image: "/anime/covers/manga/full/sora-no-otoshimono.jpg"
+    description:
+      "Most of the story revolves around the main character getting into some absurd perverted situations.
+      [This is a good example](/anime/assets/img/sora-no-otoshimono-ecchi.png) where it may sound pretty standard,
+      but Sora no Otoshimono takes it to rediculous levels using sci-fi technology in a similar vain to
+      [To LOVE-Ru](https://myanimelist.net/manga/671/To_LOVE-Ru). Inbetween all the ecchi scenarios, a story slowly
+      unfolds about the mysteries of the New World that takes the reader to my favorite series ending of all time."
+  -
+    title: "Kami nomi zo Shiru Sekai"
+    url:   "https://myanimelist.net/manga/7519/Kami_nomi_zo_Shiru_Sekai"
+    image: "/anime/covers/manga/full/twgok.jpg"
+    description:
+      The World God Only Knows is a pretty interesting scenario right off the bat. A character who accels at dating sims
+      using his skill to *conquere* real life heroines. The first few routes feel pretty standard, but the mangaka picks
+      things up and starts giving a lot of routes interesting twists and turns. Then the whole story twists and turns with
+      thrilling plot twists that kept me binging volume after volume. The ending sealed the deal when it gave a
+      proper romantic conclussion to the story about false romances.
+  -
+    title: "Voynich Hotel"
+    url:   "https://myanimelist.net/manga/25250/Voynich_Hotel"
+    image: "/anime/covers/manga/full/voynich-hotel.jpg"
+    description:
+      "Voynich Hotel is really something that no other manga can match.
+      With the large cast of memorable characters, the unique art style, and the constantly unfolding story,
+      there's never a point where you can't put the book down. We start on a strange and mysterious island
+      to start, but everything just gets stranger and stranger as the story progresses."
+  -
+    title: "Kimi wa Midara na Boku no Joou"
+    url:   "https://myanimelist.net/manga/44155/Kimi_wa_Midara_na_Boku_no_Joou"
+    image: "/anime/covers/manga/full/kimiiwa-midara-na-boku-no-joou.jpg"
+    description:
+      "This manga takes sexual humor to the extreme by locking two characters in the same room while one has to furiously
+      hide their lust. The prediciments all revolve around the \"god\" that granted their wish to share the same room.
+      The conditions keep changing as their attitude changes, sometimes to the exact opposite of it was before because they
+      were making use of that condition way too easily.
+      [My favorite panel](/anime/assets/img/kimiiwa-midara-na-boku-no-joou-fuck.jpg)."
+
+light_novels:
+  -
+    title: "Hataraku Maou-sama!"
+    url:   "https://myanimelist.net/manga/36719/Hataraku_Maou-sama"
+    image: "/anime/covers/ln/full/hataraku-maou-sama.jpg"
+    description:
+      "This series flips isekai on its back, revolving around fantasy characters ending up in modern Japan.
+      Not only does it make part-time work interesting by showing a character so diligent and dedicated to his job,
+      but in general it just shows a great perspective and the hardships of daily living even when it's not the main
+      plot of the story. Another big bonus in this story are the characters' witty banter with one another."
+  -
+    title: "No Game No Life"
+    url:   "https://myanimelist.net/manga/48399/No_Game_No_Life"
+    image: "/anime/covers/ln/full/no-game-no-life.jpg"
+    description:
+      "Even without the beautiful colors and OST of the anime, No Game No Life continues to thrive in light novel format.
+      The story continues as Sora and Shiro slowly aim for a chance to challenge Tet through in-depth strategic gameplay.
+      The limits of the 10 pledges are often tested with how far they can be bent and abused by creating dangurous
+      situations from what would normally be simple gameplay."
+  -
+    title: "KonoSuba"
+    url:   "https://myanimelist.net/manga/60553/Kono_Subarashii_Sekai_ni_Shukufuku_wo"
+    image: "/anime/covers/ln/full/konosuba.jpg"
+    description:
+      "Take a selfish protagonist with RPGs and throw him into a world that ticks just like an RPG. The RPG-like mechanics
+      in the world are fascinating alone but the story really shines with just how low Kazuma will go to succeed in his own
+      desires. Our protagonist comes up with strange solutions in dnagurous scenarios and always ends up either saving the day,
+      getting himself in more trouble, or often both. Every main character is flawed in some wonderful way that helps contribute
+      to this comedy following a misfit party."
+
+visual_novels:
+  -
+    title: "Grisaia no Kajitsu"
+    url:   "https://vndb.org/v5154"
+    image: "/anime/covers/vn/full/grisaia-no-kajitsu.jpg"
+    description:
+      "The writers are comedy geniuses, the characters are all wonderful (heroine or otherwise),
+      and the routes themselves are anything but standard. Grisaia gives us the amazing protagonist Yuuji:
+      Whose a hard-ass, tsundere, that doesn't take shit from anyone. Some even go so far as to call him \"best girl\"
+      for these reasons. But that can't be true because Sachi is best girl followed by Michiru with best route.
+      A lot of the comedy revolves around each of the characters interesting personalities and the fact that every every
+      character is either the [subject and/or instigator of teasing](/anime/assets/img/grisaia-teasing.png)."
+  -
+    title: "Saya no Uta"
+    url:   "https://vndb.org/v97"
+    image: "/anime/covers/vn/full/saya-no-uta.jpg"
+    description:
+      "A game that truly tests the limits of psychological horror story-telling.
+      It just keeps going farther and farther over the edge, and the intro was already pretty dark.
+      I had a lump in my stomach just reading some of the scenes and it takes a lot to affect me -
+      I read Emergence with no trouble compared to Saya no Uta.
+      Nowadays so many things bring back memories of this game.
+      And lastly, I will never hear distorted guitars the same way ever again."
+  -
+    title: "Fate/stay night"
+    url:   "https://vndb.org/v11"
+    image: "/anime/covers/vn/full/fate-stay-night.jpg"
+    description:
+      "Fate/stay night certainly lives up to it's popularity on VNDb. There's a huge number of choices that range
+      from challenging your sense of the situation, to choosing how to spend an afternoon bullying Fuji-nee.
+      There's a total of 40 bad ends where you get a fun little cutscene afterwords where two characters explain
+      how you done fucked up. What really makes the VN stand out is the storytelling and action. The action scenes
+      go far beyond what you'd ever expect from a visual novel. They understand how to perfectly use CG and effects
+      to really bring the player into the moment. The 3 routes are locked in order, as you progress through each one,
+      you learn new information that was never available on the previous routes keeping the story fresh and non-repetetive."
+  -
+    title: "Katawa Shoujo"
+    url:   "https://vndb.org/v945"
+    image: "/anime/covers/vn/full/katawa-shoujo.jpg"
+    description:
+      "This is the one visual novel that I'd recommend **everyone** try out. It's free, yet still delivers stories that
+      surpass many paid visual novels. Katawa Shoujo was spawned from 4chan and created by a 21-person team to bring
+      together something that becomes an instant favorite. This VN perfectly tackles the troubles of disability along
+      with the troubles of interacting with those that have one. Each heroine has a beautiful route that really gives
+      you a strong attachment, to the point where Hanako has been my waifu for years."
+
+unused:
+  -
+    title: "Kiseijuu: Sei no Kakuritsu"
+    url:   "https://myanimelist.net/anime/22535/Kiseijuu__Sei_no_Kakuritsu"
+    image: "/anime/covers/anime/full/parasyte.jpg"
+    description:
