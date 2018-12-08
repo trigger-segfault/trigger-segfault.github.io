@@ -1,0 +1,75 @@
+{
+  "categories": {
+    "clothing": {
+
+    },
+    "model": {
+
+    },
+    "other": {
+
+    },
+    "poster": {
+      "color": "#"
+    }
+  },
+
+  "owned": [
+    {
+      "title": "Monokuma Hat",
+      "category": "clothing",
+      "acquired": "Gift made by my mom",
+      "source": "http://www.cuteaz.com.au/dangan-ronpa-monokuma-anime-plush-hat-costume",
+      "image": "/anime/covers/merch/monokuma-hat.jpg",
+      "previews": [
+        "/anime/covers/merch/full/monokuma-hat.jpg"
+      ],
+    },
+    {
+      "title": "Haruhi ism Shirt",
+      "category": "clothing",
+      "acquired": "Bakuretsucon 2015 Dealer's Room",
+      "source": null,
+      "image": "/anime/covers/merch/haruhiism-shirt.jpg",
+      "previews": [
+        "/anime/covers/merch/full/haruhiism-shirt.jpg"
+      ],
+    },
+    {
+      "title": "Ripple Junction Kill LA Kill Outline Adult T-Shirt",
+      "category": "clothing",
+      "acquired": "Gift from friend",
+      "source": "https://www.amazon.com/Ripple-Junction-Outline-Adult-T-Shirt/dp/B07BJ9FTM3",
+      "image": "/anime/covers/merch/kill-la-kill-shirt.jpg",
+      "previews": [
+        "/anime/covers/merch/full/kill-la-kill-shirt.jpg"
+      ],
+    },
+    {
+      "title": "The Legend of Zelda - Majora's Mask Necklace",
+      "category": "clothing",
+      "acquired": "Momocon 2018 Artist's Alley",
+      "artist": "Shiny Things by Miyuka",
+      "source": "https://www.etsy.com/listing/230458399/the-legend-of-zelda-majoras-mask",
+      "image": "/anime/covers/merch/majoras-mask-necklace.jpg",
+      "previews": [
+        "/anime/covers/merch/full/majoras-mask-necklace.jpg"
+      ],
+    },
+    {
+      "title": "Custom-made Bookmarks",
+      "category": "other",
+      "acquired": "Designed by me, printed at Staples",
+      "source": null,
+      "image": "/anime/covers/merch/bookmarks.jpg",
+      "previews": [
+        "/anime/covers/merch/full/bookmarks-side-a.jpg",
+        "/anime/covers/merch/full/bookmarks-side-b.jpg",
+        "/anime/covers/merch/full/bookmarks-side-a-irl.jpg",
+      ],
+    }
+  ]
+
+
+
+}

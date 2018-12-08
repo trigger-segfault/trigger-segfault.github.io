@@ -42,9 +42,9 @@
       "score": 10,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 3 ],
-      "endings": [ 28, 45 ],
-      "playtime": 95,
+      "routes": [ 3, 3 ],
+      "endings": [ 31, 45 ],
+      "playtime": 115,
       "start": "2018-11-8",
       "finish": null,
       "tags": [
