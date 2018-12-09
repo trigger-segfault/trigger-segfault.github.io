@@ -7,11 +7,11 @@ image: /anime/assets/icon-vn-256.png
 description: A handmade list for keeping track of visual novels that trigger_death has played or plans to play.
 ---
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/WebPage">
 <head>
   {%- include head_base.html custom_viewport="true" -%}
-  {%- include seo.html -%}
   <meta name="viewport" content="width=1000,initial-scale=1" />
+  {%- include seo.html -%}
   <link rel="stylesheet" media="all" href="/assets/css/reset.css" />
   <link rel="stylesheet" media="all" href="/assets/css/return-arrow.css" />
   <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-mal.css" />
