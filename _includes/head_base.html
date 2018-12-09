@@ -1,7 +1,9 @@
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{%- unless include.custom_viewport -%}
 <meta name="viewport" content="width=device-width, initial-scale=1">
+{%- endunless -%}
 
 <link rel="icon" href="{{ "/favicon.ico" | relative_url}}" type="image/x-icon"/>
 <link rel="shortcut icon" href="{{ "/favicon.ico" | relative_url}}" type="image/x-icon"/>
