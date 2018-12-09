@@ -49,9 +49,10 @@ var VisualNovelList;
     var StatusType;
     (function (StatusType) {
         StatusType[StatusType["playing"] = 1] = "playing";
-        StatusType[StatusType["completed"] = 2] = "completed";
-        StatusType[StatusType["onhold"] = 3] = "onhold";
-        StatusType[StatusType["dropped"] = 4] = "dropped";
+        StatusType[StatusType["queued"] = 2] = "queued";
+        StatusType[StatusType["completed"] = 3] = "completed";
+        StatusType[StatusType["onhold"] = 4] = "onhold";
+        StatusType[StatusType["dropped"] = 5] = "dropped";
         StatusType[StatusType["planning"] = 6] = "planning";
         StatusType[StatusType["all"] = 7] = "all";
     })(StatusType || (StatusType = {}));
@@ -62,6 +63,7 @@ var VisualNovelList;
             switch (statusType) {
                 case StatusType.all: return "All Visual Novels";
                 case StatusType.playing: return "Currently Playing";
+                case StatusType.queued: return "Queued";
                 case StatusType.completed: return "Completed";
                 case StatusType.onhold: return "On-Hold";
                 case StatusType.dropped: return "Dropped";
@@ -73,6 +75,7 @@ var VisualNovelList;
             switch (statusType) {
                 case StatusType.all: return "All";
                 case StatusType.playing: return "Playing";
+                case StatusType.queued: return "Queued";
                 case StatusType.completed: return "Completed";
                 case StatusType.onhold: return "On-Hold";
                 case StatusType.dropped: return "Dropped";
@@ -86,14 +89,40 @@ var VisualNovelList;
                 var keys = Object.keys(StatusType);
                 for (var i = 0; i < keys.length; i++) {
                     var name = keys[i];
-                    if (typeof StatusType[name] === 'number')
+                    if (typeof StatusType[name] === 'number' /*&& StatusType[name] != StatusType.queued*/)
                         values.push(StatusType[name]);
                 }
             }
             return values;
         }
         StatusType.getValues = getValues;
+        /*export function getValuesAndQueued(): StatusType[] {
+            if (values == null) {
+                values = [];
+                var keys = Object.keys(StatusType);
+                var last = null;
+                for (var i = 0; i < keys.length; i++) {
+                    var name = keys[i];
+                    if (typeof StatusType[name] === 'number')
+                        values.push(StatusType[name]);
+                }
+            }
+            return values;
+        }*/
         function getNames() {
+            if (names == null) {
+                names = [];
+                var keys = Object.keys(StatusType);
+                for (var i = 0; i < keys.length; i++) {
+                    var name = keys[i];
+                    if (typeof StatusType[name] === 'number' /*&& StatusType[name] != StatusType.queued*/)
+                        names.push(name);
+                }
+            }
+            return names;
+        }
+        StatusType.getNames = getNames;
+        /*export function getNamesAndQueued(): string[] {
             if (names == null) {
                 names = [];
                 var keys = Object.keys(StatusType);
@@ -104,8 +133,7 @@ var VisualNovelList;
                 }
             }
             return names;
-        }
-        StatusType.getNames = getNames;
+        }*/
     })(StatusType || (StatusType = {}));
     var VNStats = /** @class */ (function () {
         function VNStats() {

@@ -47,11 +47,11 @@
   /*font-family: 'Helvetica neue', Helvetica, "lucida grande", tahoma, verdana, arial, sans-serif;*/
   text-align: center;
   vertical-align: middle;
-  font-size: 1.6em;
+  font-size: 18px;
 }
-.status-menu-container .status-menu .status-button.on {
+/*.status-menu-container .status-menu .status-button.on {
   font-weight: bold;
-}
+}*/
 .status-menu-container .status-menu .status-button:after {
   position: absolute;
   bottom: 0px;
@@ -63,7 +63,7 @@
   opacity: 0;
 }
 .status-menu-container .status-menu .status-button.on:after, .status-menu .status-button:hover:after {
-  opacity: 1
+  opacity: 1;
 }
 
 /**
@@ -109,7 +109,7 @@
 .list-block {
   margin-top: 16px;
   min-height: 600px;
-  padding: 0
+  padding: 0;
 }
 
 /**
@@ -142,16 +142,16 @@
   vertical-align: middle;
 }
 .list-table .list-table-header .header-title.status {
-  width: 4px
+  width: 4px;
 }
 .list-table .list-table-header .header-title.number {
-  width: 30px
+  width: 30px;
 }
 .list-table .list-table-header .header-title.image {
-  width: 66px
+  width: 66px;
 }
 .list-table .list-table-header .header-title.tags {
-  width: 120px
+  width: 120px;
 }
 
 /**
@@ -165,16 +165,16 @@
 .list-table .list-table-data .data.title {
   padding-left: 8px;
   text-align: left;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 /* TODO: Update when rewatching is added */
 .list-table .list-table-data .data.title .rewatching, .list-table .list-table-data .data.title .rereading, .list-table .list-table-data .data.title .content-status {
   color: #BABABA;
-  font-size: 0.9em
+  font-size: 0.9em;
 }
 
 .list-table .list-table-data .data.status {
-  width: 4px
+  width: 4px;
 }
 .list-table .list-table-data .data.title .more {
   position: relative;
@@ -186,23 +186,26 @@
   padding: 10px;
 }
 .list-table .list-table-data .data.tags {
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 .list-table .list-table-data .data.status.playing {
-  background-color: #2db039
+  background-color: #2db039;
+}
+.list-table .list-table-data .data.status.queued {
+  background-color: #A643D3;
 }
 .list-table .list-table-data .data.status.planning {
-  background-color: #c3c3c3
+  background-color: #c3c3c3;
 }
 .list-table .list-table-data .data.status.completed {
-  background-color: #26448f
+  background-color: #26448f;
 }
 .list-table .list-table-data .data.status.onhold {
-  background-color: #f1c83e
+  background-color: #f1c83e;
 }
 .list-table .list-table-data .data.status.dropped {
-  background-color: #a12f31
+  background-color: #a12f31;
 }
 
 .list-unit .loading-space {

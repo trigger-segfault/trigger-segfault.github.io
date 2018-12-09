@@ -336,6 +336,10 @@ td.title {
   -o-user-select: none;
   user-select: none;
 }
+.status-button.on {
+  /*font-weight: bold;*/
+  text-shadow: 1px 0px 0px #7bd;
+}
 
 .status-button:hover {
   color: #7bd !important;

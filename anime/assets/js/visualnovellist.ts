@@ -50,9 +50,10 @@ namespace ProgressType {
 
 enum StatusType {
 	playing = 1,
-	completed = 2,
-	onhold = 3,
-	dropped = 4,
+	queued = 2,
+	completed = 3,
+	onhold = 4,
+	dropped = 5,
 	planning = 6,
 	all = 7,
 }
@@ -65,6 +66,7 @@ namespace StatusType {
 		switch (statusType) {
 			case StatusType.all: return "All Visual Novels";
 			case StatusType.playing: return "Currently Playing";
+			case StatusType.queued: return "Queued";
 			case StatusType.completed: return "Completed";
 			case StatusType.onhold: return "On-Hold";
 			case StatusType.dropped: return "Dropped";
@@ -75,6 +77,7 @@ namespace StatusType {
 		switch (statusType) {
 			case StatusType.all: return "All";
 			case StatusType.playing: return "Playing";
+			case StatusType.queued: return "Queued";
 			case StatusType.completed: return "Completed";
 			case StatusType.onhold: return "On-Hold";
 			case StatusType.dropped: return "Dropped";
@@ -87,13 +90,38 @@ namespace StatusType {
 			var keys = Object.keys(StatusType);
 			for (var i = 0; i < keys.length; i++) {
 				var name = keys[i];
-				if (typeof StatusType[name] === 'number')
+				if (typeof StatusType[name] === 'number' /*&& StatusType[name] != StatusType.queued*/)
 					values.push(StatusType[name]);
 			}
 		}
 		return values;
 	}
+	/*export function getValuesAndQueued(): StatusType[] {
+		if (values == null) {
+			values = [];
+			var keys = Object.keys(StatusType);
+			var last = null;
+			for (var i = 0; i < keys.length; i++) {
+				var name = keys[i];
+				if (typeof StatusType[name] === 'number')
+					values.push(StatusType[name]);
+			}
+		}
+		return values;
+	}*/
 	export function getNames(): string[] {
+		if (names == null) {
+			names = [];
+			var keys = Object.keys(StatusType);
+			for (var i = 0; i < keys.length; i++) {
+				var name = keys[i];
+				if (typeof StatusType[name] === 'number' /*&& StatusType[name] != StatusType.queued*/)
+					names.push(name);
+			}
+		}
+		return names;
+	}
+	/*export function getNamesAndQueued(): string[] {
 		if (names == null) {
 			names = [];
 			var keys = Object.keys(StatusType);
@@ -104,7 +132,7 @@ namespace StatusType {
 			}
 		}
 		return names;
-	}
+	}*/
 }
 
 class VNStats {

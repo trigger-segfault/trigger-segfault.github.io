@@ -37,6 +37,43 @@
 
   ],
 
+  "queued": [
+    {
+      "title": "DDLC Purist Mod",
+      "url": "https://twitter.com/ddlcpuristmod",
+      "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
+      "score": null,
+      "progressType": "routes",
+      "routes": [ null, 4 ],
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Mod"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Summer's Clover",
+      "url": "https://vndb.org/v24425",
+      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Mod"
+      ],
+      "notes": null
+    }
+  ],
+
   "completed": [
     {
       "title": "Fate/stay night",
@@ -1130,40 +1167,6 @@
       "finish": null,
       "tags": [
         "Wishlist"
-      ],
-      "notes": null
-    },
-    {
-      "title": "DDLC Purist Mod",
-      "url": "https://twitter.com/ddlcpuristmod",
-      "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
-      "score": null,
-      "progressType": "routes",
-      "routes": [ null, 4 ],
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Mod"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Summer's Clover",
-      "url": "https://vndb.org/v24425",
-      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Mod"
       ],
       "notes": null
     },
