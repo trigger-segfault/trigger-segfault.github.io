@@ -25,8 +25,8 @@
 
     // Time
     "playtime": "null, hours[.minutes]",
-    "start": "null, yyyy-m-dd",
-    "finish": "null, yyyy-m-dd",
+    "start": "null, yyyy-m-d",
+    "finish": "null, yyyy-m-d",
 
     // Personal Additions
     "tags": "null, [ \"string separated tags\" ]",
@@ -34,6 +34,10 @@
   },
 
   "playing": [
+
+  ],
+
+  "completed": [
     {
       "title": "Fate/stay night",
       "aliases": [ "fsn", "f/sn" ],
@@ -43,19 +47,23 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 3, 3 ],
-      "endings": [ 31, 45 ],
-      "playtime": 115,
+      "endings": [ 45, 45 ],
+      "playtime": 119,
       "start": "2018-11-8",
-      "finish": null,
+      "finish": "2018-12-8",
       "tags": [
         "H-Scenes",
-        "Cried"
+        "Cried",
+        "Missing 1 bugged CG"
       ],
-      "notes": null
-    }
-  ],
-
-  "completed": [
+      "notes": [
+        "Choices that challenge your sense of situation and an excessive amount of endings,",
+        "strong romantic+story development, and actions scenes that will knock your sheaths off.",
+        "Fate/stay night delivers THE ultimate visual novel experience",
+        "This VN delivers something that even its high quality anime adaption can't achieve with tons of bonus content rewarded with dedicated completion.",
+        "In the words of Gigguk: \"Just read the fucking visual novel\""
+      ]
+    },
     {
       "title": "Noble ☆ Works",
       "aliases": [ "Noble Works" ],
