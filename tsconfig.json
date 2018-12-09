@@ -22,7 +22,8 @@
   },
   "exclude": [
     ".git",
-    "node_modules"
+    "node_modules",
+    "_site"
   ],
   "compileOnSave": true
 }

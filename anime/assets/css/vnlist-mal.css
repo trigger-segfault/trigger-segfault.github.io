@@ -162,9 +162,6 @@
   padding: 4px 0;
   text-align: center;
 }
-.list-table .list-table-data .data.image a {
-  display: inline-block;
-}
 .list-table .list-table-data .data.title {
   padding-left: 8px;
   text-align: left;
