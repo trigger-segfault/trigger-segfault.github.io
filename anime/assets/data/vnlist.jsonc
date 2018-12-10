@@ -40,11 +40,12 @@
       "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
       "score": null,
       "progressType": "routes",
+      "progressType2": "endings",
       "routes": [ null, 4 ],
-      "endings": null,
+      "endings": [ null, 8 ],
       "achievements": null,
-      "playtime": null,
-      "start": null,
+      "playtime": 2.38,
+      "start": "2018-12-10",
       "finish": null,
       "tags": [
         "Mod"
