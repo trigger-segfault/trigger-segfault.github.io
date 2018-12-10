@@ -414,12 +414,14 @@ class VNProgress {
 function parseDate(s: string): Date {
 	var parts = s.split('-');
 	if (parts.length != 3)
-	throw new Error('Invalid date ' + s + '!');
-	for (var i = 1; i < 3; i++) {
+		throw new Error('Invalid date ' + s + '!');
+	return new Date(Number.parseInt(parts[0]), Number.parseInt(parts[1]) - 1, Number.parseInt(parts[2]));
+	/*for (var i = 1; i < 3; i++) {
 		if (parts[i].length == 1)
 		parts[i] = '0' + parts[i];
 	}
-	return new Date(parts.join('-') + 'T00:00:00Z');
+	return new Date((parts.join('-') + 'T00:00:00').replace(/-/g, '\/').replace(/T.+/, ''));
+	*/
 }
 
 class VNEntry {
