@@ -34,10 +34,6 @@
   },
 
   "playing": [
-
-  ],
-
-  "queued": [
     {
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
@@ -54,7 +50,10 @@
         "Mod"
       ],
       "notes": null
-    },
+    }
+  ],
+
+  "queued": [
     {
       "title": "Summer's Clover",
       "url": "https://vndb.org/v24425",
