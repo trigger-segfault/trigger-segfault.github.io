@@ -41,14 +41,15 @@
       "score": 7,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 4 ],
-      "endings": [ 3, 9 ],
+      "routes": [ 2, 4 ],
+      "endings": [ 5, 9 ],
       "achievements": null,
       "playtime": 8.47,
       "start": "2018-12-9",
       "finish": null,
       "tags": [
-        "Mod"
+        "Mod",
+        "Sayori Best Route"
       ],
       "notes": null
     }
