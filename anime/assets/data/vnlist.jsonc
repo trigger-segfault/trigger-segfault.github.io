@@ -38,18 +38,18 @@
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
       "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
-      "score": 7,
+      "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 4 ],
-      "endings": [ 5, 9 ],
+      "routes": [ 3, 4 ],
+      "endings": [ 7, 9 ],
       "achievements": null,
-      "playtime": 13,
+      "playtime": 15,
       "start": "2018-12-9",
       "finish": null,
       "tags": [
         "Mod",
-        "Sayori Best Route"
+        "Natsuki Best Route"
       ],
       "notes": null
     }
