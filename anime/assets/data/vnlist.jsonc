@@ -41,10 +41,10 @@
       "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 3, 4 ],
-      "endings": [ 7, 9 ],
+      "routes": [ 4, 4 ],
+      "endings": [ 8, 9 ],
       "achievements": null,
-      "playtime": 19,
+      "playtime": 24,
       "start": "2018-12-9",
       "finish": null,
       "tags": [
