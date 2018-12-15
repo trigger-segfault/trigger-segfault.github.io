@@ -34,26 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "DDLC Purist Mod",
-      "url": "https://twitter.com/ddlcpuristmod",
-      "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
-      "score": 8,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 4, 4 ],
-      "endings": [ 8, 9 ],
-      "achievements": null,
-      "playtime": 24,
-      "start": "2018-12-9",
-      "finish": null,
-      "tags": [
-        "Mod",
-        "Cried",
-        "Natsuki Best Route"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -77,6 +57,31 @@
   ],
 
   "completed": [
+    {
+      "title": "DDLC Purist Mod",
+      "url": "https://twitter.com/ddlcpuristmod",
+      "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
+      "score": 8,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 4, 4 ],
+      "endings": [ 9, 9 ],
+      "achievements": null,
+      "playtime": 26,
+      "start": "2018-12-9",
+      "finish": "2018-12-14",
+      "tags": [
+        "Mod",
+        "Cried",
+        "Natsuki Best Route"
+      ],
+      "notes": [
+        "My first modded VN and an amazing ride.",
+        "Purist Mod turns DDLC into a normal dating sim via the best possible method of action, continuing the story.",
+        "This blew away the standards I had setup for what a modded VN would be like.",
+        "Natuski's route had comedic writing that was nearing Grisaia levels and Monika's route created a fantastic ending for the overall game."
+      ]
+    },
     {
       "title": "Fate/stay night",
       "aliases": [ "fsn", "f/sn" ],
@@ -490,7 +495,7 @@
       "progressType2": "endings",
       "routes": [ 5, 5 ],
       "endings": [ 13, 13 ],
-      "completion": 100,
+      "completion": 99,
       "playtime": 20,
       "start": "2016-2-20",
       "finish": "2016-2-24",
