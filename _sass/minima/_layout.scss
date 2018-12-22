@@ -184,6 +184,7 @@ header .site-title a {
   border-radius: 5px;
   text-align: right;
   line-height: $base-line-height * $base-font-size * 2.25;
+  z-index: 10;
 
   .nav-trigger {
       display: none;
