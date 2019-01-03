@@ -17,3 +17,10 @@
 {%- if page.tags -%}
 <meta name="keywords" content="{{ page.tags | join: ', ' | escape }}"/>
 {%- endif -%}
+{%- if page.theme_color -%}
+<meta name="theme-color" content="{{ page.theme_color }}">
+{%- else -%}
+  {%- if site.theme_color -%}
+  <meta name="theme-color" content="{{ site.theme_color }}">
+  {%- endif -%}
+{%- endif -%}
