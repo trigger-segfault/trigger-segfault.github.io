@@ -24,6 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   C#, C/C++, Java, and ActionScript, although I spend most of my time working
   in C# and haven't worked with Java in ages.
 tags: [trigger_death,trigger,robert,jordan,game,program,programming,tool,development]
+theme_color: "#00C6D8"
 
 # Contacts
 github_username: trigger-death
