@@ -5,6 +5,7 @@
 layout: home
 title: Blog
 permalink: /blog/
+regenerate: true
 ---
 
 ### See all [Blog Categories here](/blog/categories/)

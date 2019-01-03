@@ -1,9 +1,43 @@
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
+  padding-bottom: 60%;
   height: 0;
   overflow: hidden;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.video-container.inline {
+  padding-bottom: calc(60% * 0.49);
+  width: 49%;
+}
+.video-container.inline.left {
+  float: left;
+}
+.video-container.inline.right {
+  float: right;
+}
+.video-container.inline.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (max-width: 799px) {
+  .video-container.inline {
+    padding-bottom: 60%;
+    width: 100%;
+  }
+  .video-container.inline.left {
+    float: unset;
+  }
+  .video-container.inline.right {
+    float: unset;
+  }
+  .video-container.inline.center {
+    margin-left: unset;
+    margin-right: unset;
+  }
+  .video-container.inline.left:not(.first) {
+    margin-left: unset;
+  }
 }
 
 .video-container iframe, .video-container object, .video-container embed {

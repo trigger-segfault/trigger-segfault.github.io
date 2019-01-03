@@ -8,6 +8,7 @@ category: [meta, dev, anime]
 tags: [first-post, pic]
 excerpt: Now that I'm running my GitHub Pages site through Jekyll, I may as well take advantage of the blog feature...
 image: /blog/assets/img/first-post-michiru-yuuji.png
+preview: /blog/assets/img/first-post-michiru-yuuji.png
 ---
 
 Now that I'm running my GitHub Pages site through Jekyll, I may as well take advantage of the blog feature and update this thing every so often. So, have a blog post about my first post. :)
