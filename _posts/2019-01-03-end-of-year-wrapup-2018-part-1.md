@@ -2,7 +2,7 @@
 layout: post
 title:  "2018: End of Year Wrap-Up (Part 1)"
 date:   2019-01-03 13:50:00 -0500
-#date_edited: 2019-01-04 12:00:00 -0500
+date_edited: 2019-01-03 14:24:00 -0500
 categories: [meta, dev, anime, gaming, personal]
 category: [meta, dev, anime, gaming, personal]
 tags: [wrap-up, pic]
@@ -79,6 +79,8 @@ This was a small little tool I decided to create after Terraria Rupee Replacer t
 ### [Terra Launcher (Sep 24th)](https://forums.terraria.org/index.php?threads/terra-launcher-a-hub-terraria-games-servers-tools-with-save-folder-modification.62315/)
 
 <img class="center-image" src="/blog/assets/img/terra-launcher.png" alt="Terra Launcher Window">
+
+Because of my patcher programs that relied on modifying the game and associated saves, I wanted a way to access *different Terrarias* without having to shift around my save folders all the time. The solution was a launcher where you just enter in the versions of Terraria you have and enter the save directory (which gets set through command line arguments). I also added the option for storing different server configurations as well as tools for the game. With the tool feature even having the ability to open up a project file for that tool if you have that path entered in.
 
 ## RollerCoaster Tycoon 2 Work
 
