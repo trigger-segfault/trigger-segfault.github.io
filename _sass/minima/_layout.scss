@@ -405,7 +405,7 @@ header .site-title a {
     margin-bottom: 4px;
   }
 }
-.post-list:not(.project) > li {
+.post-list.blog > li {
   display: flex;
   > .image {
     width: 128px;

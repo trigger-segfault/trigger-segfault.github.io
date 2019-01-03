@@ -25,7 +25,7 @@ permalink: /blog/categories/
   {% endfor %}
 </div>-->
 
-<ul class="post-list">
+<ul class="post-list blog-categories">
   <!--<li>
     {%- assign post_count = site.posts.size | default: 0 -%}
     {%- if post_count == 1 -%}
