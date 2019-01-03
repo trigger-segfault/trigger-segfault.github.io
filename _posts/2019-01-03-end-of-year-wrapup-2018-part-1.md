@@ -20,7 +20,7 @@ Now that I have a blog and feel obligated to post things. Let's follow in [my fr
 
 ## Terraria Tools (Aug - September)
 
-In late 2017, I pumped out 7 different Terraira tools with different functionality. Although they were built in released in quick succession, I don't feel that any of them were really ruched.
+In late 2017, I pumped out 7 different Terraira tools with different functionality. Although they were built in released in quick succession, I don't feel that any of them were really rushed.
 
 ### [Terraria Midi Player (Aug 9th)](https://forums.terraria.org/index.php?threads/terraria-midi-player-play-songs-through-terrarian-instruments.61257/)
 
@@ -74,7 +74,7 @@ By far my favorite Terraria Tool created: Terraria Rupee Replacer does what it s
 
 <img class="center-image" src="/blog/assets/img/terraria-localization-packer.png" alt="Terraria Localization Packer Window">
 
-This was a small little tool I decided to create after Terraria Rupee Replacer thanks to my experience in delving into the localization files for replacing all mentions of coins with Rupees. It 
+This was a small little tool I decided to create after Terraria Rupee Replacer thanks to my experience in delving into the localization files for replacing all mentions of coins with Rupees.
 
 ### [Terra Launcher (Sep 24th)](https://forums.terraria.org/index.php?threads/terra-launcher-a-hub-terraria-games-servers-tools-with-save-folder-modification.62315/)
 
