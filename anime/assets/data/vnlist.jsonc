@@ -34,9 +34,6 @@
   },
 
   "playing": [
-  ],
-
-  "queued": [
     {
       "title": "Summer's Clover",
       "url": "https://vndb.org/v24425",
@@ -48,14 +45,17 @@
       "endings": [ null, null ],
       "achievements": null,
       "playtime": null,
-      "start": null,
+      "start": "2019-1-3",
       "finish": null,
       "tags": [
         "Mod",
         "Free"
       ],
       "notes": null
-    },
+    }
+  ],
+
+  "queued": [
     {
       "title": "Clannad",
       "title_en": "CLANNAD",
