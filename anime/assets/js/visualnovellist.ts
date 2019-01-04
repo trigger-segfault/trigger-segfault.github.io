@@ -154,6 +154,7 @@ class VNStats {
 	dropped: number;
 	planning: number;
 	totalEntries: number;
+	replays: number;
 
 	totalScore: number;
 	totalScoredEntries: number;
@@ -176,6 +177,7 @@ class VNStats {
 		this.dropped = 0;
 		this.planning = 0;
 		this.totalEntries = 0;
+		this.replays = 0;
 
 		this.totalScore = 0;
 		this.totalScoredEntries = 0;
@@ -214,6 +216,7 @@ class VNStats {
 			this.totalScore += vn.score;
 			this.totalScoredEntries++;
 		}
+		this.replays += vn.replays;
 	}
 
 	buildList(div: HTMLDivElement) {
@@ -228,6 +231,7 @@ class VNStats {
 		}
 		this.buildBasic(div, 'Total', this.totalEntries);
 		this.buildBr(div);
+		this.buildBasic(div, 'Replayed', this.replays);
 		this.buildBasic(div, 'Achievements', this.achievements);
 		this.buildBasic(div, 'Days', (this.playtime / 24.0).toFixed(2).replace(/([0-9]+(\.[0-9]+[1-9])?)(\.?0+$)/,'$1'));
 		this.buildBasic(div, 'Mean Score', this.meanScore.toFixed(2).replace(/([0-9]+(\.[0-9]+[1-9])?)(\.?0+$)/,'$1'));
@@ -262,7 +266,7 @@ class VNProgress {
 	endings: number[];
 	episodes: number[];
 	sidestories: number[];
-	constructor(data) {
+	constructor(data: any) {
 		this.routes = null;
 		this.endings = null;
 		this.episodes = null;
@@ -424,6 +428,41 @@ function parseDate(s: string): Date {
 	*/
 }
 
+class VNPlaythrough {
+	start: Date;
+	finish: Date;
+	playtime: number;
+	playtimeHours: number;
+	playtimeMinutes: number;
+	
+	constructor(data: any) {
+		this.playtime = 0;
+		this.playtimeHours = 0;
+		this.playtimeMinutes = 0;
+		if (data.playtime != null) {
+			// TODO: Get mad when playtime is less than 0
+			this.playtime = data.playtime;
+			// Playtime is input as fixed hh.mm
+			//var hours = Math.floor(data.playtime);
+			//var minutes = Math.floor((data.playtime % 1.0) * 100.0);
+			if (this.playtime != 0) {
+				this.playtimeHours = Math.floor(data.playtime);
+				this.playtimeMinutes = Math.round((data.playtime % 1.0) * 100.0);
+				//this.playtime = new TimeSpan(0, 0, minutes, hours);
+				// TODO: Get mad when the minutes are invalid.
+
+				this.playtime = this.playtimeHours + (this.playtimeMinutes / 60.0);
+			}
+		}
+		this.start = null;
+		this.finish = null;
+		if (data.start != null)
+			this.start = parseDate(data.start);
+		if (data.finish != null)
+			this.finish = parseDate(data.finish);
+	}
+}
+
 class VNEntry {
 	title: string;
 	url: string;
@@ -440,6 +479,8 @@ class VNEntry {
 	playtimeHours: number;
 	playtimeMinutes: number;
 
+	playthroughs: VNPlaythrough[];
+
 	start: Date;
 	finish: Date;
 
@@ -448,7 +489,7 @@ class VNEntry {
 
 	tbody: HTMLTableSectionElement;
 	tdNumber: HTMLTableDataCellElement;
-	constructor(data, status) {
+	constructor(data: any, status:StatusType) {
 		this.title = data.title;
 		this.url = data.url;
 		this.image = data.image;
@@ -462,7 +503,7 @@ class VNEntry {
 		this.progress = new VNProgress(data);
 		this.achievements = data.achievements;
 		this.completion = data.completion;
-		this.playtime = 0;
+		/*this.playtime = 0;
 		this.playtimeHours = 0;
 		this.playtimeMinutes = 0;
 		if (data.playtime != null) {
@@ -483,7 +524,25 @@ class VNEntry {
 		if (data.start != null)
 			this.start = parseDate(data.start);
 		if (data.finish != null)
-			this.finish = parseDate(data.finish);
+			this.finish = parseDate(data.finish);*/
+		this.playthroughs = [];
+		this.playthroughs.push(new VNPlaythrough(data));
+		this.start = this.playthroughs[0].start;
+		this.finish = this.playthroughs[0].finish;
+		if (data.replays != null) {
+			for (var i = 0; i < data.replays.length; i++) {
+				this.playthroughs.push(new VNPlaythrough(data.replays[i]));
+			}
+		}
+		this.playtime = 0;
+		this.playtimeHours = 0;
+		this.playtimeMinutes = 0;
+		for (var i = 0; i < this.playthroughs.length; i++) {
+			var playthrough = this.playthroughs[i];
+			this.playtime += playthrough.playtime;
+			this.playtimeHours += playthrough.playtimeHours;
+			this.playtimeMinutes += playthrough.playtimeMinutes;
+		}
 		//this.start = data.start;
 		//this.finish = data.finish;
 		this.tags = data.tags;
@@ -512,7 +571,11 @@ class VNEntry {
 		}
 	}
 
-	buildTableSection(number) {
+	get replays() {
+		return this.playthroughs.length - 1;
+	}
+
+	buildTableSection(number: number) {
 		this.tbody = document.createElement('tbody');
 		this.tbody.className = 'list-item';
 		var tr = document.createElement('tr');
@@ -525,7 +588,7 @@ class VNEntry {
 
 		var tdNumber = document.createElement('td');
 		tdNumber.className = 'data number';
-		tdNumber.innerText = number;
+		tdNumber.innerText = number.toString();
 		tr.appendChild(tdNumber);
 
 		var tdImage = document.createElement('td');
@@ -622,18 +685,43 @@ class VNEntry {
 		var tdPlaytime = document.createElement('td');
 		tdPlaytime.className = 'data playtime';
 		tr.appendChild(tdPlaytime);
-		if (this.playtime != null && (this.playtimeHours > 0 || this.playtimeMinutes > 0)) {
-			if (this.playtimeHours > 0) {
-				if (this.playtimeMinutes > 0)
-					tdPlaytime.innerText = this.playtimeHours + 'h ' + this.playtimeMinutes + 'm';
+		/*if (this.replays == 0) {
+			if (this.playtime != 0 && (this.playtimeHours > 0 || this.playtimeMinutes > 0)) {
+				if (this.playtimeHours > 0) {
+					if (this.playtimeMinutes > 0)
+						tdPlaytime.innerText = this.playtimeHours + 'h ' + this.playtimeMinutes + 'm';
+					else
+						tdPlaytime.innerText = this.playtimeHours + 'h';
+				}
 				else
-					tdPlaytime.innerText = this.playtimeHours + 'h';
+					tdPlaytime.innerText = this.playtimeMinutes + 'm';
 			}
 			else
-				tdPlaytime.innerText = this.playtimeMinutes + 'm';
+				tdPlaytime.innerText = '-';
+		}*/
+		if (this.playtime != 0) {
+			var spanPlaytime = document.createElement('span');
+			tdPlaytime.appendChild(spanPlaytime);
+			if (this.playtime != 0 && (this.playtimeHours > 0 || this.playtimeMinutes > 0)) {
+				if (this.playtimeHours > 0) {
+					if (this.playtimeMinutes > 0)
+						spanPlaytime.innerText = this.playtimeHours + 'h ' + this.playtimeMinutes + 'm';
+					else
+						spanPlaytime.innerText = this.playtimeHours + 'h';
+				}
+				else
+					spanPlaytime.innerText = this.playtimeMinutes + 'm';
+			}
+			else
+				spanPlaytime.innerText = '-';
 		}
-		else
-			tdPlaytime.innerText = '-';
+		if (this.replays != 0) {
+			if (this.playtime != 0)
+				tdPlaytime.appendChild(document.createElement('br'));
+			var spanReplays = document.createElement('span');
+			spanReplays.innerText = 'Replays: ' + this.replays.toString();
+			tdPlaytime.appendChild(spanReplays);
+		}
 
 
 		var tdStartFinish = document.createElement('td');
@@ -706,7 +794,7 @@ class VNEntry {
 		return this.tbody;
 	}
 
-	buildNormalTd(className, value) {
+	buildNormalTd(className: string, value: any) {
 		var td = document.createElement('td');
 		td.className = 'data ' + className;
 		if (value != null)
@@ -716,7 +804,7 @@ class VNEntry {
 		return td;
 	}
 
-	buildProgressTd(className, type, array) {
+	buildProgressTd(className: string, type: string, array: any[]) {
 		var tdProgress = document.createElement('td');
 		tdProgress.className = 'data ' + className;
 		if (array != null) {
@@ -758,7 +846,7 @@ export function initializeVNList() {
 	loadJSON('/anime/assets/data/vnlist.jsonc', initializeVNListJson);
 }
 
-function initializeVNListJson(jsonText) {
+function initializeVNListJson(jsonText: string) {
 	var json = JSON.parse(stripJsonComments(jsonText, null));
 	var table = document.getElementById('list-table') as HTMLTableElement;
 	var listStats = document.getElementById('list-stats') as HTMLDivElement;
@@ -867,7 +955,7 @@ function initializeVNListJson(jsonText) {
 	document.getElementById('loading-spinner').style.display = 'none';
 }
 
-function updateEntries(table:HTMLTableElement) {
+function updateEntries(table: HTMLTableElement) {
 	var index:number = 1;
 	for (var i = 0; i < vnList.length; i++) {
 		var vn = vnList[i];
@@ -902,7 +990,7 @@ function loadJSON(url: string, callback: (jsonText: string) => void) {
 	xobj.send(null);
 }
 
-function loadStatus(json, status: StatusType) {
+function loadStatus(json: any, status: StatusType) {
 	var statusArray = json[StatusType[status]];
 	if (statusArray == null)
 		return;

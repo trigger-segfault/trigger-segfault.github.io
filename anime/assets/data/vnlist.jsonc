@@ -42,6 +42,44 @@
       "url": "https://vndb.org/v24425",
       "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
       "score": null,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ null, 2 ],
+      "endings": [ null, null ],
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Mod",
+        "Free"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Clannad",
+      "title_en": "CLANNAD",
+      "url": "https://vndb.org/v4",
+      "image": "/anime/covers/vn/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
+      "score": null,
+      "progressType": "routes",
+      "routes": null,
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Rakuen",
+      "title_en": "The Eden of Grisaia",
+      "url": "https://vndb.org/v7724",
+      "image": "/anime/covers/vn/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
+      "score": null,
       "progressType": null,
       "routes": null,
       "endings": null,
@@ -50,7 +88,44 @@
       "start": null,
       "finish": null,
       "tags": [
-        "Mod"
+        "H-Scenes",
+        "Owned"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Senritsu",
+      "title_en": "The Melody of Grisaia",
+      "url": "https://vndb.org/v19072",
+      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
+      "score": null,
+      "progressType": "endings",
+      "routes": null,
+      "endings": [ null, 1 ],
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Grisaia no Zankou",
+      "title_en": "The Afterglow of Grisaia",
+      "url": "https://vndb.org/v18831",
+      "image": "/anime/covers/vn/grisaia-zankou.jpg",//"https://s.vndb.org/cv/56/27356.jpg",
+      "score": null,
+      "progressType": "endings",
+      "routes": null,
+      "endings": [ null, 1 ],
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Owned"
       ],
       "notes": null
     }
@@ -72,6 +147,7 @@
       "finish": "2018-12-14",
       "tags": [
         "Mod",
+        "Free",
         "Cried",
         "Natsuki Best Route"
       ],
@@ -495,10 +571,17 @@
       "progressType2": "endings",
       "routes": [ 5, 5 ],
       "endings": [ 13, 13 ],
-      "completion": 99,
-      "playtime": 20,
+      "completion": 100,
+      "playtime": 71, // Original playtime unknown, estimated around 60-75 hours
       "start": "2016-2-20",
       "finish": "2016-2-24",
+      "replays": [
+        {
+          "start": "2018-12-21",
+          "finish": "2019-1-3",
+          "playtime": 89
+        }
+      ],
       "tags": [
         "H-Scenes",
         "Cried",
@@ -927,25 +1010,6 @@
       "notes": null
     },
     {
-      "title": "Grisaia no Rakuen",
-      "title_en": "The Eden of Grisaia",
-      "url": "https://vndb.org/v7724",
-      "image": "/anime/covers/vn/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "H-Scenes",
-        "Wishlist"
-      ],
-      "notes": null
-    },
-    {
       "title": "Neko Para Vol.2 Shimai Neko no Sucre",
       "title_en": "NEKOPARA Vol. 2",
       "url": "https://vndb.org/v18713",
@@ -962,42 +1026,6 @@
         "H-Scenes",
         "Owned",
         "Missing DLC"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Grisaia no Senritsu",
-      "title_en": "The Melody of Grisaia",
-      "url": "https://vndb.org/v19072",
-      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
-      "score": null,
-      "progressType": "endings",
-      "routes": null,
-      "endings": [ null, 1 ],
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Wishlist"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Grisaia no Zankou",
-      "title_en": "The Afterglow of Grisaia",
-      "url": "https://vndb.org/v18831",
-      "image": "/anime/covers/vn/grisaia-zankou.jpg",//"https://s.vndb.org/cv/56/27356.jpg",
-      "score": null,
-      "progressType": "endings",
-      "routes": null,
-      "endings": [ null, 1 ],
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Wishlist"
       ],
       "notes": null
     },
@@ -1103,25 +1131,7 @@
       "start": null,
       "finish": null,
       "tags": [
-        "Wishlist"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Clannad",
-      "title_en": "CLANNAD",
-      "url": "https://vndb.org/v4",
-      "image": "/anime/covers/vn/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
-      "score": null,
-      "progressType": "routes",
-      "routes": null,
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Wishlist"
+        "Owned"
       ],
       "notes": null
     },
