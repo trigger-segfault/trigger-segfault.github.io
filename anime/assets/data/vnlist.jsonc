@@ -38,18 +38,17 @@
       "title": "Summer's Clover",
       "url": "https://vndb.org/v24425",
       "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
-      "score": null,
+      "score": 6,
       "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ null, 2 ],
-      "endings": [ null, null ],
-      "achievements": null,
-      "playtime": null,
+      "routes": [ 1, 2 ],
+      "playtime": 9.40,
       "start": "2019-1-3",
       "finish": null,
       "tags": [
-        "Mod",
-        "Free"
+        "Fan Game",
+        "Free",
+        "Bad Art",
+        "Bad UI"
       ],
       "notes": null
     }
