@@ -34,24 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "Summer's Clover",
-      "url": "https://vndb.org/v24425",
-      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
-      "score": 6,
-      "progressType": "routes",
-      "routes": [ 1, 2 ],
-      "playtime": 11,
-      "start": "2019-1-3",
-      "finish": null,
-      "tags": [
-        "Fan Game",
-        "Free",
-        "Bad Art",
-        "Bad UI"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -131,6 +113,24 @@
   ],
 
   "completed": [
+    {
+      "title": "Summer's Clover",
+      "url": "https://vndb.org/v24425",
+      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
+      "score": 6,
+      "progressType": "routes",
+      "routes": [ 2, 2 ],
+      "playtime": 13,
+      "start": "2019-1-3",
+      "finish": "2019-1-6",
+      "tags": [
+        "Fan Game",
+        "Free",
+        "Bad Art",
+        "Bad UI"
+      ],
+      "notes": null
+    },
     {
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
