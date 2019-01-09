@@ -114,6 +114,23 @@
 
   "completed": [
     {
+      "title": "Doki Doki Do You Lift Club!",
+      "url": "https://vndb.org/v22717/chars#chars",
+      "image": "https://s.vndb.org/cv/18/34718.jpg",
+      "score": 8.5,
+      "progressType": "routes",
+      "routes": [ 3, 3 ],
+      "achievements": null,
+      "playtime": 3.16,
+      "start": "2019-1-7",
+      "finish": "2018-1-8",
+      "tags": [
+        "Fan Game",
+        "Free"
+      ],
+      "notes": null
+    },
+    {
       "title": "Summer's Clover",
       "url": "https://vndb.org/v24425",
       "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
