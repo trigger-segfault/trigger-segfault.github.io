@@ -1,0 +1,27 @@
+{% if include.id2 %}
+<div class="video-inline-container">
+  <div class="video-container inline left">
+    <iframe src="https://gfycat.com/ifr/{{ include.id }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+  </div>
+  <div class="video-container inline spacing"></div>
+  <div class="video-container inline right">
+      <iframe src="https://gfycat.com/ifr/{{ include.id2 }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+  </div>
+</div>
+{% else %}
+  {% if include.center %}
+  <div class="video-inline-container">
+    <div class="video-container inline center">
+      <iframe src="https://gfycat.com/ifr/{{ include.id }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    </div>
+  </div>
+  {% else %}
+  <div class="video-container">
+    {% if include.width and include.height %}
+    <iframe src="https://gfycat.com/ifr/{{ include.id }}" width="{{ include.width }}" height="{{ include.height }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    {% else %}
+    <iframe src="https://gfycat.com/ifr/{{ include.id }}" frameborder="0" scrolling="no" allowfullscreen></iframe>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endif %}

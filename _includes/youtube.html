@@ -3,6 +3,7 @@
   <div class="video-container inline left">
     <iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
   </div>
+  <div class="video-container inline spacing"></div>
   <div class="video-container inline right">
     <iframe src="https://www.youtube.com/embed/{{ include.id2 }}" frameborder="0" allowfullscreen></iframe>
   </div>
@@ -17,7 +18,7 @@
   {% else %}
   <div class="video-container">
     {% if include.width and include.height %}
-    <iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" width="{{ include.width }}" height="{{ include.height }}" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/{{ include.id }}" width="{{ include.width }}" height="{{ include.height }}" frameborder="0"  allowfullscreen></iframe>
     {% else %}
     <iframe src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allowfullscreen></iframe>
     {% endif %}

@@ -10,6 +10,12 @@
   padding-bottom: calc(60% * 0.49);
   width: 49%;
 }
+/* A hack to prevent paragraphcs from seeping in between the spacing. */
+.video-container.inline.spacing {
+  padding-bottom: calc(60% * 0.49);
+  width: 2%;
+  float: left;
+}
 .video-container.inline.left {
   float: left;
 }
@@ -24,6 +30,9 @@
   .video-container.inline {
     padding-bottom: 60%;
     width: 100%;
+  }
+  .video-container.inline.spacing {
+    display: none;
   }
   .video-container.inline.left {
     float: unset;
