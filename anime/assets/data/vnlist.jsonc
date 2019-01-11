@@ -91,28 +91,30 @@
         "Owned"
       ],
       "notes": null
-    },
+    }
+  ],
+
+  "completed": [
     {
       "title": "Grisaia no Zankou",
       "title_en": "The Afterglow of Grisaia",
       "url": "https://vndb.org/v18831",
       "image": "/anime/covers/vn/grisaia-zankou.jpg",//"https://s.vndb.org/cv/56/27356.jpg",
-      "score": null,
+      "score": 8.5,
       "progressType": "endings",
-      "routes": null,
-      "endings": [ null, 1 ],
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
+      "endings": [ 1, 1 ],
+      "playtime": 6,
+      "start": "2019-1-9",
+      "finish": "2019-1-10",
       "tags": [
-        "Owned"
+        "Owned",
+        "Cried"
       ],
-      "notes": null
-    }
-  ],
-
-  "completed": [
+      "notes": [
+        "Didn't expect to cry from such a short story but here we have it.",
+        "Another Grisaia short, but this time, focusing more on story than comedy. Of course there's still good comedy too."
+      ]
+    },
     {
       "title": "Doki Doki Do You Lift Club!",
       "url": "https://vndb.org/v22717/chars#chars",
@@ -126,9 +128,15 @@
       "finish": "2019-1-8",
       "tags": [
         "Fan Game",
-        "Free"
+        "Comedy Gold",
+        "Free",
+        "Buffsuki Best Girl"
       ],
-      "notes": null
+      "notes": [
+        "This had some really great comedy writing!",
+        "For a short mod, it certainly delivered a high level of quality that I absolutely fell in love with.",
+        "The absurdness of some of the scenes were perfect and the meta references were few but well executed."
+      ]
     },
     {
       "title": "Summer's Clover",
@@ -146,7 +154,11 @@
         "Bad Art",
         "Bad UI"
       ],
-      "notes": null
+      "notes": [
+        "The sprites and UI are pretty poor. Many of the sprites legit look Frankensteined together.",
+        "The writing wasn't bad, but the stories never really went too deep into things.",
+        "The most interesting part was definitely getting to learn about Miki's life and backstory."
+      ]
     },
     {
       "title": "DDLC Purist Mod",
@@ -607,7 +619,9 @@
       "notes": [
         "A widely beloved VN that originated from 4chan.",
         "It has a large amount of choices and the stories are amazingly written.",
-        "There is NO better visual novel to recommend than Katawa Shoujo, it's an absolute must-play! And it's FREE!",
+        "There is NO better visual novel to recommend than Katawa Shoujo, it's an absolute must-play! And it's free!",
+        "Each of the routes revolve much more around emotions and personal issues than outside issues like in other VNs.",
+        "The protagonist not only has to help the heroine, but overcome his own difficulties as well.",
         "My 3rd finished VN."
       ]
     },
