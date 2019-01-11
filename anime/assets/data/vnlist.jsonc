@@ -34,25 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "Summer's Clover",
-      "url": "https://vndb.org/v24425",
-      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
-      "score": null,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ null, 2 ],
-      "endings": [ null, null ],
-      "achievements": null,
-      "playtime": null,
-      "start": "2019-1-3",
-      "finish": null,
-      "tags": [
-        "Mod",
-        "Free"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -133,6 +114,41 @@
 
   "completed": [
     {
+      "title": "Doki Doki Do You Lift Club!",
+      "url": "https://vndb.org/v22717/chars#chars",
+      "image": "https://s.vndb.org/cv/18/34718.jpg",
+      "score": 8.5,
+      "progressType": "routes",
+      "routes": [ 3, 3 ],
+      "achievements": null,
+      "playtime": 3.16,
+      "start": "2019-1-7",
+      "finish": "2019-1-8",
+      "tags": [
+        "Fan Game",
+        "Free"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Summer's Clover",
+      "url": "https://vndb.org/v24425",
+      "image": "/anime/covers/vn/summers-clover.jpg",//"https://s.vndb.org/cv/31/37031.jpg",
+      "score": 6,
+      "progressType": "routes",
+      "routes": [ 2, 2 ],
+      "playtime": 13,
+      "start": "2019-1-3",
+      "finish": "2019-1-6",
+      "tags": [
+        "Fan Game",
+        "Free",
+        "Bad Art",
+        "Bad UI"
+      ],
+      "notes": null
+    },
+    {
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
       "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
@@ -146,7 +162,7 @@
       "start": "2018-12-9",
       "finish": "2018-12-14",
       "tags": [
-        "Mod",
+        "Fan Game",
         "Free",
         "Cried",
         "Natsuki Best Route"
