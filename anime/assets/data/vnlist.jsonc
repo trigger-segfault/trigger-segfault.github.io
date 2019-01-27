@@ -119,8 +119,8 @@
     },
     {
       "title": "Doki Doki Do You Lift Club!",
-      "url": "https://vndb.org/v22717/chars#chars",
-      "image": "https://s.vndb.org/cv/18/34718.jpg",
+      "url": "https://vndb.org/v22717",
+      "image": "/anime/covers/vn/d2dlc.jpg",
       "score": 8.5,
       "progressType": "routes",
       "routes": [ 3, 3 ],
@@ -130,6 +130,7 @@
       "finish": "2019-1-8",
       "tags": [
         "Fan Game",
+        "Free",
         "Comedy Gold",
         "Free",
         "Buffsuki Best Girl"
@@ -1290,6 +1291,40 @@
       "tags": [
         "H-Scenes",
         "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Doki Doki! New Eyes",
+      "url": "https://vndb.org/v23036",
+      "image": "/anime/covers/vn/doki_doki_new_eyes.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Fan Game",
+        "Free"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Doki Doki! RainClouds",
+      "url": "https://vndb.org/v22637",
+      "image": "/anime/covers/vn/doki_doki_rainclouds.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Fan Game",
+        "Free"
       ],
       "notes": null
     }
