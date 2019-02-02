@@ -44,9 +44,9 @@
       "progressType2": "endings",
       "routes": [ 2, 3 ],
       "endings": [ 3, 4 ],
-      "sidestories": [ null, 8 ],
-      "completion": 68,
-      "playtime": 31,
+      "sidestories": [ 8, 8 ],
+      "completion": 84,
+      "playtime": 33,
       "start": "2019-1-25",
       "finish": null,
       "tags": [
