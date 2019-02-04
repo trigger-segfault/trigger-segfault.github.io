@@ -35,24 +35,20 @@
 
   "playing": [
     {
-      "title": "Grisaia no Rakuen",
-      "title_en": "The Eden of Grisaia",
-      "url": "https://vndb.org/v7724",
-      "image": "/anime/covers/vn/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
-      "score": 10,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 2, 3 ],
-      "endings": [ 3, 4 ],
-      "sidestories": [ 8, 8 ],
-      "completion": 92,
-      "playtime": 37,
-      "start": "2019-1-25",
+      "title": "Grisaia no Senritsu",
+      "title_en": "The Melody of Grisaia",
+      "url": "https://vndb.org/v19072",
+      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
+      "score": null,
+      "progressType": "endings",
+      "routes": null,
+      "endings": [ null, 1 ],
+      "achievements": null,
+      "playtime": null,
+      "start": null,
       "finish": null,
       "tags": [
-        "H-Scenes",
-        "Owned",
-        "Cried"
+        "Owned"
       ],
       "notes": null
     }
@@ -76,28 +72,39 @@
         "Owned"
       ],
       "notes": null
-    },
-    {
-      "title": "Grisaia no Senritsu",
-      "title_en": "The Melody of Grisaia",
-      "url": "https://vndb.org/v19072",
-      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
-      "score": null,
-      "progressType": "endings",
-      "routes": null,
-      "endings": [ null, 1 ],
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
     }
   ],
 
   "completed": [
+    {
+      "title": "Grisaia no Rakuen",
+      "title_en": "The Eden of Grisaia",
+      "url": "https://vndb.org/v7724",
+      "image": "/anime/covers/vn/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
+      "score": 10,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 3, 3 ],
+      "endings": [ 4, 4 ],
+      "sidestories": [ 8, 8 ],
+      "completion": 100,
+      "playtime": 42,
+      "start": "2019-1-25",
+      "finish": "2019-2-4",
+      "tags": [
+        "H-Scenes",
+        "Owned",
+        "Cried",
+        "Michiru Best Girl"
+      ],
+      "notes": [
+        "The finale for the Grisaia Trilogy, this absolutely blew me away!",
+        "We were given not only a conclusive and exciting end to the story, but a prologue to the beginning of Mihama Academy.",
+        "The main afterstory had a wonderful emotionally touching end and the prologue had its own sets of emotions that overwhelmed me numerous times.",
+        "I've heard others' dislike for Rakuen, but I honestly think this is the highlight of the series!",
+        "The comedy and emotions were so well executed, that it truly made me fall in love with Grisaia all over again."
+      ]
+    },
     {
       "title": "Grisaia no Zankou",
       "title_en": "The Afterglow of Grisaia",
