@@ -34,24 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "Grisaia no Senritsu",
-      "title_en": "The Melody of Grisaia",
-      "url": "https://vndb.org/v19072",
-      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
-      "score": null,
-      "progressType": "endings",
-      "routes": null,
-      "endings": [ null, 1 ],
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -76,6 +58,26 @@
   ],
 
   "completed": [
+    {
+      "title": "Grisaia no Senritsu",
+      "title_en": "The Melody of Grisaia",
+      "url": "https://vndb.org/v19072",
+      "image": "/anime/covers/vn/grisaia-senritsu.jpg",//"https://s.vndb.org/cv/41/28041.jpg",
+      "score": 9,
+      "progressType": "endings",
+      "endings": [ 1, 1 ],
+      "playtime": 2,
+      "start": "2019-2-4",
+      "finish": "2019-2-4",
+      "tags": [
+        "Owned"
+      ],
+      "notes": [
+        "This was definitely the best of the 3 Grisaia shorts.",
+        "At the beginning I got a major sense deja-vu and it didn't click that it was an expansion of an arc in Meikyuu until the very end.",
+        "The witty back in forth was great as always and I can never get enough of Kazamu Yuuji's Declassified Life Protip Guide."
+      ]
+    },
     {
       "title": "Grisaia no Rakuen",
       "title_en": "The Eden of Grisaia",
