@@ -34,27 +34,28 @@
   },
 
   "playing": [
-  ],
-
-  "queued": [
     {
       "title": "Clannad",
       "title_en": "CLANNAD",
       "url": "https://vndb.org/v4",
       "image": "/anime/covers/vn/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
-      "score": null,
+      "score": 9,
       "progressType": "routes",
-      "routes": null,
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
+      "progressType2": "endings",
+      "routes": [ null, null ],
+      "endings": [ 1 , null ],
+      "achievements": [ 1, 22 ],
+      "playtime": 4,
+      "start": "2019-2-5",
       "finish": null,
       "tags": [
         "Owned"
       ],
       "notes": null
     }
+  ],
+
+  "queued": [
   ],
 
   "completed": [
