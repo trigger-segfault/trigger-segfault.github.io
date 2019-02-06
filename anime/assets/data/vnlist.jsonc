@@ -56,6 +56,23 @@
   ],
 
   "queued": [
+    {
+      "title": "Little Busters!",
+      "url": "https://vndb.org/v5",
+      "image": "/anime/covers/vn/little-busters.jpg",//"https://s.vndb.org/cv/67/24267.jpg",
+      "score": null,
+      "progressType": "routes",
+      "routes": null,
+      "endings": null,
+      "achievements": [ null, 27 ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    }
   ],
 
   "completed": [
@@ -873,23 +890,6 @@
       "progressType": null,
       "achievements": [ null, 35 ],
       "completion": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Little Busters!",
-      "url": "https://vndb.org/v5",
-      "image": "/anime/covers/vn/little-busters.jpg",//"https://s.vndb.org/cv/67/24267.jpg",
-      "score": null,
-      "progressType": "routes",
-      "routes": null,
-      "endings": null,
-      "achievements": [ null, 27 ],
       "playtime": null,
       "start": null,
       "finish": null,
