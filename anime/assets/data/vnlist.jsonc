@@ -42,14 +42,16 @@
       "score": 9,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ null, null ],
-      "endings": [ 1 , null ],
-      "achievements": [ 1, 22 ],
-      "playtime": 8,
+      "routes": [ 2, null ],
+      "endings": [ 3 , null ],
+      "sidestories": [ 1, 1 ],
+      "achievements": [ 5, 22 ],
+      "playtime": 18,
       "start": "2019-2-5",
       "finish": null,
       "tags": [
-        "Owned"
+        "Owned",
+        "Cried"
       ],
       "notes": null
     }
