@@ -42,16 +42,17 @@
       "score": 9,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 5, null ],
-      "endings": [ 8 , null ],
+      "routes": [ 6, null ],
+      "endings": [ 10, null ],
       "sidestories": [ 1, 1 ],
       "achievements": [ 8, 22 ],
-      "playtime": 55,
+      "playtime": 58,
       "start": "2019-2-5",
       "finish": null,
       "tags": [
         "Owned",
-        "Cried"
+        "Cried",
+        "Destroyer of Tear Ducts"
       ],
       "notes": null
     }
