@@ -42,17 +42,18 @@
       "score": 9.2,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 10, null ],
-      "endings": [ 18, null ],
+      "routes": [ 12, null ],
+      "endings": [ 20, null ],
       "sidestories": [ 1, 1 ],
-      "achievements": [ 15, 22 ],
-      "playtime": 96,
+      "achievements": [ 17, 22 ],
+      "playtime": 100,
       "start": "2019-2-5",
       "finish": null,
       "tags": [
         "Owned",
         "Cried",
-        "Destroyer of Tear Ducts"
+        "Destroyer of Tear Ducts",
+        "Sunohara Worst Friend"
       ],
       "notes": null
     }
