@@ -43,10 +43,10 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 13, null ],
-      "endings": [ 21, null ],
+      "endings": [ 23, null ],
       "sidestories": [ 1, 1 ],
       "achievements": [ 19, 22 ],
-      "playtime": 106,
+      "playtime": 108,
       "start": "2019-2-5",
       "finish": null,
       "tags": [
