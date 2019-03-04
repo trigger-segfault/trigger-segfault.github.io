@@ -34,30 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "Clannad",
-      "title_en": "CLANNAD",
-      "url": "https://vndb.org/v4",
-      "image": "/anime/covers/vn/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
-      "score": 10,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 13, null ],
-      "endings": [ 25, null ], // 6 similar excluded bad ends, 5 Illusionary World, 1 Nagisa, all end with already-read lines
-      "sidestories": [ 1, 1 ],
-      "achievements": [ 19, 22 ],
-      "playtime": 127,
-      "start": "2019-2-5",
-      "finish": null,
-      "tags": [
-        "Owned",
-        "Cried",
-        "Destroyer of Tear Ducts",
-        "DECIMATOR OF TEAR DUCTS",
-        "Sunohara Worst Friend"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -81,6 +57,31 @@
   ],
 
   "completed": [
+    {
+      "title": "Clannad",
+      "title_en": "CLANNAD",
+      "url": "https://vndb.org/v4",
+      "image": "/anime/covers/vn/clannad.jpg",//"https://s.vndb.org/cv/52/24252.jpg",
+      "score": 10,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 15, 15 ],
+      "endings": [ 27, 27 ], // 6 similar excluded bad ends, 5 Illusionary World, 1 Nagisa, all end with already-read lines
+      "sidestories": [ 1, 1 ],
+      "achievements": [ 22, 22 ],
+      "encyclopedia": [ 93, 96 ], // Missing 33, 71, and 90
+      "playtime": 130,
+      "start": "2019-2-5",
+      "finish": "2019-3-3",
+      "tags": [
+        "Owned",
+        "Cried",
+        "Destroyer of Tear Ducts",
+        "DECIMATOR OF TEAR DUCTS",
+        "Sunohara Worst Friend"
+      ],
+      "notes": null
+    },
     {
       "title": "Grisaia no Senritsu",
       "title_en": "The Melody of Grisaia",
