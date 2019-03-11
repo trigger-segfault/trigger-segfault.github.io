@@ -80,7 +80,13 @@
         "DECIMATOR OF TEAR DUCTS",
         "Sunohara Worst Friend"
       ],
-      "notes": null
+      "notes": [
+        "Clannad has the most robust and complex choice system I've ever seen in the visual novel, not to mention the most choices I've ever encountered in any game.",
+        "The developers took so much into account when implementing the effects choices had on the story.",
+        //"Being acquainted with someone can give slight variations in dialog that most other games would never bother to recognize.",
+        "Even without the variety of choices in the game, Clannad has a ridiculous amount of tearjerking moments that gave it the tag: DECIMATOR OF TEAR DUCTS.",
+        "No one is safe."
+      ]
     },
     {
       "title": "Grisaia no Senritsu",
@@ -1361,6 +1367,23 @@
       "finish": null,
       "tags": [
         "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Ao no Kanata no Four Rhythm",
+      "url": "https://vndb.org/v12849",
+      "image": "/anime/covers/vn/aokana.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist",
+        "Waiting for Translation"
       ],
       "notes": null
     }
