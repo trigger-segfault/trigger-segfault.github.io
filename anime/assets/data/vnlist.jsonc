@@ -34,6 +34,23 @@
   },
 
   "playing": [
+    {
+      "title": "Lucy - Geunyeoga Baladeon Geos -",
+      "title_en": "Lucy -The Eternity She Wished For-",
+      "url": "https://vndb.org/v16743",
+      "image": "/anime/covers/vn/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
+      "score": null,
+      "progressType": "endings",
+      "routes": null,
+      "endings": [ null, null ],
+      "playtime": null,
+      "start": "2019-3-12",
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    }
   ],
 
   "queued": [
@@ -46,24 +63,6 @@
       "routes": null,
       "endings": null,
       "achievements": [ null, 27 ],
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Lucy - Geunyeoga Baladeon Geos -",
-      "title_en": "Lucy -The Eternity She Wished For-",
-      "url": "https://vndb.org/v16743",
-      "image": "/anime/covers/vn/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": null,
       "playtime": null,
       "start": null,
       "finish": null,
