@@ -1394,7 +1394,7 @@
       "score": null,
       "progressType": null,
       "routes": null,
-      "achievements": null,
+      "achievements": [ null, 27 ],
       "playtime": null,
       "start": null,
       "finish": null,
