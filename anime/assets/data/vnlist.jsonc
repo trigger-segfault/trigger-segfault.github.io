@@ -1386,6 +1386,22 @@
         "Waiting for Translation"
       ],
       "notes": null
+    },
+    {
+      "title": "Tomoyo After ~It's a Wonderful Life~",
+      "url": "https://vndb.org/v12",
+      "image": "/anime/covers/vn/tomoyo-after.jpg",
+      "score": null,
+      "progressType": null,
+      "routes": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist"
+      ],
+      "notes": null
     }
   ]
 }
