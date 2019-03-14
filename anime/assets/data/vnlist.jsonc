@@ -34,24 +34,6 @@
   },
 
   "playing": [
-    {
-      "title": "Lucy - Geunyeoga Baladeon Geos -",
-      "title_en": "Lucy -The Eternity She Wished For-",
-      "url": "https://vndb.org/v16743",
-      "image": "/anime/covers/vn/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
-      "score": 8.5,
-      "progressType": "endings",
-      "routes": null,
-      "endings": [ null, null ],
-      "achievements": [ 2, 15 ],
-      "playtime": 2,
-      "start": "2019-3-12",
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
@@ -75,6 +57,28 @@
   ],
 
   "completed": [
+    {
+      "title": "Lucy - Geunyeoga Baladeon Geos -",
+      "title_en": "Lucy -The Eternity She Wished For-",
+      "url": "https://vndb.org/v16743",
+      "image": "/anime/covers/vn/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
+      "score": 9.5,
+      "progressType": "endings",
+      "endings": [ 3, 3 ],
+      "achievements": [ 15, 15 ],
+      "playtime": 9,
+      "start": "2019-3-12",
+      "finish": "2019-3-13",
+      "tags": [
+        "Owned",
+        "Cried"
+      ],
+      "notes": [
+        //"In the short time that I spent playing this visual novel I was was dumped into a ditch, then hit with a sack of bricks, then hit with an bigger, *older* sack of bricks.",
+        "Lucy -The Eternity She Wished For- will bring you to the depths of despair all while bringing a short and heartwarming story.",
+        "As long as you can get over the terrible UX design, you'll be able to enjoy the rest of the beauty this visual novel has to offer."
+      ]
+    },
     {
       "title": "Clannad",
       "title_en": "CLANNAD",
@@ -373,7 +377,7 @@
       "title_en": "The Song of Saya",
       "url": "https://vndb.org/v97",
       "image": "/anime/covers/vn/saya-no-uta.jpg",//"https://s.vndb.org/cv/75/8675.jpg",
-      "score": 10,
+      "score": 9.5,
       "progressType": "endings",
       "endings": [ 3, 3 ],
       "playtime": 6.46,
