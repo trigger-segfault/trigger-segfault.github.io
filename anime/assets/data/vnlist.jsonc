@@ -34,26 +34,26 @@
   },
 
   "playing": [
-  ],
-
-  "queued": [
     {
-      "title": "Little Busters!",
-      "url": "https://vndb.org/v5",
-      "image": "/anime/covers/vn/little-busters.jpg",//"https://s.vndb.org/cv/67/24267.jpg",
-      "score": null,
-      "progressType": "routes",
-      "routes": null,
-      "endings": null,
-      "achievements": [ null, 27 ],
-      "playtime": null,
-      "start": null,
+      "title": "Highway Blossoms",
+      "url": "https://vndb.org/v18381",
+      "image": "/anime/covers/vn/highway-blossoms.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
+      "score": 8,
+      "progressType": "endings",
+      "endings": [ null, 1 ],
+      "achievements": [ 4, 20 ],
+      "playtime": 6,
+      "start": "2019-3-17",
       "finish": null,
       "tags": [
-        "Owned"
+        "Owned",
+        "English VA"
       ],
       "notes": null
     }
+  ],
+
+  "queued": [
   ],
 
   "completed": [
@@ -861,6 +861,24 @@
 
   "onhold": [
     {
+      "title": "Little Busters!",
+      "url": "https://vndb.org/v5",
+      "image": "/anime/covers/vn/little-busters.jpg",//"https://s.vndb.org/cv/67/24267.jpg",
+      "score": null,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ null, null ],
+      "endings": [ null, null ],
+      "achievements": [ 1, 27 ],
+      "playtime": 0.55,
+      "start": "2019-3-15",
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    },
+    {
       "title": "MegaTagmension Blanc + Neptune VS Zombies (Neptunia)",
       "url": "https://store.steampowered.com/app/496810/MegaTagmension_Blanc__Neptune_VS_Zombies_Neptunia/",
       "image": "/anime/covers/vn/megatagmension-blanc.jpg",//"https://vignette.wikia.nocookie.net/neptunia/images/d/d4/BvZ_Standard.jpg/revision/latest?cb=20160413175446",
@@ -1012,23 +1030,6 @@
       "routes": null,
       "endings": null,
       "achievements": [ null, 21 ],
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Highway Blossoms",
-      "url": "https://vndb.org/v18381",
-      "image": "/anime/covers/vn/highway-blossoms.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": [ null, 20 ],
       "playtime": null,
       "start": null,
       "finish": null,
