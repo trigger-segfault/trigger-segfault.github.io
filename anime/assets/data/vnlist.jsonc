@@ -40,16 +40,23 @@
       "image": "/anime/covers/vn/highway-blossoms.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
       "score": 8,
       "progressType": "endings",
-      "endings": [ null, 1 ],
-      "achievements": [ 4, 20 ],
-      "playtime": 6,
+      "endings": [ 1, 1 ],
+      "achievements": [ 19, 20 ],
+      "playtime": 14,
       "start": "2019-3-17",
-      "finish": null,
+      "finish": "2019-3-18",
       "tags": [
         "Owned",
-        "English VA"
+        "English VA",
+        "14h without Desert RV"
       ],
-      "notes": null
+      "notes": [
+        "This game has it all!",
+        "Features a 19yo old protagonist that is more responsible in life than I am at 25 ✓.",
+        "Cute girls doing cute things and English voice acting that's adorable and enjoyable ✓.",
+        "Optional \"Extreme Difficulty\" that disables fast travel in a game about road trips ✓.",
+        "And an unlockable language that's salted with memes and then given a piss-poor English translation ✓."
+      ]
     }
   ],
 
@@ -876,7 +883,10 @@
       "tags": [
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "The sprites scare me more than Clannad and the voice acting quality is the total opposite of Clannad.",
+        "Shelved for a day when I've run out of backlog."
+      ]
     },
     {
       "title": "MegaTagmension Blanc + Neptune VS Zombies (Neptunia)",
