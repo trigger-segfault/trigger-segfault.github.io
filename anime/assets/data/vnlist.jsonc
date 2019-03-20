@@ -34,6 +34,12 @@
   },
 
   "playing": [
+  ],
+
+  "queued": [
+  ],
+
+  "completed": [
     {
       "title": "Highway Blossoms",
       "url": "https://vndb.org/v18381",
@@ -41,14 +47,17 @@
       "score": 8,
       "progressType": "endings",
       "endings": [ 1, 1 ],
-      "achievements": [ 19, 20 ],
-      "playtime": 14,
+      "achievements": [ 20, 20 ],
+      "playtime": 37,
       "start": "2019-3-17",
       "finish": "2019-3-18",
       "tags": [
+        "H-Scenes",
+        "Cried",
         "Owned",
         "English VA",
-        "14h without Desert RV"
+        "15h without Desert RV",
+        "Need to replay with Goofball Mode"
       ],
       "notes": [
         "This game has it all!",
@@ -57,19 +66,13 @@
         "Optional \"Extreme Difficulty\" that disables fast travel in a game about road trips ✓.",
         "And an unlockable language that's salted with memes and then given a piss-poor English translation ✓."
       ]
-    }
-  ],
-
-  "queued": [
-  ],
-
-  "completed": [
+    },
     {
       "title": "Lucy - Geunyeoga Baladeon Geos -",
       "title_en": "Lucy -The Eternity She Wished For-",
       "url": "https://vndb.org/v16743",
       "image": "/anime/covers/vn/lucy.jpg",//"https://s.vndb.org/cv/99/23299.jpg",
-      "score": 9.5,
+      "score": 9,
       "progressType": "endings",
       "endings": [ 3, 3 ],
       "achievements": [ 15, 15 ],
@@ -142,7 +145,7 @@
       "title_en": "The Eden of Grisaia",
       "url": "https://vndb.org/v7724",
       "image": "/anime/covers/vn/grisaia-rakuen.jpg",//"https://s.vndb.org/cv/14/25914.jpg",
-      "score": 10,
+      "score": 9.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 3, 3 ],
@@ -236,7 +239,7 @@
       "title": "DDLC Purist Mod",
       "url": "https://twitter.com/ddlcpuristmod",
       "image": "/anime/covers/vn/ddlc-purist-mod.jpg",
-      "score": 8,
+      "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 4, 4 ],
@@ -289,7 +292,7 @@
       "aliases": [ "Noble Works" ],
       "url": "https://vndb.org/v4806",
       "image": "/anime/covers/vn/noble-works.jpg",//"https://s.vndb.org/cv/09/27809.jpg",
-      "score": 7,
+      "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 6, 6 ],
@@ -598,7 +601,7 @@
       "title_en": "The Leisure of Grisaia",
       "url": "https://vndb.org/v18830",
       "image": "/anime/covers/vn/grisaia-yuukan.jpg",//"https://s.vndb.org/cv/55/27355.jpg",
-      "score": 8,
+      "score": 7.5,
       "progressType": "endings",
       "endings": [ 1, 1 ],
       "playtime": 1.07,
