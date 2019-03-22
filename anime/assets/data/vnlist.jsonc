@@ -38,18 +38,18 @@
       "title": "Sunrider: Mask of Arcadius",
       "url": "https://vndb.org/v14112",
       "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
-      "score": null,
+      "score": 8.5,
       "progressType": "endings",
       "endings": [ null, null ],
-      "achievements": null,
-      "playtime": null,
+      "playtime": 8,
       "start": "2019-3-21",
       "finish": null,
       "tags": [
         "Owned",
         "Free",
         "English VA",
-        "SRPG"
+        "SRPG",
+        "Great OST"
       ],
       "notes": null
     }
