@@ -41,6 +41,7 @@
       "score": 9,
       "progressType": "routes",
       "routes": [ 1, 2 ],
+      "playtime": 15,
       "start": "2019-3-21",
       "finish": null,
       "tags": [
