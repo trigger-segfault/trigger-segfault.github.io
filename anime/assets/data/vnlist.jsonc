@@ -37,13 +37,13 @@
     {
       "title": "Sunrider: Mask of Arcadius",
       "url": "https://vndb.org/v14112",
-      "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",//"https://s.vndb.org/cv/71/26271.jpg",
-      "score": 9,
+      "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",
+      "score": 8.5,
       "progressType": "routes",
-      "routes": [ 1, 2 ],
-      "playtime": 15,
+      "routes": [ 2, 2 ],
+      "playtime": 16,
       "start": "2019-3-21",
-      "finish": null,
+      "finish": null, // 2019-3-22
       "tags": [
         "Cried",
         "Owned",
@@ -51,6 +51,26 @@
         "English VA",
         "SRPG",
         "Great OST"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Sunrider: Liberation Day",
+      "url": "https://vndb.org/v17694",
+      "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
+      "score": 8.5,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ null, null ],
+      "endings": [ 1, null ],
+      "achievements": [ 17, 52 ],
+      "playtime": 15,
+      "start": "2019-3-23",
+      "finish": null,
+      "tags": [
+        "Cried",
+        "Owned",
+        "SRPG"
       ],
       "notes": null
     }
@@ -1080,24 +1100,6 @@
       "finish": null,
       "tags": [
         "Owned"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Sunrider: Liberation Day",
-      "url": "https://vndb.org/v17694",
-      "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": [ null, 52 ],
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Owned",
-        "SRPG"
       ],
       "notes": null
     },
