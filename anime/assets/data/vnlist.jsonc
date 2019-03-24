@@ -35,35 +35,15 @@
 
   "playing": [
     {
-      "title": "Sunrider: Mask of Arcadius",
-      "url": "https://vndb.org/v14112",
-      "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",
-      "score": 8.5,
-      "progressType": "routes",
-      "routes": [ 2, 2 ],
-      "playtime": 16,
-      "start": "2019-3-21",
-      "finish": null, // 2019-3-22
-      "tags": [
-        "Cried",
-        "Owned",
-        "Free",
-        "English VA",
-        "SRPG",
-        "Great OST"
-      ],
-      "notes": null
-    },
-    {
       "title": "Sunrider: Liberation Day",
       "url": "https://vndb.org/v17694",
       "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
-      "score": 8.5,
+      "score": 8.6,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ null, null ],
       "endings": [ 1, null ],
-      "achievements": [ 17, 52 ],
+      "achievements": [ 25, 52 ],
       "playtime": 15,
       "start": "2019-3-23",
       "finish": null,
@@ -72,7 +52,11 @@
         "Owned",
         "SRPG"
       ],
-      "notes": null
+      "notes": [
+        "Being a paid game, Liberation Day lost a lot of the beautiful music tracks that came with MoA which was a real bummer.",
+        "The introduction of story voice acting was surprising and definitely a big highlight.",
+        "A worthy sequel to MoA, but the mechanics of carrying over progression make completion a bit of a hassle."
+      ]
     }
   ],
 
@@ -80,6 +64,31 @@
   ],
 
   "completed": [
+    {
+      "title": "Sunrider: Mask of Arcadius",
+      "url": "https://vndb.org/v14112",
+      "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",
+      "score": 8.8,
+      "progressType": "routes",
+      "routes": [ 2, 2 ],
+      "playtime": 17,
+      "start": "2019-3-21",
+      "finish": "2019-3-23", // 2019-3-22
+      "tags": [
+        "Cried",
+        "Owned",
+        "Free",
+        "English VA",
+        "SRPG",
+        "Great OST"
+      ],
+      "notes": [
+        "Coming from a free game, my expectations were blown away!",
+        "The OST was incredible and really brought the entire game to life in both the VN and gameplay elements.",
+        "The story was interesting, although a little predictable at times.",
+        "My biggest complaint is that Ren'Py is not designed to run a game such as this, and thus the game was very slow at times."
+      ]
+    },
     {
       "title": "Highway Blossoms",
       "url": "https://vndb.org/v18381",
