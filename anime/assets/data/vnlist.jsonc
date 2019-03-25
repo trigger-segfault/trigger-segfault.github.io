@@ -38,13 +38,13 @@
       "title": "Sunrider: Liberation Day",
       "url": "https://vndb.org/v17694",
       "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
-      "score": 8.6,
+      "score": 9,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ null, null ],
-      "endings": [ 1, null ],
-      "achievements": [ 25, 52 ],
-      "playtime": 15,
+      "routes": [ 2, null ],
+      "endings": [ 8, null ],
+      "achievements": [ 28, 52 ],
+      "playtime": 20,
       "start": "2019-3-23",
       "finish": null,
       "tags": [
@@ -55,7 +55,8 @@
       "notes": [
         "Being a paid game, Liberation Day lost a lot of the beautiful music tracks that came with MoA which was a real bummer.",
         "The introduction of story voice acting was surprising and definitely a big highlight.",
-        "A worthy sequel to MoA, but the mechanics of carrying over progression make completion a bit of a hassle."
+        "A worthy sequel to MoA, but the mechanics of carrying over progression make completion a bit of a hassle.",
+        "The [RE]turn arc brings out the best of Sunrider's stories so far."
       ]
     }
   ],
