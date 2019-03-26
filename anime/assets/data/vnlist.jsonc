@@ -17,7 +17,15 @@
     "sidestories": "null, [ null/integer, null/integer ]",
 
     "replaying": "null, false, true (increments progresses by + max)",
-    "replayed": "null, integer (increments progresses by + replayed * max)",
+    //"replayed": "null, integer (increments progresses by + replayed * max)",
+    "replays": [
+      {
+        "playtime": "null, hours[.minutes]",
+        "start": "null, yyyy-m-d",
+        "finish": "null, yyyy-m-d"
+      }
+      //...
+    ],
 
     // Completion
     "achievements": "null, [ null/integer, null/integer ]",
@@ -35,28 +43,35 @@
 
   "playing": [
     {
-      "title": "Sunrider: Liberation Day",
-      "url": "https://vndb.org/v17694",
-      "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
-      "score": 9,
+      "title": "Sunrider Academy",
+      "url": "https://vndb.org/v16221",
+      "image": "/anime/covers/vn/sunrider-academy.jpg",//"https://s.vndb.org/cv/40/22940.jpg",
+      "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, null ],
-      "endings": [ 8, null ],
-      "achievements": [ 28, 52 ],
-      "playtime": 20,
-      "start": "2019-3-23",
-      "finish": null,
+      "routes": [ null, 4 ],
+      "endings": [ null, 5 ], // TODO: More confirmation, (no heroine bad endings, 1 common end)
+      "achievements": [ 20, 20 ],
+      "completion": 100,
+      "playtime": 33,
+      "replaying": true,
+      "replays": [
+        {
+          "start": null,
+          "finish": null,
+          "playtime": 0
+        }
+      ],
+      "start": "2016-2-14",
+      "finish": "2016-2-18",
       "tags": [
+        "H-Scenes",
         "Cried",
-        "Owned",
-        "SRPG"
+        "Owned"
       ],
       "notes": [
-        "Being a paid game, Liberation Day lost a lot of the beautiful music tracks that came with MoA which was a real bummer.",
-        "The introduction of story voice acting was surprising and definitely a big highlight.",
-        "A worthy sequel to MoA, but the mechanics of carrying over progression make completion a bit of a hassle.",
-        "The [RE]turn arc brings out the best of Sunrider's stories so far."
+        "The second visual novel I ever played. Likewise, I also viewed this pretty highly when first played, but I imagine it won't hold.",
+        "This is the only dating sim I've played with actual character stats as of Dec 2018."
       ]
     }
   ],
@@ -66,10 +81,38 @@
 
   "completed": [
     {
+      "title": "Sunrider: Liberation Day",
+      "url": "https://vndb.org/v17694",
+      "image": "/anime/covers/vn/sunrider-liberation-day.jpg",//"https://s.vndb.org/cv/60/24760.jpg",
+      "score": 9,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 6, 6 ],
+      "endings": [ 19, 19 ],
+      "achievements": [ 47, 52 ],
+      "playtime": 27,
+      "start": "2019-3-23",
+      "finish": "2019-3-25",
+      "tags": [
+        "H-Scenes",
+        "Cried",
+        "Owned",
+        "SRPG",
+        "Great OST"
+      ],
+      "notes": [
+        "Being a paid game, Liberation Day lost a lot of the beautiful music tracks that came with MoA which was a real bummer.",
+        "The introduction of story voice acting was surprising and definitely a big highlight.",
+        "A worthy sequel to MoA, but the mechanics of carrying over progression make completion a bit of a hassle.",
+        "The [RE]turn arc brings out the best of Sunrider's stories so far.",
+        "Asaga's H-scene in [RE]turn also had the best comedic writing I've read so far."
+      ]
+    },
+    {
       "title": "Sunrider: Mask of Arcadius",
       "url": "https://vndb.org/v14112",
       "image": "/anime/covers/vn/sunrider-mask-of-arcadius.jpg",
-      "score": 8.8,
+      "score": 8.5,
       "progressType": "routes",
       "routes": [ 2, 2 ],
       "playtime": 17,
@@ -822,30 +865,6 @@
       ],
       "notes": [
         "The first visual novel I ever played. I viewed it pretty highly when first played, but I imagine it won't hold up during a replay."
-      ]
-    },
-    {
-      "title": "Sunrider Academy",
-      "url": "https://vndb.org/v16221",
-      "image": "/anime/covers/vn/sunrider-academy.jpg",//"https://s.vndb.org/cv/40/22940.jpg",
-      "score": 7.5,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 4, 4 ],
-      "endings": [ 5, 5 ], // TODO: More confirmation, (no heroine bad endings, 1 common end)
-      "achievements": [ 20, 20 ],
-      "completion": 100,
-      "playtime": 33,
-      "start": "2016-2-14",
-      "finish": "2016-2-18",
-      "tags": [
-        "H-Scenes",
-        "Cried",
-        "Owned"
-      ],
-      "notes": [
-        "The second visual novel I ever played. Likewise, I also viewed this pretty highly when first played, but I imagine it won't hold.",
-        "This is the only dating sim I've played with actual character stats as of Dec 2018."
       ]
     },
     {

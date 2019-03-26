@@ -207,10 +207,18 @@ class VNStats {
 				this.gamesWithFullCompletion++;
 		}
 		for (let name of ProgressType.getNames()) {
-			if (vn.progress[name] != null)
-				this[name] += vn.progress[name][0];
+			if (vn.progress[name] != null) {
+				// Replaying increments the max progress instead
+				if (vn.replaying)
+					this[name] += vn.progress[name][1];
+				else
+					this[name] += vn.progress[name][0];
+			}
 		}
 		this[StatusType[vn.status]]++;
+		// A VN being replaying always increments the completed count
+		if (vn.status != StatusType.completed && vn.replaying)
+			this[StatusType[StatusType.completed]]++;
 		this.totalEntries++;
 		if (vn.score != null) {
 			this.totalScore += vn.score;
@@ -480,6 +488,7 @@ class VNEntry {
 	playtimeMinutes: number;
 
 	playthroughs: VNPlaythrough[];
+	replaying: boolean;
 
 	start: Date;
 	finish: Date;
@@ -534,6 +543,9 @@ class VNEntry {
 				this.playthroughs.push(new VNPlaythrough(data.replays[i]));
 			}
 		}
+		this.replaying = false;
+		if (data.replaying != null)
+			this.replaying = data.replaying;
 		this.playtime = 0;
 		this.playtimeHours = 0;
 		this.playtimeMinutes = 0;
@@ -572,7 +584,7 @@ class VNEntry {
 	}
 
 	get replays() {
-		return this.playthroughs.length - 1;
+		return Math.max(0, this.playthroughs.length - (this.replaying ? 2 : 1));
 	}
 
 	buildTableSection(number: number) {
@@ -699,7 +711,16 @@ class VNEntry {
 			else
 				tdPlaytime.innerText = '-';
 		}*/
+		if (this.replaying) {
+			//if (this.playtime != 0 || this.replays != 0)
+			//	tdPlaytime.appendChild(document.createElement('br'));
+			var spanReplaying = document.createElement('span');
+			spanReplaying.innerText = 'Replaying';
+			tdPlaytime.appendChild(spanReplaying);
+		}
 		if (this.playtime != 0) {
+			if (this.replaying|| this.replays != 0)
+				tdPlaytime.appendChild(document.createElement('br'));
 			var spanPlaytime = document.createElement('span');
 			tdPlaytime.appendChild(spanPlaytime);
 			if (this.playtime != 0 && (this.playtimeHours > 0 || this.playtimeMinutes > 0)) {
@@ -716,12 +737,24 @@ class VNEntry {
 				spanPlaytime.innerText = '-';
 		}
 		if (this.replays != 0) {
-			if (this.playtime != 0)
+			if (this.replaying|| this.playtime != 0)
 				tdPlaytime.appendChild(document.createElement('br'));
+			//if (this.playtime != 0)
+			//	tdPlaytime.appendChild(document.createElement('br'));
 			var spanReplays = document.createElement('span');
 			spanReplays.innerText = 'Replays: ' + this.replays.toString();
 			tdPlaytime.appendChild(spanReplays);
 		}
+		if (!this.replaying && this.playtime == 0 && this.replays == 0) {
+			tdPlaytime.innerText = '-';
+		}
+		/*if (this.replaying) {
+			if (this.playtime != 0 || this.replays != 0)
+				tdPlaytime.appendChild(document.createElement('br'));
+			var spanReplaying = document.createElement('span');
+			spanReplaying.innerText = 'Replaying';
+			tdPlaytime.appendChild(spanReplaying);
+		}*/
 
 
 		var tdStartFinish = document.createElement('td');
