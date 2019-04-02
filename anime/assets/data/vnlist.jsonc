@@ -49,10 +49,9 @@
       "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 4 ],
-      "endings": [ 2, 5 ], // Disappointed sister, Asaga
-      // TODO: Get ending for Sick, clubs disbanded, lost election
-      // TODO: More confirmation, (no heroine bad endings, 1 common end)
+      "routes": [ 2, 4 ],
+      "endings": [ 6, 8 ], // Disappointed sister, disbanded, hospitalized, flunk, Asaga, Sola
+      // Missing: Ava, Chigara
       "achievements": [ 20, 20 ],
       "completion": 100,
       "playtime": 33,
@@ -61,7 +60,7 @@
         {
           "start": "2019-3-26",
           "finish": null,
-          "playtime": 13
+          "playtime": 17
         }
       ],
       "start": "2016-2-14",
