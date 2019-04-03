@@ -42,25 +42,29 @@
   },
 
   "playing": [
+  ],
+
+  "queued": [
+  ],
+
+  "completed": [
     {
       "title": "Sunrider Academy",
       "url": "https://vndb.org/v16221",
       "image": "/anime/covers/vn/sunrider-academy.jpg",//"https://s.vndb.org/cv/40/22940.jpg",
-      "score": 7.5,
+      "score": 7.8,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 4 ],
-      "endings": [ 6, 8 ], // Disappointed sister, disbanded, hospitalized, flunk, Asaga, Sola
-      // Missing: Ava, Chigara
+      "routes": [ 4, 4 ],
+      "endings": [ 8, 8 ], // Disappointed sister, disbanded, hospitalized, flunk, Asaga, Sola, Ava, Chigara
       "achievements": [ 20, 20 ],
       "completion": 100,
       "playtime": 33,
-      "replaying": true,
       "replays": [
         {
           "start": "2019-3-26",
-          "finish": null,
-          "playtime": 17
+          "finish": "2019-4-2",
+          "playtime": 24
         }
       ],
       "start": "2016-2-14",
@@ -74,13 +78,7 @@
         "The second visual novel I ever played. Likewise, I also viewed this pretty highly when first played, but I imagine it won't hold.",
         "This is the only dating sim I've played with actual character stats as of Dec 2018."
       ]
-    }
-  ],
-
-  "queued": [
-  ],
-
-  "completed": [
+    },
     {
       "title": "Sunrider: Liberation Day",
       "url": "https://vndb.org/v17694",
@@ -1481,6 +1479,24 @@
       "progressType": null,
       "routes": null,
       "achievements": [ null, 27 ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Sunrider 4: The Captain's Return",
+      "url": "https://vndb.org/v25544",
+      "image": "/anime/covers/vn/sunrider-4.jpg",
+      "score": null,
+      "progressType": null,
+      "progressType2": null,
+      "routes": null,
+      "endings": null,
+      "achievements": null,
       "playtime": null,
       "start": null,
       "finish": null,
