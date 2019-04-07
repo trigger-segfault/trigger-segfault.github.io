@@ -42,6 +42,21 @@
   },
 
   "playing": [
+    {
+      "title": "Eden* They Were Only Two, On The Planet.",
+      "url": "https://vndb.org/v1286",
+      "image": "/anime/covers/vn/eden.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
+      "score": 7.5,
+      "progressType": "endings",
+      "endings": [ null, 1 ],
+      "playtime": 9,
+      "start": "2019-4-5",
+      "finish": null,
+      "tags": [
+        "Owned"
+      ],
+      "notes": null
+    }
   ],
 
   "queued": [
@@ -1299,23 +1314,6 @@
       "title": "Ever17 -The Out of Infinity-",
       "url": "https://vndb.org/v17",
       "image": "/anime/covers/vn/ever17.jpg",//"https://s.vndb.org/cv/60/24260.jpg",
-      "score": null,
-      "progressType": null,
-      "routes": null,
-      "endings": null,
-      "achievements": null,
-      "playtime": null,
-      "start": null,
-      "finish": null,
-      "tags": [
-        "Wishlist"
-      ],
-      "notes": null
-    },
-    {
-      "title": "Eden* They Were Only Two, On The Planet.",
-      "url": "https://vndb.org/v1286",
-      "image": "/anime/covers/vn/eden.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
       "score": null,
       "progressType": null,
       "routes": null,
