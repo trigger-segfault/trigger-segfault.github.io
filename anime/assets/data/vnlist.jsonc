@@ -106,7 +106,7 @@
       "routes": [ 6, 6 ],
       "endings": [ 19, 19 ],
       "achievements": [ 47, 52 ],
-      "playtime": 27,
+      "playtime": 28,
       "start": "2019-3-23",
       "finish": "2019-3-25",
       "tags": [
@@ -131,7 +131,7 @@
       "score": 8.5,
       "progressType": "routes",
       "routes": [ 2, 2 ],
-      "playtime": 17,
+      "playtime": 18,
       "start": "2019-3-21",
       "finish": "2019-3-23", // 2019-3-22
       "tags": [
