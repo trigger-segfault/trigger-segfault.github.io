@@ -42,28 +42,30 @@
   },
 
   "playing": [
-    {
-      "title": "Eden* They Were Only Two, On The Planet.",
-      "url": "https://vndb.org/v1286",
-      "image": "/anime/covers/vn/eden.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
-      "score": 7.5,
-      "progressType": "endings",
-      "endings": [ null, 1 ],
-      "playtime": 13,
-      "start": "2019-4-5",
-      "finish": null,
-      "tags": [
-        "H-Scenes",
-        "Owned"
-      ],
-      "notes": null
-    }
   ],
 
   "queued": [
   ],
 
   "completed": [
+    {
+      "title": "Eden* They Were Only Two, On The Planet.",
+      "url": "https://vndb.org/v1286",
+      "image": "/anime/covers/vn/eden.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
+      "score": 7.5,
+      "progressType": "endings",
+      "progressType2": "sidestories",
+      "endings": [ 1, 1 ],
+      "sidestories": [ 4, 4 ],
+      "playtime": 18,
+      "start": "2019-4-5",
+      "finish": "2019-4-8",
+      "tags": [
+        "H-Scenes",
+        "Owned"
+      ],
+      "notes": null
+    },
     {
       "title": "Sunrider Academy",
       "url": "https://vndb.org/v16221",
