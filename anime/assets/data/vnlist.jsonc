@@ -42,6 +42,24 @@
   },
 
   "playing": [
+    {
+      "title": "Hoshi Ori Yume Mirai",
+      "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
+      "url": "https://vndb.org/v14265",
+      "image": "/anime/covers/vn/hoshiori.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
+      "score": null,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ null, null ],
+      "endings": [ null, null ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "H-Scenes"
+      ],
+      "notes": null
+    }
   ],
 
   "queued": [
@@ -64,7 +82,13 @@
         "H-Scenes",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Eden* is composed of two arcs and a time gap in the middle.",
+        "Both arcs are very slow-paced and very little happens throughout.",
+        "At the worst of times the story is bland, and at the best of times the dialogue is like that of a sappy soap opera.",
+        "Maya was the only redeeming character in this sea emptiness,",
+        "although the standalone H-scenes were actually decent because they played out like mini heroine routes with actual story in them."
+      ]
     },
     {
       "title": "Sunrider Academy",
