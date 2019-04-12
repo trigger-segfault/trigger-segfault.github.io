@@ -47,16 +47,18 @@
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
       "image": "/anime/covers/vn/hoshiori.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
-      "score": 8.5,
+      "score": 9.2,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ null, 6 ],
       "endings": [ null, null ],
       "playtime": 8.08,
-      "start": null,
+      "start": "2019-4-9",
       "finish": null,
       "tags": [
-        "H-Scenes"
+        "H-Scenes",
+        "Concentrated Diabetes",
+        "Cried"
       ],
       "notes": null
     }
