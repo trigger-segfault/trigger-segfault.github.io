@@ -46,18 +46,17 @@
       "title": "Hoshi Ori Yume Mirai",
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
-      "image": "/anime/covers/vn/hoshiori.jpg",//"https://s.vndb.org/cv/22/3922.jpg",
-      "score": 9.2,
+      "image": "/anime/covers/vn/hoshiori.jpg",
+      "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ null, 6 ],
-      "endings": [ null, null ],
-      "playtime": 18.45,
+      "routes": [ 1, 6 ],
+      "endings": [ 1, 7 ],
+      "playtime": 30,
       "start": "2019-4-9",
       "finish": null,
       "tags": [
         "H-Scenes",
-        "Concentrated Diabetes",
         "Cried"
       ],
       "notes": null
@@ -96,7 +95,7 @@
       "title": "Sunrider Academy",
       "url": "https://vndb.org/v16221",
       "image": "/anime/covers/vn/sunrider-academy.jpg",//"https://s.vndb.org/cv/40/22940.jpg",
-      "score": 7.8,
+      "score": 8,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 4, 4 ],
@@ -108,7 +107,7 @@
         {
           "start": "2019-3-26",
           "finish": "2019-4-2",
-          "playtime": 24
+          "playtime": 25
         }
       ],
       "start": "2016-2-14",
@@ -160,7 +159,7 @@
       "score": 8.5,
       "progressType": "routes",
       "routes": [ 2, 2 ],
-      "playtime": 24,
+      "playtime": 25,
       "start": "2019-3-21",
       "finish": "2019-3-23", // 2019-3-22
       "tags": [
