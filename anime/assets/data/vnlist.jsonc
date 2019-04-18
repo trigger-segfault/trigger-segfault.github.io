@@ -64,6 +64,24 @@
   ],
 
   "queued": [
+    {
+      "title": "Natsuiro no Sunadokei",
+      "title_en": "Hourglass of Summer",
+      "url": "https://vndb.org/v32",
+      "image": "/anime/covers/vn/natsuiro-no-sunadokei.jpg",
+      "score": null,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ null, 5 ],
+      "endings": [ null, null ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "PS2 Emulator"
+      ],
+      "notes": null
+    }
   ],
 
   "completed": [
