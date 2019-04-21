@@ -60,28 +60,32 @@
         "Cried"
       ],
       "notes": null
-    }
-  ],
-
-  "queued": [
+    },
     {
       "title": "Natsuiro no Sunadokei",
       "title_en": "Hourglass of Summer",
       "url": "https://vndb.org/v32",
       "image": "/anime/covers/vn/natsuiro-no-sunadokei.jpg",
-      "score": null,
+      "score": 8.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ null, 5 ],
-      "endings": [ null, null ],
-      "playtime": null,
-      "start": null,
+      "endings": [ 2, null ],
+      // BAD ENDS:
+      // * Groped Kaho!?
+      // * Made Ai do the Dirty work and Kaho was not impressed
+      "playtime": 27,
+      "start": "2019-4-17",
       "finish": null,
       "tags": [
-        "DVD"
+        "DVD",
+        "Password Saves"
       ],
       "notes": null
     }
+  ],
+
+  "queued": [
   ],
 
   "completed": [
