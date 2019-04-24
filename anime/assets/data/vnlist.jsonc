@@ -69,16 +69,17 @@
       "score": 8.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 5 ],
-      "endings": [ 6, null ],
+      "routes": [ 2, 5 ],
+      "endings": [ 7, null ],
       // BAD ENDS:
       // * Groped Kaho!?
       // * Made Ai do the Dirty work and Kaho was not impressed
       // * AI bad A (Kaho dies)
       // * Ai bad B (Ai dies)
       // * Ai good
-      // * Tomo bad (reset)
-      "playtime": 40,
+      // * Tomo bad (both lead to same bad end)
+      // * Tomo good
+      "playtime": 42,
       "start": "2019-4-17",
       "finish": null,
       "tags": [
