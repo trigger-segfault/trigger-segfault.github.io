@@ -52,7 +52,7 @@
       "progressType2": "endings",
       "routes": [ 1, 6 ],
       "endings": [ 1, 7 ],
-      "playtime": 37,
+      "playtime": 42,
       "start": "2019-4-9",
       "finish": null,
       "tags": [
@@ -69,8 +69,8 @@
       "score": 8.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 5 ],
-      "endings": [ 7, null ],
+      "routes": [ 3, 5 ],
+      "endings": [ 8, null ],
       // BAD ENDS:
       // * Groped Kaho!?
       // * Made Ai do the Dirty work and Kaho was not impressed
@@ -79,7 +79,8 @@
       // * Ai good
       // * Tomo bad (both lead to same bad end)
       // * Tomo good
-      "playtime": 47,
+      // * Mana good
+      "playtime": 50,
       "start": "2019-4-17",
       "finish": null,
       "tags": [
