@@ -70,9 +70,9 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 3, 5 ],
-      "endings": [ 8, null ],
+      "endings": [ 9, null ],
       // BAD ENDS:
-      // * Groped Kaho!?
+      // * Groped Kaho!? TWICE!??
       // * Made Ai do the Dirty work and Kaho was not impressed
       // * AI bad A (Kaho dies)
       // * Ai bad B (Ai dies)
@@ -80,7 +80,8 @@
       // * Tomo bad (both lead to same bad end)
       // * Tomo good
       // * Mana good
-      "playtime": 50,
+      // * Mana bad
+      "playtime": 51,
       "start": "2019-4-17",
       "finish": null,
       "tags": [
