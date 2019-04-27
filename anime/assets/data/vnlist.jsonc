@@ -83,7 +83,7 @@
       // * Mana bad
       // * Lee Jane good
       // * Lee Jane bad
-      "playtime": 51,
+      "playtime": 55,
       "start": "2019-4-17",
       "finish": null,
       "tags": [
@@ -1551,6 +1551,24 @@
       "title": "Sunrider 4: The Captain's Return",
       "url": "https://vndb.org/v25544",
       "image": "/anime/covers/vn/sunrider-4.jpg",
+      "score": null,
+      "progressType": null,
+      "progressType2": null,
+      "routes": null,
+      "endings": null,
+      "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "X-Note",
+      "url": "https://vndb.org/v6915",
+      "image": "/anime/covers/vn/x-note.jpg",
       "score": null,
       "progressType": null,
       "progressType2": null,
