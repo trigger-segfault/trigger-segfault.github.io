@@ -69,18 +69,20 @@
       "score": 8.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 3, 5 ],
-      "endings": [ 9, null ],
+      "routes": [ 4, 5 ],
+      "endings": [ 11, null ],
       // BAD ENDS:
       // * Groped Kaho!? TWICE!??
       // * Made Ai do the Dirty work and Kaho was not impressed
+      // * Ai good
       // * AI bad A (Kaho dies)
       // * Ai bad B (Ai dies)
-      // * Ai good
       // * Tomo bad (both lead to same bad end)
       // * Tomo good
       // * Mana good
       // * Mana bad
+      // * Lee Jane good
+      // * Lee Jane bad
       "playtime": 51,
       "start": "2019-4-17",
       "finish": null,
