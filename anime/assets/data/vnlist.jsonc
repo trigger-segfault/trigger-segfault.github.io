@@ -66,11 +66,11 @@
       "title_en": "Hourglass of Summer",
       "url": "https://vndb.org/v32",
       "image": "/anime/covers/vn/natsuiro-no-sunadokei.jpg",
-      "score": 8.75,
+      "score": 8.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 4, 5 ],
-      "endings": [ 11, null ],
+      "endings": [ 14, 17 ],
       // BAD ENDS:
       // * Groped Kaho!? TWICE!??
       // * Made Ai do the Dirty work and Kaho was not impressed
@@ -83,7 +83,14 @@
       // * Mana bad
       // * Lee Jane good
       // * Lee Jane bad
-      "playtime": 58,
+      // * Mana hospitalized
+      // * Kotaro Hospitalized
+      // * Failed to romance anyone
+
+      // x Kaho good
+      // x Kaho bad 1
+      // x Kaho bad 2
+      "playtime": 60,
       "start": "2019-4-17",
       "finish": null,
       "tags": [
