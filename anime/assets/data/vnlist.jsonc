@@ -77,15 +77,23 @@
       "progressType2": "endings",
       "routes": [ 5, 5 ],
       "endings": [ 17, 17 ],
+      "completion": 100, // There is no completion stat, but I've torn this game apart enough to have seen absolutely everything it has to offer.
       "playtime": 64,
       "start": "2019-4-17",
       "finish": "2019-4-29",
       "tags": [
         "Cried",
         "DVD",
-        "Password Saves"
+        "Password Saves",
+        "Lee Jane Best Girl"
       ],
-      "notes": null
+      "notes": [
+        "Although the difficulty involved in attempting to play this VN is enough to deter most,",
+        "you'll quickly get used to the quirkiness of the visual novel developed to run on a goddamn DVD.",
+        "The rewards are charming CGs, cute and fun characters, and a fully voice protagonist.",
+        "The routes mostly take completely different paths and cover different parts of the time travel to create a full story.",
+        "My biggest complaint is that Lee Jane didn't get the full route she deserved."
+      ]
     },
     {
       "title": "Eden* They Were Only Two, On The Planet.",
