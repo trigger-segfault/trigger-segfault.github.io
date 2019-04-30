@@ -60,45 +60,6 @@
         "Cried"
       ],
       "notes": null
-    },
-    {
-      "title": "Natsuiro no Sunadokei",
-      "title_en": "Hourglass of Summer",
-      "url": "https://vndb.org/v32",
-      "image": "/anime/covers/vn/natsuiro-no-sunadokei.jpg",
-      "score": 8.5,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 4, 5 ],
-      "endings": [ 14, 17 ],
-      // BAD ENDS:
-      // * Groped Kaho!? TWICE!??
-      // * Made Ai do the Dirty work and Kaho was not impressed
-      // * Ai good
-      // * AI bad A (Kaho dies)
-      // * Ai bad B (Ai dies)
-      // * Tomo bad (both lead to same bad end)
-      // * Tomo good
-      // * Mana good
-      // * Mana bad
-      // * Lee Jane good
-      // * Lee Jane bad
-      // * Mana hospitalized
-      // * Kotaro Hospitalized
-      // * Failed to romance anyone
-
-      // x Kaho good
-      // x Kaho bad 1
-      // x Kaho bad 2
-      "playtime": 60,
-      "start": "2019-4-17",
-      "finish": null,
-      "tags": [
-        "Cried",
-        "DVD",
-        "Password Saves"
-      ],
-      "notes": null
     }
   ],
 
@@ -106,6 +67,26 @@
   ],
 
   "completed": [
+    {
+      "title": "Natsuiro no Sunadokei",
+      "title_en": "Hourglass of Summer",
+      "url": "https://vndb.org/v32",
+      "image": "/anime/covers/vn/natsuiro-no-sunadokei.jpg",
+      "score": 8,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 5, 5 ],
+      "endings": [ 17, 17 ],
+      "playtime": 64,
+      "start": "2019-4-17",
+      "finish": "2019-4-29",
+      "tags": [
+        "Cried",
+        "DVD",
+        "Password Saves"
+      ],
+      "notes": null
+    },
     {
       "title": "Eden* They Were Only Two, On The Planet.",
       "url": "https://vndb.org/v1286",
