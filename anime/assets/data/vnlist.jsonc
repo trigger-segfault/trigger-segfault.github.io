@@ -7,6 +7,8 @@
 
     // Opinion
     "score": "null, 1.0-10.0",
+    "eroge": true, // H-Scenes are often too damn long and worthy of being skipped
+    "eroge_score": "null, 0.0-INF", // Number of H-Scenes that weren't boring as hell
 
     // Progress
     "progressType": "null, routes, endings, episodes, sidestories",
@@ -47,17 +49,20 @@
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
       "image": "/anime/covers/vn/hoshiori.jpg",
-      "score": 7.5,
+      "score": 7,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 6 ],
-      "endings": [ 1, 7 ],
-      "playtime": 51,
+      "routes": [ 2, 6 ], // Natsuki, Touko
+      "endings": [ 3, 7 ],
+      "playtime": 62,
+      "eroge": true,
+      "eroge_score": 1,
       "start": "2019-4-9",
       "finish": null,
       "tags": [
         "H-Scenes",
-        "Cried"
+        "Cried",
+        "Slice of Life"
       ],
       "notes": null
     }
@@ -105,6 +110,8 @@
       "endings": [ 1, 1 ],
       "sidestories": [ 4, 4 ],
       "playtime": 18,
+      "eroge": true,
+      "eroge_score": 0,
       "start": "2019-4-5",
       "finish": "2019-4-8",
       "tags": [
@@ -131,6 +138,8 @@
       "achievements": [ 20, 20 ],
       "completion": 100,
       "playtime": 33,
+      "eroge": true,
+      "eroge_score": 0,
       "replays": [
         {
           "start": "2019-3-26",
@@ -163,6 +172,8 @@
       "endings": [ 19, 19 ],
       "achievements": [ 47, 52 ],
       "playtime": 28,
+      "eroge": true,
+      "eroge_score": 0.5,
       "start": "2019-3-23",
       "finish": "2019-3-25",
       "tags": [
@@ -214,6 +225,8 @@
       "endings": [ 1, 1 ],
       "achievements": [ 20, 20 ],
       "playtime": 37,
+      "eroge": true,
+      "eroge_score": 0,
       "start": "2019-3-17",
       "finish": "2019-3-18",
       "tags": [
@@ -318,6 +331,8 @@
       "sidestories": [ 8, 8 ],
       "completion": 100,
       "playtime": 42,
+      "eroge": true,
+      "eroge_score": 0,
       "start": "2019-1-25",
       "finish": "2019-2-4",
       "tags": [
@@ -386,6 +401,8 @@
       "progressType": "routes",
       "routes": [ 2, 2 ],
       "playtime": 13,
+      "eroge": true,
+      "eroge_score": 0,
       "start": "2019-1-3",
       "finish": "2019-1-6",
       "tags": [
@@ -465,6 +482,8 @@
       "routes": [ 6, 6 ],
       "endings": [ 7, 7 ],
       "playtime": 108,
+      "eroge": true,
+      "eroge_score": 2,
       "start": "2016-2-18",
       "finish": "2018-11-7",
       "tags": [
@@ -486,6 +505,8 @@
       "progressType": "endings",
       "endings": [ 25, 25 ],
       "playtime": 12,
+      "eroge": true,
+      "eroge_score": 2.5,
       "start": "2018-3-14",
       "finish": "2018-3-16",
       "tags": [
@@ -716,6 +737,8 @@
       "endings": [ 10, 10 ],
       "completion": 100,
       "playtime": 113,
+      "eroge": true,
+      "eroge_score": 1,
       "start": "2017-7-5",
       "finish": "2017-8-4",
       "tags": [
@@ -750,6 +773,8 @@
       "sidestories": [ 39, 39 ],
       "completion": 100,
       "playtime": 49,
+      "eroge": true,
+      "eroge_score": 1,
       "start": "2018-3-21",
       "finish": "2018-3-29",
       "tags": [
@@ -819,6 +844,8 @@
       "achievements": [ 20, 20 ],
       "completion": 100,
       "playtime": 67,
+      "eroge": true,
+      "eroge_score": 2,
       "start": "2016-1-23",
       "finish": "2018-3-3",
       "tags": [
@@ -903,6 +930,8 @@
       "endings": [ 1, 1 ],
       "achievements": [ 14, 14 ],
       "playtime": 8,
+      "eroge": true,
+      "eroge_score": 0,
       "start": "2018-3-6",
       "finish": "2018-3-7",
       "tags": [
