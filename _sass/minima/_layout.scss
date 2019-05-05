@@ -144,6 +144,40 @@ header .site-title a {
 		margin-left: -50px;
 	}
 }
+// Used to generate the Social Preview image for the GitHub Repo
+/*@media all {
+  .site-header {
+    width: 640px;
+  }
+  .site-title-header {
+    height: 310px;
+    border-bottom: 5px solid $grey-color-dark;
+  }
+  #title-fractal {
+    background-image: url("/assets/img/title-fractal-large-310.png");
+    background-size: 327px 310px;
+    width: 327px;
+    height: 310px;
+		margin-left: -90px;
+  }
+	header .site-title a {
+		flex-direction: column;
+	}
+	header .site-title h1, header .site-title h2 {
+		margin: 0;
+		font-weight: bold !important;
+	}
+	header .site-title h1 {
+		@include relative-font-size(1.9*2.5);
+	}
+	header .site-title h2 {
+		@include relative-font-size(1.45*2.5);
+	}
+	header .site-title span {
+    @include relative-font-size(1*2.0);
+    font-weight: normal;
+	}
+}*/
 .image-border {
   border: 1px solid $grey-color-light;
   border-radius: 3px;
