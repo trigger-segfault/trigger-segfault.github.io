@@ -240,7 +240,7 @@ pre,
 /**
  * Tables
  */
-table {
+/*table {
   margin-bottom: $spacing-unit;
   width: 100%;
   text-align: $table-text-align;
@@ -263,4 +263,54 @@ table {
   td {
     border: 1px solid $grey-color-light;
   }
+}*/
+/*
+ * Tables
+ */
+table {
+  margin-bottom: $spacing-unit;
+  //width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  tr {
+    background-color: $background-color;
+    &:nth-child(even) {
+      background-color: darken($background-color, 6%);
+    }
+  }
+  th, td {
+    border: 1px solid #dfe2e5;
+    //padding: 6px 13px;
+    padding: ($spacing-unit / 4) ($spacing-unit / 3);
+  }
+  strong, th {
+    font-weight: 600;
+  }
+  /*th {
+    //background-color: lighten($grey-color-light, 3%);
+    //border: 1px solid darken($grey-color-light, 4%);
+    //border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    //border: 1px solid $grey-color-light;
+  }*/
+}
+
+table.normal-table {
+  th, td {
+    font-weight: normal;
+  }
+}
+table.bold-table {
+  th, td {
+    font-weight: 600;
+  }
+}
+
+.figure-text {
+  text-align: center;
+  font-size: 80%;
+  color: $grey-color;
 }

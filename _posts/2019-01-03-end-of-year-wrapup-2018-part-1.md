@@ -2,7 +2,7 @@
 layout: post
 title:  "2018: End of Year Wrap-Up (Part 1)"
 date:   2019-01-03 13:50:00 -0500
-date_edited: 2019-01-03 14:24:00 -0500
+date_edited: 2019-05-05 16:00:00 -0400
 categories: [meta, dev, gaming]
 category: [meta, dev, gaming]
 tags: [wrap-up, pic]
