@@ -45,6 +45,26 @@
 
   "playing": [
     {
+      "title": "Shining Song Starnova",
+      "url": "https://vndb.org/v19322",
+      "image": "/anime/covers/vn/shining-song-starnova.jpg",
+      "score": 7.5,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 1, 7 ], // Nattan
+      "endings": [ 2, null ],
+      "playtime": 20,
+      "eroge": true,
+      "eroge_score": 0,
+      "start": "2019-5-8",
+      "finish": null,
+      "tags": [
+        "H-Scenes",
+        "Owned"
+      ],
+      "notes": null
+    },
+    {
       "title": "Hoshi Ori Yume Mirai",
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
