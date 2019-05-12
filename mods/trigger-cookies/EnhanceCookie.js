@@ -4,8 +4,8 @@ ENHANCE COOKIE MOD
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/CookieMods
-// Raw File:     https://raw.githubusercontent.com/trigger-death/CookieMods/master/EnhanceCookie.js
+// Repository:   https://github.com/trigger-segfault/CookieMods
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/CookieMods/master/EnhanceCookie.js
 
 
 // Based All function by /u/jakerman999 on Reddit.

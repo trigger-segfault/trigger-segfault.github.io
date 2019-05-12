@@ -4,7 +4,7 @@ TRIGGERNOTIFY MOD
 
 // Author:       Robert Jordan
 // Written For:  Ver 1.0.7.1
-// Repository:   https://github.com/trigger-death/trigger-death.github.io/tree/master/mods/trigger-notify
+// Repository:   https://github.com/trigger-segfault/trigger-segfault.github.io/tree/master/mods/trigger-notify
 
 /*=====================================================================================
 QUICK FUNCTIONS

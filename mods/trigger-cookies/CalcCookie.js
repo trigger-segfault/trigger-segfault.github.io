@@ -4,8 +4,8 @@ CALC COOKIE MOD
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/trigger-death.github.io/tree/master/TriggerCookies/
-// Raw File:     http://trigger-death.github.io/mods/trigger-cookies/CalcCookies.js
+// Repository:   https://github.com/trigger-segfault/trigger-segfault.github.io/tree/master/TriggerCookies/
+// Raw File:     http://trigger-segfault.github.io/mods/trigger-cookies/CalcCookies.js
 
 /*=====================================================================================
 QUICK FUNCTIONS

@@ -2,12 +2,12 @@
 layout: page
 title: OpenRCT2 Contributions
 permalink: /games/openrct2/
-description: Documentation of contributions trigger_death has made to OpenRCT2 over the years.
+description: Documentation of contributions trigger_segfault has made to OpenRCT2 over the years.
 image: /games/openrct2/assets/icon-256.png
 ---
 
-* **[Commit History](https://github.com/OpenRCT2/OpenRCT2/commits?author=trigger-death)**
-* **[Pull Request History](https://github.com/OpenRCT2/OpenRCT2/pulls?q=author%3Atrigger-death)**
+* **[Commit History](https://github.com/OpenRCT2/OpenRCT2/commits?author=trigger-segfault)**
+* **[Pull Request History](https://github.com/OpenRCT2/OpenRCT2/pulls?q=author%3Atrigger-segfault)**
 
 Before I started working for the OpenRCT2 team, I began working on my original RCT2 tool, the Content Browser. I worked with [X123M3-256](https://github.com/X123M3-256) over IRC to decipher the attraction .DAT file format, which he used to create his [RCT2 Ride Generator](https://github.com/X123M3-256/RCT2RideGenerator) and [many custom-made rides](http://x123m3-256.github.io/RCT2/CustomRides/). I started contributing to OpenRCT2 after I released my [GitHub Pages section for my RCT2 Tools](/tools/rct2-tools/) and someone recommended I help out.
 

@@ -4,8 +4,8 @@ COOKIES CLICKER HELPER
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/CookieMods
-// Raw File:     https://raw.githubusercontent.com/trigger-death/CookieMods/master/Overrides.js
+// Repository:   https://github.com/trigger-segfault/CookieMods
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/CookieMods/master/Overrides.js
 
 /*=====================================================================================
 HELPER DEFINITIONS
@@ -48,13 +48,13 @@ function IsModLoaded(name) {
 // Loads the Trigger Cookies Mod Manager.
 function LoadTriggerCookies() {
 	if (!IsModLoaded('TriggerCookies')) {
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/TriggerCookies.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/TriggerCookies.js');
 	}
 }
 // Loads the an original TriggerCookies mod if the it hasn't been loaded yet.
 function LoadTriggerCookiesMod(name) {
 	if (!IsModLoaded(name)) {
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/' + name + '.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/' + name + '.js');
 	}
 }
 // Returns true if the variable is defined and equals the value.

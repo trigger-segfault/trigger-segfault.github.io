@@ -20,7 +20,7 @@ Part two is long overdue, so here it so.
 
 # 2018
 
-## [Zelda Oracle Engine (Nov - Apr)](https://github.com/trigger-death/ZeldaOracle)
+## [Zelda Oracle Engine (Nov - Apr)](https://github.com/trigger-segfault/ZeldaOracle)
 
 <img class="center-image" src="/blog/assets/img/zelda-oracle.png" alt="Zelda Oracle Engine logo">
 
@@ -48,7 +48,7 @@ The physics engine got an overhaul along with monster API. Pretty much every wea
 
 It was great to get to work on this project again and great to work with my brother, who really knows what he's doing when he goes to implement something. The game wouldn't be even 1/10th as good as it is now without his help. cube_man worked mostly on the actual engine, while I worked more in the area of the editor and resource management. Most of my time went to gathering and compiling the [tile list we see here](/blog/assets/img/zelda-oracle-tile-list.png). The project went on hiatus in April after slowly losing interest, but I have no doubt we'll pick it up again in the future, assuming we have the time.
 
-## [Discord Bot: trigger_chan v1 (Apr - Oct)](https://github.com/trigger-death/TriggerChan)
+## [Discord Bot: trigger_chan v1 (Apr - Oct)](https://github.com/trigger-segfault/TriggerChan)
 
 <p class="center-text">The old avatar for Triggy before upgrading to my Bot Framework v2 with a new image.</p>
 
@@ -56,7 +56,7 @@ It was great to get to work on this project again and great to work with my brot
 
 On April 20th, a Discord server for an anime app I used opened up. Me and the developer knew each other from another server so he gave me the go-ahead to setup a bot for the server to manage basic stuff such as MyAnimeList profile embeds and roles. With this, I made my first trek into writing a Discord Bot, which ended up being a ton of fun. It was pretty basic at first, and the help embeds were *not very helpful*, but it got the job done.
 
-I decided on the name *trigger_chan* to play off my own username of *trigger_death* as well as her being the mascot for Studio Trigger.
+I decided on the name *trigger_chan* to play off my own username of *trigger_segfault* as well as her being the mascot for Studio Trigger.
 
 <img class="center-image" src="/blog/assets/img/postgresql-db.png" alt="PostgreSQL Database View">
 
@@ -78,7 +78,7 @@ With v1 of the bot framework, each command was stored in it's own entry identifi
 
 Unfortunately, in the beginning and even now, Triggy was still hosted locally on my Computer. I didn't move her to AWS until after the 2019 started, and I still haven't nailed down what to do once the free year is up.
 
-## [Discord Bot: trigger_chan v2 (Oct - present)](https://github.com/trigger-death/TriggerChan)
+## [Discord Bot: trigger_chan v2 (Oct - present)](https://github.com/trigger-segfault/TriggerChan)
 
 <p class="center-text">The new image for Triggy after upgrading to my Bot Framework v2. <a href="https://www.deviantart.com/zwimmy/art/Trigger-chan-711192608">The avatar is by Zwimmy</a>.</p>
 
@@ -90,15 +90,15 @@ During the upgrade, I switched from SQLite to PostgreSQL to allow more advanced 
 
 One of the other big changes to Triggy was migrating the audio player to using Lavalink, which does most of the hard work for you when it comes to playing audio. It supports YouTube and SoundCloud searches, as well as BandCamp, Twitch, and Vimeo urls.
 
-More in depth view on the current state of trigger_chan [can be found here](http://trigger-death.github.io/tools/trigger-chan/).
+More in depth view on the current state of trigger_chan [can be found here](http://trigger-segfault.github.io/tools/trigger-chan/).
 
-## [Grisaia Extract (May - Jun)](https://github.com/trigger-death/GrisaiaExtractor)
+## [Grisaia Extract (May - Jun)](https://github.com/trigger-segfault/GrisaiaExtractor)
 
 <img class="center-image" src="/blog/assets/img/grisaia-extract.png" alt="Grisaia Extract Console">
 
 I'd consider the Grisaia trilogy one of my favorite visual novel series of all time. I'd worked with extracting graphics from visual novels before, and [there were already existing tools to do it for CatSystem2 games like Grisaia](http://asmodean.reverse.net/pages/exkifint.html), but I wanted to make the experience *better* for Grisaia. This process evolved over time from simply wrapping existing programs, to rewriting the existing codebase to be incorporated into C# as a native library. I got started using the helpful existing info on categorization from the [/r/Grisaia ripping wiki page](https://www.reddit.com/r/grisaia/wiki/ripping). And after that I spent a lot of time sifting through images to figure out the pattern to their name, and where to move each of them programmatically. The tool was pretty much done in May, but I decided to actually make it presentable for release in June, because I didn't know how long it would take before I made a proper UI. Post-release many hotfixes have come to update categorization.
 
-## [TriggersTools.SteinsGate.Divergence (Jun)](https://github.com/trigger-death/TriggersTools.SteinsGate)
+## [TriggersTools.SteinsGate.Divergence (Jun)](https://github.com/trigger-segfault/TriggersTools.SteinsGate)
 
 <img class="center-image" src="/blog/assets/img/triggerstools-steinsgate-divergence.png" alt="Divergence Meter Examples">
 
@@ -110,7 +110,7 @@ I created a library to draw the iconic [Divergence Meters](https://steins-gate.f
 
 I'd seen these badges used a lot in other repos, but never went out of my way to find out more about them, once I finally learned what they were called in June, I proceeded to absolutely plaster them on pretty much every repository that was maintained or of use to some degree.
 
-## [Wiimote Experimentation (Jun - Sep)](https://github.com/trigger-death/WiimoteLib.Net)
+## [Wiimote Experimentation (Jun - Sep)](https://github.com/trigger-segfault/WiimoteLib.Net)
 
 <img class="center-image" src="/blog/assets/img/wiimote-controller.png" alt="Wiimote Controller Overlay">
 
@@ -136,13 +136,13 @@ My biggest problems with Windows 10 that still persist today are major graphical
 
 I'm just one of those *unlucky few people who have bad luck with Windows 10 on their build.*
 
-## [TriggersTools.Build (Jul)](https://github.com/trigger-death/TriggersTools.Build)
+## [TriggersTools.Build (Jul)](https://github.com/trigger-segfault/TriggersTools.Build)
 
 <img class="center-image" src="/blog/assets/img/triggerstools-build.png" alt="TriggersTools.Build NuGet Icons">
 
 I started futzing around with MSBuild Task NuGet packages to create a proper system for auto-updating the copyright year and keeping a build timestamp without having to manually set these up for every project. These build tasks have been really handy with the other projects I've worked on and allowed for additional laziness.
 
-## [WinDirStat.Net (Aug)](https://github.com/trigger-death/WinDirStat.Net)
+## [WinDirStat.Net (Aug)](https://github.com/trigger-segfault/WinDirStat.Net)
 
 <img class="center-image" src="/blog/assets/img/windirstat-net.png" alt="WinDirStat.Net">
 
@@ -150,25 +150,25 @@ WinDirStat is tried and true, but their UI is quite outdated at this point, and 
 
 I started work on creating a WPF implementation of WinDirStat and managed to get pretty far. This ended up being my first delve into MVVM, which was recommended by a friend. This also required *a lot* of code optimization and memory optimization. A lot of time was put into improving the UI responsiveness while still scanning, and generally improving the treeview render. The program came out quite nicely, but there are still some bugs to iron out and features to implement.
 
-## [TriggersTools.FileFind (Sep)](https://github.com/trigger-death/TriggersTools.FileFind)
+## [TriggersTools.FileFind (Sep)](https://github.com/trigger-segfault/TriggersTools.FileFind)
 
 <img class="center-image" src="/blog/assets/img/triggerstools-filefind.png" alt="TriggersTools.FileFind NuGet">
 
 I had to recreate file enumeration in WinDirStat because of a large number of flaws with the .NET implementation, including enumeration exceptions and slow speed due to waste of resources. This library allows traversing a Windows file tree in many different orders while avoiding security exceptions and wasting time on checks that don't need to be made. This also has the option of returning the actual file information acquired during the file enumeration so that it doesn't go to waste.
 
-## [TriggersTools.DirectoryCaseSensitivity (Sep)](https://github.com/trigger-death/TriggersTools.DirectoryCaseSensitivity)
+## [TriggersTools.DirectoryCaseSensitivity (Sep)](https://github.com/trigger-segfault/TriggersTools.DirectoryCaseSensitivity)
 
 <img class="center-image" src="/blog/assets/img/triggerstools-dircase.png" alt="TriggersTools.DirectoryCaseSensitivity NuGet">
 
 I'd started fiddling with Windows Subsystem for Linux and wanted to look into API support for Windows 10's new directory case-sensitivity functionality. Turns out there is no API for this in C#, or even in the Windows C API, we have to call low level `Nt` functions to get the proper info. I was able to whip up a C# API for getting this info, as well as `DirectoryInfo` extension methods. You can check, change, and create directories with case sentivity of either type without having to go through native calls yourself.
 
-## [WebScriptDisplay (Sep)](https://github.com/trigger-death/WebScriptDisplay)
+## [WebScriptDisplay (Sep)](https://github.com/trigger-segfault/WebScriptDisplay)
 
 <img class="center-image" src="/blog/assets/img/webscriptdisplay.png" alt="WebScriptDisplay Page">
 
 I got a request from my Dad to write a small page to display the results of cgi scripts on an [OpenVMS](https://en.wikipedia.org/wiki/OpenVMS) server for his work. I took the specifications and created a basic HTML page with Javascript that is easily modified to extend or add support for more scripts. The CSS style came later, but it was definitely an improvement over that of no CSS style. Apparently it's still on the server and in use today by other people, which is nice to hear.
 
-## [Visual Novel List for a Stats Freak (Oct - present)](http://trigger-death.github.io/anime/visualnovellist/)
+## [Visual Novel List for a Stats Freak (Oct - present)](http://trigger-segfault.github.io/anime/visualnovellist/)
 
 <img class="center-image" src="/blog/assets/img/vnlist.png" alt="Visual Novel List Page">
 
@@ -176,7 +176,7 @@ By this point in time, I had played a decent number of visual novels, and keepin
 
 You can follow updates to this list by subscribing to the endless *Update vnlist.jsonc, Update vnlist.jsonc, Update vnlist.jsonc* commits, that are absolutely flooding the commit history and burrying out anything meaningful.
 
-## [Grisaia Sprite Viewer (Nov - present)](https://github.com/trigger-death/GrisaiaSpriteViewer)
+## [Grisaia Sprite Viewer (Nov - present)](https://github.com/trigger-segfault/GrisaiaSpriteViewer)
 
 <p class="center-text">The first public post displaying the progress of the sprite viewer in alpha. A heaping mess that <i>just works</i>.</p>
 
@@ -184,8 +184,8 @@ You can follow updates to this list by subscribing to the endless *Update vnlist
 
 The Grisaia Sprite Viewer is an ongoing project to create a program to view and manipulate in-game Grisaia sprites by taking all image parts and combining them into a single image. CatSystem2 games like Grisaia store their image parts in thounsands of different images that only get more and more specific as you go down the list of lighting, distance, pose, and blush level. Added with the fact that many characters use sprite parts differently, an entire data file was needed to keep track of how image parts are used and what they're called. The Sprite Viewer didn't make its first release until 2019, so more coverge of that will be shown in next year's blog post.
 
-## [This Website Upgrade (Nov - present)](http://trigger-death.github.io/)
+## [This Website Upgrade (Nov - present)](http://trigger-segfault.github.io/)
 
 <img class="center-image" src="/blog/assets/img/site-header-small-2018.png" alt="Site Header">
 
-Before now, my personal GitHub Pages site was terribly underutilized and outright ignored most of the time. *It still is now,* but at least it gets some updates besides *Update vnlist.jsonc*. The previous iteration made use of my ancient Julia set Fractal Viewer program for the header so I decided to keep with this tradition, but go for a more minimal effect. The entire website's theme is pretty much a copy of the Jekyll's default Minima theme, but with some improvements and changes. There are also a few pages from the old site that stayed almost identical as they already had their own unique theme, such as the [RCT2 Tools](http://trigger-death.github.io/tools/rct2-tools/) and the [TriggerCookies (dead) mod](http://trigger-death.github.io/mods/trigger-cookies/).
+Before now, my personal GitHub Pages site was terribly underutilized and outright ignored most of the time. *It still is now,* but at least it gets some updates besides *Update vnlist.jsonc*. The previous iteration made use of my ancient Julia set Fractal Viewer program for the header so I decided to keep with this tradition, but go for a more minimal effect. The entire website's theme is pretty much a copy of the Jekyll's default Minima theme, but with some improvements and changes. There are also a few pages from the old site that stayed almost identical as they already had their own unique theme, such as the [RCT2 Tools](http://trigger-segfault.github.io/tools/rct2-tools/) and the [TriggerCookies (dead) mod](http://trigger-segfault.github.io/mods/trigger-cookies/).

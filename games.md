@@ -13,7 +13,7 @@ projects:
     description: "I worked on OpenRCT2's development during the summer of 2015 and 2017. I implemented a numerous features such as the game speed buttons, window theming, title sequence editing, in-game object selection, and changing an entrance's path in the scenario editor, and even the drawing of the logo on the title screen."
   -
     title: "Zelda Oracle Engine"
-    url: https://github.com/trigger-death/ZeldaOracle
+    url: https://github.com/trigger-segfault/ZeldaOracle
     image: /games/previews/zelda-oracle-engine.png
     description: "Zelda Oracle Engine is a recreation of the original Oracle of Ages/Seasons games with XNA with me and my brother. We have had a history of recreating the Oracle game engine ever since we were kids. We've done it in GameMaker, Java, and now we're moving onto XNA."
   -

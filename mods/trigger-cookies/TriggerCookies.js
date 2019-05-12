@@ -4,8 +4,8 @@ TRIGGER COOKIES MODS
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/CookieMods
-// Raw File:     https://raw.githubusercontent.com/trigger-death/CookieMods/master/TriggerCookies.js
+// Repository:   https://github.com/trigger-segfault/CookieMods
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/CookieMods/master/TriggerCookies.js
 
 /*=====================================================================================
 QUICK FUNCTIONS
@@ -110,7 +110,7 @@ TriggerCookies.Init = function () {
 
 		var str = '';
 		
-		str += '<a class="changeLogButton" href="http://trigger-death.github.io/mods/trigger-cookies/changelog/#v1-0-2-6", target="_blank">Change Log</a>';
+		str += '<a class="changeLogButton" href="http://trigger-segfault.github.io/mods/trigger-cookies/changelog/#v1-0-2-6", target="_blank">Change Log</a>';
 
 		str += '<div class="section">' + 'Trigger Cookies'.fontcolor('cyan') +
 			'<div style="font-size: 20px;">v1.0.2.6 ' + 'beta'.fontcolor('#4B8') + '</div>' + '</div>';

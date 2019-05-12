@@ -14,7 +14,7 @@ preview: /blog/assets/img/hourglasspass.png
 {:align="center"}
 ![Example Password](/blog/assets/img/hourglasspass.png)
 
-I've worked on reverse engineering binary file formats before, and it can be quite difficult at times. That said, I've never tried to decipher a text-based format, even if it was as small as an 8-letter password. The full documentation explained in this post can be found on the [Hourglass of Summer: Documentation Wiki](https://github.com/trigger-death/HourglassPassword/wiki).
+I've worked on reverse engineering binary file formats before, and it can be quite difficult at times. That said, I've never tried to decipher a text-based format, even if it was as small as an 8-letter password. The full documentation explained in this post can be found on the [Hourglass of Summer: Documentation Wiki](https://github.com/trigger-segfault/HourglassPassword/wiki).
 
 Special thanks go to [Porcupine's Detailed Walkthrough](https://gamefaqs.gamespot.com/dvd/924699-hourglass-of-summer/faqs/35923) as it was essential in speeding up my work, thanks to it's extensive listing of passwords and scene Title-Chapters.
 
@@ -40,7 +40,7 @@ Notes that were taken for Scene passwords as they were encountered during regula
 {:align="center"}
 ![Password Notes](/blog/assets/img/hourglass-password-notes.png)
 
-To see how much the password could vary without any changes in game data, I kept closing and opening the password menu to see what changed each time, and what it changed to. It boiled down to 10 letters in the same spots that would freely change between one another whenever I opened the menu. There was one other spot in the password that had different letter randomization, but I only looked into that later. This led to the first discovery of the what I called **[Garbage Letters](https://github.com/trigger-death/HourglassPassword/wiki/Password-Structure#garbage-letters)**, which are letters that represent unused or uninitialized data. Because I doubt any real RNG existed in the game, I expected that this password randomization was based on the timestamp in the pause menu when opening the password menu.
+To see how much the password could vary without any changes in game data, I kept closing and opening the password menu to see what changed each time, and what it changed to. It boiled down to 10 letters in the same spots that would freely change between one another whenever I opened the menu. There was one other spot in the password that had different letter randomization, but I only looked into that later. This led to the first discovery of the what I called **[Garbage Letters](https://github.com/trigger-segfault/HourglassPassword/wiki/Password-Structure#garbage-letters)**, which are letters that represent unused or uninitialized data. Because I doubt any real RNG existed in the game, I expected that this password randomization was based on the timestamp in the pause menu when opening the password menu.
 
 {:align="center" .figure-text}
 These are the letters determined to be Garbage Letters.
@@ -86,7 +86,7 @@ You reach this screen and are presented with *flawless English* when the passwor
 
 ### Determined Letter Values
 
-The following **[Valid Letters](https://github.com/trigger-death/HourglassPassword/wiki/Password-Structure#valid-letters)** were then tested and confirmed to represent these values. I was correct in the assumption that **Z** stood for zero although most of my other guesses were proven wrong.
+The following **[Valid Letters](https://github.com/trigger-segfault/HourglassPassword/wiki/Password-Structure#valid-letters)** were then tested and confirmed to represent these values. I was correct in the assumption that **Z** stood for zero although most of my other guesses were proven wrong.
 
 {:align="center"}
 |  #  |Bin   |Hex|Dec
@@ -148,7 +148,7 @@ The first time I tried to make use of everything I had learned, and the flags I 
 
 For now I had always assumed that the first flag letter (and 4th letter in the password) **F<sup>4</sup>** was a special letter where the operations of OR and AND are reversed. This letter started out as **X** (all bits set) and slowly lowered in value over time. Messing around with it also proved that it would trigger the Password Input Menu to reject the password. At this point I had no idea how complex the input validator was, but I wanted to fully understand how it worked. I tried seeing if it could function as some sort of checksum based on the rest of the letters in the password. After looking at its change in value through all of the recorded flag operations and scene passwords, I started noticing that it was often changed just during flag operations, but not always. Trying to figure out why it changed, I noticed that one letter was always being changed to or from a garbage letter during every change to the fourth letter.
 
-After furthur investigation, I confirmed that this checksum letter had everything to do with the garbage letters. The next step was figuring out how it was generated and how to take it apart. After looking at the changes in the letter's bits, only one bit changed every time the checksum changed, this lead to the conclusion that each bit corresponded to a single potential garbage letter in the password. This was quickly confirmed by messing around with the Password Input Menu and generating valid passwords through changing the checksum and potential garbage letters. This is when the term **[Garbage Checksum](https://github.com/trigger-death/HourglassPassword/wiki/Password-Structure#garbage-checksum)** was coined to describe the letter's behavior. Each *nth* bit in the letter is set, when the *nth* potential garbage letter in the password is a garbage letter.
+After furthur investigation, I confirmed that this checksum letter had everything to do with the garbage letters. The next step was figuring out how it was generated and how to take it apart. After looking at the changes in the letter's bits, only one bit changed every time the checksum changed, this lead to the conclusion that each bit corresponded to a single potential garbage letter in the password. This was quickly confirmed by messing around with the Password Input Menu and generating valid passwords through changing the checksum and potential garbage letters. This is when the term **[Garbage Checksum](https://github.com/trigger-segfault/HourglassPassword/wiki/Password-Structure#garbage-checksum)** was coined to describe the letter's behavior. Each *nth* bit in the letter is set, when the *nth* potential garbage letter in the password is a garbage letter.
 
 {:align="center" .figure-text}
 Each bit in the Garbage Checksum is set when the specified letter is a garbage letter.
@@ -164,7 +164,7 @@ Although this didn't directly explain *how* the Password Input Glitch occurred, 
 
 Once I had discovered that **Z** was a valid replacement for the first potential garbage letter, and changing the garbage checksum actually produced a valid result, I tested if other letters could be **Z** instead of garbage letters. **Z** could replace *any* potential garbage letter! This meant that password input could be simplified **even more**, `AZZZZZZZ` was a completely valid password that would take you to the very beginning of the game! It complied with all of the rules, and even supplied the correct flags for that point in time. This was a game changer, as it opened up a whole new way to easily and lazily input passwords.
 
-Once this point was reached, the documentation for the **[Password Structure](https://github.com/trigger-death/HourglassPassword/wiki/Password-Structure#structure-of-a-password)** was completed and corrected.
+Once this point was reached, the documentation for the **[Password Structure](https://github.com/trigger-segfault/HourglassPassword/wiki/Password-Structure#structure-of-a-password)** was completed and corrected.
 
 ### Branching Scene IDs
 
@@ -192,7 +192,7 @@ The final *AHAH* moment was when I discovered the truth of the many strange beha
 
 **X** *is and can* be used as a valid letter at **C<sup>4</sup>** or **F<sup>8</sup>**, but it turns out that the only way to do it right, is by entering it in *before* entering in the previous 3 letters. If the password input navigation arrows didn't exist, this would make the bug much more troublesome and impossible to fix in certain situations.
 
-After encountering this, I learned how to trigger the crash. Apparently Garbage letters behave differently when overwritten by the *now labeled* **[Propagating X Input](https://github.com/trigger-death/HourglassPassword/wiki/Password-Input-Glitches#propagating-x-input-invalid-x)** glitch. This special behavior also helps because it keeps the garbage letters as such and allows the garbage checksum to stay valid. The problem with these garbage letters, is if you navigate to them in the Password Input Menu *after* Propagating X Input overwrites it, the game will crash (at least on the player I used).
+After encountering this, I learned how to trigger the crash. Apparently Garbage letters behave differently when overwritten by the *now labeled* **[Propagating X Input](https://github.com/trigger-segfault/HourglassPassword/wiki/Password-Input-Glitches#propagating-x-input-invalid-x)** glitch. This special behavior also helps because it keeps the garbage letters as such and allows the garbage checksum to stay valid. The problem with these garbage letters, is if you navigate to them in the Password Input Menu *after* Propagating X Input overwrites it, the game will crash (at least on the player I used).
 
 {:align="center" .figure-text}
 What the input looks like before Propagating X.

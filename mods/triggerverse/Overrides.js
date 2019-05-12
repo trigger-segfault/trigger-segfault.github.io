@@ -4,8 +4,8 @@ JAVASCRIPT OVERRIDES
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/trigger-death.github.io/
-// Raw File:     https://raw.githubusercontent.com/trigger-death/trigger-death.github.io/master/mods/Overrides.js
+// Repository:   https://github.com/trigger-segfault/trigger-segfault.github.io/
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/trigger-segfault.github.io/master/mods/Overrides.js
 
 /*=====================================================================================
 OVERRIDES DEFINITIONS

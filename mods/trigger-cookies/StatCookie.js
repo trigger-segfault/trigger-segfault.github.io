@@ -4,8 +4,8 @@ AUTO-COOKIE MOD
 
 // Author:       Robert Jordan
 // Written For:  v.1.0501 beta
-// Repository:   https://github.com/trigger-death/CookieMods
-// Raw File:     https://raw.githubusercontent.com/trigger-death/CookieMods/master/StatCookie.js
+// Repository:   https://github.com/trigger-segfault/CookieMods
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/CookieMods/master/StatCookie.js
 
 // Based off "Cookieclicker Bots".
 // Link: https://gist.githubusercontent.com/pernatiy/38bc231506b06fd85473/raw/cc.js

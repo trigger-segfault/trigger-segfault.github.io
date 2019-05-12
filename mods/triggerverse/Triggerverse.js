@@ -3,8 +3,8 @@ TRIGGERVERSE MOD
 =======================================================================================*/
 
 // Author:       Robert Jordan
-// Repository:   https://github.com/trigger-death/trigger-death.github.io/
-// Raw File:     https://raw.githubusercontent.com/trigger-death/trigger-death.github.io/master/mods/triggerverse/Triggerverse.js
+// Repository:   https://github.com/trigger-segfault/trigger-segfault.github.io/
+// Raw File:     https://raw.githubusercontent.com/trigger-segfault/trigger-segfault.github.io/master/mods/triggerverse/Triggerverse.js
 
 /*=====================================================================================
 QUICK FUNCTIONS

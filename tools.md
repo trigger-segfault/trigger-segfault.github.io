@@ -23,12 +23,12 @@ projects:
     description: "I play Gen 3 a lot and I decided hoarding Pokémon and items was a pain when storage space was so limited, that and trading takes forever. So I created a PokéBank-like program for hoarding, trading, and managing Pokémon, Items, Pokéblocks, Mail, and Decorations. Trigger's PC is a tool designed for legit purposes. There really aren't enough tools for legit-play out there sadly. However, note it does extend some of the boundaries of the game to increase replayability and customization."
   -
     title: "WinDirStat.Net (WIP)"
-    url: https://github.com/trigger-death/WinDirStat.Net
+    url: https://github.com/trigger-segfault/WinDirStat.Net
     image: /tools/previews/windirstat-net.png
     description: "A .NET/WPF implementation of WinDirStat with a cleaner UI that does less freezing up. Also faster than the original but there are other implementations that do the same."
   -
     title: "Grisaia Extract"
-    url: https://github.com/trigger-death/GrisaiaExtractor
+    url: https://github.com/trigger-segfault/GrisaiaExtractor
     image: /tools/previews/grisaia-extract.png
     description: "A ripping tool (Primarily for images) for the Grisaia games. (Phantom Trigger not supported) This is basically a polished, easy-to-use wrapper for existing programs that extract Grisaia files. (Although much of the original code has been ported to C#)"
   -
@@ -43,7 +43,7 @@ projects:
     description: "This is a program I created to simplify collecting power-ups in the Metroid Prime series. Each power-up is displayed on its map with instructions on how to acquire it. Many thanks to Falcon Zero for letting me use his maps and guides he created for the 3 games."
   -
     title: "Ascii Artist (Forever a WIP)"
-    url: https://github.com/trigger-death/AsciiArtist
+    url: https://github.com/trigger-segfault/AsciiArtist
     image: /tools/previews/ascii-artist.png
     description: "A program for creating and saving images drawn in the console using ASCII characters and colors. This program has gone through numerous versions. I often use it as a grid-based level editor."
   -

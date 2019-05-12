@@ -23,11 +23,11 @@ description: >- # this means to ignore newlines until "baseurl:"
   that don't already have dedicated pages. I'm developer that's fluent with
   C#, C/C++, Java, and ActionScript, although I spend most of my time working
   in C# and haven't worked with Java in ages.
-tags: [trigger_death,trigger,robert,jordan,game,program,programming,tool,development]
+tags: [trigger_death,trigger_segfault,trigger,robert,jordan,game,program,programming,tool,development]
 theme_color: "#00C6D8"
 
 # Contacts
-github_username: trigger-death
+github_username: trigger-segfault
 reddit_username: trigger_death
 steam_username: trigger_death
 discord_name: trigger_development
@@ -41,7 +41,7 @@ vndb_userid: 155981
 mfc_username: trigger_death
 
 # Settings
-url: "https://trigger-death.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://trigger-segfault.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 show_excerpts: true # Show summaries on blog listings
 google_analytics: UA-129364070-1
 
@@ -74,7 +74,7 @@ defaults:
     values:
       title_postfix: Trigger's Tools & Games
       image: /assets/icon-256.png
-      tags: [trigger_death,trigger,robert jordan,game,program,programming,tool,development]
+      tags: [trigger_death,trigger_segfault,trigger,robert jordan,game,program,programming,tool,development]
   -
     scope:
       path: "tools/rct2-tools"
@@ -82,7 +82,7 @@ defaults:
       layout: "rct2-tools"
       title_postfix: Trigger's RCT2 Tools
       image: /tools/rct2-tools/assets/icon-256.png
-      tags: [trigger_death,trigger,robert jordan,rct2,rollercoaster,tycoon,2,openrct2]
+      tags: [trigger_death,trigger_segfault,trigger,robert jordan,rct2,rollercoaster,tycoon,2,openrct2]
   -
     scope:
       path: "mods/trigger-cookies"
@@ -90,7 +90,7 @@ defaults:
       layout: "trigger-cookies"
       title_postfix: An outdated Cookie Clicker mod
       image: /mods/trigger-cookies/assets/icon-256.png
-      tags: [trigger_death,trigger,robert jordan,cookies,triggercookies,cookie,clicker,mod]
+      tags: [trigger_death,trigger_segfault,trigger,robert jordan,cookies,triggercookies,cookie,clicker,mod]
 
 collections:
   posts:

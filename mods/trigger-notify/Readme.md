@@ -8,7 +8,7 @@ permalink: /mods/trigger-notify/
 
 * **Author:**         Robert Jordan
 * **Version:**        v1.1.0.0
-* **Source Code:**    [GitHub](https://github.com/trigger-death/trigger-death.github.io/tree/master/mods/trigger-notify/)
+* **Source Code:**    [GitHub](https://github.com/trigger-segfault/trigger-segfault.github.io/tree/master/mods/trigger-notify/)
 
 TriggerNotify is a simple mod for Kittens Game that alerts the user with a sound when a resource hits its limit. Each resource has a unique sound when hit so it's differentiable while multitasking. The mod comes with a menu for customization. You can mute specific resources or use a custom sound for a resource. Resources will not show up in the menu unless the resources has been discovered to prevent spoilers.
 
@@ -30,7 +30,7 @@ If your browser allows loading of local audio files you can paste the file path 
 ```javascript
 javascript: (function () {
     var mod = document.createElement('script');
-    mod.src = 'http://trigger-death.github.io/mods/trigger-notify/TriggerNotify.js';
+    mod.src = 'http://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
     mod.id = 'modscript_TriggerNotify';
     document.head.appendChild(mod);
 })();
@@ -43,7 +43,7 @@ javascript: (function () {
     var checkReady = setInterval(function () {
       clearInterval(checkReady);
       var mod = document.createElement('script');
-      mod.src = 'http://trigger-death.github.io/mods/trigger-notify/TriggerNotify.js';
+      mod.src = 'http://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
       mod.id = 'modscript_TriggerNotify';
       document.head.appendChild(mod);
     }, 400);

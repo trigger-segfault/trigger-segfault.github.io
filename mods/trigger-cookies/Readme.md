@@ -20,12 +20,12 @@ TriggerCookies is a large mod suite made in the style of [CookieMaster](https://
 ```javascript
 javascript: (function () {
     console.log("Loading Trigger Cookies");
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/TriggerCookies.js');
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/EnhanceCookie.js');
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/AutoCookie.js');
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/StatCookie.js');
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/CheatCookie.js');
-    Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/HotfixCookie.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/TriggerCookies.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/EnhanceCookie.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/AutoCookie.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/StatCookie.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/CheatCookie.js');
+    Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/HotfixCookie.js');
 }());
 ```
 
@@ -37,12 +37,12 @@ javascript: (function () {
         if (typeof Game.ready !== 'undefined' && Game.ready) {
         clearInterval(checkReady);
         console.log("Loading Trigger Cookies");
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/TriggerCookies.js');
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/EnhanceCookie.js');
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/AutoCookie.js');
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/StatCookie.js');
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/CheatCookie.js');
-        Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/HotfixCookie.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/TriggerCookies.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/EnhanceCookie.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/AutoCookie.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/StatCookie.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/CheatCookie.js');
+        Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/HotfixCookie.js');
     }}, 100);
 }());
 ```
@@ -55,9 +55,9 @@ javascript: (function () {
 
 ## Features
 
-* Modular Support: Take a look at [ExampleMod.js](https://github.com/trigger-death/trigger-death.github.io/blob/master/mods/trigger-cookies/ExampleMod.js).
+* Modular Support: Take a look at [ExampleMod.js](https://github.com/trigger-segfault/trigger-segfault.github.io/blob/master/mods/trigger-cookies/ExampleMod.js).
 * Number Places: Write number places such as *billion*/*b*, *octillion*/*oc* in text boxes instead of entering in all those '0's.
-* Overrides: Comes with [Overrides.js](https://github.com/trigger-death/trigger-death.github.io/blob/master/mods/trigger-cookies/Overrides.js) which allows for handling overriding and appending to Cookie Clicker functions. Also outputs to the console log to see who is overriding functions and if conflicts occur.
+* Overrides: Comes with [Overrides.js](https://github.com/trigger-segfault/trigger-segfault.github.io/blob/master/mods/trigger-cookies/Overrides.js) which allows for handling overriding and appending to Cookie Clicker functions. Also outputs to the console log to see who is overriding functions and if conflicts occur.
 * *Third-party* Achievement: Hey guess what!? This is a mod you're using! So why not receive the plugin shadow achievement?
 * Favicon: Set the favicon to a cookie, which it should have been all along.
 

@@ -13,7 +13,7 @@ permalink: /tools/trigger-chan/
 </style>
 
 * **Version:**        v2.0
-* **Source Code:**    [GitHub](https://github.com/trigger-death/TriggerChan)
+* **Source Code:**    [GitHub](https://github.com/trigger-segfault/TriggerChan)
 * **Avatar:**         [Zwimmy 2017](https://www.deviantart.com/zwimmy/art/Trigger-chan-711192608)
 
 

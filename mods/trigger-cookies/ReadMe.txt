@@ -24,7 +24,7 @@ Author:         Robert Jordan
 Version:        v0.1.0.0
 Last Updated:   11/24/2014
 --------------------------------
-Repository:     https://github.com/trigger-death/CookieMods
+Repository:     https://github.com/trigger-segfault/CookieMods
 
 ================================================
  Game Requirements
@@ -53,13 +53,13 @@ Bookmarklet
 javascript: (function () {
 	console.log("Loading Trigger Cookies");
 
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/TriggerCookies.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/TriggerCookies.js');
 	
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/EnhanceCookie.js');
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/AutoCookie.js');
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/StatCookie.js');
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/CheatCookie.js');
-	Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/HotfixCookie.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/EnhanceCookie.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/AutoCookie.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/StatCookie.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/CheatCookie.js');
+	Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/HotfixCookie.js');
 }());
 
 ================================================
@@ -72,13 +72,13 @@ javascript: (function () {
 		clearInterval(checkReady);
 		console.log("Loading Trigger Cookies");
 
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/TriggerCookies.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/TriggerCookies.js');
 	
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/EnhanceCookie.js');
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/AutoCookie.js');
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/StatCookie.js');
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/CheatCookie.js');
-		Game.LoadMod('http://trigger-death.github.io/mods/trigger-cookies/HotfixCookie.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/EnhanceCookie.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/AutoCookie.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/StatCookie.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/CheatCookie.js');
+		Game.LoadMod('http://trigger-segfault.github.io/mods/trigger-cookies/HotfixCookie.js');
 	}
 	}, 100);
 }());
