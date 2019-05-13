@@ -27,7 +27,7 @@ I almost exclusively use [Paint.NET](https://www.getpaint.net/) for editing imag
 
 ### My Username and Avatar
 
-My username is a play on the [Source SDK](https://developer.valvesoftware.com/wiki/SDK_Docs) brush entity: [`trigger_hurt`](https://developer.valvesoftware.com/wiki/Trigger_hurt). I've had the name for around 10 or so years and the avatar for a few years less. Before that I used to use the actual Source SDK [`trigger`](https://developer.valvesoftware.com/wiki/Tool_textures#trigger) texture as my avatar. It's a little bit of a silly name now that look back on it, but I won't ever be changing it because it's my name and it's actually unique. I've never had to postfix numbers to the end of it when signing up online and that is enough for me.
+My username is a play on the [Source SDK](https://developer.valvesoftware.com/wiki/SDK_Docs) brush entity: [`trigger_hurt`](https://developer.valvesoftware.com/wiki/Trigger_hurt). I've had the name for around 10 or so years and the avatar for a few years less. Before that I used to use the actual Source SDK [`trigger`](https://developer.valvesoftware.com/wiki/Tool_textures#trigger) texture as my avatar. The postfix of the name was changed from *death* to *segfault* in mid 2019 to move away from the gamer tag theme before. It's a little bit of a silly name now that look back on it, but I won't ever be changing it because it's my name and it's actually unique. I've never had to postfix numbers to the end of it when signing up online and that is enough for me.
 
 ### Notable Works
 

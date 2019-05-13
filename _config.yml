@@ -28,17 +28,19 @@ theme_color: "#00C6D8"
 
 # Contacts
 github_username: trigger-segfault
-reddit_username: trigger_death
-steam_username: trigger_death
+reddit_username: trigger_segfault
+steam_username: trigger_segfault
+steam_url: trigger_death
 discord_name: trigger_development
 discord_invite: https://discord.gg/vB7jUbY
-youtube_channel_name: Trigger_Death
+youtube_channel_name: trigger_segfault
 youtube_channel: UCGQ4ksvfuzCeVbDplBc5yhg
-mal_username: trigger_death
-anilist_username: triggerdeath
-vndb_username: trigger-death
-vndb_userid: 155981
-mfc_username: trigger_death
+mal_username: trigger_segfault
+anilist_username: triggersegfault
+vndb_username: triggersegfault
+vndb_userid: 162862
+mfc_username: trigger_segfault
+linkedin_username: robert-g-jordan
 
 # Settings
 url: "https://trigger-segfault.github.io" # the base hostname & protocol for your site, e.g. http://example.com

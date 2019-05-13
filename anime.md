@@ -17,16 +17,16 @@ work_in_progress: true
 
 ## Lists
 
-#### **[Anime List](https://myanimelist.net/animelist/trigger_death)**
+#### **[Anime List](https://myanimelist.net/animelist/{{ site.mal_username }})**
 
-#### **[Manga List](https://myanimelist.net/mangalist/trigger_death)**
+#### **[Manga List](https://myanimelist.net/mangalist/{{ site.mal_username }})**
 
 ## Profiles
 
-#### **[MyAnimeList](https://myanimelist.net/profile/trigger_death)**
+#### **[MyAnimeList](https://myanimelist.net/profile/{{ site.mal_username }})**
 
-#### **[AniList](https://anilist.co/user/triggerdeath/)**
+#### **[AniList](https://anilist.co/user/{{ site.anilist_username }}/)**
 
-#### **[MyFigureCollection](https://myfigurecollection.net/profile/trigger_death)**
+#### **[MyFigureCollection](https://myfigurecollection.net/profile/{{ site.mfc_username }})**
 
-#### **[VNDb](https://vndb.org/u155981)**
+#### **[VNDb](https://vndb.org/u{{ site.vndb_userid }})**

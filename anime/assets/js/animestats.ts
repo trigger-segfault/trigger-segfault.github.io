@@ -10,7 +10,7 @@ namespace AnimeStats {
 });*/
 
 /*require(['jikanjs'], function(jikanjs) {
-	jikanjs.loadUser('trigger_death').then(function (response) {
+	jikanjs.loadUser('trigger_segfault').then(function (response) {
 		console.log(response);
 	}).catch(function () {
 		// handle error
