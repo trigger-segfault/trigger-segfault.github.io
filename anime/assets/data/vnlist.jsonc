@@ -51,15 +51,17 @@
       "score": 7.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 1, 7 ], // Nattan
-      "endings": [ 2, null ],
-      "playtime": 20,
+      "routes": [ 2, 7 ], // Nattan
+      "endings": [ 4, null ],
+      "achievements": [ 4, 9 ],
+      "playtime": 31,
       "eroge": true,
       "eroge_score": 0,
       "start": "2019-5-8",
       "finish": null,
       "tags": [
         "H-Scenes",
+        "Cried",
         "Owned"
       ],
       "notes": null
