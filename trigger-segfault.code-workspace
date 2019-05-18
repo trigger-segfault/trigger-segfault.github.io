@@ -18,7 +18,7 @@
     "spellright.ignoreFiles": [
       "**/.gitignore",
       "**/.spellignore",
-      "GitHub-Pages.code-workspace",
+      "trigger-segfault.code-workspace",
       "Gemfile*",
       "tsconfig.json",
       ".markdownlint.json"
