@@ -2,6 +2,7 @@
 layout: page
 title: Trigger's Terraria Tools
 permalink: /tools/terraria-tools/
+description: A list of all tools and applications for Terraria created by trigger_segfault.
 ---
 
 #### **[Midi Player](https://forums.terraria.org/index.php?threads/terraria-midi-player-play-songs-through-terrarian-instruments.61257/)**

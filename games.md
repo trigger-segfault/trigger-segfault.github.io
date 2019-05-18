@@ -5,6 +5,8 @@
 layout: projects
 title: Games
 permalink: /games/
+description: A list of all notable games developed by trigger_segfault, or that trigger_segfault has contributed to.
+date_edited: 2018-11-21 12:00:00 -0400
 projects:
   -
     title: "OpenRCT2 Contributions"

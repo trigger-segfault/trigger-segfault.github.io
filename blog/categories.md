@@ -2,6 +2,7 @@
 layout: page
 title: Blog Categories
 permalink: /blog/categories/
+description: A list of categories for trigger_segfault's blog posts. Filter out the junk you don't want! ✓
 ---
 
 <!--<div id="categories">
@@ -25,6 +26,8 @@ permalink: /blog/categories/
   {% endfor %}
 </div>-->
 
+<p>{{ page.description | escape }}</p>
+
 <ul class="post-list blog-categories">
   <!--<li>
     {%- assign post_count = site.posts.size | default: 0 -%}
@@ -35,6 +38,17 @@ permalink: /blog/categories/
     {%- endif -%}
     <h3><a class="post-link" href="{{ '/blog/all/' | relative_url }}">All Blog Posts</a></h3>
   </li>-->
+  <li>
+    {%- assign category = site.pages | where: "permalink", "/blog/" | first -%}
+    {%- assign post_count = site.posts.size | default: 0 -%}
+    {%- if post_count == 1 -%}
+      <span class="post-meta">{{ post_count }} Post</span>
+    {%- else -%}
+      <span class="post-meta">{{ post_count }} Posts</span>
+    {%- endif -%}
+    <h3><a class="post-link" href="{{ '/blog/' | absolute_url }}">Entire Blog</a></h3>
+    <p>{{ category.description | escape }}</p>
+  </li>
   {% for category in site.pages %}
     {%- if category.category and category.layout == "home" -%}
       <li>

@@ -15,4 +15,5 @@ Now that I'm running my GitHub Pages site through Jekyll, I may as well take adv
 
 Editing out the text "Pic" in this CG took quite some time. But I'm happy with the result, even if you can clearly see it's modified near the "o" in "Post". Source is [Grisaia no Meikyuu](https://vndb.org/v7723).
 
-<img class="center-image" width="512" src="/blog/assets/img/first-post-michiru-yuuji.png" alt="First Post Hype CG">
+{:align="center" width="512"}
+![First Post Hype CG](/blog/assets/img/first-post-michiru-yuuji.png)

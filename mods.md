@@ -5,6 +5,8 @@
 layout: projects
 title: Mods
 permalink: /mods/
+description: A list of all notable game mods developed by trigger_segfault.
+date_edited: 2019-05-18 11:00:00 -0400
 projects:
   -
     title: "Skyrim: Snowdrift Manor"
@@ -16,6 +18,16 @@ projects:
     url: https://www.nexusmods.com/skyrim/mods/62428/
     image: /mods/previews/ore-veins-mined.png
     description: "This mod adds a stat for tracking ore veins mined. It can be found in the statistics menu in the crafting section. The statistic will not count any ore veins you mined before adding this mod. This is a statistic that I always thought the game needed. It's a slow and unlucrative process and there's no reason to do it late-game when you can buy the ore in bulk. At least now you can get the satisfaction of knowing you incremented a counter in the game while wasting 10 whole seconds for 9 gold worth of iron ore."
+  -
+    title: "Sunrider Academy: PureVN"
+    url: https://github.com/trigger-segfault/SunriderAcademyPureVN
+    image: /mods/previews/purevn.png
+    description: "Optionally eliminate all non-visual novel elements in Sunrider Academy for a nice, smooth, non-carpal-tunnel-inducing story. The game functions by forcing the player to select activities multiple times every in-game day, and there are about 450 in-game days the player has to go through. PureVN automates the activities and selects ones based on what will trigger any and all events."
+  -
+    title: "Sunrider Mask of Arcadius: UI Enhancement"
+    url: https://github.com/trigger-segfault/SunriderMoAEnhancement
+    image: /mods/previews/moa-ui-enhancement.png
+    description: "Update the UI and features of Mask of Arcadius by using Liberation Day resources for an all around better viewing experience. The classic UI for Mask of Arcadius is old, clunky, and also does not come with any sort of gallery. The enhancement mod fixes the dialogue text so that it is readable again, creates a proper gallery browser, and allows for viewing more than a total of five addons. The main menu has extra polish applied and also shows a black background when trying to Alt+F4 (instead of the default gray checkered one). Navigating current missions is easier thanks to the red active planet markers in the Galaxy Map."
   -
     title: "Cookie Clicker: TriggerCookies (Outdated)"
     url: /mods/trigger-cookies/

@@ -48,13 +48,13 @@
       "title": "Shining Song Starnova",
       "url": "https://vndb.org/v19322",
       "image": "/anime/covers/vn/shining-song-starnova.jpg",
-      "score": 7.5,
+      "score": 8,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 7 ], // Nattan
-      "endings": [ 4, null ],
-      "achievements": [ 4, 9 ],
-      "playtime": 31,
+      "routes": [ 3, 7 ], // Nattan
+      "endings": [ 6, null ],
+      "achievements": [ 5, 9 ],
+      "playtime": 45,
       "eroge": true,
       "eroge_score": 0,
       "start": "2019-5-8",
@@ -71,7 +71,7 @@
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
       "image": "/anime/covers/vn/hoshiori.jpg",
-      "score": 7,
+      "score": 6.5,
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 2, 6 ], // Natsuki, Touko

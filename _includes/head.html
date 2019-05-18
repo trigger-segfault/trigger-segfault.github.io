@@ -1,10 +1,14 @@
-<head>
-  {%- include head_base.html -%}
-  {%- include seo.html -%}
-  <link rel="stylesheet" type="text/css" href="/assets/css/video-container.css"/>
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
-</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="{{ include.viewport | default: 'width=device-width, initial-scale=1' }}">
+{%- include seo.html -%}
+{%- if page.redirect_seo -%}
+  <link rel="canonical" href="{{ page.redirect_seo | absolute_url | escape }}">
+  <meta http-equiv="refresh" content="1; url={{ page.redirect_seo | absolute_url | escape }}">
+{%- else -%}
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/css/reset.css' | relative_url }}"/>
+{%- endif -%}
+{%- feed_meta -%}
+{%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+{%- endif -%}

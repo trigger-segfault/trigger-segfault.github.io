@@ -2,6 +2,7 @@
 hide_title: true
 title: Triggerverse
 title_postfix: A mod for Ortei's Nested
+description: The homepage for the TriggerVerse mod for Ortei's Nested.
 permalink: /mods/triggerverse/
 ---
 # Triggerverse

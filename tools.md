@@ -5,6 +5,8 @@
 layout: projects
 title: Tools
 permalink: /tools/
+description: A list of all notable tools developed by trigger_segfault.
+date_edited: 2019-05-18 11:00:00 -0400
 projects:
   -
     title: "RCT2 Tools"
@@ -27,10 +29,30 @@ projects:
     image: /tools/previews/windirstat-net.png
     description: "A .NET/WPF implementation of WinDirStat with a cleaner UI that does less freezing up. Also faster than the original but there are other implementations that do the same."
   -
+    title: "Grisaia Extract Sprite Viewer"
+    url: https://github.com/trigger-segfault/GrisaiaSpriteViewer
+    image: /tools/previews/grisaia-extract-sprite-viewer.png
+    description: "A sprite viewer and saver for the original Grisaia Games. This tools will locate and index all image archives for all Grisaia games. Afterwards you can browse for a character sprite by Game, Character, Lighting, Distance, Pose, Blush, and then select the parts to display. Future versions will implement the features of Grisaia Extract so that sorting and extraction can be done via a user interface."
+  -
     title: "Grisaia Extract"
     url: https://github.com/trigger-segfault/GrisaiaExtractor
     image: /tools/previews/grisaia-extract.png
     description: "A ripping tool (Primarily for images) for the Grisaia games. (Phantom Trigger not supported) This is basically a polished, easy-to-use wrapper for existing programs that extract Grisaia files. (Although much of the original code has been ported to C#)"
+  -
+    title: "Unlimited Steamworks"
+    url: https://github.com/trigger-segfault/UnlimitedSteamworks
+    image: /tools/previews/unlimited-steamworks.png
+    description: "A launcher for Steam apps to signal Steam activity, protect against crashing apps breaking relaunching, and circumventing Steam's terrible command line argument security measures. Unlimited Steamworks is for launching Steam games without the use of the Steam client. All issues aside from the 2nd point are moot when a game is launched via the Steam client."
+  -
+    title: "jpcmd"
+    url: https://github.com/trigger-segfault/jpcmd
+    image: /tools/previews/jpcmd.png
+    description: "A Command Prompt launcher that sets the codepage to Shift JIS (932) for proper Japanese program output. All command line arguments passed to jpcmd.exe are passed directly to cmd.exe. Setting the path to Locale Emulator's LEProc.exe in the config.ini file will allow launching the program through jpcmdle.exe to make sure all programs launched from jpcmd.exe keep their Japanese locale. The reason for this feature is that even when running cmd.exe through Locale Emulator, the codepage will not be set to Shift JIS (932), making the output practically useless."
+  -
+    title: "Hourglass Password Wiki"
+    url: https://github.com/trigger-segfault/HourglassPassword/wiki
+    image: /tools/previews/hourglasspass.png
+    description: "Although a tool has not been constructed for this yet, the entire framework has been set for creating one. The DVD-PG visual novel Hourglass of Summer uses password saves and this wiki documents absolutely everything about them and how they function. A web app to generate passwords is planned for the future."
   -
     title: "Trigger-chan Discord Bot"
     url: /tools/trigger-chan/

@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/WebPage">
+---
+layout: htmldoc
+---
   <head>
-    {%- include head_base.html -%}
-    {%- include seo.html -%}
+    {%- include head.html -%}
     <link rel="stylesheet" type="text/css" href="/assets/css/return-arrow.css"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/video-container.css"/>
     <link rel="stylesheet" type="text/css" href="/tools/rct2-tools/assets/css/styles.css"/>
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-      {%- include google-analytics.html -%}
-    {%- endif -%}
   </head>
   <body>
     <a id="return-arrow" href="/tools/"></a>
@@ -37,5 +34,3 @@
       </div>
     </div>
   </body>
-
-</html>

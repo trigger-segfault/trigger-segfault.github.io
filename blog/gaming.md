@@ -7,5 +7,5 @@ title: Gaming Blog
 permalink: /blog/gaming/
 category: gaming
 category_title: Gaming
-description: Blog posts about games I have played, want to play, or recommend.
+description: Blog posts about games trigger_segfault has played, wants to play, or recommends.
 ---

@@ -3,8 +3,8 @@ layout: post
 title:  "trigger_death is now trigger_segfault"
 date:   2019-05-14 11:10:00 -0400
 #date_edited: 2019-05-14 11:10:00 -0400
-categories: [dev, personal]
-category: [dev, personal]
+categories: [dev, meta, personal]
+category: [dev, meta, personal]
 tags: [trigger_death, trigger_segfault, username, handle, change, rename, rebrand]
 excerpt: I've been thinking about it over the last few months and decided it was time to rebrand myself from trigger_death to a new online username.
 image: /blog/assets/img/trigger_segfault-avatar.png

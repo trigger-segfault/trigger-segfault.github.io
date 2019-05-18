@@ -7,8 +7,21 @@ layout: default
   {%- unless hide_title -%}
     <header class="post-header">
       <h1 class="post-title">{{ page.title | escape }}</h1>
+      {%- if page.date_edited -%}
+        <p class="post-meta">
+          Last Updated
+          <time class="dt-updated" datetime="{{ page.date_edited | date_to_xmlschema }}" itemprop="dateUpdated">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {{ page.date_edited | date: date_format }}
+          </time>
+        </p>
+      {%- endif -%}
     </header>
   {%- endunless -%}
+
+  {%- if page.description -%}
+    <p>{{ page.description | escape }}</p>
+  {%- endif -%}
 
   {{ content }}
 
@@ -20,7 +33,10 @@ layout: default
         <div class="info">
           <h3>
             <a class="post-link" href="{{ projects.url | relative_url }}">
-              {{ projects.title | escape }}
+              {%- comment -%}
+              <!-- We do the split here just so long library names with dots in them wrap. -->
+              {%- endcomment -%}
+              {{ projects.title | escape | split: '.' | join: '.<wbr>'}}
             </a>
           </h3>
           <p>{{ projects.description | escape }}</p>

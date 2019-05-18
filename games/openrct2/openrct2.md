@@ -123,7 +123,7 @@ Before this, the Clear Scenery tool would only clear walls, small scenery, and I
 
 Below I was able to wipe out everything from Electric Fields with a single mouse click and dragging.
 
-<img style="max-height: 400px" src="/games/openrct2/assets/img/clear-scenery.png">
+![Clear Scenery Tool](/games/openrct2/assets/img/clear-scenery.png){:style="max-height: 400px"}
 
 ### Force Ride Breakdown: [#1288](https://github.com/OpenRCT2/OpenRCT2/pull/1288) {#force-ride-breakdown}
 
@@ -151,7 +151,7 @@ These are what the final windows looked like, along with the option for changing
 
 Below is an example of the MR BONES WILD INTRO title sequence.
 
-<img style="max-height: 400px" src="/games/openrct2/assets/img/title-sequence-mrbones.png">
+![MR BONES WILD TITLE SEQUENCE](/games/openrct2/assets/img/title-sequence-mrbones.png){:style="max-height: 400px"}
 
 ## Contributions 2017
 

@@ -20,9 +20,9 @@ author: Robert Jordan
 email: triggerstools@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal blog and source of information for my tools and other projects
-  that don't already have dedicated pages. I'm developer that's fluent with
-  C#, C/C++, Java, and ActionScript, although I spend most of my time working
-  in C# and haven't worked with Java in ages.
+  that don't already have dedicated pages. I'm a developer that's fluent with
+  C#, C/C++, Java, and ActionScript, and a bit of Python, although I spend most
+  of my time working in C# and would rather stay 10ft away from Java at all times.
 tags: [trigger_death,trigger_segfault,trigger,robert,jordan,game,program,programming,tool,development]
 theme_color: "#00C6D8"
 

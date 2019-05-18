@@ -1,17 +1,13 @@
 ---
-layout: none
+layout: htmldoc
 title: trigger_segfault's Visual Novel List
 title_postfix: ""
 permalink: /anime/visualnovellist/
 image: /anime/assets/icon-vn-256.png
 description: A handmade list for keeping track of visual novels that trigger_segfault has played or plans to play.
 ---
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" prefix="og: http://ogp.me/ns#" itemscope="" itemtype="http://schema.org/WebPage">
 <head>
-  {%- include head_base.html custom_viewport="true" -%}
-  <meta name="viewport" content="width=1000,initial-scale=1" />
-  {%- include seo.html -%}
+  {%- include head.html viewport="width=1000,initial-scale=1" -%}
   <link rel="stylesheet" media="all" href="/assets/css/reset.css" />
   <link rel="stylesheet" media="all" href="/assets/css/return-arrow.css" />
   <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-mal.css" />
@@ -20,9 +16,6 @@ description: A handmade list for keeping track of visual novels that trigger_seg
   <script type="text/javascript" src="/assets/js/is-touch-device.js"></script>
   <script type="text/javascript" src="/assets/js/strip-json-comments.js"></script>
   <script type="text/javascript" src="/anime/assets/js/visualnovellist.js"></script>
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
 </head>
 <body class="ownlist anime">
   <div id="bgfade"> </div>
@@ -79,4 +72,3 @@ description: A handmade list for keeping track of visual novels that trigger_seg
   <!-- All visual novels populated here -->
   <script>VisualNovelList.initializeVNList();</script>
 </body>
-</html>

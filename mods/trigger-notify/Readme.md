@@ -2,6 +2,7 @@
 hide_title: true
 title: TriggerNotify
 title_postfix: A Kittens Game Alert mod
+description: The homepage for the TriggerNotify mod for Bloodrizer's insane incremental Kittens Game.
 permalink: /mods/trigger-notify/
 ---
 # TriggerNotify

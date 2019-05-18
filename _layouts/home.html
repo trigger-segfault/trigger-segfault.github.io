@@ -10,7 +10,22 @@ layout: default
     </header>
   {%- endunless -%}
 
-  {%- if page.description -%}
+  <h3 id="see-all-blog-categories-here">
+    {%- if page.category -%}
+      Go back to
+      <a href="/blog/categories/">Blog Categories</a>
+    {%- else -%}
+      See all
+      <a href="/blog/categories/">Blog Categories here</a>
+    {%- endif -%}
+  </h3>
+  {%- assign feed = '/feed.xml' -%}
+  {%- if page.category -%}
+    {%- assign feed = '/feed/' | append: page.category | append: '.xml' -%}
+  {%- endif -%}
+  <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ feed | relative_url }}">Subscribe</a></p>
+
+  {%- if page.description and page.category -%}
     <p>{{ page.description | escape }}</p>
   {%- endif -%}
 
@@ -43,10 +58,4 @@ layout: default
     {%- else -%}
     <p><strong>There's nothing here. :(</strong></p>
   {%- endif -%}
-  {%- assign feed = '/feed.xml' -%}
-  {%- if page.category -%}
-    {%- assign feed = '/feed/' | append: page.category | append: '.xml' -%}
-  {%- endif -%}
-  <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ feed | relative_url }}">Subscribe</a></p>
-
 </div>
