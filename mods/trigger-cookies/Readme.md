@@ -49,7 +49,7 @@ javascript: (function () {
 
 ## Credits
 
-* Bake all Heavenly Cookies button by [/u/jakerman999](http://www.reddit.com/user/jakerman999), [Original Post](http://www.reddit.com/r/CookieClicker/comments/2gb4gw/i_made_a_bake_all_button/).
+* Bake all Heavenly Cookies button by [/u/jakerman999](https://www.reddit.com/user/jakerman999), [Original Post](https://www.reddit.com/r/CookieClicker/comments/2gb4gw/i_made_a_bake_all_button/).
 * Many features based off of [CookieMaster](https://github.com/greenc/CookieMaster) and its source code.
 * Originally based off and still uses some code from [Cookieclicker Bots](https://gist.github.com/pernatiy/38bc231506b06fd85473#file-cc-js)
 

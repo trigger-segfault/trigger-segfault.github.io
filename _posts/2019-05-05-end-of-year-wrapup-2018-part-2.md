@@ -107,7 +107,7 @@ During the upgrade, I switched from SQLite to PostgreSQL to allow more advanced 
 
 One of the other big changes to Triggy was migrating the audio player to using Lavalink, which does most of the hard work for you when it comes to playing audio. It supports YouTube and SoundCloud searches, as well as BandCamp, Twitch, and Vimeo urls.
 
-More in depth view on the current state of trigger_chan [can be found here](http://trigger-segfault.github.io/tools/trigger-chan/).
+More in depth view on the current state of trigger_chan [can be found here](/tools/trigger-chan/).
 
 ## [Grisaia Extract (May - Jun)](https://github.com/trigger-segfault/GrisaiaExtractor)
 
@@ -196,7 +196,7 @@ I'd started fiddling with Windows Subsystem for Linux and wanted to look into AP
 
 I got a request from my Dad to write a small page to display the results of cgi scripts on an [OpenVMS](https://en.wikipedia.org/wiki/OpenVMS) server for his work. I took the specifications and created a basic HTML page with Javascript that is easily modified to extend or add support for more scripts. The CSS style came later, but it was definitely an improvement over that of no CSS style. Apparently it's still on the server and in use today by other people, which is nice to hear.
 
-## [Visual Novel List for a Stats Freak (Oct - present)](http://trigger-segfault.github.io/anime/visualnovellist/)
+## [Visual Novel List for a Stats Freak (Oct - present)](/anime/visualnovellist/)
 
 {:align="center"}
 ![Visual Novel List Page](/blog/assets/img/vnlist.png)
@@ -215,9 +215,9 @@ The first public post displaying the progress of the sprite viewer in alpha. A h
 
 The Grisaia Sprite Viewer is an ongoing project to create a program to view and manipulate in-game Grisaia sprites by taking all image parts and combining them into a single image. CatSystem2 games like Grisaia store their image parts in thounsands of different images that only get more and more specific as you go down the list of lighting, distance, pose, and blush level. Added with the fact that many characters use sprite parts differently, an entire data file was needed to keep track of how image parts are used and what they're called. The Sprite Viewer didn't make its first release until 2019, so more coverge of that will be shown in next year's blog post.
 
-## [This Website Upgrade (Nov - present)](http://trigger-segfault.github.io/)
+## [This Website Upgrade (Nov - present)](/)
 
 {:align="center"}
 ![Site Header](/blog/assets/img/site-header-small-2018.png)
 
-Before now, my personal GitHub Pages site was terribly underutilized and outright ignored most of the time. *It still is now,* but at least it gets some updates besides *Update vnlist.jsonc*. The previous iteration made use of my ancient Julia set Fractal Viewer program for the header so I decided to keep with this tradition, but go for a more minimal effect. The entire website's theme is pretty much a copy of the Jekyll's default Minima theme, but with some improvements and changes. There are also a few pages from the old site that stayed almost identical as they already had their own unique theme, such as the [RCT2 Tools](http://trigger-segfault.github.io/tools/rct2-tools/) and the [TriggerCookies (dead) mod](http://trigger-segfault.github.io/mods/trigger-cookies/).
+Before now, my personal GitHub Pages site was terribly underutilized and outright ignored most of the time. *It still is now,* but at least it gets some updates besides *Update vnlist.jsonc*. The previous iteration made use of my ancient Julia set Fractal Viewer program for the header so I decided to keep with this tradition, but go for a more minimal effect. The entire website's theme is pretty much a copy of the Jekyll's default Minima theme, but with some improvements and changes. There are also a few pages from the old site that stayed almost identical as they already had their own unique theme, such as the [RCT2 Tools](/tools/rct2-tools/) and the [TriggerCookies (dead) mod](/mods/trigger-cookies/).

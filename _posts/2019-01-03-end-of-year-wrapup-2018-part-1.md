@@ -115,11 +115,11 @@ The water creator went through an overhaul of its own with Paint.NET like color 
 
 The Steam stub added support for all RollerCoaster Tycoon games, including classic. Along with the ability to customize the launcher setup.
 
-### [OpenRCT2 Contributions: part 2 (Oct - Nov)](http://localhost:4001/games/openrct2#contributions-2017)
+### [OpenRCT2 Contributions: part 2 (Oct - Nov)](/games/openrct2#contributions-2017)
 
 For the second time, I ended up adding my own contributions to OpenRCT2 and fixing a few bugs (most notably viewport scrolling). I spent a heavy amount of time on the Title Sequence Editor since I had left it a mess previously.
 
-Because this information is already well documented, [all contributions in 2017 can be found here.](http://localhost:4001/games/openrct2/#contributions-2017)
+Because this information is already well documented, [all contributions in 2017 can be found here.](/games/openrct2/#contributions-2017)
 
 {:align="center"}
 ![OpenRCT2 Place Path over Entrances](/games/openrct2/assets/img/park-entrance-path.gif)

@@ -35,7 +35,7 @@ projects:
     description: "My final game I created during my first year of game programming at college. The idea of Murican Tetris was a joke because of the fact that Tetris was made in Russia. Rule 1) All Tetrominos are red, white, and blue. Rule 2) Rock music must be playing at all times. Rule 3) Stars must fly out when a Tetromino lands."
   -
     title: "Asteroid Belt"
-    url: http://imgur.com/a/ZQEIv
+    url: https://imgur.com/a/ZQEIv
     image: /games/previews/asteroid-belt.png
     description: "A pretty basic game I made in Flash where you have to travel as far as possible while avoiding/destroying asteroids. A mixture between side-scrolling bullet hells and Asteroids."
 ---

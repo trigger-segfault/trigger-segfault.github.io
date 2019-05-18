@@ -53,4 +53,4 @@ Hits are already being indexed for *trigger_segfault* by Google, just 24 hours i
 
 The name change is definitely devastating, but at the same time it was becoming necissary. I have done this once now, and shall hopefully never have to do it again. Better late than never.
 
-**One Final Note:** You will likely need to update your RSS feeds to be directed to the new [trigger_segfault.github.io](http://trigger-segfault.github.io/) domain. There isn't really a proper way to fix this.
+**One Final Note:** You will likely need to update your RSS feeds to be directed to the new [trigger_segfault.github.io](/) domain. There isn't really a proper way to fix this.

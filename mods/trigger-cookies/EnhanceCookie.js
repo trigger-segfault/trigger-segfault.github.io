@@ -9,7 +9,7 @@ ENHANCE COOKIE MOD
 
 
 // Based All function by /u/jakerman999 on Reddit.
-// Link: http://www.reddit.com/r/CookieClicker/comments/2gb4gw/i_made_a_bake_all_button/
+// Link: https://www.reddit.com/r/CookieClicker/comments/2gb4gw/i_made_a_bake_all_button/
 
 /*=====================================================================================
 QUICK FUNCTIONS

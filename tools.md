@@ -70,12 +70,12 @@ projects:
     description: "A program for creating and saving images drawn in the console using ASCII characters and colors. This program has gone through numerous versions. I often use it as a grid-based level editor."
   -
     title: "AudioVis"
-    url: http://imgur.com/a/qunXM
+    url: https://imgur.com/a/qunXM
     image: /tools/previews/audiovis.png
     description: "AudioVis is a program created in flash that allows you to enjoy your music through customizable visualizations."
   -
     title: "Julia Set Explorer"
-    url: http://imgur.com/a/tv7Sf
+    url: https://imgur.com/a/tv7Sf
     image: /tools/previews/julia-set-explorer.png
     description: "A program for creating and viewing Julia Set fractals. You can choose different functions and customize the colors."
 ---

@@ -9,7 +9,7 @@ image: /games/openrct2/assets/icon-256.png
 * **[Commit History](https://github.com/OpenRCT2/OpenRCT2/commits?author=trigger-segfault)**
 * **[Pull Request History](https://github.com/OpenRCT2/OpenRCT2/pulls?q=author%3Atrigger-segfault)**
 
-Before I started working for the OpenRCT2 team, I began working on my original RCT2 tool, the Content Browser. I worked with [X123M3-256](https://github.com/X123M3-256) over IRC to decipher the attraction .DAT file format, which he used to create his [RCT2 Ride Generator](https://github.com/X123M3-256/RCT2RideGenerator) and [many custom-made rides](http://x123m3-256.github.io/RCT2/CustomRides/). I started contributing to OpenRCT2 after I released my [GitHub Pages section for my RCT2 Tools](/tools/rct2-tools/) and someone recommended I help out.
+Before I started working for the OpenRCT2 team, I began working on my original RCT2 tool, the Content Browser. I worked with [X123M3-256](https://github.com/X123M3-256) over IRC to decipher the attraction .DAT file format, which he used to create his [RCT2 Ride Generator](https://github.com/X123M3-256/RCT2RideGenerator) and [many custom-made rides](https://x123m3-256.github.io/RCT2/CustomRides/). I started contributing to OpenRCT2 after I released my [GitHub Pages section for my RCT2 Tools](/tools/rct2-tools/) and someone recommended I help out.
 
 OpenRCT2 was my first real experience of working on an open source project, and my first dive into pull requests and working with Git Bash. It's kind of embarrassing looking back on my PRs and seeing many of the mistakes I made so often. Below is the history of my contributions and what I added to the project, excluding many of the minor bug fixes.
 

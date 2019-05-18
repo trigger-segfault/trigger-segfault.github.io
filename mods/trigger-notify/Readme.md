@@ -55,7 +55,7 @@ javascript: (function () {
 
 Here are the sources for all the sounds used. A few use the same base sound but the rest have been edited.
 
-* Default Beep: [soundjay](http://www.soundjay.com/button/beep-30b.mp3)
+* Default Beep: [soundjay](https://www.soundjay.com/button/beep-30b.mp3)
 * Catnip: [freesound](https://www.freesound.org/people/MaxDemianAGL/sounds/131050/)
 * Wood: [freesound](https://www.freesound.org/people/Celticvalkyria/sounds/250391/)
 * Minerals: [freesound](https://www.freesound.org/people/Prosser/sounds/233998/)
@@ -72,4 +72,4 @@ Here are the sources for all the sounds used. A few use the same base sound but 
 * Faith: [freesound](https://www.freesound.org/people/chipfork/sounds/50087/)
 * Kittens: [freesound](https://www.freesound.org/people/Npeo/sounds/203121/)
 * Zebras: [freesound](https://www.freesound.org/people/acclivity/sounds/19812/)
-* Astronomical Event: [freesound](http://www.freesound.org/people/Andromadax24/sounds/186719/)
+* Astronomical Event: [freesound](https://www.freesound.org/people/Andromadax24/sounds/186719/)
