@@ -59,7 +59,7 @@ header_pages: # extensions are not required, both .md and .html pages will be se
   - resume
 
 rct2tools_header_pages:
-  - tools/rct2-tools/index.html
+  - tools/rct2-tools/rct2-tools.html
   - tools/rct2-tools/content-browser.html
   - tools/rct2-tools/graphics-extractor.html
   - tools/rct2-tools/group-creator.html

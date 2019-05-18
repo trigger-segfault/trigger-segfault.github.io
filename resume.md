@@ -5,7 +5,7 @@ layout: default
 title: Resume
 permalink: /resume/
 image: /assets/icon-resume-256.png
-description: A redirect to Robert Jordan's (trigger_segfault's) current resume.
+description: View Robert Jordan's resume. Listing skills, education, experience, and specialties.
 #redirect_to:
 #  - /resume.pdf
 redirect_seo: /resume.pdf
