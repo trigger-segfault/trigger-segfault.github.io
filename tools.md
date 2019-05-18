@@ -17,7 +17,7 @@ projects:
     title: "Terraria Tools"
     url: /tools/terraria-tools/
     image: /tools/previews/terraria-tools-128.png
-    description: "Eh... I'll write this later..."
+    description: "A wide variety of tools for working with Terraria, it's file formats, or patching features into the game."
   -
     title: "Trigger's PC"
     url: https://projectpokemon.org/home/forums/topic/37582-gen-3-triggers-pc-legit-use-everything-bank-and-save-manager-tool/
