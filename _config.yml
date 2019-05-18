@@ -131,6 +131,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - assets/ts/
-  - run-lan.ps1
-  - run-local.ps1
-  - GitHub-Pages.code-workspace
+  - serve.cmd
+  - serve.ps1
+  - trigger-segfault.code-workspace
+  - tsconfig.json
