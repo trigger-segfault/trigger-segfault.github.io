@@ -57,7 +57,7 @@ projects:
     description: "A Discord bot I made for use in a small selection of Discord servers. Her selling features are spoilers, inserting claps between words, drawing Divergence Meters, and other fun or helpful commands."
   -
     title: "Metroid Map Guardian"
-    url: https://imgur.com/a/qT4IM
+    url: https://github.com/trigger-segfault/MetroidMapGuardian
     image: /tools/previews/metroid-map-guardian.png
     description: "This is a program I created to simplify collecting power-ups in the Metroid Prime series. Each power-up is displayed on its map with instructions on how to acquire it. Many thanks to Falcon Zero for letting me use his maps and guides he created for the 3 games."
   -
