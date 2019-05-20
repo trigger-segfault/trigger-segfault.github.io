@@ -11,7 +11,7 @@ image: /blog/assets/img/wiimote-article.png
 preview: /blog/assets/img/wiimote-article.png
 ---
 
-This post is a more in depth coverage of the Wiimote Experimentation in the [2018: End of Year Wrap-Up (Part 2)]({% post_url 2019-05-05-end-of-year-wrapup-2018-part-2 %}).
+This post is a more in-depth coverage of the Wiimote Experimentation in the [2018: End of Year Wrap-Up (Part 2)]({% post_url 2019-05-05-end-of-year-wrapup-2018-part-2 %}). The unorganized source code can be [found here](https://github.com/trigger-segfault/WiimoteLib.Net).
 
 {:align="center"}
 ![Wiimote Controller Overlay](/blog/assets/img/wiimote-fade.png)
