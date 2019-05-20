@@ -135,21 +135,21 @@ I'd seen these badges used a lot in other repos, but never went out of my way to
 {:align="center"}
 ![Wiimote Controller Overlay](/blog/assets/img/wiimote-controller.png)
 
-I started fiddling around with Wiimote control to enable playing games from a couch with an easier-to-use controller. It began with looking at existing libraries and how they communicated with the Wiimote. The current system for Wiimote Bluetooth pairing in Windows 7 was a huge hastle of remove and readding the device every time it was needed. One of the goals of this work was to create a better system for easily pairing the Wiimote automatically.
+I started fiddling around with Wiimote control to enable playing games from a couch with an easier-to-use controller. It began with looking at existing libraries and how they communicated with the Wiimote. The current system for Wiimote Bluetooth pairing in Windows 7 was a huge hassle of removing and re-adding the device every time it was needed. One of the goals of this work was to create a better system for easily pairing the Wiimote automatically.
 
 {:align="center"}
 ![BSOD: Windows 10th Edition](/blog/assets/img/bsod-10.png)
 
-One interesting thing I attempted was to modify the existing [HID-Wiimote](https://github.com/jloehr/HID-Wiimote) drivers to help support better pairing and passthrough so that the original controls could be retained without registering it as a different controller. It was interesting to learn how difficult it is to develop drivers, but it was also pretty fun. I took an old unused laptop and manages to hook it up to my main system with a debugger. Then I proceeded to-*Your PC ran into a problem and needs to restart*, to-*Your PC ran into a problem and needs to restart*... I crashed the laptop quite a lot. Although in the end I did learn a bit about HID descriptors and how USB decices work. I never made any usable progress with the drivers.
+One interesting thing I attempted was to modify the existing [HID-Wiimote](https://github.com/jloehr/HID-Wiimote) drivers to help support better pairing and passthrough so that the original controls could be retained without registering it as a different controller. It was interesting to learn how difficult it is to develop drivers, but it was also pretty fun. I took an old unused laptop and managed to hook it up to my main system with a debugger. Then I proceeded to-*Your PC ran into a problem and needs to restart*, to-*Your PC ran into a problem and needs to restart*... I crashed the laptop quite a lot. Although in the end I did learn a bit about HID descriptors and how USB devices work. I never made any usable progress with the drivers.
 
 {:align="center"}
 ![Wiimote Audio Player](/blog/assets/img/wiimote-audio-player.png)
 
-After getting the library up and running, I wanted to start looking into Wiimote Speaker playback, which for a long time has been relatively impossible to do well. The first part was that I had to purchase the latest Wiimote type which actually had better audio support. I don't think I ever got the original Wiimote to play anything identifiable. The hardest part was getting the ADPCM format down. I eventually found what seems to be the right version of it, but even then the audio sometimes fades out and in in the Wiimote, and conversion to lower sample rates in general is pretty destructive.
+After getting the library up and running, I wanted to start looking into Wiimote Speaker playback, which for a long time has been relatively impossible to do well. The first part was that I had to purchase the latest Wiimote type which actually had better audio support. I never got the original Wiimote to play anything identifiable. Because PCM playback never sounded right, the main task was getting the ADPCM format down. I eventually found what seems to be the right version of it, but even then, the audio sometimes fades out and in in the Wiimote, and conversion to lower sample rates in general is pretty destructive.
 
 {% include youtube.html id="vNItdVw6ONs" center="true" %}
 
-I've been using the Wiimote controller application that resulted from this project ever since it's inception. This paired with the DolphinBar has made the Wiimote Controller my personally most-used application to date.
+I've been using the Wiimote controller application that resulted from this project ever since its inception. This paired with the DolphinBar has made the Wiimote Controller my personally most-used application to date.
 
 ## Finally Upgrading to Windows 10 (Jul)
 
