@@ -51,10 +51,10 @@
       "score": 8,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 3, 7 ], // Nattan
-      "endings": [ 6, null ],
+      "routes": [ 4, 7 ], // Nattan, Nemunemu, Julie, Mariya
+      "endings": [ 7, null ],
       "achievements": [ 5, 9 ],
-      "playtime": 45,
+      "playtime": 52,
       "eroge": true,
       "eroge_score": 0,
       "start": "2019-5-8",
