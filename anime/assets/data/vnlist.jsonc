@@ -45,29 +45,6 @@
 
   "playing": [
     {
-      "title": "Shining Song Starnova",
-      "url": "https://vndb.org/v19322",
-      "image": "/anime/covers/vn/shining-song-starnova.jpg",
-      "score": 8,
-      "progressType": "routes",
-      "progressType2": "endings",
-      "routes": [ 6, 7 ], // Nattan, Nemunemu, Julie, Mariya, Mika
-      "endings": [ 12, 14 ],
-      "achievements": [ 8, 9 ],
-      "completion": 85,
-      "playtime": 75,
-      "eroge": true,
-      "eroge_score": 0.5,
-      "start": "2019-5-8",
-      "finish": null,
-      "tags": [
-        "H-Scenes",
-        "Cried",
-        "Owned"
-      ],
-      "notes": null
-    },
-    {
       "title": "Hoshi Ori Yume Mirai",
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
       "url": "https://vndb.org/v14265",
@@ -76,7 +53,7 @@
       "progressType": "routes",
       "progressType2": "endings",
       "routes": [ 2, 6 ], // Natsuki, Touko
-      "endings": [ 3, 7 ],
+      "endings": [ 3, 7 ], // Touko is the only one with a bad end
       "playtime": 77,
       "eroge": true,
       "eroge_score": 1,
@@ -95,6 +72,29 @@
   ],
 
   "completed": [
+    {
+      "title": "Shining Song Starnova",
+      "url": "https://vndb.org/v19322",
+      "image": "/anime/covers/vn/shining-song-starnova.jpg",
+      "score": 8,
+      "progressType": "routes",
+      "progressType2": "endings",
+      "routes": [ 7, 7 ],
+      "endings": [ 14, 14 ],
+      "achievements": [ 9, 9 ],
+      "completion": 100,
+      "playtime": 101,
+      "eroge": true,
+      "eroge_score": 0.75,
+      "start": "2019-5-8",
+      "finish": "2019-5-31",
+      "tags": [
+        "H-Scenes",
+        "Cried",
+        "Owned"
+      ],
+      "notes": null
+    },
     {
       "title": "Natsuiro no Sunadokei",
       "title_en": "Hourglass of Summer",
