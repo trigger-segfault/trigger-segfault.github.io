@@ -52,9 +52,9 @@
       "score": 6.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 2, 6 ], // Natsuki, Touko
-      "endings": [ 3, 7 ], // Touko is the only one with a bad end
-      "playtime": 77,
+      "routes": [ 3, 6 ], // Natsuki, Touko
+      "endings": [ 4, 7 ], // Touko is the only one with a bad end
+      "playtime": 120,
       "eroge": true,
       "eroge_score": 1,
       "start": "2019-4-9",
@@ -93,7 +93,11 @@
         "Cried",
         "Owned"
       ],
-      "notes": null
+      "notes": [
+        "Shining Song Starnova leads the pack by delving into the idol industry in-depth, more than you'd see in any other story.",
+        "Each route is extremely different from the other, allowing for never a dull moment when reading.",
+        "Even some of the bad ends have a lot of effort put into them, enough so that they rate higher than a few good ends."
+      ]
     },
     {
       "title": "Natsuiro no Sunadokei",
