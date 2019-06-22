@@ -52,11 +52,11 @@
       "score": 6.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 3, 6 ], // Natsuki, Touko
-      "endings": [ 4, 7 ], // Touko is the only one with a bad end
-      "playtime": 120,
+      "routes": [ 4, 6 ], // Natsuki, Touko, Sora, Marika
+      "endings": [ 5, 7 ], // Touko is the only one with a bad end
+      "playtime": 180,
       "eroge": true,
-      "eroge_score": 1,
+      "eroge_score": 3,
       "start": "2019-4-9",
       "finish": null,
       "tags": [
@@ -1557,7 +1557,7 @@
       "score": null,
       "progressType": null,
       "routes": null,
-      "achievements": null,
+      "achievements": [ null, 20 ],
       "playtime": null,
       "start": null,
       "finish": null,
@@ -1571,8 +1571,10 @@
       "url": "https://vndb.org/v12849",
       "image": "/anime/covers/vn/aokana.jpg",
       "score": null,
-      "progressType": null,
-      "routes": null,
+      "progressType": "routes",
+      "progressType2": null,
+      "routes": [ null, null ],
+      "endings": null,
       "achievements": null,
       "playtime": null,
       "start": null,
@@ -1589,7 +1591,9 @@
       "image": "/anime/covers/vn/tomoyo-after.jpg",
       "score": null,
       "progressType": null,
+      "progressType2": null,
       "routes": null,
+      "endings": null,
       "achievements": [ null, 27 ],
       "playtime": null,
       "start": null,
@@ -1627,6 +1631,60 @@
       "routes": null,
       "endings": null,
       "achievements": null,
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "VA-11 HALL-A",
+      "url": "https://vndb.org/v18872",
+      "image": "/anime/covers/vn/va11halla.jpg",
+      "score": null,
+      "progressType": "endings",
+      "progressType2": null,
+      "routes": null,
+      "endings": null,
+      "achievements": [ null, 34 ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Death end re;Quest",
+      "url": "https://vndb.org/v25796",
+      "image": "/anime/covers/vn/death-end-request.jpg",
+      "score": null,
+      "progressType": "endings",
+      "progressType2": null,
+      "routes": null,
+      "endings": null,
+      "achievements": [ null, 39 ],
+      "playtime": null,
+      "start": null,
+      "finish": null,
+      "tags": [
+        "Wishlist",
+        "JRPG"
+      ],
+      "notes": null
+    },
+    {
+      "title": "Steins;Gate Senkei Kousoku no Phenogram",
+      "title_en": "STEINS;GATE: Linear Bounded Phenogram",
+      "url": "https://vndb.org/v25796",
+      "image": "/anime/covers/vn/steins-gate-linear.jpg",
+      "score": null,
+      "progressType": "endings",
+      "endings": [ null, 1 ],
+      "achievements": [ null, 35 ],
       "playtime": null,
       "start": null,
       "finish": null,
