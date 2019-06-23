@@ -52,9 +52,9 @@
       "score": 6.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 4, 6 ], // Natsuki, Touko, Sora, Marika
-      "endings": [ 5, 7 ], // Touko is the only one with a bad end
-      "playtime": 180,
+      "routes": [ 5, 6 ], // Natsuki, Touko, Sora, Marika
+      "endings": [ 6, 7 ], // Touko is the only one with a bad end
+      "playtime": 186,
       "eroge": true,
       "eroge_score": 3,
       "start": "2019-4-9",
