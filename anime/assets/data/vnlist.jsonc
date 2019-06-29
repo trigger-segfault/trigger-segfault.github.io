@@ -44,6 +44,12 @@
   },
 
   "playing": [
+  ],
+
+  "queued": [
+  ],
+
+  "completed": [
     {
       "title": "Hoshi Ori Yume Mirai",
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
@@ -52,26 +58,20 @@
       "score": 6.5,
       "progressType": "routes",
       "progressType2": "endings",
-      "routes": [ 5, 6 ], // Natsuki, Touko, Sora, Marika
-      "endings": [ 6, 7 ], // Touko is the only one with a bad end
-      "playtime": 186,
+      "routes": [ 6, 6 ],
+      "endings": [ 7, 7 ], // Touko is the only one with a bad end
+      "playtime": 223,
       "eroge": true,
       "eroge_score": 3,
       "start": "2019-4-9",
-      "finish": null,
+      "finish": "2019-6-28",
       "tags": [
         "H-Scenes",
         "Cried",
         "Slice of Life"
       ],
       "notes": null
-    }
-  ],
-
-  "queued": [
-  ],
-
-  "completed": [
+    },
     {
       "title": "Shining Song Starnova",
       "url": "https://vndb.org/v19322",
