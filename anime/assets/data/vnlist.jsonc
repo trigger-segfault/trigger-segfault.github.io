@@ -44,6 +44,26 @@
   },
 
   "playing": [
+    {
+      "title": "Crystalline",
+      "url": "https://vndb.org/v19989",
+      "image": "/anime/covers/vn/crystalline.jpg",
+      "score": 9,
+      "progressType": "endings",
+      "endings": [ null, null ],
+      "playtime": 24,
+      "start": "2020-4-1",
+      "finish": null,
+      "tags": [
+        "English VA",
+        "Owned",
+        "Personality Choices",
+        "Zack Best Tsundere"
+      ],
+      "notes": [
+        "The starts off a bit bland, but its completely redeamed by the huge number of meaningless choices that essentially allow you to pixk and choose the personality of the protagonist!"
+      ]
+    }
   ],
 
   "queued": [
@@ -60,7 +80,7 @@
       "progressType2": "endings",
       "routes": [ 6, 6 ],
       "endings": [ 7, 7 ], // Touko is the only one with a bad end
-      "playtime": 223,
+      "playtime": 223, // what a disaster...
       "eroge": true,
       "eroge_score": 3,
       "start": "2019-4-9",
@@ -70,7 +90,13 @@
         "Cried",
         "Slice of Life"
       ],
-      "notes": null
+      "notes": [
+        "The Dark Souls of moege (as a friend pit it). HoshiOri is... loooong, too long.",
+        "Take one route, make it longer than most visual novels alone, then multiply it by 6 routes.",
+        "The story adhears to all events in time for every route, and it starts to feel like watching the Endless Eight more than actually watching the Endless Eight.",
+        "The one enjoyable aspect was the in-game phone to fiddle with in game.",
+        "My accomplishment is taking enough in-game photos to cause about 15-20 seconds of load time when viewing the photos app."
+      ]
     },
     {
       "title": "Shining Song Starnova",
@@ -717,13 +743,20 @@
       "title_en": "fault - milestone one",
       "url": "https://vndb.org/v12694",
       "image": "/anime/covers/vn/fault-milestone-1.jpg",//"https://s.vndb.org/cv/55/21155.jpg",
-      "score": 8,
+      "score": 8.5,
       "progressType": "endings",
       "endings": [ 1, 1 ],
       "achievements": [ 12, 12 ],
       "playtime": 8,
       "start": "2018-3-7",
       "finish": "2018-3-8",
+      "replays": [
+        {
+          "start": "2020-3-6",
+          "finish": "2020-3-10",
+          "playtime": 9
+        }
+      ],
       "tags": [
         "Owned"
       ],
@@ -737,16 +770,24 @@
       "title_en": "fault - milestone two side:above",
       "url": "https://vndb.org/v15252",
       "image": "/anime/covers/vn/fault-milestone-2-side-above.jpg",//"https://s.vndb.org/cv/62/33762.jpg",
-      "score": 8.5,
+      "score": 9,
       "progressType": "endings",
       "endings": [ 1, 1 ],
       "achievements": [ 9, 9 ],
       "playtime": 8,
       "start": "2018-3-12",
       "finish": "2018-3-13",
+      "replays": [
+        {
+          "start": "2020-3-11",
+          "finish": "2020-3-23",
+          "playtime": 11
+        }
+      ],
       "tags": [
         "Cried",
-        "Owned"
+        "Owned",
+        "Guest Star: House M.D."
       ],
       "notes": [
         "Again we see beautiful world building, Run being Run, and a side dish of heartbreak."
@@ -1495,7 +1536,7 @@
       ],
       "notes": null
     },
-    {
+   /* {  // Change of plans... let's not
       "title": "euphoria",
       "url": "https://vndb.org/v6540",
       "image": "/anime/covers/vn/euphoria.jpg",
@@ -1512,7 +1553,7 @@
         "Wishlist"
       ],
       "notes": null
-    },
+    }, */
     {
       "title": "Doki Doki! New Eyes",
       "url": "https://vndb.org/v23036",
@@ -1580,8 +1621,7 @@
       "start": null,
       "finish": null,
       "tags": [
-        "Wishlist",
-        "Waiting for Translation"
+        "Wishlist"
       ],
       "notes": null
     },
