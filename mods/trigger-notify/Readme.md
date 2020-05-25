@@ -31,7 +31,7 @@ If your browser allows loading of local audio files you can paste the file path 
 ```javascript
 javascript: (function () {
     var mod = document.createElement('script');
-    mod.src = 'http://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
+    mod.src = 'https://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
     mod.id = 'modscript_TriggerNotify';
     document.head.appendChild(mod);
 })();
@@ -44,7 +44,7 @@ javascript: (function () {
     var checkReady = setInterval(function () {
       clearInterval(checkReady);
       var mod = document.createElement('script');
-      mod.src = 'http://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
+      mod.src = 'https://trigger-segfault.github.io/mods/trigger-notify/TriggerNotify.js';
       mod.id = 'modscript_TriggerNotify';
       document.head.appendChild(mod);
     }, 400);
