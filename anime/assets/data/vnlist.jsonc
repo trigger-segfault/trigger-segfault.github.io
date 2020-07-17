@@ -48,17 +48,18 @@
       "title": "Crystalline",
       "url": "https://vndb.org/v19989",
       "image": "/anime/covers/vn/crystalline.jpg",
-      "score": 9,
+      "score": 8.7,
       "progressType": "endings",
-      "endings": [ null, null ],
-      "playtime": 24,
+      "endings": [ 7, 8 ], // True,A,B,C,D,E,G  Todo: F
+      "playtime": 54, // currently about 4 hours behind steam playtime due to launching without Steam.
       "start": "2020-4-1",
       "finish": null,
       "tags": [
         "English VA",
         "Owned",
         "Personality Choices",
-        "Zack Best Tsundere"
+        "Zack Best Tsundere",
+        "Unoptimized hell of eternal crash and buffering"
       ],
       "notes": [
         "The starts off a bit bland, but its completely redeamed by the huge number of meaningless choices that essentially allow you to pixk and choose the personality of the protagonist!"
@@ -363,7 +364,8 @@
       "start": "2019-2-4",
       "finish": "2019-2-4",
       "tags": [
-        "Owned"
+        "Owned",
+        "CatSystem2"
       ],
       "notes": [
         "This was definitely the best of the 3 Grisaia shorts.",
@@ -392,7 +394,8 @@
         "H-Scenes",
         "Owned",
         "Cried",
-        "Michiru Best Girl"
+        "Michiru Best Girl",
+        "CatSystem2"
       ],
       "notes": [
         "The finale for the Grisaia Trilogy, this absolutely blew me away!",
@@ -415,7 +418,8 @@
       "finish": "2019-1-10",
       "tags": [
         "Owned",
-        "Cried"
+        "Cried",
+        "CatSystem2"
       ],
       "notes": [
         "Didn't expect to cry from such a short story but here we have it.",
@@ -815,7 +819,8 @@
         "Comedy Gold",
         "Sachi Best Girl",
         "Michiru Best Route",
-        "Owned"
+        "Owned",
+        "CatSystem2"
       ],
       "notes": [
         "My absolute favorite VN of all time.",
@@ -850,7 +855,8 @@
         "Cried",
         "Sachi Best Girl",
         "Michiru Best Afterstory",
-        "Owned"
+        "Owned",
+        "CatSystem2"
       ],
       "notes": [
         "Grisaia continues to maintain it's quality writing with 5 afterstories, and main route.",
@@ -870,7 +876,8 @@
       "start": "2018-3-19",
       "finish": "2018-3-19",
       "tags": [
-        "Owned"
+        "Owned",
+        "CatSystem2"
       ],
       "notes": [
         "FUN FACT: This game is labeled as SFW, yet there's actually a nude sprite for Michiru hidden in the \"image.int\" file, HAH!"
@@ -890,7 +897,8 @@
       "tags": [
         "Cried",
         "Comedy Gold",
-        "Owned"
+        "Owned",
+        "CatSystem2"
       ],
       "notes": [
         "I HATE magical girl spinoffs with a passion, yet I LOVE this VN!",
@@ -1532,7 +1540,8 @@
       "finish": null,
       "tags": [
         "H-Scenes",
-        "Wishlist"
+        "Wishlist",
+        "CatSystem2"
       ],
       "notes": null
     },
@@ -1621,7 +1630,7 @@
       "start": null,
       "finish": null,
       "tags": [
-        "Wishlist"
+        "Owned"
       ],
       "notes": null
     },
@@ -1639,7 +1648,7 @@
       "start": null,
       "finish": null,
       "tags": [
-        "Wishlist"
+        "Owned"
       ],
       "notes": null
     },
