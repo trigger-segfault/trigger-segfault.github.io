@@ -44,16 +44,21 @@
   },
 
   "playing": [
-    {
+  ],
+
+  "queued": [
+  ],
+
+  "completed": [{
       "title": "Crystalline",
       "url": "https://vndb.org/v19989",
       "image": "/anime/covers/vn/crystalline.jpg",
-      "score": 8.7,
+      "score": 8.6,
       "progressType": "endings",
-      "endings": [ 7, 8 ], // True,A,B,C,D,E,G  Todo: F
-      "playtime": 54, // currently about 4 hours behind steam playtime due to launching without Steam.
+      "endings": [ 8, 8 ], // True,A,B,C,D,E,G,F
+      "playtime": 57, // currently about 4 hours behind steam playtime due to launching without Steam.
       "start": "2020-4-1",
-      "finish": null,
+      "finish": "2020-7-18", // FREEEEEDOM
       "tags": [
         "English VA",
         "Owned",
@@ -64,13 +69,7 @@
       "notes": [
         "The starts off a bit bland, but its completely redeamed by the huge number of meaningless choices that essentially allow you to pixk and choose the personality of the protagonist!"
       ]
-    }
-  ],
-
-  "queued": [
-  ],
-
-  "completed": [
+    },
     {
       "title": "Hoshi Ori Yume Mirai",
       "title_en": "HoshiOri, Star Weaving ☆ Dreaming of the Future",
