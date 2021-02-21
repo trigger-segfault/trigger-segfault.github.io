@@ -1,74 +1,13 @@
 ---
-layout: htmldoc
+# Redirect to isolated visualnovellist repo:
+#  https://github.com/trigger-segfault/visualnovellist
+layout: default
 title: trigger_segfault's Visual Novel List
 title_postfix: ""
 permalink: /anime/visualnovellist/
-image: /anime/assets/icon-vn-256.png
+image: /visualnovellist/assets/icon-vn-256.png
+#redirect_to:
+#  - /visualnovellist/
+redirect_seo: /visualnovellist/
 description: A handmade list for keeping track of visual novels that trigger_segfault has played or plans to play.
 ---
-<head>
-  {%- include head.html viewport="width=1000,initial-scale=1" -%}
-  <link rel="stylesheet" media="all" href="/assets/css/reset.css" />
-  <link rel="stylesheet" media="all" href="/assets/css/return-arrow.css" />
-  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-mal.css" />
-  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-fa.css" />
-  <link rel="stylesheet" media="all" href="/anime/assets/css/vnlist-custom.css" />
-  <script type="text/javascript" src="/assets/js/is-touch-device.js"></script>
-  <script type="text/javascript" src="/assets/js/strip-json-comments.js"></script>
-  <script type="text/javascript" src="/anime/assets/js/visualnovellist.js"></script>
-</head>
-<body class="ownlist anime">
-  <div id="bgfade"> </div>
-  <div id="bgright"> </div>
-  <div id="bgleft"> </div>
-  <div id="header">
-    <h1>trigger_segfault's visual novel list</h1>
-  </div>
-  <a id="return-arrow" href="/anime/"></a>
-  <div id="list-container" class="list-container">
-    <div class="list-block">
-      <div class="list-unit all_vns">
-        <div id="status-menu" class="status-menu-container">
-          <div class="status-menu" id="status-menu-buttons">
-            <span class="status-button all on">All Visual Novels</span>
-            <span class="status-button playing ">Currently Playing</span>
-            <span class="status-button queued ">Queued</span>
-            <span class="status-button completed ">Completed</span>
-            <span class="status-button onhold ">On Hold</span>
-            <span class="status-button dropped ">Dropped</span>
-            <span class="status-button planning ">Plan to Play</span>
-          </div>
-          <div class="search-container">
-            <div id="search-box"><input value="" type="text"></div>
-            <a id="search-button" href="javascript: void(0);">
-              <i class="fa fa-search"></i>
-            </a>
-          </div>
-          <div class="list-stats" id="list-stats" style="display: block;"></div>
-        </div>
-        <table class="list-table" id="list-table">
-          <tbody>
-            <tr class="list-table-header">
-              <th class="header-title status"></th>
-              <th class="header-title number">#</th>
-              <th class="header-title image">Image</th>
-              <th class="header-title title"><a class="title sort-category">Title</a></th>
-              <th class="header-title score" style="width: 50px;"><a class="score sort-category">Score</a></th>
-              <th class="header-title progress" style="width: 68px;"><a class="progress sort-category">Progress</a></th>
-              <th class="header-title completion" style="width: 82px;">Completion</th>
-              <th class="header-title playtime" style="width: 66px;"><a class="playtime sort-category">Playtime</a></th>
-              <th class="header-title start-finish" style="width: 90px;"><a class="start sort-category">Start</a>/<a class="finish sort-category">Finish</a></th>
-              <th class="header-title tags">Tags <a id="tags-clear" style="display: none;">(clear)</a></th>
-            </tr>
-          </tbody>
-        </table>
-        <div class="loading-space">
-            <i id="loading-spinner" class="fa fa-spinner fa-spin"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- All visual novels populated here -->
-  <script>VisualNovelList.initializeVNList();</script>
-</body>
